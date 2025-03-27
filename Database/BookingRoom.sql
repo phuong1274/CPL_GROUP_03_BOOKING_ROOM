@@ -6,12 +6,10 @@ GO
 -- Bảng User (có thêm Points)
 CREATE TABLE [User] (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
-    Username NVARCHAR(50) UNIQUE,
-    PasswordHash NVARCHAR(255),
+    Username NVARCHAR(50) COLLATE SQL_Latin1_General_CP1_CS_AS UNIQUE,
+    PasswordHash NVARCHAR(255) COLLATE SQL_Latin1_General_CP1_CS_AS,
     PhoneNumber NVARCHAR(15),
-    Email NVARCHAR(100) UNIQUE,
-    Token NVARCHAR(255),
-    TokenExpiry DATETIME,
+    Email NVARCHAR(100) COLLATE SQL_Latin1_General_CP1_CS_AS UNIQUE,
     CreateAt DATETIME DEFAULT GETDATE(),
     FullName NVARCHAR(255),
     Points INT DEFAULT 0,
@@ -32,6 +30,8 @@ CREATE TABLE Rooms (
     RoomID INT IDENTITY(1,1) PRIMARY KEY,
     RoomNumber NVARCHAR(50),
     RoomTypeID INT,
+	StartDate DATE,
+	EndDate DATE,
     Status NVARCHAR(20) DEFAULT 'Available',
     FOREIGN KEY (RoomTypeID) REFERENCES RoomType(RoomTypeID)
 );

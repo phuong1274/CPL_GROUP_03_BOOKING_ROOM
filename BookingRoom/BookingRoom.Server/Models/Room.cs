@@ -11,6 +11,10 @@ public partial class Room
 
     public int? RoomTypeId { get; set; }
 
+    public DateOnly? StartDate { get; set; }
+
+    public DateOnly? EndDate { get; set; }
+
     public string? Status { get; set; }
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
