@@ -1,6 +1,9 @@
-﻿namespace BookingRoom.Server.Repositories.Interfaces
+﻿using BookingRoom.Server.Models;
+
+namespace BookingRoom.Server.Repositories.Interfaces
 {
-    public interface IBookingRepository
+    public interface IBookingRepository : IRepository<Booking>
     {
+        
     }
 }

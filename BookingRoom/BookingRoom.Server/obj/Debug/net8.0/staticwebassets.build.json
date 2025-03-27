@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I0iDQE92MnQvSed3417SNwLIM3KIH/mvRzFBswXpzIg=",
+  "Hash": "W7lcnI/Vs+BbEX8N89uIE0sp7BYhL2NOQfUz1isHlW0=",
   "Source": "BookingRoom.Server",
   "BasePath": "_content/BookingRoom.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "bookingroom.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

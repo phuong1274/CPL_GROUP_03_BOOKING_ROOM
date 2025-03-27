@@ -10,8 +10,6 @@ CREATE TABLE [User] (
     PasswordHash NVARCHAR(255) COLLATE SQL_Latin1_General_CP1_CS_AS,
     PhoneNumber NVARCHAR(15),
     Email NVARCHAR(100) COLLATE SQL_Latin1_General_CP1_CS_AS UNIQUE,
-    Token NVARCHAR(255),
-    TokenExpiry DATETIME,
     CreateAt DATETIME DEFAULT GETDATE(),
     FullName NVARCHAR(255),
     Points INT DEFAULT 0,
