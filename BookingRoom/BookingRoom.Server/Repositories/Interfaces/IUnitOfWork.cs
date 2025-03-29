@@ -6,5 +6,6 @@
         IBookingRepository Bookings { get; }
         IUserRepository Users { get; }
         Task<int> SaveChangesAsync();
+        Task<int> CompleteAsync();
     }
 }

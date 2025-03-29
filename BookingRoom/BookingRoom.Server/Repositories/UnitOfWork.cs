@@ -44,7 +44,10 @@ namespace BookingRoom.Server.Repositories
         {
             return await _context.SaveChangesAsync();
         }
-
+        public async Task<int> CompleteAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
         public void Dispose()
         {
             Dispose(true);

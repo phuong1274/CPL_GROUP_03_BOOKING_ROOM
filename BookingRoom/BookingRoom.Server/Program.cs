@@ -17,11 +17,11 @@ builder.Services.AddDbContext<HotelBookingDbContext>(options =>
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", builder =>
+    options.AddPolicy("AllowAll", builder =>
     {
-        builder.WithOrigins("https://localhost:5173")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
     });
 });
 
@@ -75,16 +75,46 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Enable CORS ngay sau Swagger và trước các middleware khác
-app.UseCors("AllowReactApp");
-
 app.UseHttpsRedirection();
+
+// Thêm middleware để xử lý OPTIONS request
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        context.Response.Headers.Add("Access-Control-Allow-Origin", "https://localhost:5173");
+        context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        context.Response.StatusCode = 200;
+        return;
+    }
+    await next();
+});
+
+app.UseCors("AllowAll");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
 
-app.MapFallbackToFile("/index.html");
+// Xử lý các request API và fallback
+app.UseEndpoints(endpoints =>
+{
+    // Xử lý các request API
+    _ = endpoints.MapControllers();
+
+    // Fallback cho các request không phải API
+    _ = endpoints.MapFallbackToFile("/index.html", new StaticFileOptions
+    {
+        OnPrepareResponse = ctx =>
+        {
+            // Chỉ áp dụng fallback cho các request không bắt đầu bằng /api
+            if (ctx.Context.Request.Path.StartsWithSegments("/api"))
+            {
+                ctx.Context.Response.StatusCode = 404;
+                ctx.Context.Response.Body = Stream.Null;
+            }
+        }
+    });
+});
 
 app.Run();
-

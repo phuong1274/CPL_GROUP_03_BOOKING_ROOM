@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
 
     useEffect(() => {
-        // Kiểm tra token trong localStorage khi ứng dụng khởi động
         const storedToken = localStorage.getItem('token');
         const storedUser = localStorage.getItem('user');
         if (storedToken && storedUser) {
