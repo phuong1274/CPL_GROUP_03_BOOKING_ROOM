@@ -1,0 +1,65 @@
+﻿/* components/styles/BookingForm.css */
+.booking-form {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.booking-form-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; 
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-group {
+    flex: 1 1 200px; 
+    min-width: 200px; 
+    max-width: 200px; 
+}
+
+    .form-group label {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%; 
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+.check-availability-btn {
+    flex: 1 1 200px;
+    min-width: 200px; 
+    background-color: #0052cc;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .check-availability-btn:hover {
+        background-color: #003d99;
+    }
