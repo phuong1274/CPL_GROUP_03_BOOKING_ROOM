@@ -2,6 +2,7 @@
 using BookingRoom.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BookingRoom.Server.Repositories.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace BookingRoom.Server.Controllers
 {
@@ -35,18 +36,30 @@ namespace BookingRoom.Server.Controllers
 
             try
             {
+                Console.WriteLine($"Login input: {loginDTO.login}");
                 var user = await _unitOfWork.Users.GetByEmailOrUsernameAsync(loginDTO.login);
+                Console.WriteLine($"User found: {user?.Username}, Status: {user?.Status}");
+
                 if (user == null)
                 {
+                    Console.WriteLine("User not found in database.");
                     return BadRequest(new { login = "Invalid username or email" });
+                }
+
+                if (string.Equals(user.Status, "Deactive", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("User is Deactive.");
+                    return StatusCode(403, new { error = "Your account has been deactivated. Please contact support." });
                 }
 
                 var token = await _authService.LoginAsync(loginDTO);
                 if (string.IsNullOrEmpty(token))
                 {
+                    Console.WriteLine("Token is null or empty - incorrect password.");
                     return BadRequest(new { password = "Incorrect password" });
                 }
 
+                Console.WriteLine("Login successful.");
                 return Ok(new
                 {
                     token,
@@ -57,15 +70,24 @@ namespace BookingRoom.Server.Controllers
                         user.FullName,
                         user.Role,
                         user.PhoneNumber,
-                        user.Points
+                        user.Points,
+                        user.Status
                     }
                 });
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine($"UnauthorizedAccessException: {ex.Message}");
+                return StatusCode(403, new { error = ex.Message });
+            }
             catch (Exception ex)
             {
+                Console.WriteLine($"Exception: {ex.Message}");
                 return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
             }
         }
+
+
 
         //====================================================================================================
 
@@ -115,7 +137,8 @@ namespace BookingRoom.Server.Controllers
                         user.FullName,
                         user.Role,
                         user.PhoneNumber,
-                        user.Points
+                        user.Points,
+                        user.Status
                     }
                 });
             }

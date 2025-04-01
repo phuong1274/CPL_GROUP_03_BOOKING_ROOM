@@ -17,9 +17,9 @@ builder.Services.AddDbContext<HotelBookingDbContext>(options =>
 // Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
+    options.AddPolicy("AllowAll", bu =>
     {
-        builder.AllowAnyOrigin()
+        bu.AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader();
     });

@@ -34,6 +34,7 @@ namespace BookingRoom.Server.Services
             return GenerateJwtToken(user);
         }
 
+
         public async Task<string> RegisterAsync(RegisterDTO registerDTO)
         {
             var existingUser = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.username);
@@ -81,7 +82,7 @@ namespace BookingRoom.Server.Services
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddDays(30),
+                expires: DateTime.Now.AddHours(2),
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

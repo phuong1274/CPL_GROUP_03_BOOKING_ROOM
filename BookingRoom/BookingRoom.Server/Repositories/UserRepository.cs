@@ -1,6 +1,8 @@
 ﻿using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BookingRoom.Server.Repositories
 {
@@ -15,42 +17,29 @@ namespace BookingRoom.Server.Repositories
 
         public async Task<User?> GetByEmailOrUsernameAsync(string login)
         {
-            return await _context.Users
+            Console.WriteLine($"Searching for user with Email or Username: {login}");
+            var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == login || u.Username == login);
+            if (user == null)
+            {
+                Console.WriteLine($"No user found with Email or Username: {login}");
+            }
+            else
+            {
+                Console.WriteLine($"User found - Username: {user.Username}, Email: {user.Email}, Status: {user.Status}");
+            }
+            return user;
         }
+
 
         public async Task<User?> GetByEmailAsync(string email)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public IQueryable<User> GetAll()
         {
-            return await _context.Users.ToListAsync();
-        }
-
-        public async Task<User?> GetByIdAsync(int id)
-        {
-            return await _context.Users.FindAsync(id);
-        }
-
-        public async Task AddAsync(User entity)
-        {
-            await _context.Users.AddAsync(entity);
-        }
-
-        public async Task UpdateAsync(User entity)
-        {
-            _context.Users.Update(entity);
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            var user = await GetByIdAsync(id);
-            if (user != null)
-            {
-                _context.Users.Remove(user);
-            }
+            return _context.Users.AsQueryable();
         }
     }
 }

@@ -16,20 +16,18 @@ const Login = () => {
 
     const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
-        setErrors({}); 
+        setErrors({});
+        console.log("Form data on submit:", formData);
 
         try {
             const { token, user } = await loginService(formData);
+            console.log("Login successful, token:", token, "user:", user);
             login(token, user);
             navigate('/');
         } catch (err) {
-            const newErrors = err && typeof err === 'object'
-                ? err.Errors
-                    ? { general: `${err.Error}${err.Details ? `: ${err.Details}` : ''}` }
-                    : err
-                : { general: err?.message || 'Login failed' };
-
-            setErrors(newErrors);
+            console.log("Error caught in handleSubmit:", err);
+            const errorMessage = err.message || 'Đăng nhập thất bại';
+            setErrors({ general: errorMessage });
         }
     }, [formData, login, navigate]);
 
@@ -42,8 +40,13 @@ const Login = () => {
                 {['login', 'password'].map((field) => (
                     <div key={field}>
                         <label>{field === 'login' ? 'Email or Username:' : 'Password:'}</label>
-                        <input type={field === 'password' ? 'password' : 'text'} name={field}
-                            value={formData[field]}  onChange={handleChange}  required />
+                        <input
+                            type={field === 'password' ? 'password' : 'text'}
+                            name={field}
+                            value={formData[field]}
+                            onChange={handleChange}
+                            required
+                        />
                         {errors[field] && <div style={{ color: 'red' }}>{errors[field]}</div>}
                     </div>
                 ))}
