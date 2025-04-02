@@ -176,8 +176,6 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-<<<<<<< HEAD
-=======
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
@@ -192,12 +190,9 @@ K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.pdb
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Core.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Identity.dll
-K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Humanizer.dll
-K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -366,4 +361,3 @@ K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.pdb
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
->>>>>>> 06ca9fb (Update Login Register Interface)
