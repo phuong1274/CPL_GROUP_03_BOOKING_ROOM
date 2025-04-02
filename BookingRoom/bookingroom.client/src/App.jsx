@@ -1,10 +1,11 @@
 ﻿import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
-import Login from './pages/Login';
-import Register from './pages/Register';
 import UserList from './pages/UserList';
 import UserDetail from './pages/UserDetail';
+import { useEffect, useState } from 'react';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 import './App.css';
 import { useEffect } from 'react';
 

@@ -1,0 +1,80 @@
+.registerPageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    background: url('../../assets/Login_Register/bg_login_register.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.registerBox {
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+    .registerBox * {
+        box-sizing: border-box;
+    }
+
+    .registerBox h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+.inputGroup {
+    margin: 15px 0;
+}
+
+    .inputGroup label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .inputGroup input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 14px;
+    }
+
+        .inputGroup input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+.registerButton {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .registerButton:hover {
+        background: rgba(255, 255, 255, 0.7);
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+.errorMessage, .errorMessageField {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
