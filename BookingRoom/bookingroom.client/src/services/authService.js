@@ -28,3 +28,38 @@ export const register = async (registerData) => {
         throw new Error(error.response?.data || 'Registration failed');
     }
 };
+
+export const forgotPassword = async (data) => {
+    try {
+        const response = await axios.post(`${API_URL}/forgot-password`, {
+            login: data.login,
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error.response?.data || 'Failed to send reset link');
+    }
+};
+
+export const resetPassword = async (data) => {
+    try {
+        const response = await axios.post(`${API_URL}/reset-password`, {
+            token: data.token,
+            password: data.password,
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error.response?.data || 'Failed to reset password');
+    }
+};
+
+export const changePassword = async (data) => {
+    try {
+        const response = await api.post('/auth/change-password', {
+            oldPassword: data.oldPassword,
+            newPassword: data.newPassword,
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error.response?.data || 'Failed to change password');
+    }
+};

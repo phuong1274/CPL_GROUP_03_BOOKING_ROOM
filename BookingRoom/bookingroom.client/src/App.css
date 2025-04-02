@@ -351,6 +351,74 @@ body {
         margin: 0;
     }
 
+/*Forgot pass*/
+.forgot-password-page,
+.reset-password-page {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.forgot-password-page form,
+.reset-password-page form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*Change pass and user pro5*/
+.user-profile-page,
+.change-password-page {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+    .user-profile-page p {
+        font-family: 'Lora', serif;
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+    }
+
+    .change-password-page form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.avatar {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+    .avatar:hover {
+        color: #b8860b;
+    }
+
+.guest-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .guest-btn:hover {
+        color: #b8860b;
+    }
 /* ... (remaining styles remain unchanged) */
 
 /* Responsive Design */

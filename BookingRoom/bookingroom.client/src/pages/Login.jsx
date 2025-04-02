@@ -1,5 +1,5 @@
 ﻿import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { login as loginService } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
 
@@ -71,6 +71,9 @@ const Login = () => {
                 </div>
                 <button type="submit">Login</button>
             </form>
+            <p>
+                <Link to="/forgot-password" style={{ color: '#b8860b' }}>Forgot Password?</Link>
+            </p>
         </div>
     );
 };

@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "S:\\New folder\\BookingRoom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\bookingform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\bookingform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\pages\\booking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\booking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\pages\\home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -33,6 +13,46 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\pages\\userprofile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userprofile.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\services\\authservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\services\\authservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\resetpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\resetpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\forgotpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\forgotpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\pages\\home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\home.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\components\\bookingform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\bookingform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\pages\\booking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\booking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|s:\\new folder\\bookingroom\\bookingroom.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -46,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,44 +82,127 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookingForm.jsx",
-              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\BookingForm.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\BookingForm.jsx",
-              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\BookingForm.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\components\\BookingForm.jsx",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwG8AAAAbAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ChangePassword.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ChangePassword.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\ChangePassword.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ChangePassword.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\ChangePassword.jsx",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwEEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-01T08:21:49.173Z",
+              "WhenOpened": "2025-04-02T07:33:24.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserProfile.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\pages\\UserProfile.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserProfile.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\pages\\UserProfile.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserProfile.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-02T07:32:26.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Footer.jsx",
-              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Footer.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Footer.jsx",
-              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Footer.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\components\\Footer.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAArAAAAAAAAAA==",
+              "Title": "authService.js",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\services\\authService.js",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\services\\authService.js",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\services\\authService.js",
+              "RelativeToolTip": "bookingroom.client\\src\\services\\authService.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-02T07:30:20.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResetPassword.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ResetPassword.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\ResetPassword.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ResetPassword.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\ResetPassword.jsx",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwEMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-01T07:04:05.18Z"
+              "WhenOpened": "2025-04-02T07:29:04.673Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "ForgotPassword.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ForgotPassword.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\ForgotPassword.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\ForgotPassword.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\ForgotPassword.jsx",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwDQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-02T07:27:41.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Navbar.jsx",
               "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Navbar.jsx",
               "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
               "RelativeToolTip": "bookingroom.client\\src\\components\\Navbar.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-01T07:02:04.571Z"
+              "WhenOpened": "2025-04-01T07:02:04.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "App.css",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.css",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.css",
+              "RelativeToolTip": "bookingroom.client\\src\\App.css",
+              "ViewState": "AgIAAHwBAAAAAAAAAAAIwI0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-01T07:00:41.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Footer.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Footer.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Footer.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\Footer.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\Footer.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-01T07:04:05.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\App.jsx",
+              "ViewState": "AgIAADAAAAAAAAAAAAApwEMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-01T07:00:29.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Booking.jsx",
               "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\pages\\Booking.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\Booking.jsx",
@@ -111,19 +214,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Home.jsx",
               "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\pages\\Home.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\Home.jsx",
               "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\pages\\Home.jsx",
               "RelativeToolTip": "bookingroom.client\\src\\pages\\Home.jsx",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEgAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-04-01T07:01:26.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "index.html",
               "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\index.html",
               "RelativeDocumentMoniker": "bookingroom.client\\index.html",
@@ -135,7 +238,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
+              "Title": "BookingForm.jsx",
+              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\BookingForm.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\BookingForm.jsx",
+              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\components\\BookingForm.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\BookingForm.jsx",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAewG8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-01T08:21:49.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "index.css",
               "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\index.css",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\index.css",
@@ -144,34 +259,6 @@
               "ViewState": "AgIAACkAAAAAAAAAAAAIwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-01T07:00:56.75Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "App.css",
-              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.css",
-              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.css",
-              "RelativeToolTip": "bookingroom.client\\src\\App.css",
-              "ViewState": "AgIAAFkBAAAAAAAAAAAAAIEBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-01T07:00:41.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.jsx",
-              "DocumentMoniker": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.jsx",
-              "ToolTip": "S:\\New folder\\BookingRoom\\bookingroom.client\\src\\App.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\App.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-01T07:00:29.026Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             }
           ]
         }
