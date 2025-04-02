@@ -8,8 +8,17 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
     <Folder Include="src\pages\NewFolder\" />
   </ItemGroup>
+=======
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <Folder Include="src\assets\Login_Register\" />
+  </ItemGroup>
+>>>>>>> kien
+>>>>>>> 758a18686aad3ecd1d819e26972410cd57826e4a
 </Project>

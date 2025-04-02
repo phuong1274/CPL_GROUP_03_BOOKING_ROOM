@@ -1,3 +1,3 @@
-﻿import { register, login } from './api';
+﻿import { register, login, getUsers, getUserById, updateUserStatus } from './api';
 
-export { register, login };
+export { register, login, getUsers, getUserById, updateUserStatus };

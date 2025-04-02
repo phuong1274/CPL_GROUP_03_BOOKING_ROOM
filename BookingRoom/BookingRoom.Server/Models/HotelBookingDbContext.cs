@@ -179,6 +179,9 @@ public partial class HotelBookingDbContext : DbContext
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .UseCollation("SQL_Latin1_General_CP1_CS_AS");
+            entity.Property(e => e.Status)
+                .HasMaxLength(15);
+                
         });
 
         OnModelCreatingPartial(modelBuilder);
