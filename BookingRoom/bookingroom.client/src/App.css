@@ -9,3 +9,379 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+/* Global Styles */
+body {
+    font-family: 'Playfair Display', serif; /* Elegant font for luxury feel */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f5f0; /* Light cream background for elegance */
+    color: #333;
+}
+
+/* NavBar Styles */
+.navbar {
+    background-color: #2c2c2c;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+        .navbar a:hover {
+            color: #b8860b;
+        }
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .logout-btn:hover {
+        color: #b8860b;
+    }
+
+/* Hero Section (Home Page) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://landmark72.intercontinental.com/wp-content/uploads/2-1.jpg'); /* Replace with actual hotel image */
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: 'Lora', serif;
+}
+
+/* Quick Booking Form (Home Page) */
+.quick-book-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group (Used in Home, Booking, Login, Register) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .form-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+        font-family: 'Lora', serif;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: 'Lora', serif;
+    }
+
+.book-now-btn {
+    background-color: #b8860b; /* Gold color for luxury */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .book-now-btn:hover {
+        background-color: #daa520;
+    }
+
+/* Rooms Section (Home Page) */
+.rooms-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+    .rooms-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #2c2c2c;
+    }
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.room-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+    .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .room-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .room-card h3 {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem;
+        color: #2c2c2c;
+    }
+
+    .room-card p {
+        font-family: 'Lora', serif;
+        font-size: 1rem;
+        color: #666;
+        padding: 0 1rem;
+    }
+
+.book-link {
+    display: inline-block;
+    margin: 1rem 0;
+    color: #b8860b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .book-link:hover {
+        text-decoration: underline;
+    }
+
+/* Booking Page */
+.booking-page {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+    .booking-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+    }
+
+    .booking-page p {
+        font-family: 'Lora', serif;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #666;
+    }
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login and Register Pages */
+.login-page,
+.register-page {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+    .login-page h2,
+    .register-page h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+    }
+
+    .login-page form,
+    .register-page form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+/* Error and Success Messages (Used in Login, Register, Booking) */
+.error-message {
+    color: red;
+    margin-bottom: 1rem;
+    font-family: 'Lora', serif;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 1rem;
+    font-family: 'Lora', serif;
+}
+
+/* NavBar Styles */
+.navbar {
+    background-color: #2c2c2c;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+        .navbar a:hover {
+            color: #b8860b;
+        }
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .logout-btn:hover {
+        color: #b8860b;
+    }
+
+/* Footer Styles */
+.footer {
+    background-color: #2c2c2c; /* Dark background to match the NavBar */
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    /* Removed flexbox since there's only one section */
+}
+
+.footer-section {
+    /* Removed flex: 1 and min-width since there's only one section */
+}
+
+    .footer-section h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .footer-section p {
+        font-family: 'Lora', serif;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .footer-section a {
+        color: #b8860b;
+        text-decoration: none;
+    }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+/* Removed .footer-section ul and .footer-section ul li since Quick Links is gone */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+    .footer-bottom p {
+        font-family: 'Lora', serif;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+/* ... (remaining styles remain unchanged) */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 500px;
+    }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Simplified responsive styles for Footer */
+    .footer-content {
+        /* Removed flex-direction: column and gap since there's only one section */
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .booking-page,
+    .login-page,
+    .register-page {
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+}
+
