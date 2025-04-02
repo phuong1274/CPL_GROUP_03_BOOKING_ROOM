@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\FU Learning\\2025\\SPRING2025\\Mock_Project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|d:\\fulearning\\sp25_ojt\\final_project\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\styles\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|d:\\fulearning\\sp25_ojt\\final_project\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|d:\\fulearning\\sp25_ojt\\final_project\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\vite.config.js||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\vite.config.js||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.css",
+              "DocumentMoniker": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\styles\\Login.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\styles\\Login.css",
+              "ToolTip": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\styles\\Login.css",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\styles\\Login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-01T06:25:30.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "package.json",
+              "DocumentMoniker": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\package.json",
+              "RelativeDocumentMoniker": "bookingroom.client\\package.json",
+              "ToolTip": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\package.json",
+              "RelativeToolTip": "bookingroom.client\\package.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwBEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-26T12:09:09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\vite.config.js",
+              "RelativeDocumentMoniker": "bookingroom.client\\vite.config.js",
+              "ToolTip": "D:\\FULearning\\Sp25_OJT\\Final_project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\vite.config.js",
+              "RelativeToolTip": "bookingroom.client\\vite.config.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAiwDYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-26T12:08:50.147Z"
             }
           ]
         }

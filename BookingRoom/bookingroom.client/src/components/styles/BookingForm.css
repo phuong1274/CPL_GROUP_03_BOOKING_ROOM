@@ -1,0 +1,40 @@
+/* Form Group (Used in Home, Booking, Login, Register) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .form-group label {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+        font-family: 'Lora', serif;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: 'Lora', serif;
+    }
+
+.book-now-btn {
+    background-color: #b8860b; /* Gold color for luxury */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .book-now-btn:hover {
+        background-color: #daa520;
+    }

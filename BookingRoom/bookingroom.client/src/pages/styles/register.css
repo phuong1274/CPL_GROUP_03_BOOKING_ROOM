@@ -1,0 +1,73 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background-color: #f4f4f4;*/
+}
+
+.register-page {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.register-page h2 {
+    font-size: 2rem; /* Same font size as Login page */
+    margin-bottom: 1.5rem; /* Same spacing as Login page */
+    color: #2c2c2c;
+}
+
+/* Form group styling (shared) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1.5rem; 
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal; 
+    color: #2c2c2c;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Button styling (shared) */
+.submit-button {
+    padding: 0.5rem 1rem; 
+    margin-top: 0.5rem;
+    border: 1px solid #ccc; 
+    background-color: transparent; 
+    color: #2c2c2c; 
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #e0e0e0; 
+}
+
+/* Error and success messages (shared) */
+.error-message {
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 1rem;
+}

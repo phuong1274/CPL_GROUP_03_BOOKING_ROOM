@@ -1,0 +1,30 @@
+/* Booking Page */
+.booking-page {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+    .booking-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+    }
+
+    .booking-page p {
+        font-family: 'Lora', serif;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #666;
+    }
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

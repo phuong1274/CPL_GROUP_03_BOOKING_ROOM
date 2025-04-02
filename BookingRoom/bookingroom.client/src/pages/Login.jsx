@@ -2,6 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import { login as loginService } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
+import './styles/Login.css';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -9,10 +10,10 @@ const Login = () => {
         password: ''
     });
     const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null); // Thêm trạng thái success
+    const [success, setSuccess] = useState(null);
     const errorRef = useRef(null);
     const navigate = useNavigate();
-    const { login } = useAuth(); // Sử dụng hàm login từ useAuth
+    const { login } = useAuth();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,9 +27,8 @@ const Login = () => {
         });
         try {
             const token = await loginService(formData);
-            // Giả sử backend trả về user cùng với token, nếu không thì bạn cần điều chỉnh
-            const user = { username: formData.login }; // Thay thế bằng dữ liệu user thực tế từ backend
-            login(token, user); // Cập nhật token và user trong AuthContext
+            const user = { username: formData.login };
+            login(token, user);
             setSuccess('Login successful! Redirecting to home...');
             setTimeout(() => {
                 navigate('/');
@@ -44,33 +44,47 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            {error && <div ref={errorRef} style={{ color: 'red' }}>{error}</div>}
-            {success && <div style={{ color: 'green' }}>{success}</div>} {/* Hiển thị thông báo thành công */}
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email or Username:</label>
-                    <input
-                        type="text"
-                        name="login"
-                        value={formData.login}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
+        <div className="login-container">
+            <div className="login-page">
+                <h2>Login</h2>
+                {error && (
+                    <div ref={errorRef} className="error-message">
+                        {error}
+                    </div>
+                )}
+                {success && (
+                    <div className="success-message">
+                        {success}
+                    </div>
+                )}
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="login">Email or Username:</label>
+                        <input
+                            type="text"
+                            id="login"
+                            name="login"
+                            value={formData.login}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="login-button">
+                        Login
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
