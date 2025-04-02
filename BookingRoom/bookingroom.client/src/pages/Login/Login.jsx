@@ -36,22 +36,6 @@ const Login = () => {
     }, [formData, login, navigate]);
 
     return (
-        //<div>
-        //    <h2>Login</h2>
-        //    {errors.general && <div style={{ color: 'red' }}>{errors.general}</div>}
-
-        //    <form onSubmit={handleSubmit}>
-        //        {['login', 'password'].map((field) => (
-        //            <div key={field}>
-        //                <label>{field === 'login' ? 'Email or Username:' : 'Password:'}</label>
-        //                <input type={field === 'password' ? 'password' : 'text'} name={field}
-        //                    value={formData[field]}  onChange={handleChange}  required />
-        //                {errors[field] && <div style={{ color: 'red' }}>{errors[field]}</div>}
-        //            </div>
-        //        ))}
-        //        <button type="submit">Login</button>
-        //    </form>
-        //</div>
         <div className={styles.loginPageWrapper}>
             <div className={styles.loginBox}>
                 <h2>Login</h2>

@@ -165,7 +165,6 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-<<<<<<< HEAD
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.json
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.development.json
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssets.props
@@ -181,11 +180,6 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
 =======
-<<<<<<< HEAD
-=======
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.Development.json
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.json
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\spa.proxy.json
@@ -372,7 +366,10 @@ K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
 K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 06ca9fb (Update Login Register Interface)
 >>>>>>> kien
 >>>>>>> 758a18686aad3ecd1d819e26972410cd57826e4a
+=======
+>>>>>>> 63fd54f6418dcbdab872495b0f50e18421d21d04

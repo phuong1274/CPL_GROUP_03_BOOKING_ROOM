@@ -3,7 +3,6 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import './App.css';
-import { useEffect } from 'react';
 
 // Component Navbar để hiển thị thanh điều hướng
 function Navbar() {
