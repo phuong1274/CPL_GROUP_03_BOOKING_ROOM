@@ -5,24 +5,20 @@
     gap: 0.5rem;
 }
 
-    .form-group label {
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #333;
-        font-family: 'Lora', serif;
-    }
-
-    .form-group input,
-    .form-group select {
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-family: 'Lora', serif;
-    }
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Lora', serif;
+}
+.form-group input,
+.form-group select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+}
 
 .book-now-btn {
     background-color: #b8860b; /* Gold color for luxury */

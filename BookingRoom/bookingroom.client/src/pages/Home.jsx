@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer'; // Import the Footer component
 import './styles/Home.css';
 
 const Home = () => {
@@ -46,54 +47,58 @@ const Home = () => {
     };
 
     return (
-        <div className="home">
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-content">
-                    <h1>Indulge in Luxury at InterContinental Hanoi Landmark72</h1>
-                    <p>Experience the highest luxury hotel in Hanoi with panoramic views and world-class amenities.</p>
-                    {/* Simplified Quick Booking Form */}
-                    <form className="quick-book-form" onSubmit={handleQuickBook}>
-                        <div className="form-group">
-                            <label>Guests</label>
-                            <select required>
-                                <option value="">Select</option>
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4+ Guests</option>
-                            </select>
-                        </div>
-                        <button type="submit" className="book-now-btn">Book Now</button>
-                    </form>
-                </div>
-            </section>
+        <>
+            <div className="home">
+                {/* Hero Section */}
+                <section className="hero">
+                    <div className="hero-content">
+                        <h1>Indulge in Luxury at InterContinental Hanoi Landmark72</h1>
+                        <p>Experience the highest luxury hotel in Hanoi with panoramic views and world-class amenities.</p>
+                        {/* Simplified Quick Booking Form */}
+                        <form className="quick-book-form" onSubmit={handleQuickBook}>
+                            <div className="form-group">
+                                <label>Guests</label>
+                                <select required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4+ Guests</option>
+                                </select>
+                            </div>
+                            <button type="submit" className="book-now-btn">Book Now</button>
+                        </form>
+                    </div>
+                </section>
 
-            {/* Rooms Section */}
-            <section className="rooms-section">
-                <h2>Discover Our Luxurious Rooms</h2>
-                <div className="rooms-grid">
-                    {rooms.map((room, index) => (
-                        <div key={index} className="room-card">
-                            <img src={room.image} alt={room.name} />
-                            <h3>{room.name}</h3>
-                            <p>{room.description}</p>
-                            <Link to="/booking" className="book-link">Book This Room</Link>
-                        </div>
-                    ))}
-                </div>
-            </section>
+                {/* Rooms Section */}
+                <section className="rooms-section">
+                    <h2>Discover Our Luxurious Rooms</h2>
+                    <div className="rooms-grid">
+                        {rooms.map((room, index) => (
+                            <div key={index} className="room-card">
+                                <img src={room.image} alt={room.name} />
+                                <h3>{room.name}</h3>
+                                <p>{room.description}</p>
+                                <Link to="/booking" className="book-link">Book This Room</Link>
+                            </div>
+                        ))}
+                    </div>
+                </section>
 
-            {/* Call to Action for Login/Register */}
-            <section className="cta-section">
-                <h2>Ready to Book Your Stay?</h2>
-                <p>Log in or register to secure your luxurious experience at InterContinental Hanoi Landmark72.</p>
-                <div className="cta-buttons">
-                    <Link to="/login" className="cta-btn">Login</Link>
-                    <Link to="/register" className="cta-btn">Register</Link>
-                </div>
-            </section>
-        </div>
+                {/* Call to Action for Login/Register */}
+                <section className="cta-section">
+                    <h2>Ready to Book Your Stay?</h2>
+                    <p>Log in or register to secure your luxurious experience at InterContinental Hanoi Landmark72.</p>
+                    <div className="cta-buttons">
+                        <Link to="/login" className="cta-btn">Login</Link>
+                        <Link to="/register" className="cta-btn">Register</Link>
+                    </div>
+                </section>
+            </div>
+            {/* Footer Section */}
+            <Footer />
+        </>
     );
 };
 

@@ -2,7 +2,7 @@
     background-color: #2c2c2c;
     padding: 1rem;
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
     width: 100vw; /* Span the full viewport width */
     position: relative;
@@ -12,16 +12,16 @@
     margin: 0; /* Ensure no margin adds space */
 }
 
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 600;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
     }
 
-        .navbar a:hover {
-            color: #b8860b;
-        }
+.navbar a:hover {
+    color: #b8860b;
+    }
 
 .logout-btn {
     background: none;
@@ -32,6 +32,6 @@
     cursor: pointer;
 }
 
-    .logout-btn:hover {
-        color: #b8860b;
-    }
+.logout-btn:hover {
+    color: #b8860b;
+}

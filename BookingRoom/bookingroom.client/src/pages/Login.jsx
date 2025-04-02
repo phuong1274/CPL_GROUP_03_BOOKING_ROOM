@@ -1,4 +1,5 @@
-﻿import React, { useState, useRef } from 'react';
+﻿// pages/Login.jsx
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login as loginService } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
@@ -58,8 +59,8 @@ const Login = () => {
                     </div>
                 )}
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="login">Email or Username:</label>
+                    <div className="input-group"> {/* Replaced form-group with input-group */}
+                        <label htmlFor="login">Email or Username:</label> {/* Fixed label1 to label */}
                         <input
                             type="text"
                             id="login"
@@ -69,8 +70,8 @@ const Login = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password:</label>
+                    <div className="input-group"> {/* Replaced form-group with input-group */}
+                        <label htmlFor="password">Password:</label> {/* Fixed label1 to label */}
                         <input
                             type="password"
                             id="password"

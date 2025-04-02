@@ -1,4 +1,5 @@
-﻿import React, { useState, useRef } from 'react';
+﻿// pages/Register.jsx
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../services/authService'; // Import hàm register từ authService
 import './styles/register.css'; // Assuming this is the same CSS file as before
@@ -53,7 +54,7 @@ const Register = () => {
                     </div>
                 )}
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="input-group"> {/* Replaced form-group1 with input-group */}
                         <label htmlFor="username">Username:</label>
                         <input
                             type="text"
@@ -64,7 +65,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="input-group"> {/* Replaced form-group1 with input-group */}
                         <label htmlFor="email">Email:</label>
                         <input
                             type="email"
@@ -75,7 +76,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="input-group"> {/* Replaced form-group1 with input-group */}
                         <label htmlFor="password">Password:</label>
                         <input
                             type="password"
@@ -86,7 +87,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="input-group"> {/* Replaced form-group1 with input-group */}
                         <label htmlFor="fullName">Full Name:</label>
                         <input
                             type="text"
@@ -97,7 +98,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="input-group"> {/* Replaced form-group1 with input-group */}
                         <label htmlFor="phoneNumber">Phone Number:</label>
                         <input
                             type="text"
