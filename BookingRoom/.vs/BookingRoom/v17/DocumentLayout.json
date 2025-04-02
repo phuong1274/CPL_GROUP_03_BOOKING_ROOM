@@ -55,8 +55,7 @@
               "RelativeToolTip": "bookingroom.client\\src\\services\\api.js",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-03-31T07:09:01.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T07:09:01.354Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "BookingRoom.Server\\Controllers\\UsersController.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAYwEcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T07:05:51.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T07:05:51.804Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "bookingroom.client\\src\\pages\\UserList.jsx",
               "ViewState": "AgIAAI8AAAAAAAAAAAAUwKEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-03-31T07:00:20.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T07:00:20.791Z"
             }
           ]
         }
