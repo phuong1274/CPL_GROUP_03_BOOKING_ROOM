@@ -1,6 +1,7 @@
+// pages/Booking.jsx
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import './styles/Booking.css';
+import BookingForm from '../components/BookingForm';
 
 const Booking = () => {
     const { token } = useAuth(); // Check if user is logged in
@@ -15,21 +16,65 @@ const Booking = () => {
     });
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const [isLoading, setIsLoading] = useState(false); // Add loading state
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const validateForm = () => {
+        const today = new Date();
+        const checkInDate = new Date(formData.checkIn);
+        const checkOutDate = new Date(formData.checkOut);
+
+        // Validate check-in date (not in the past)
+        if (checkInDate < today.setHours(0, 0, 0, 0)) {
+            return 'Check-in date cannot be in the past.';
+        }
+
+        // Validate check-out date (must be after check-in)
+        if (checkOutDate <= checkInDate) {
+            return 'Check-out date must be after check-in date.';
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            return 'Please enter a valid email address.';
+        }
+
+        // Validate phone number (basic validation for digits and length)
+        const phoneRegex = /^\d{10,15}$/;
+        if (!phoneRegex.test(formData.phone)) {
+            return 'Please enter a valid phone number (10-15 digits).';
+        }
+
+        return null; // No errors
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(null);
+        setSuccess(null);
+        setIsLoading(true);
+
         if (!token) {
             setError('Please log in to make a booking.');
+            setIsLoading(false);
+            return;
+        }
+
+        // Validate form data
+        const validationError = validateForm();
+        if (validationError) {
+            setError(validationError);
+            setIsLoading(false);
             return;
         }
 
         try {
             // Simulate API call to book a room
-            console.log('Booking Data:', formData);
+            console.log('Booking Data:', { ...formData, token });
             setSuccess('Booking successful! We will contact you shortly.');
             setError(null);
             setFormData({
@@ -44,6 +89,8 @@ const Booking = () => {
         } catch (err) {
             setError('Booking failed. Please try again.');
             setSuccess(null);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -55,89 +102,12 @@ const Booking = () => {
             {error && <div className="error-message">{error}</div>}
             {success && <div className="success-message">{success}</div>}
 
-            <form className="booking-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Check-In Date</label>
-                    <input
-                        type="date"
-                        name="checkIn"
-                        value={formData.checkIn}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Check-Out Date</label>
-                    <input
-                        type="date"
-                        name="checkOut"
-                        value={formData.checkOut}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Room Type</label>
-                    <select
-                        name="roomType"
-                        value={formData.roomType}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select Room Type</option>
-                        <option value="junior-suite">Junior Suite</option>
-                        <option value="premier-suite">Premier Suite</option>
-                        <option value="ambassador-suite">Ambassador Suite</option>
-                        <option value="royal-suite">Royal Suite</option>
-                    </select>
-                </div>
-                <div className="form-group">
-                    <label>Number of Guests</label>
-                    <select
-                        name="guests"
-                        value={formData.guests}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4+ Guests</option>
-                    </select>
-                </div>
-                <div className="form-group">
-                    <label>Full Name</label>
-                    <input
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Phone Number</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit" className="book-now-btn">Confirm Booking</button>
-            </form>
+            <BookingForm
+                formData={formData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                isLoading={isLoading}
+            />
         </div>
     );
 };
