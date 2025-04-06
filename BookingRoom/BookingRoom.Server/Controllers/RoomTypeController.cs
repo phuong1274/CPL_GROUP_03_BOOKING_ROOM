@@ -27,10 +27,9 @@ namespace BookingRoom.Server.Controllers
             {
                 var roomTypes = await _unitOfWork.RoomTypes.GetAllRoomTypesAsync();
 
-                // Kiểm tra nếu roomTypes là null
                 if (roomTypes == null)
                 {
-                    return Ok(new List<RoomTypeDTO>()); // Trả về mảng rỗng nếu không có dữ liệu
+                    return Ok(new List<RoomTypeDTO>()); 
                 }
 
                 var roomTypeDTOs = roomTypes.Select(rt => new RoomTypeDTO
