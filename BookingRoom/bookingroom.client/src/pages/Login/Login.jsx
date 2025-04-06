@@ -1,6 +1,6 @@
 ﻿import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login as loginService } from '../../services/authService';
+import { login as loginService } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Login.module.css'; 
 

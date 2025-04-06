@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUsers, updateUserStatus } from '../services/authService';
+import { getUsers, updateUserStatus } from '../services/api';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);

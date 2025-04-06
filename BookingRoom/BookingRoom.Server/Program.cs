@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,12 +31,17 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+builder.Services.AddScoped<IRoomMediaRepository, RoomMediaRepository>();
 
 // Đăng ký Services
 builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
+builder.Services.AddScoped<IRoomMediaService, RoomMediaService>();
 
 // Cấu hình JWT Authentication
 builder.Services.AddAuthentication(options =>
@@ -65,6 +71,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Create the uploads directory if it doesn't exist
+var uploadsPath = Path.Combine(app.Environment.ContentRootPath, "uploads");
+if (!Directory.Exists(uploadsPath))
+{
+    Directory.CreateDirectory(uploadsPath);
+}
+
 // Cấu hình pipeline
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -92,6 +105,15 @@ app.Use(async (context, next) =>
 });
 
 app.UseCors("AllowAll");
+
+// Serve static files from the "uploads" folder
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
+        Path.Combine(app.Environment.ContentRootPath, "uploads")),
+    RequestPath = "/uploads"
+});
+
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

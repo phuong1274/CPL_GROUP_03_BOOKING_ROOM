@@ -3,6 +3,10 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
 import UserList from './pages/UserList';
 import UserDetail from './pages/UserDetail';
+import RoomList from './pages/RoomList';
+import RoomType from './pages/RoomType';
+import AddRoom from './pages/AddRoom';
+import EditRoom from './pages/EditRoom';
 import { useEffect, useState } from 'react';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
@@ -39,20 +43,50 @@ function Navbar() {
             </div>
             <div>
                 {token && isAdmin() && (
-                    <button
-                        onClick={() => navigate('/users')}
-                        style={{
-                            marginRight: '10px',
-                            padding: '5px 10px',
-                            backgroundColor: '#007bff',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        User List
-                    </button>
+                    <>
+                        <button
+                            onClick={() => navigate('/users')}
+                            style={{
+                                marginRight: '10px',
+                                padding: '5px 10px',
+                                backgroundColor: '#007bff',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            User List
+                        </button>
+                        <button
+                            onClick={() => navigate('/rooms')}
+                            style={{
+                                marginRight: '10px',
+                                padding: '5px 10px',
+                                backgroundColor: '#007bff',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Room List
+                        </button>
+                        <button
+                            onClick={() => navigate('/room-types')}
+                            style={{
+                                marginRight: '10px',
+                                padding: '5px 10px',
+                                backgroundColor: '#007bff',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Room Types
+                        </button>
+                    </>
                 )}
                 {token && (
                     <button
@@ -118,7 +152,7 @@ function AppContent() {
             <Navbar />
             <div style={{ minHeight: 'calc(100vh - 60px)' }}>
                 <Routes>
-                    <Route path="/login" element={<Login />} /> 
+                    <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route
                         path="/"
@@ -141,6 +175,38 @@ function AppContent() {
                         element={
                             <ProtectedRoute requireAdmin={true}>
                                 <UserDetail />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/rooms"
+                        element={
+                            <ProtectedRoute requireAdmin={true}>
+                                <RoomList />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/room-types"
+                        element={
+                            <ProtectedRoute requireAdmin={true}>
+                                <RoomType />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/add-room"
+                        element={
+                            <ProtectedRoute requireAdmin={true}>
+                                <AddRoom />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/edit-room/:id"
+                        element={
+                            <ProtectedRoute requireAdmin={true}>
+                                <EditRoom />
                             </ProtectedRoute>
                         }
                     />
