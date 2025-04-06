@@ -5,7 +5,7 @@ import { getRoomById, updateRoom, getRoomTypes, addMedia, deleteMedia } from '..
 function RoomDetail() {
     const { id } = useParams();
     const [room, setRoom] = useState(null);
-    const [mediaItems, setMediaItems] = useState([]); // Store full media objects
+    const [mediaItems, setMediaItems] = useState([]); 
     const [newMediaLink, setNewMediaLink] = useState('');
     const [roomTypes, setRoomTypes] = useState([]);
     const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ function RoomDetail() {
     const fetchData = async () => {
         try {
             const roomData = await getRoomById(id);
-            console.log('Room data:', roomData); // Add this to debug
+            console.log('Room data:', roomData); 
             setRoom({
                 roomId: roomData.roomId,
                 roomNumber: roomData.roomNumber,
@@ -28,7 +28,7 @@ function RoomDetail() {
                 roomData.media
                     ? roomData.media.map((m) => ({
                           mediaId: m.mediaId,
-                          mediaLink: `https://localhost:7067${m.mediaLink}`,
+                          mediaLink: `https://localhost:7067${m.media_Link}`,
                       }))
                     : []
             );
@@ -48,12 +48,11 @@ function RoomDetail() {
 
     const handleAddMediaLink = () => {
         if (newMediaLink.trim()) {
-            // Add new media link as an object with a temporary mediaId (will be updated after saving)
             setMediaItems([
                 ...mediaItems,
                 {
-                    mediaId: `temp-${Date.now()}`, // Temporary unique ID for the key
-                    mediaLink: newMediaLink.trim(),
+                    mediaId: `temp-${Date.now()}`, 
+                    mediaLink: newMedia_Link.trim(),
                 },
             ]);
             setNewMediaLink('');
@@ -62,7 +61,6 @@ function RoomDetail() {
 
     const handleDeleteMedia = async (index) => {
         const mediaItem = mediaItems[index];
-        // Check if this media item exists in the database (mediaId is not temporary)
         if (!mediaItem.mediaId.startsWith('temp-')) {
             try {
                 await deleteMedia(mediaItem.mediaId);
@@ -77,7 +75,7 @@ function RoomDetail() {
     const handleSave = async () => {
         try {
             await updateRoom(id, room);
-            // Add new media items (those with temporary mediaId)
+
             const existingMediaLinks = room.media
                 ? room.media.map((m) => `https://localhost:7067${m.mediaLink}`)
                 : [];
