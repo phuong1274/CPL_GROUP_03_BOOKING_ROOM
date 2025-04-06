@@ -23,16 +23,32 @@ namespace BookingRoom.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRoomTypes()
         {
-            var roomTypes = await _unitOfWork.RoomTypes.GetAllRoomTypesAsync();
-            var roomTypeDTOs = roomTypes.Select(rt => new RoomTypeDTO
+            try
             {
-                RoomTypeID = rt.RoomTypeId,
-                RoomTypeName = rt.RoomTypeName,
-                Description = rt.Description,
-                Price = rt.Price.GetValueOrDefault(),
-                ValidDate = rt.ValidDate ?? DateTime.MinValue
-            }).ToList();
-            return Ok(roomTypeDTOs);
+                var roomTypes = await _unitOfWork.RoomTypes.GetAllRoomTypesAsync();
+
+                // Kiểm tra nếu roomTypes là null
+                if (roomTypes == null)
+                {
+                    return Ok(new List<RoomTypeDTO>()); // Trả về mảng rỗng nếu không có dữ liệu
+                }
+
+                var roomTypeDTOs = roomTypes.Select(rt => new RoomTypeDTO
+                {
+                    RoomTypeID = rt.RoomTypeId,
+                    RoomTypeName = rt.RoomTypeName,
+                    Description = rt.Description,
+                    Price = rt.Price.GetValueOrDefault(),
+                    ValidDate = rt.ValidDate ?? DateTime.MinValue
+                }).ToList();
+
+                return Ok(roomTypeDTOs);
+            }
+            catch (Exception ex)
+            {
+             
+                return StatusCode(500, new { error = $"Error retrieving room types: {ex.Message}" });
+            }
         }
 
         [HttpGet("{id}")]

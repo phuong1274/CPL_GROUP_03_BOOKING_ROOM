@@ -39,9 +39,18 @@ export const uploadMedia = async (files) => {
 };
 
 // Hàm lấy danh sách phòng
-export const getRooms = async () => {
+export const getRooms = async (queryParams = {}) => {
     try {
-        const response = await api.get('/room');
+        const { roomNumber, status, roomTypeId } = queryParams;
+        const params = new URLSearchParams();
+
+        // Thêm các tham số vào query string nếu có
+        if (roomNumber) params.append('roomNumber', roomNumber);
+        if (status) params.append('status', status);
+        if (roomTypeId) params.append('roomTypeId', roomTypeId);
+
+        // Gọi API với query string
+        const response = await api.get(`/room${params.toString() ? `?${params.toString()}` : ''}`);
         return response.data;
     } catch (error) {
         throw new Error(error.response?.data?.Error || error.message || 'Failed to fetch rooms');

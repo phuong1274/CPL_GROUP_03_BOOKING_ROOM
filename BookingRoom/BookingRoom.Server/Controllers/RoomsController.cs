@@ -23,37 +23,71 @@ namespace BookingRoom.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetRooms()
+        public async Task<IActionResult> GetRooms(
+                [FromQuery] string? roomNumber = null,
+                [FromQuery] string? status = null,
+                [FromQuery] int? roomTypeId = null)
         {
-            var rooms = await _unitOfWork.Rooms.GetAllRoomsAsync();
-            var roomDTOs = new List<RoomDTO>();
-
-            foreach (var room in rooms)
+            try
             {
-                var media = await _unitOfWork.RoomMedia.GetMediaByRoomIdAsync(room.RoomId);
-                var mediaDTOs = media.Select(m => new RoomMediaDTO
-                {
-                    MediaID = m.MediaId,
-                    RoomID = m.RoomId.GetValueOrDefault(),
-                    Media_Link = m.MediaLink,
-                    Description = m.Description,
-                    MediaType = m.MediaType
-                }).ToList();
+                // Lấy tất cả các phòng
+                var rooms = await _unitOfWork.Rooms.GetAllRoomsAsync();
 
-                roomDTOs.Add(new RoomDTO
+                // Lọc theo RoomNumber (tìm kiếm không phân biệt hoa thường, hỗ trợ tìm kiếm một phần)
+                if (!string.IsNullOrWhiteSpace(roomNumber))
                 {
-                    RoomID = room.RoomId,
-                    RoomNumber = room.RoomNumber,
-                    RoomTypeID = room.RoomTypeId.GetValueOrDefault(),
-                    RoomTypeName = room.RoomType?.RoomTypeName,
-                    StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
-                    EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
-                    Status = room.Status,
-                    Media = mediaDTOs
-                });
+                    roomNumber = roomNumber.Trim().ToLower();
+                    rooms = rooms.Where(r => r.RoomNumber != null && r.RoomNumber.ToLower().Contains(roomNumber)).ToList();
+                }
+
+                // Lọc theo Status (chính xác, không phân biệt hoa thường)
+                if (!string.IsNullOrWhiteSpace(status))
+                {
+                    status = status.Trim().ToLower();
+                    rooms = rooms.Where(r => r.Status != null && r.Status.ToLower() == status).ToList();
+                }
+
+                // Lọc theo RoomTypeId
+                if (roomTypeId.HasValue)
+                {
+                    rooms = rooms.Where(r => r.RoomTypeId == roomTypeId.Value).ToList();
+                }
+
+                // Chuyển đổi danh sách phòng thành RoomDTO
+                var roomDTOs = new List<RoomDTO>();
+
+                foreach (var room in rooms)
+                {
+                    var media = await _unitOfWork.RoomMedia.GetMediaByRoomIdAsync(room.RoomId);
+                    var mediaDTOs = media.Select(m => new RoomMediaDTO
+                    {
+                        MediaID = m.MediaId,
+                        RoomID = m.RoomId.GetValueOrDefault(),
+                        Media_Link = m.MediaLink,
+                        Description = m.Description,
+                        MediaType = m.MediaType
+                    }).ToList();
+
+                    roomDTOs.Add(new RoomDTO
+                    {
+                        RoomID = room.RoomId,
+                        RoomNumber = room.RoomNumber,
+                        RoomTypeID = room.RoomTypeId.GetValueOrDefault(),
+                        RoomTypeName = room.RoomType?.RoomTypeName,
+                        StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
+                        EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
+                        Status = room.Status,
+                        Media = mediaDTOs
+                    });
+                }
+
+                return Ok(roomDTOs);
             }
-
-            return Ok(roomDTOs);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving rooms.");
+                return StatusCode(500, new { error = $"Error retrieving rooms: {ex.Message}" });
+            }
         }
 
         [HttpGet("{id}")]
