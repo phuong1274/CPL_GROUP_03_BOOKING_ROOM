@@ -109,16 +109,25 @@ public partial class HotelBookingDbContext : DbContext
             entity.HasKey(e => e.RoomId).HasName("PK__Rooms__3286391963F47230");
 
             entity.Property(e => e.RoomId).HasColumnName("RoomID");
-            entity.Property(e => e.RoomNumber).HasMaxLength(50);
+            entity.Property(e => e.RoomNumber)
+                .HasMaxLength(50)
+                .IsRequired();  // Optional, nếu RoomNumber bắt buộc
+
             entity.Property(e => e.RoomTypeId).HasColumnName("RoomTypeID");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)
                 .HasDefaultValue("Available");
 
+            // Thêm chỉ mục UNIQUE cho RoomNumber
+            entity.HasIndex(e => e.RoomNumber)
+                .IsUnique()
+                .HasName("UQ_Unique"); // Tạo chỉ mục UNIQUE với tên tùy chỉnh
+
             entity.HasOne(d => d.RoomType).WithMany(p => p.Rooms)
                 .HasForeignKey(d => d.RoomTypeId)
                 .HasConstraintName("FK__Rooms__RoomTypeI__2D27B809");
         });
+
 
         modelBuilder.Entity<RoomMedium>(entity =>
         {

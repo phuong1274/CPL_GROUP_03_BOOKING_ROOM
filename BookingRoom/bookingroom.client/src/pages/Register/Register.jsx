@@ -1,6 +1,6 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../../services/authService';
+import { register } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Register.module.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -126,7 +126,8 @@ const Register = () => {
     };
 
     return (
-        
+
+
         <div className={styles.registerPageWrapper}>
             <div className={styles.registerBox}>
                 <h2>Register</h2>
