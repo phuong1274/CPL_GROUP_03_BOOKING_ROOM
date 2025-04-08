@@ -6,10 +6,9 @@
     <ShouldRunBuildScript>false</ShouldRunBuildScript>
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
-<<<<<<< HEAD
-=======
+
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
   </ItemGroup>
->>>>>>> kien
+
 </Project>

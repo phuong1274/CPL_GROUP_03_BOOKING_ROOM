@@ -39,6 +39,36 @@ export const register = async (registerData) => {
 };
 
 // Hàm login
+//export const login = async (loginData) => {
+//    try {
+//        const response = await api.post('/auth/login', {
+//            login: loginData.login.trim(),
+//            password: loginData.password
+//        });
+//        return response.data;
+//    } catch (error) {
+//        if (error.response) {
+//            if (error.response.status === 400) {
+//                if (error.response.data.login) {
+//                    throw new Error(error.response.data.login);
+//                } else if (error.response.data.password) {
+//                    throw new Error(error.response.data.password);
+//                } else if (error.response.data.error) {
+//                    throw new Error(error.response.data.error);
+//                } else {
+//                    throw new Error(error.response.data.Error || 'Yêu cầu không hợp lệ');
+//                }
+//            } else if (error.response.status === 403) {
+//                throw new Error(error.response.data.error || 'Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ.');
+//            } else if (error.response.status === 500) {
+//                throw new Error(error.response.data.Error || 'Lỗi server');
+//            }
+//        } else if (error.request) {
+//            throw new Error('Không nhận được phản hồi từ server. Vui lòng kiểm tra xem backend có đang chạy không.');
+//        }
+//        throw new Error(error.message || 'Đăng nhập thất bại');
+//    }
+//};
 export const login = async (loginData) => {
     try {
         const response = await api.post('/auth/login', {
@@ -49,24 +79,20 @@ export const login = async (loginData) => {
     } catch (error) {
         if (error.response) {
             if (error.response.status === 400) {
-                if (error.response.data.login) {
-                    throw new Error(error.response.data.login);
-                } else if (error.response.data.password) {
-                    throw new Error(error.response.data.password);
-                } else if (error.response.data.error) {
-                    throw new Error(error.response.data.error);
+                if (error.response.data.login || error.response.data.password || error.response.data.error) {
+                    throw error.response.data; // Throw object lỗi trực tiếp
                 } else {
-                    throw new Error(error.response.data.Error || 'Yêu cầu không hợp lệ');
+                    throw { Error: error.response.data.Error || 'Yêu cầu không hợp lệ' };
                 }
             } else if (error.response.status === 403) {
-                throw new Error(error.response.data.error || 'Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ.');
+                throw { error: error.response.data.error || 'Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ.' };
             } else if (error.response.status === 500) {
-                throw new Error(error.response.data.Error || 'Lỗi server');
+                throw { Error: error.response.data.Error || 'Lỗi server', Details: error.response.data.Details };
             }
         } else if (error.request) {
-            throw new Error('Không nhận được phản hồi từ server. Vui lòng kiểm tra xem backend có đang chạy không.');
+            throw { error: 'Không nhận được phản hồi từ server. Vui lòng kiểm tra xem backend có đang chạy không.' };
         }
-        throw new Error(error.message || 'Đăng nhập thất bại');
+        throw { error: error.message || 'Đăng nhập thất bại' };
     }
 };
 

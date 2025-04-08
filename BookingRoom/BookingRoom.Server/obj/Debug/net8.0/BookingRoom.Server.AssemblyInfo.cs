@@ -14,23 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bafb07195dda082d06be3c53e430318b23a05858")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ad92053f73a13b51915a2fc1e5ba5d0a7164e64")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee42fbf76c1b44093653c8d6b78cc98bd8f89deb")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bafb07195dda082d06be3c53e430318b23a05858")]
->>>>>>> 06ca9fb (Update Login Register Interface)
->>>>>>> kien
->>>>>>> 758a18686aad3ecd1d819e26972410cd57826e4a
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+758a18686aad3ecd1d819e26972410cd57826e4a")]
->>>>>>> 63fd54f6418dcbdab872495b0f50e18421d21d04
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9fd29751f06a20242a9db91c021168678c12608")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
