@@ -7,5 +7,6 @@ namespace BookingRoom.Server.Services.Interfaces
         Task<List<BookingDTO>> GetBookingsAsync();
         Task<bool> CheckInAsync(int bookingId);
         Task<bool> CheckOutAsync(int bookingId);
+        Task<bool> CancelBookingAsync(int bookingId);
     }
 }

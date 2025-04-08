@@ -143,7 +143,6 @@ namespace BookingRoom.Server.Controllers
         {
             try
             {
-
                 var result = await _service.CheckOutAsync(id);
                 if (!result)
                 {
@@ -155,10 +154,10 @@ namespace BookingRoom.Server.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error checking out booking {BookingId}", id);
-                return StatusCode(500, new { Error = "Failed to check out booking" });
+                return StatusCode(500, new { Error = "Failed to check out booking", Details = ex.Message });
             }
         }
 
-       
+
     }
 }

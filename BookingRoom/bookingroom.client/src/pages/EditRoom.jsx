@@ -25,6 +25,7 @@ function RoomDetail() {
                     startDate: roomData.startDate.split('T')[0],
                     endDate: roomData.endDate.split('T')[0],
                     status: roomData.status,
+                    description: roomData.description,
                     media: roomData.media || [],
                 });
 
@@ -109,6 +110,7 @@ function RoomDetail() {
                 RoomID: parseInt(id),
                 RoomNumber: room.roomNumber,
                 RoomTypeID: parseInt(room.roomTypeId),
+                description: room.description,
                 StartDate: new Date(room.startDate).toISOString().split('.')[0],
                 EndDate: new Date(room.endDate).toISOString().split('.')[0],
                 Status: room.status,
@@ -231,6 +233,23 @@ function RoomDetail() {
                         <option value="Maintenance">Maintenance</option>
                     </select>
                 </div>
+                <div style={{ marginBottom: '15px' }}>
+                    <label style={{ display: 'block', marginBottom: '5px' }}>Description:</label>
+                    <textarea
+                        name="description"
+                        value={room.description}
+                        onChange={handleChange}
+                        rows={4}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: '1px solid #ddd',
+                            resize: 'vertical',
+                        }}
+                    />
+                </div>
+
 
                 <div style={{ marginBottom: '15px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Start Date:</label>

@@ -31,7 +31,8 @@ namespace BookingRoom.Server.Services
                 RoomTypeName = r.RoomType?.RoomTypeName,
                 StartDate = r.StartDate.Value.ToDateTime(TimeOnly.MinValue),
                 EndDate = r.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
-                Status = r.Status
+                Status = r.Status,
+                Description = r.Descriptions,
             }).ToList();
         }
 
@@ -62,7 +63,8 @@ namespace BookingRoom.Server.Services
                 StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
                 EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
                 Status = room.Status,
-                Media = mediaDTOs
+                Media = mediaDTOs,
+                Description = room.Descriptions,
             };
         }
 
@@ -74,7 +76,8 @@ namespace BookingRoom.Server.Services
                 RoomTypeId = roomDTO.RoomTypeID,
                 StartDate = DateOnly.FromDateTime(roomDTO.StartDate),
                 EndDate = DateOnly.FromDateTime(roomDTO.EndDate),
-                Status = roomDTO.Status
+                Status = roomDTO.Status,
+                Descriptions = roomDTO.Description,
             };
 
             await _unitOfWork.RoomRepository.AddRoomAsync(room);
@@ -88,7 +91,8 @@ namespace BookingRoom.Server.Services
                 RoomTypeID = room.RoomTypeId.GetValueOrDefault(),
                 StartDate = DateOnly.FromDateTime(roomDTO.StartDate).ToDateTime(TimeOnly.MinValue),
                 EndDate = DateOnly.FromDateTime(roomDTO.EndDate).ToDateTime(TimeOnly.MinValue),
-                Status = room.Status
+                Status = room.Status,
+                Description = room.Descriptions
             };
         }
 
@@ -115,6 +119,7 @@ namespace BookingRoom.Server.Services
             room.StartDate = DateOnly.FromDateTime(roomDTO.StartDate);
             room.EndDate = DateOnly.FromDateTime(roomDTO.EndDate);
             room.Status = roomDTO.Status;
+            room.Descriptions = roomDTO.Description;
 
             await _unitOfWork.Rooms.UpdateRoomAsync(room);
         }

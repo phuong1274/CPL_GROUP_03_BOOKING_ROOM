@@ -23,5 +23,6 @@ namespace BookingRoom.Server.DTOs
         public string phoneNumber { get; set; } = string.Empty;
 
         public string role { get; set; } = "Customer";
+        public string status { get; set; } = "Active";
     }
 }

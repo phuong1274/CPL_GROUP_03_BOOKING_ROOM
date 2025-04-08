@@ -71,7 +71,8 @@ namespace BookingRoom.Server.Controllers
                         StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
                         EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
                         Status = room.Status,
-                        Media = mediaDTOs
+                        Media = mediaDTOs,
+                        Description = room.Descriptions
                     });
                 }
 
@@ -112,7 +113,8 @@ namespace BookingRoom.Server.Controllers
                 StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
                 EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MaxValue),
                 Status = room.Status,
-                Media = mediaDTOs 
+                Media = mediaDTOs,
+                Description = room.Descriptions
             };
             return Ok(roomDTO);
         }
@@ -151,7 +153,8 @@ namespace BookingRoom.Server.Controllers
                     RoomTypeId = roomDTO.RoomTypeID,
                     StartDate = DateOnly.FromDateTime(roomDTO.StartDate),
                     EndDate = DateOnly.FromDateTime(roomDTO.EndDate),
-                    Status = roomDTO.Status
+                    Status = roomDTO.Status,
+                    Descriptions = roomDTO.Description
                 };
 
                 await _unitOfWork.RoomRepository.AddRoomAsync(room);
@@ -166,7 +169,8 @@ namespace BookingRoom.Server.Controllers
                     RoomTypeID = room.RoomTypeId.GetValueOrDefault(),
                     StartDate = room.StartDate.Value.ToDateTime(TimeOnly.MinValue),
                     EndDate = room.EndDate.Value.ToDateTime(TimeOnly.MinValue),
-                    Status = room.Status
+                    Status = room.Status,
+                    Description = room.Descriptions
                 };
 
                 return CreatedAtAction(nameof(GetRoom), new { id = room.RoomId }, createdRoomDTO);
@@ -206,6 +210,7 @@ namespace BookingRoom.Server.Controllers
                 room.RoomNumber = roomDTO.RoomNumber;
                 room.RoomTypeId = roomDTO.RoomTypeID;
                 room.Status = roomDTO.Status;
+                room.Descriptions = roomDTO.Description;
 
                 // Handle date conversion carefully
                 if (roomDTO.StartDate != default)

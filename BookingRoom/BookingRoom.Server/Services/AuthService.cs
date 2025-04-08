@@ -57,6 +57,7 @@ namespace BookingRoom.Server.Services
                 FullName = registerDTO.fullName,
                 PhoneNumber = registerDTO.phoneNumber,
                 Role = registerDTO.role ?? "Customer",
+                Status= registerDTO.status ?? " Active",
                 Points = 0
             };
 
@@ -70,6 +71,7 @@ namespace BookingRoom.Server.Services
         {
             var claims = new[]
             {
+                 new Claim("id", user.UserId.ToString()),
                 new Claim(JwtRegisteredClaimNames.Sub, user.Username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.Role, user.Role)

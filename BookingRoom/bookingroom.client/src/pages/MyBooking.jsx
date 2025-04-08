@@ -1,33 +1,27 @@
-﻿import React, { useEffect, useState } from 'react';
-import {
-    checkInBooking,
-    checkOutBooking,
-    getAllBookings
-} from '../services/bookingService';
-import { getUserById, getRoomById } from '../services/api';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getRoomById, getUserById, getMyBookings, cancelBooking } from '../services/customerService';
 
-export default function BookingList() {
+export default function MyBooking() {
     const [bookings, setBookings] = useState([]);
     const [error, setError] = useState(null);
     const [noResults, setNoResults] = useState(false);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
     const [filters, setFilters] = useState({
-        roomNumber: '',
-        username: '',
         checkInDate: '',
         checkOutDate: '',
         status: ''
     });
-    const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const [checkingInId, setCheckingInId] = useState(null); // Track check-in loading state
-    const [checkingOutId, setCheckingOutId] = useState(null); // Track check-out loading state
+    const [cancellingId, setCancellingId] = useState(null); // Track which booking is being cancelled
     const pageSize = 30;
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetchBookings();
+        fetchMyBookings();
     }, [page, filters]);
 
-    const fetchBookings = async () => {
+    const fetchMyBookings = async () => {
         try {
             setNoResults(false);
             const params = {
@@ -36,11 +30,14 @@ export default function BookingList() {
                 ...filters,
             };
 
-            const response = await getAllBookings(params);
-            console.log('Response from getAllBookings:', response); // Debug log
-            const bookingsData = response.bookings || [];
-            const totalCount = response.totalRecords || 0;
-            console.log('Bookings Data:', bookingsData); // Debug log
+            const response = await getMyBookings(params);
+            console.log('Response from getMyBookings:', response);
+
+            const bookingsData = Array.isArray(response) ? response : response.bookings || [];
+            console.log('Bookings Data:', bookingsData);
+
+            const totalCount = Array.isArray(response) ? bookingsData.length : response.totalRecords || 0;
+            console.log('Total Count:', totalCount);
 
             const enriched = await Promise.all(
                 bookingsData.map(async (b) => {
@@ -56,16 +53,38 @@ export default function BookingList() {
                 })
             );
 
-            console.log('Enriched Bookings:', enriched); // Debug log
+            console.log('Enriched Bookings:', enriched);
             setBookings(enriched);
             setTotalPages(Math.ceil(totalCount / pageSize));
             setNoResults(enriched.length === 0);
             setError(null);
         } catch (err) {
             console.error('Error fetching bookings:', err);
-            setError(err.message || 'Failed to fetch bookings');
-            setBookings([]);
-            setNoResults(false);
+            if (err.message.includes('401')) {
+                localStorage.removeItem('token');
+                navigate('/login');
+            } else {
+                setError(err.message || 'Failed to fetch your bookings');
+                setBookings([]);
+                setNoResults(false);
+            }
+        }
+    };
+
+    const handleCancel = async (bookingId) => {
+        const confirmCancel = window.confirm('Are you sure you want to cancel this booking?');
+        if (!confirmCancel) return;
+
+        try {
+            setCancellingId(bookingId); // Set loading state
+            await cancelBooking(bookingId);
+            await fetchMyBookings();
+            setError(null);
+        } catch (err) {
+            console.error('Error cancelling booking:', err);
+            setError(err.message || 'Failed to cancel the booking');
+        } finally {
+            setCancellingId(null); // Clear loading state
         }
     };
 
@@ -75,36 +94,6 @@ export default function BookingList() {
         setPage(1);
     };
 
-    const handleCheckIn = async (id) => {
-        console.log('Check-in button clicked for booking ID:', id); // Debug log
-        try {
-            setCheckingInId(id);
-            await checkInBooking(id);
-            await fetchBookings();
-            setError(null);
-        } catch (err) {
-            console.error('Error in handleCheckIn:', err);
-            setError(err.message || 'Failed to check in booking');
-        } finally {
-            setCheckingInId(null);
-        }
-    };
-
-    const handleCheckOut = async (id) => {
-        console.log('Check-out button clicked for booking ID:', id); // Debug log
-        try {
-            setCheckingOutId(id);
-            await checkOutBooking(id);
-            await fetchBookings();
-            setError(null);
-        } catch (err) {
-            console.error('Error in handleCheckOut:', err);
-            setError(err.message || 'Failed to check out booking');
-        } finally {
-            setCheckingOutId(null);
-        }
-    };
-
     const formatDate = (dateString) => {
         if (!dateString) return '';
         return new Date(dateString).toLocaleDateString();
@@ -112,18 +101,15 @@ export default function BookingList() {
 
     return (
         <div className="p-4">
-            <h2 className="text-xl font-bold mb-4">Booking List</h2>
+            <h2 className="text-xl font-bold mb-4">My Bookings</h2>
             {error && <p className="text-red-500 mb-4">{error}</p>}
             {noResults && !error && (
                 <p className="text-yellow-600 mb-4">
-                    No bookings found matching your filter criteria.
+                    You have no bookings.
                 </p>
             )}
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-                <input name="roomNumber" value={filters.roomNumber} onChange={handleInputChange} placeholder="Room Number" className="border px-2 py-1" />
-                <input name="username" value={filters.username} onChange={handleInputChange} placeholder="Username" className="border px-2 py-1" />
-
                 <label htmlFor="checkInDate">Check-in Date:</label>
                 <input type="date" id="checkInDate" name="checkInDate" value={filters.checkInDate} onChange={handleInputChange} className="border px-2 py-1" />
 
@@ -142,7 +128,7 @@ export default function BookingList() {
                     <option value="Cancelled">Cancelled</option>
                     <option value="Confirmed">Confirmed</option>
                     <option value="Pending">Pending</option>
-                    <option value="Completed">Completed</option> {/* Added Completed to the filter options */}
+                    <option value="Completed">Completed</option>
                 </select>
             </div>
 
@@ -151,14 +137,13 @@ export default function BookingList() {
                     <tr>
                         <th className="border px-4 py-2">Booking ID</th>
                         <th className="border px-4 py-2">Room Number</th>
-                        <th className="border px-4 py-2">Username</th>
                         <th className="border px-4 py-2">Created At</th>
                         <th className="border px-4 py-2">Check-in</th>
                         <th className="border px-4 py-2">Check-out</th>
                         <th className="border px-4 py-2">Updated At</th>
                         <th className="border px-4 py-2">Total</th>
                         <th className="border px-4 py-2">Status</th>
-                        <th className="border px-4 py-2">Actions</th> {/* Renamed column for clarity */}
+                        <th className="border px-4 py-2"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -166,7 +151,6 @@ export default function BookingList() {
                         <tr key={b.bookingID}>
                             <td className="border px-4 py-2">{b.bookingID}</td>
                             <td className="border px-4 py-2">{b.roomNumber}</td>
-                            <td className="border px-4 py-2">{b.username}</td>
                             <td className="border px-4 py-2">{formatDate(b.createdAt)}</td>
                             <td className="border px-4 py-2">{formatDate(b.checkInDate)}</td>
                             <td className="border px-4 py-2">{formatDate(b.checkOutDate)}</td>
@@ -176,20 +160,11 @@ export default function BookingList() {
                             <td className="border px-4 py-2">
                                 {b.bookingStatus === 'Pending' && (
                                     <button
-                                        onClick={() => handleCheckIn(b.bookingID)}
-                                        className="bg-blue-500 text-white px-3 py-1 rounded mr-2 disabled:opacity-50"
-                                        disabled={checkingInId === b.bookingID}
+                                        onClick={() => handleCancel(b.bookingID)}
+                                        className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 disabled:opacity-50"
+                                        disabled={cancellingId === b.bookingID}
                                     >
-                                        {checkingInId === b.bookingID ? 'Checking In...' : 'Check-in'}
-                                    </button>
-                                )}
-                                {b.bookingStatus === 'Confirmed' && (
-                                    <button
-                                        onClick={() => handleCheckOut(b.bookingID)}
-                                        className="bg-green-500 text-white px-3 py-1 rounded disabled:opacity-50"
-                                        disabled={checkingOutId === b.bookingID}
-                                    >
-                                        {checkingOutId === b.bookingID ? 'Checking Out...' : 'Check-out'}
+                                        {cancellingId === b.bookingID ? 'Cancelling...' : 'Cancel'}
                                     </button>
                                 )}
                             </td>

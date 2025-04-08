@@ -6,10 +6,12 @@ function AddRoom() {
     const [room, setRoom] = useState({
         roomNumber: '',
         roomTypeID: '',
+        description: '',
         startDate: '',
         endDate: '',
         status: 'Available',
     });
+
     const [mediaFiles, setMediaFiles] = useState([]);
     const [mediaData, setMediaData] = useState([]);
     const [roomTypes, setRoomTypes] = useState([]);
@@ -42,16 +44,16 @@ function AddRoom() {
 
         try {
             const uploadedMedia = await uploadMedia(files);
-            setMediaFiles([...mediaFiles, ...files]);
-            setMediaData([...mediaData, ...uploadedMedia]);
+            setMediaFiles((prev) => [...prev, ...files]);
+            setMediaData((prev) => [...prev, ...uploadedMedia]);
         } catch (err) {
             setError(err.message);
         }
     };
 
     const handleRemoveMedia = (index) => {
-        setMediaFiles(mediaFiles.filter((_, i) => i !== index));
-        setMediaData(mediaData.filter((_, i) => i !== index));
+        setMediaFiles((prev) => prev.filter((_, i) => i !== index));
+        setMediaData((prev) => prev.filter((_, i) => i !== index));
     };
 
     const handleSubmit = async (e) => {
@@ -75,29 +77,27 @@ function AddRoom() {
 
             const newRoom = await addRoom(formattedRoom);
 
-            if (!newRoom || !newRoom.roomID || newRoom.roomID <= 0) {
+            if (!newRoom?.roomID || newRoom.roomID <= 0) {
                 throw new Error('Failed to create room: Invalid RoomID');
             }
 
-            if (mediaData.length > 0) {
-                for (const media of mediaData) {
-                    await addMedia({
-                        roomID: newRoom.roomID,
-                        media_Link: media.url,
-                        description: 'Media for room ' + newRoom.roomNumber,
-                        mediaType: media.type,
-                    });
-                }
+            for (const media of mediaData) {
+                await addMedia({
+                    roomID: newRoom.roomID,
+                    media_Link: media.url,
+                    description: `Media for room ${newRoom.roomNumber}`,
+                    mediaType: media.type,
+                });
             }
 
             alert('Room added successfully!');
-            setRoom({ roomNumber: '', roomTypeID: roomTypes[0]?.roomTypeID || '', startDate: '', endDate: '', status: 'Available' });
+            setRoom({ roomNumber: '', roomTypeID: roomTypes[0]?.roomTypeID || '', description: '', startDate: '', endDate: '', status: 'Available' });
             setMediaFiles([]);
             setMediaData([]);
             navigate('/rooms');
         } catch (err) {
-            setError(err.message);
             console.error('Error adding room or media:', err);
+            setError(err.message);
         }
     };
 
@@ -118,9 +118,10 @@ function AddRoom() {
                 </div>
             )}
 
-            <div style={{ maxWidth: '500px' }}>
+            <form onSubmit={handleSubmit} style={{ maxWidth: '500px' }}>
+                {/* Room Number */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Room Number:</label>
+                    <label>Room Number:</label>
                     <input
                         type="text"
                         name="roomNumber"
@@ -131,8 +132,9 @@ function AddRoom() {
                     />
                 </div>
 
+                {/* Room Type */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Room Type:</label>
+                    <label>Room Type:</label>
                     <select
                         name="roomTypeID"
                         value={room.roomTypeID}
@@ -147,8 +149,22 @@ function AddRoom() {
                     </select>
                 </div>
 
+                {/* Description */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Start Date:</label>
+                    <label>Description:</label>
+                    <input
+                        type="text"
+                        name="description"
+                        value={room.description}
+                        onChange={handleChange}
+                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        required
+                    />
+                </div>
+
+                {/* Start Date */}
+                <div style={{ marginBottom: '15px' }}>
+                    <label>Start Date:</label>
                     <input
                         type="date"
                         name="startDate"
@@ -159,8 +175,9 @@ function AddRoom() {
                     />
                 </div>
 
+                {/* End Date */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>End Date:</label>
+                    <label>End Date:</label>
                     <input
                         type="date"
                         name="endDate"
@@ -171,8 +188,9 @@ function AddRoom() {
                     />
                 </div>
 
+                {/* Status */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Status:</label>
+                    <label>Status:</label>
                     <select
                         name="status"
                         value={room.status}
@@ -185,60 +203,64 @@ function AddRoom() {
                     </select>
                 </div>
 
+                {/* Media Upload */}
                 <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Add Media (Upload Images or Videos):</label>
-                    <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-                        <input
-                            type="file"
-                            accept="image/*,video/*"
-                            multiple
-                            onChange={handleFileChange}
-                            style={{ flex: 1, padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        />
-                    </div>
+                    <label>Add Media (Images/Videos):</label>
+                    <input
+                        type="file"
+                        accept="image/*,video/*"
+                        multiple
+                        onChange={handleFileChange}
+                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                    />
                     {mediaFiles.length > 0 && (
-                        <div>
+                        <div style={{ marginTop: '10px' }}>
                             <h4>Uploaded Media:</h4>
                             <ul>
-                                {mediaFiles.map((file, index) => (
-                                    <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                        {mediaData[index].type === 'Image' ? (
-                                            <img
-                                                src={URL.createObjectURL(file)}
-                                                alt="Preview"
-                                                style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
-                                            />
-                                        ) : (
-                                            <video
-                                                src={URL.createObjectURL(file)}
-                                                style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
-                                                controls
-                                            />
-                                        )}
-                                        <span>{file.name}</span>
-                                        <button
-                                            onClick={() => handleRemoveMedia(index)}
-                                            style={{
-                                                padding: '5px 10px',
-                                                backgroundColor: '#dc3545',
-                                                color: 'white',
-                                                border: 'none',
-                                                borderRadius: '4px',
-                                                cursor: 'pointer',
-                                            }}
-                                        >
-                                            Remove
-                                        </button>
-                                    </li>
-                                ))}
+                                {mediaFiles.map((file, index) => {
+                                    const media = mediaData[index];
+                                    return (
+                                        <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                                            {media?.type === 'Image' ? (
+                                                <img
+                                                    src={URL.createObjectURL(file)}
+                                                    alt="Preview"
+                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
+                                                />
+                                            ) : (
+                                                <video
+                                                    src={URL.createObjectURL(file)}
+                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
+                                                    controls
+                                                />
+                                            )}
+                                            <span>{file.name}</span>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRemoveMedia(index)}
+                                                style={{
+                                                    padding: '5px 10px',
+                                                    backgroundColor: '#dc3545',
+                                                    color: 'white',
+                                                    border: 'none',
+                                                    borderRadius: '4px',
+                                                    cursor: 'pointer',
+                                                }}
+                                            >
+                                                Remove
+                                            </button>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     )}
                 </div>
 
+                {/* Buttons */}
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <button
-                        onClick={handleSubmit}
+                        type="submit"
                         style={{
                             padding: '10px 20px',
                             backgroundColor: '#28a745',
@@ -251,6 +273,7 @@ function AddRoom() {
                         Add Room
                     </button>
                     <button
+                        type="button"
                         onClick={() => navigate('/rooms')}
                         style={{
                             padding: '10px 20px',
@@ -264,7 +287,7 @@ function AddRoom() {
                         Cancel
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }

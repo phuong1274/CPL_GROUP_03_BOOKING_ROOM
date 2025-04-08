@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react'; // Add React import
+﻿import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
@@ -11,6 +11,7 @@ import EditRoom from './pages/EditRoom';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import BookingList from './pages/BookingList';
+import MyBooking from './pages/MyBooking';
 import './App.css';
 
 // ErrorBoundary Component to catch rendering errors
@@ -65,6 +66,17 @@ function Navbar() {
                 <h3>Hotel Booking</h3>
             </div>
             <div className="navbar-links">
+                {token && (
+                    <>
+                        <button
+                            onClick={() => navigate('/my-booking')}
+                            className="nav-button"
+                            aria-label="Navigate to My Bookings"
+                        >
+                            My Bookings
+                        </button>
+                    </>
+                )}
                 {token && isAdmin() && (
                     <>
                         <button
@@ -207,6 +219,14 @@ function AppContent() {
                             element={
                                 <ProtectedRoute requireAdmin={true}>
                                     <UserList />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/my-booking"
+                            element={
+                                <ProtectedRoute>
+                                    <MyBooking />
                                 </ProtectedRoute>
                             }
                         />

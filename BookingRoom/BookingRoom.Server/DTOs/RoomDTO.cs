@@ -27,6 +27,7 @@ namespace BookingRoom.Server.DTOs
 
         [Required(ErrorMessage = "Status is required")]
         public string Status { get; set; } = "Available";
+        public string? Description { get; set; }
 
         public List<RoomMediaDTO> Media { get; set; } = new List<RoomMediaDTO>();
     }

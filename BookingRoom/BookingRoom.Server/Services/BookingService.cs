@@ -10,6 +10,7 @@ namespace BookingRoom.Server.Services
     public class BookingService : IBookingService
     {
         private readonly IUnitOfWork _unitOfWork;
+      
 
         public BookingService(IUnitOfWork unitOfWork)
         {
@@ -53,7 +54,7 @@ namespace BookingRoom.Server.Services
 
             booking.BookingStatus = "Completed";
             booking.UpdatedAt = DateTime.Now;
-           
+
 
             var payment = new Payment
             {
@@ -65,6 +66,22 @@ namespace BookingRoom.Server.Services
             await _unitOfWork.Bookings.UpdateAsync(booking);
             await _unitOfWork.SaveChangesAsync();
 
+            return true;
+        }
+
+
+
+
+        public async Task<bool> CancelBookingAsync(int bookingId)
+        {
+            var booking = await _unitOfWork.Bookings.GetByIdAsync(bookingId);
+            if (booking == null || booking.BookingStatus != "Pending") return false;
+
+            booking.BookingStatus = "Cancelled";
+            booking.UpdatedAt = DateTime.Now;
+
+            await _unitOfWork.Bookings.UpdateAsync(booking);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
 
