@@ -1,6 +1,10 @@
-﻿namespace BookingRoom.Server.Services.Interfaces
+﻿using BookingRoom.Server.DTOs;
+
+namespace BookingRoom.Server.Services.Interfaces
 {
     public interface IAuthService
     {
+        Task<string> LoginAsync(LoginDTO loginDTO);
+        Task<string> RegisterAsync(RegisterDTO registerDTO);
     }
 }

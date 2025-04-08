@@ -26,6 +26,7 @@ public partial class User
     public int? Points { get; set; }
 
     public string? Role { get; set; }
+    public string? Status { get; set; }
 
     public virtual ICollection<Booking> BookingStaffs { get; set; } = new List<Booking>();
 

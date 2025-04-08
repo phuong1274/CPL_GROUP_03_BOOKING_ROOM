@@ -30,13 +30,13 @@ public partial class HotelBookingDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    => optionsBuilder.UseSqlServer("Server=(local);Database=HotelBookingDB;Uid=sa;Pwd=123;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=(local);Database=HotelBookingDB;Uid=sa;Pwd=123;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD281BE86A");
+            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD77F0246A");
 
             entity.Property(e => e.BookingId).HasColumnName("BookingID");
             entity.Property(e => e.BookingStatus)
@@ -68,7 +68,7 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<Payment>(entity =>
         {
-            entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A5813EACAB4");
+            entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A58205A5EAD");
 
             entity.ToTable(tb => tb.HasTrigger("trg_AfterPaymentInsert"));
 
@@ -87,7 +87,7 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<PointTransaction>(entity =>
         {
-            entity.HasKey(e => e.TransactionId).HasName("PK__PointTra__55433A4BF955C88B");
+            entity.HasKey(e => e.TransactionId).HasName("PK__PointTra__55433A4B5B23482C");
 
             entity.Property(e => e.TransactionId).HasColumnName("TransactionID");
             entity.Property(e => e.BookingId).HasColumnName("BookingID");
@@ -106,7 +106,7 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<Room>(entity =>
         {
-            entity.HasKey(e => e.RoomId).HasName("PK__Rooms__328639198124F490");
+            entity.HasKey(e => e.RoomId).HasName("PK__Rooms__3286391963F47230");
 
             entity.Property(e => e.RoomId).HasColumnName("RoomID");
             entity.Property(e => e.RoomNumber).HasMaxLength(50);
@@ -122,7 +122,7 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<RoomMedium>(entity =>
         {
-            entity.HasKey(e => e.MediaId).HasName("PK__RoomMedi__B2C2B5AF8F26409E");
+            entity.HasKey(e => e.MediaId).HasName("PK__RoomMedi__B2C2B5AFB247DADF");
 
             entity.Property(e => e.MediaId).HasColumnName("MediaID");
             entity.Property(e => e.Description).HasMaxLength(255);
@@ -139,7 +139,7 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<RoomType>(entity =>
         {
-            entity.HasKey(e => e.RoomTypeId).HasName("PK__RoomType__BCC89611E7AB8B34");
+            entity.HasKey(e => e.RoomTypeId).HasName("PK__RoomType__BCC896118A3BF6D0");
 
             entity.ToTable("RoomType");
 
@@ -152,27 +152,36 @@ public partial class HotelBookingDbContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__1788CCAC767B24F7");
+            entity.HasKey(e => e.UserId).HasName("PK__User__1788CCAC570B2EEC");
 
             entity.ToTable("User");
 
-            entity.HasIndex(e => e.Username, "UQ__User__536C85E4B39D3EE5").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__User__536C85E474526AAB").IsUnique();
 
-            entity.HasIndex(e => e.Email, "UQ__User__A9D1053436BA3893").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__User__A9D105349E640EE9").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("UserID");
             entity.Property(e => e.CreateAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .UseCollation("SQL_Latin1_General_CP1_CS_AS");
             entity.Property(e => e.FullName).HasMaxLength(255);
-            entity.Property(e => e.PasswordHash).HasMaxLength(255);
+            entity.Property(e => e.PasswordHash)
+                .HasMaxLength(255)
+                .UseCollation("SQL_Latin1_General_CP1_CS_AS");
             entity.Property(e => e.PhoneNumber).HasMaxLength(15);
             entity.Property(e => e.Points).HasDefaultValue(0);
             entity.Property(e => e.Role).HasMaxLength(50);
             entity.Property(e => e.Token).HasMaxLength(255);
             entity.Property(e => e.TokenExpiry).HasColumnType("datetime");
-            entity.Property(e => e.Username).HasMaxLength(50);
+            entity.Property(e => e.Username)
+                .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CS_AS");
+            entity.Property(e => e.Status)
+                .HasMaxLength(15);
+                
         });
 
         OnModelCreatingPartial(modelBuilder);

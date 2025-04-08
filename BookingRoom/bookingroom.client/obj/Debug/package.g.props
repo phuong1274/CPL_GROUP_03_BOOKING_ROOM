@@ -4,12 +4,14 @@
     <PackageJsonScriptsDev Condition="$(PackageJsonScriptsDev) == ''">vite</PackageJsonScriptsDev>
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vite build</PackageJsonScriptsBuild>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
+    <PackageJsonDependenciesAxios Condition="$(PackageJsonDependenciesAxios) == ''">^1.8.4</PackageJsonDependenciesAxios>
+    <PackageJsonDependenciesBoostrap Condition="$(PackageJsonDependenciesBoostrap) == ''">^2.0.0</PackageJsonDependenciesBoostrap>
+    <PackageJsonDependenciesBootstrapIcons Condition="$(PackageJsonDependenciesBootstrapIcons) == ''">^1.11.3</PackageJsonDependenciesBootstrapIcons>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^18.2.0</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^18.2.0</PackageJsonDependenciesReactDom>
-    <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^6.11.0</PackageJsonDependenciesReactRouterDom>
-    <PackageJsonDependenciesAxios Condition="$(PackageJsonDependenciesAxios) == ''">^1.4.0</PackageJsonDependenciesAxios>
+    <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^6.30.0</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDevdependenciesVitejsPluginReact Condition="$(PackageJsonDevdependenciesVitejsPluginReact) == ''">^4.0.0</PackageJsonDevdependenciesVitejsPluginReact>
-    <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">^6.2.3</PackageJsonDevdependenciesVite>
     <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^8.0.0</PackageJsonDevdependenciesEslint>
+    <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">^6.2.3</PackageJsonDevdependenciesVite>
   </PropertyGroup>
 </Project>
