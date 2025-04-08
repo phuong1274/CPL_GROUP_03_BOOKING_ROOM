@@ -9,6 +9,11 @@ namespace BookingRoom.Server.Repositories.Interfaces
         IRoomRepository Rooms { get; }
         IBookingRepository Bookings { get; }
         IUserRepository Users { get; }
+        IRoomTypeRepository RoomTypes { get; }
+        IRoomMediaRepository RoomMedia { get; }
+        IRoomRepository RoomRepository { get; }
+
+        IRoomTypeRepository RoomTypeRepository { get; }
         Task<int> SaveChangesAsync();
         Task<IDbContextTransaction> BeginTransactionAsync();
         Task CommitTransactionAsync(IDbContextTransaction transaction);

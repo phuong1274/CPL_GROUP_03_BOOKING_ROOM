@@ -1,6 +1,6 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../../services/authService';
+import { register } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Register.module.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -126,64 +126,7 @@ const Register = () => {
     };
 
     return (
-        //<div className={styles.registerPageWrapper}>
-        //    <div className={styles.registerBox}>
-        //        <h2>Register</h2>
-        //        {(errors.general || clientErrors.general) && (
-        //            <div ref={errorRef} style={{ color: 'red' }}>
-        //                {errors.general || clientErrors.general}
-        //            </div>
-        //        )}
-        //        <form onSubmit={handleSubmit} noValidate>
-        //            <div className={styles.inputGroup}>
-        //                <label>Username:</label>
-        //                <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-        //                {(clientErrors.username || errors.username) && (
-        //                    <div style={{ color: 'red' }}>
-        //                        {clientErrors.username || (Array.isArray(errors.username) ? errors.username[0] : errors.username)}
-        //                    </div>
-        //                )}
-        //            </div>
-        //            <div className={styles.inputGroup}>
-        //                <label>Email:</label>
-        //                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        //                {(clientErrors.email || errors.email) && (
-        //                    <div style={{ color: 'red' }}>
-        //                        {clientErrors.email || (Array.isArray(errors.email) ? errors.email[0] : errors.email)}
-        //                    </div>
-        //                )}
-        //            </div>
-        //            <div className={styles.inputGroup}>
-        //                <label>Password:</label>
-        //                <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-        //                {(clientErrors.password || errors.password) && (
-        //                    <div style={{ color: 'red' }}>
-        //                        {clientErrors.password || (Array.isArray(errors.password) ? errors.password[0] : errors.password)}
-        //                    </div>
-        //                )}
-        //            </div>
-        //            <div className={styles.inputGroup}>
-        //                <label>Full Name:</label>
-        //                <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
-        //                {(clientErrors.fullName || errors.fullName) && (
-        //                    <div style={{ color: 'red' }}>
-        //                        {clientErrors.fullName || (Array.isArray(errors.fullName) ? errors.fullName[0] : errors.fullName)}
-        //                    </div>
-        //                )}
-        //            </div>
-        //            <div className={styles.inputGroup}>
-        //                <label>Phone Number:</label>
-        //                <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
-        //                {(clientErrors.phoneNumber || errors.phoneNumber) && (
-        //                    <div style={{ color: 'red' }}>
-        //                        {clientErrors.phoneNumber || (Array.isArray(errors.phoneNumber) ? errors.phoneNumber[0] : errors.phoneNumber)}
-        //                    </div>
-        //                )}
-        //            </div>
-        //            <button type="submit" className={styles.registerButton}>Register</button>
-        //        </form>
-        //    </div>
-        //</div>
+
 
         <div className={styles.registerPageWrapper}>
             <div className={styles.registerBox}>

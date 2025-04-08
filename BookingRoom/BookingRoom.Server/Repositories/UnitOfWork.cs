@@ -11,6 +11,8 @@ namespace BookingRoom.Server.Repositories
         private IRoomRepository? _roomRepository;
         private IBookingRepository? _bookingRepository;
         private IUserRepository? _userRepository;
+        public IRoomTypeRepository?  _roomTypes;
+        public IRoomMediaRepository? _roomMedia;
         private bool _disposed = false;
 
         public UnitOfWork(HotelBookingDbContext context)
@@ -25,7 +27,29 @@ namespace BookingRoom.Server.Repositories
                 return _roomRepository ??= new RoomRepository(_context);
             }
         }
+        public IRoomRepository RoomRepository
+        {
+            get { return _roomRepository ??= new RoomRepository(_context); }
+        }
 
+        public IRoomTypeRepository RoomTypes
+        {
+            get
+            {
+                return _roomTypes ??= new RoomTypeRepository(_context);
+            }
+        }
+        public IRoomTypeRepository RoomTypeRepository
+        {
+            get { return _roomTypes ??= new RoomTypeRepository(_context); }
+        }
+        public IRoomMediaRepository RoomMedia
+        {
+            get
+            {
+                return _roomMedia ??= new RoomMediaRepository(_context);
+            }
+        }
         public IBookingRepository Bookings
         {
             get
@@ -41,6 +65,8 @@ namespace BookingRoom.Server.Repositories
                 return _userRepository ??= new UserRepository(_context);
             }
         }
+
+       
 
         public async Task<int> SaveChangesAsync()
         {
