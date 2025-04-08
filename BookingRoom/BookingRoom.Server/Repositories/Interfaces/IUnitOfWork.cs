@@ -12,6 +12,7 @@ namespace BookingRoom.Server.Repositories.Interfaces
         IRoomTypeRepository RoomTypes { get; }
         IRoomMediaRepository RoomMedia { get; }
         IRoomRepository RoomRepository { get; }
+        IPaymentRepository Payments { get; }
 
         IRoomTypeRepository RoomTypeRepository { get; }
         Task<int> SaveChangesAsync();

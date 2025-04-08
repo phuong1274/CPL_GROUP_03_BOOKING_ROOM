@@ -13,6 +13,7 @@ namespace BookingRoom.Server.Repositories
         private IUserRepository? _userRepository;
         public IRoomTypeRepository?  _roomTypes;
         public IRoomMediaRepository? _roomMedia;
+        public IPaymentRepository? _payments;
         private bool _disposed = false;
 
         public UnitOfWork(HotelBookingDbContext context)
@@ -66,7 +67,14 @@ namespace BookingRoom.Server.Repositories
             }
         }
 
-       
+        public IPaymentRepository Payments
+        {
+            get
+            {
+                return _payments ??= new PaymentRepository(_context);
+            }
+        }
+
 
         public async Task<int> SaveChangesAsync()
         {

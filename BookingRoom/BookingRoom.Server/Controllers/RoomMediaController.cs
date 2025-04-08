@@ -101,10 +101,10 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMedia(int id)
+        [HttpDelete("room/{roomId}")]
+        public async Task<IActionResult> DeleteMediaByRoomId(int roomId)
         {
-            await _roomMediaService.DeleteMediaAsync(id);
+            await _roomMediaService.DeleteMediaByRoomIdAsync(roomId);
             return NoContent();
         }
     }

@@ -8,5 +8,6 @@ namespace BookingRoom.Server.Repositories
         Task<RoomMedium> GetMediaByIdAsync(int mediaId);
         Task AddMediaAsync(RoomMedium media);
         Task DeleteMediaAsync(int mediaId);
+        Task DeleteMediaByRoomIdAsync(int roomId);
     }
 }

@@ -34,15 +34,14 @@ const UserList = () => {
     const handleStatusChange = async (userId, newStatus) => {
         try {
             const response = await updateUserStatus(userId, newStatus);
-            // Cập nhật danh sách users
+
             setUsers(users.map(user =>
                 user.id === userId ? { ...user, status: newStatus } : user
             ));
-            // Hiển thị thông báo thành công với username
+
             setSuccessMessage(`Trạng thái của ${response.username} đã được cập nhật thành ${newStatus}`);
             setError(null);
 
-            // Tự động xóa thông báo sau 3 giây
             setTimeout(() => setSuccessMessage(null), 3000);
         } catch (err) {
             setError(err.message || 'Failed to update user status');

@@ -9,5 +9,6 @@ namespace BookingRoom.Server.Services
         Task<List<RoomMediaDTO>> GetMediaByRoomIdAsync(int roomId);
         Task<RoomMediaDTO> AddMediaAsync(RoomMediaDTO mediaDTO);
         Task DeleteMediaAsync(int mediaId);
+        Task DeleteMediaByRoomIdAsync(int roomId);
     }
 }

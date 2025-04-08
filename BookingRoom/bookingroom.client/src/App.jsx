@@ -1,4 +1,5 @@
-﻿import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+﻿import React, { useEffect, useState } from 'react'; // Add React import
+import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
 import UserList from './pages/UserList';
@@ -7,98 +8,100 @@ import RoomList from './pages/RoomList';
 import RoomType from './pages/RoomType';
 import AddRoom from './pages/AddRoom';
 import EditRoom from './pages/EditRoom';
-import { useEffect, useState } from 'react';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import BookingList from './pages/BookingList';
 import './App.css';
 
-// Component Navbar để hiển thị thanh điều hướng
+// ErrorBoundary Component to catch rendering errors
+class ErrorBoundary extends React.Component {
+    state = { hasError: false };
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        console.error('Rendering error:', error, errorInfo);
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <div className="error-message">Something went wrong. Please try again later.</div>;
+        }
+        return this.props.children;
+    }
+}
+
+// 404 Page Component
+function NotFound() {
+    return (
+        <div className="not-found">
+            <h1>404 - Page Not Found</h1>
+            <p>The page you are looking for does not exist.</p>
+        </div>
+    );
+}
+
+// Navbar Component
 function Navbar() {
     const { token, isAdmin, logout } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Không hiển thị Navbar trên trang login và register
-    if (location.pathname === '/login' || location.pathname === '/register') {
+    // Hide Navbar on login and register routes (including nested routes)
+    if (location.pathname.startsWith('/login') || location.pathname.startsWith('/register')) {
         return null;
     }
 
-    // Xử lý đăng xuất
     const handleLogout = () => {
         logout();
         navigate('/login');
     };
 
     return (
-        <nav style={{
-            backgroundColor: '#f8f9fa',
-            padding: '10px 20px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            borderBottom: '1px solid #ddd'
-        }}>
-            <div>
-                <h3 style={{ margin: 0 }}>Hotel Booking</h3>
+        <nav className="navbar">
+            <div className="navbar-brand">
+                <h3>Hotel Booking</h3>
             </div>
-            <div>
+            <div className="navbar-links">
                 {token && isAdmin() && (
                     <>
                         <button
                             onClick={() => navigate('/users')}
-                            style={{
-                                marginRight: '10px',
-                                padding: '5px 10px',
-                                backgroundColor: '#007bff',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
+                            className="nav-button"
+                            aria-label="Navigate to User List"
                         >
                             User List
                         </button>
                         <button
                             onClick={() => navigate('/rooms')}
-                            style={{
-                                marginRight: '10px',
-                                padding: '5px 10px',
-                                backgroundColor: '#007bff',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
+                            className="nav-button"
+                            aria-label="Navigate to Room List"
                         >
                             Room List
                         </button>
                         <button
                             onClick={() => navigate('/room-types')}
-                            style={{
-                                marginRight: '10px',
-                                padding: '5px 10px',
-                                backgroundColor: '#007bff',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '4px',
-                                cursor: 'pointer'
-                            }}
+                            className="nav-button"
+                            aria-label="Navigate to Room Types"
                         >
                             Room Types
+                        </button>
+                        <button
+                            onClick={() => navigate('/booking')}
+                            className="nav-button"
+                            aria-label="Navigate to Bookings"
+                        >
+                            Bookings
                         </button>
                     </>
                 )}
                 {token && (
                     <button
                         onClick={handleLogout}
-                        style={{
-                            padding: '5px 10px',
-                            backgroundColor: '#dc3545',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer'
-                        }}
+                        className="logout-button"
+                        aria-label="Logout"
                     >
                         Logout
                     </button>
@@ -108,32 +111,46 @@ function Navbar() {
     );
 }
 
-// Component Home để hiển thị nội dung trang home
+// Home Component
 function Home() {
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="home">
             <h1>Welcome to the Home Page!</h1>
             <p>You have successfully logged in.</p>
         </div>
     );
 }
 
+// ProtectedRoute Component
 function ProtectedRoute({ children, requireAdmin = false }) {
     const { token, isLoading, isAdmin } = useAuth();
+    const [loadingTimeout, setLoadingTimeout] = useState(false);
 
-    // Nếu đang tải dữ liệu xác thực, hiển thị loading
-    if (isLoading) {
-        return <div>Loading...</div>;
+    // Set a timeout for loading state
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (isLoading) {
+                setLoadingTimeout(true);
+            }
+        }, 5000); // 5 seconds timeout
+
+        return () => clearTimeout(timer);
+    }, [isLoading]);
+
+    if (isLoading && !loadingTimeout) {
+        return <div className="loading">Loading...</div>;
     }
 
-    // Kiểm tra nếu không có token (chưa đăng nhập)
+    if (loadingTimeout) {
+        return <div className="error-message">Loading timed out. Please refresh the page.</div>;
+    }
+
     if (!token) {
         return <Navigate to="/login" />;
     }
 
-    // Kiểm tra nếu route yêu cầu Admin và người dùng không phải Admin
     if (requireAdmin && !isAdmin()) {
-        return <Navigate to="/" />;
+        return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
     return children;
@@ -141,76 +158,109 @@ function ProtectedRoute({ children, requireAdmin = false }) {
 
 function AppContent() {
     const { logout } = useAuth();
+    const location = useLocation();
+    const [errorMessage, setErrorMessage] = useState(null);
 
-    // Cung cấp logout cho api.js
+    // Handle error messages from redirects
+    useEffect(() => {
+        if (location.state?.error) {
+            setErrorMessage(location.state.error);
+            // Clear the state after displaying the message
+            window.history.replaceState({}, document.title, location.pathname);
+        }
+    }, [location]);
+
+    // Set logout callback for api.js
     useEffect(() => {
         setLogoutCallback(logout);
+        return () => {
+            setLogoutCallback(null); // Cleanup on unmount
+        };
     }, [logout]);
 
     return (
         <div>
             <Navbar />
-            <div style={{ minHeight: 'calc(100vh - 60px)' }}>
-                <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route
-                        path="/"
-                        element={
-                            <ProtectedRoute>
-                                <Home />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/users"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <UserList />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/user/:id"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <UserDetail />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/rooms"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <RoomList />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/room-types"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <RoomType />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/add-room"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <AddRoom />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/edit-room/:id"
-                        element={
-                            <ProtectedRoute requireAdmin={true}>
-                                <EditRoom />
-                            </ProtectedRoute>
-                        }
-                    />
-                </Routes>
+            {errorMessage && (
+                <div className="error-message">
+                    {errorMessage}
+                    <button onClick={() => setErrorMessage(null)} className="close-error">
+                        Close
+                    </button>
+                </div>
+            )}
+            <div className="content">
+                <ErrorBoundary>
+                    <Routes>
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route
+                            path="/"
+                            element={
+                                <ProtectedRoute>
+                                    <Home />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/users"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <UserList />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/booking"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <BookingList />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/user/:id"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <UserDetail />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/rooms"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <RoomList />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/room-types"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <RoomType />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/add-room"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <AddRoom />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/edit-room/:id"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <EditRoom />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </ErrorBoundary>
             </div>
         </div>
     );

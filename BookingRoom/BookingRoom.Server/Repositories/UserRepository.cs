@@ -41,5 +41,6 @@ namespace BookingRoom.Server.Repositories
         {
             return _context.Users.AsQueryable();
         }
+        
     }
 }

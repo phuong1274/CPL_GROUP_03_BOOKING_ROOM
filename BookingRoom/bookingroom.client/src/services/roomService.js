@@ -80,15 +80,29 @@ export const addRoom = async (roomData) => {
 };
 
 
-// Hàm sửa phòng
 export const updateRoom = async (id, roomData) => {
     try {
-        await api.put(`/room/${id}`, roomData);
+        // Transform data to match backend expectations
+        const payload = {
+            RoomID: parseInt(id),
+            RoomNumber: roomData.roomNumber,
+            RoomTypeID: parseInt(roomData.roomTypeId),
+            Status: roomData.status,
+            StartDate: roomData.startDate ? new Date(roomData.startDate) : null,
+            EndDate: roomData.endDate ? new Date(roomData.endDate) : null
+        };
+
+        const response = await api.put(`/room/${id}`, payload);
+        return response.data;
     } catch (error) {
-        throw new Error(error.response?.data?.Error || error.message || 'Failed to update room');
+        // Enhanced error handling
+        const errorMessage = error.response?.data?.toString() ||
+            error.response?.statusText ||
+            error.message ||
+            'Failed to update room';
+        throw new Error(errorMessage);
     }
 };
-
 // Hàm xóa phòng
 export const deleteRoom = async (id) => {
     try {
@@ -177,5 +191,12 @@ export const deleteMedia = async (id) => {
         await api.delete(`/roommedia/${id}`);
     } catch (error) {
         throw new Error(error.response?.data?.Error || error.message || 'Failed to delete media');
+    }
+};
+export const deleteMediaByRoomId = async (roomId) => {
+    try {
+        await api.delete(`/roommedia/room/${roomId}`);
+    } catch (error) {
+        throw new Error(error.response?.data?.Error || error.message || 'Failed to delete media by room');
     }
 };

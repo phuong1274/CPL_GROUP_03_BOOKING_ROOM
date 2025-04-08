@@ -30,30 +30,24 @@ namespace BookingRoom.Server.Controllers
         {
             try
             {
-                // Lấy tất cả các phòng
                 var rooms = await _unitOfWork.Rooms.GetAllRoomsAsync();
 
-                // Lọc theo RoomNumber (tìm kiếm không phân biệt hoa thường, hỗ trợ tìm kiếm một phần)
                 if (!string.IsNullOrWhiteSpace(roomNumber))
                 {
                     roomNumber = roomNumber.Trim().ToLower();
                     rooms = rooms.Where(r => r.RoomNumber != null && r.RoomNumber.ToLower().Contains(roomNumber)).ToList();
                 }
-
-                // Lọc theo Status (chính xác, không phân biệt hoa thường)
                 if (!string.IsNullOrWhiteSpace(status))
                 {
                     status = status.Trim().ToLower();
                     rooms = rooms.Where(r => r.Status != null && r.Status.ToLower() == status).ToList();
                 }
 
-                // Lọc theo RoomTypeId
                 if (roomTypeId.HasValue)
                 {
                     rooms = rooms.Where(r => r.RoomTypeId == roomTypeId.Value).ToList();
                 }
 
-                // Chuyển đổi danh sách phòng thành RoomDTO
                 var roomDTOs = new List<RoomDTO>();
 
                 foreach (var room in rooms)
@@ -151,8 +145,6 @@ namespace BookingRoom.Server.Controllers
                     return BadRequest(new { error = $"Room Type ID '{roomDTO.RoomTypeID}' does not exist." });
                 }
 
-
-                // ✅ Create Room entity
                 var room = new Room
                 {
                     RoomNumber = roomDTO.RoomNumber,
@@ -167,7 +159,6 @@ namespace BookingRoom.Server.Controllers
 
                 _logger.LogInformation("New room added with RoomID: {RoomID}", room.RoomId);
 
-                // ✅ Return created RoomDTO
                 var createdRoomDTO = new RoomDTO
                 {
                     RoomID = room.RoomId,
@@ -193,30 +184,49 @@ namespace BookingRoom.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomDTO roomDTO)
         {
-            if (id != roomDTO.RoomID)
+            try
             {
-                return BadRequest();
-            }
+                if (id != roomDTO.RoomID)
+                {
+                    return BadRequest("Room ID mismatch");
+                }
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var room = await _unitOfWork.Rooms.GetRoomByIdAsync(id);
+                if (room == null)
+                {
+                    return NotFound();
+                }
+
+                // Update properties
+                room.RoomNumber = roomDTO.RoomNumber;
+                room.RoomTypeId = roomDTO.RoomTypeID;
+                room.Status = roomDTO.Status;
+
+                // Handle date conversion carefully
+                if (roomDTO.StartDate != default)
+                {
+                    room.StartDate = DateOnly.FromDateTime(roomDTO.StartDate);
+                }
+
+                if (roomDTO.EndDate != default)
+                {
+                    room.EndDate = DateOnly.FromDateTime(roomDTO.EndDate);
+                }
+
+                await _unitOfWork.Rooms.UpdateRoomAsync(room);
+                await _unitOfWork.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
             {
-                return BadRequest(ModelState);
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
-
-            var room = await _unitOfWork.Rooms.GetRoomByIdAsync(id);
-            if (room == null)
-            {
-                return NotFound();
-            }
-
-            room.RoomNumber = roomDTO.RoomNumber;
-            room.RoomTypeId = roomDTO.RoomTypeID;
-            room.StartDate = DateOnly.FromDateTime(roomDTO.StartDate);
-            room.EndDate = DateOnly.FromDateTime(roomDTO.EndDate);
-            room.Status = roomDTO.Status;
-
-            await _unitOfWork.Rooms.UpdateRoomAsync(room);
-            return NoContent();
         }
 
         [HttpDelete("{id}")]

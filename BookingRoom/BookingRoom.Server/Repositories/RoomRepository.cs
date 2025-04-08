@@ -56,5 +56,9 @@ namespace BookingRoom.Server.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+        public IQueryable<Room> GetQuery()
+        {
+            return _context.Rooms.AsQueryable();
+        }
     }
 }

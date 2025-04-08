@@ -33,6 +33,7 @@ builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
 builder.Services.AddScoped<IRoomMediaRepository, RoomMediaRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 // Đăng ký Services
 builder.Services.AddScoped<IRoomService, RoomService>();
@@ -42,6 +43,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IRoomTypeService, RoomTypeService>();
 builder.Services.AddScoped<IRoomMediaService, RoomMediaService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 // Cấu hình JWT Authentication
 builder.Services.AddAuthentication(options =>

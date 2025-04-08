@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRooms, deleteRoom, getRoomTypes } from '../services/api';
+import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../services/api';
 
 function RoomList() {
     const [rooms, setRooms] = useState([]);
@@ -8,27 +8,22 @@ function RoomList() {
     const [roomNumber, setRoomNumber] = useState('');
     const [status, setStatus] = useState('');
     const [roomTypeId, setRoomTypeId] = useState('');
-    const [roomTypes, setRoomTypes] = useState([]); // Lưu danh sách room types để hiển thị trong dropdown
+    const [roomTypes, setRoomTypes] = useState([]);
     const navigate = useNavigate();
 
-    // Lấy danh sách phòng và room types khi component được mount
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Sử dụng getRoomTypes từ api.js thay vì fetch thủ công
                 const roomTypesData = await getRoomTypes();
                 setRoomTypes(roomTypesData);
-
-                // Lấy danh sách phòng với các tham số lọc hiện tại
                 fetchRooms();
             } catch (err) {
                 setError(err.message);
             }
         };
         fetchData();
-    }, []); // Chỉ chạy một lần khi component mount
+    }, []);
 
-    // Hàm lấy danh sách phòng với các tham số lọc
     const fetchRooms = async () => {
         try {
             const params = {
@@ -36,7 +31,6 @@ function RoomList() {
                 status: status,
                 roomTypeId: roomTypeId,
             };
-
             const data = await getRooms(params);
             setRooms(data);
         } catch (err) {
@@ -44,14 +38,16 @@ function RoomList() {
         }
     };
 
-    // Cập nhật danh sách phòng khi các tham số lọc thay đổi
     useEffect(() => {
         fetchRooms();
-    }, [roomNumber, status, roomTypeId]); // Khi lọc thay đổi, gọi lại fetchRooms
+    }, [roomNumber, status, roomTypeId]);
 
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this room?')) {
             try {
+                // Xóa tất cả media liên quan đến room trước
+                await deleteMediaByRoomId(id);
+                // Sau đó xóa room
                 await deleteRoom(id);
                 setRooms(rooms.filter((room) => room.roomID !== id));
             } catch (err) {
@@ -71,7 +67,6 @@ function RoomList() {
             <h1>Room List</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}
 
-            {/* Bộ lọc */}
             <div style={{ marginBottom: '20px', display: 'flex', gap: '15px', alignItems: 'center' }}>
                 <div>
                     <label style={{ marginRight: '10px' }}>Search Room Number:</label>

@@ -2,6 +2,7 @@
 using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories;
 using BookingRoom.Server.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,15 @@ namespace BookingRoom.Server.Services
                 MediaType = m.MediaType
             }).ToList();
         }
-
+        public async Task DeleteMediaByRoomIdAsync(int roomId)
+        {
+            var mediaList = await _unitOfWork.RoomMedia.GetMediaByRoomIdAsync(roomId);
+            foreach (var media in mediaList)
+            {
+                await _unitOfWork.RoomMedia.DeleteMediaAsync(media.MediaId);
+            }
+            await _unitOfWork.SaveChangesAsync();
+        }
         public async Task<RoomMediaDTO> AddMediaAsync(RoomMediaDTO mediaDTO)
         {
             var room = await _unitOfWork.Rooms.GetRoomByIdAsync(mediaDTO.RoomID);

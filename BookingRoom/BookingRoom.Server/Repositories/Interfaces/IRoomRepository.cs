@@ -10,5 +10,6 @@ namespace BookingRoom.Server.Repositories
         Task UpdateRoomAsync(Room room);
         Task DeleteRoomAsync(int roomId);
         Task<Room?> GetRoomByNumberAsync(string roomNumber);
+        IQueryable<Room> GetQuery();
     }
 }

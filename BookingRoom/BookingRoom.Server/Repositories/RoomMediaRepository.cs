@@ -19,7 +19,15 @@ namespace BookingRoom.Server.Repositories
                 .Where(m => m.RoomId == roomId)
                 .ToListAsync();
         }
+        public async Task DeleteMediaByRoomIdAsync(int roomId)
+        {
+            var mediaList = await _context.RoomMedia
+                .Where(m => m.RoomId == roomId)
+                .ToListAsync();
 
+            _context.RoomMedia.RemoveRange(mediaList);
+            // Note: SaveChangesAsync should be called by UnitOfWork, not here
+        }
         public async Task<RoomMedium> GetMediaByIdAsync(int mediaId)
         {
             return await _context.RoomMedia.FindAsync(mediaId);
