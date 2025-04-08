@@ -5,5 +5,8 @@ namespace BookingRoom.Server.Services.Interfaces
     public interface IAuthService
     {
         Task<string> LoginAsync(LoginDTO loginDTO);
+        Task RegisterAsync(RegisterDTO registerDTO);
+
+
     }
 }

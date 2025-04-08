@@ -28,5 +28,22 @@ namespace BookingRoom.Server.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)
+        {
+            try
+            {
+                await _authService.RegisterAsync(registerDTO);
+                return Ok(new { Message = "Registration successful" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return BadRequest(new { Message = ex.Message });
+            }
+        }
     }
 }
+
+    
