@@ -1,13 +1,16 @@
-﻿using BookingRoom.Server.Models;
+﻿using BookingRoom.Server.DTOs;
+using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
 using BookingRoom.Server.Services.Interfaces;
-using BookingRoom.Server.DTOs;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BCrypt.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace BookingRoom.Server.Services
 {
@@ -22,35 +25,42 @@ namespace BookingRoom.Server.Services
             _configuration = configuration;
         }
 
-        public async Task<string> LoginAsync(LoginDTO loginDTO)
+        public async Task<string?> LoginAsync(LoginDTO loginDTO)
         {
-            Console.WriteLine($"Backend - Received login data: Login={loginDTO.Login}, Password={loginDTO.Password}");
-            var user = await _unitOfWork.Users.GetByEmailOrUsernameAsync(loginDTO.Login);
-            if (user == null || user.PasswordHash == null || !VerifyPassword(loginDTO.Password, user.PasswordHash))
+            var user = await _unitOfWork.Users.GetByEmailOrUsernameAsync(loginDTO.login);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDTO.password, user.PasswordHash))
             {
-                Console.WriteLine($"Backend - User lookup result: Username={(user != null ? user.Username : "null")}, Email={(user != null ? user.Email : "null")}, PasswordHash={(user != null ? user.PasswordHash : "null")}");
-                throw new Exception("Invalid login credentials");
+                return null;
             }
-            Console.WriteLine($"Backend - Login successful for user: {user.Username}");
+
             return GenerateJwtToken(user);
         }
 
-        public async Task RegisterAsync(RegisterDTO registerDTO)
+
+        public async Task<string> RegisterAsync(RegisterDTO registerDTO)
         {
-            var existingUser = await _unitOfWork.Users.GetByEmailAsync(registerDTO.Email);
+            var existingUser = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.username);
             if (existingUser != null)
             {
-                throw new Exception("User already exists");
+                throw new Exception("Username already exists");
+            }
+
+            existingUser = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.email);
+            if (existingUser != null)
+            {
+                throw new Exception("Email already exists");
             }
 
             var user = new User
             {
-                Username = registerDTO.Username,
-                Email = registerDTO.Email,
-                PasswordHash = HashPassword(registerDTO.Password),
-                FullName = registerDTO.FullName,
-                PhoneNumber = registerDTO.PhoneNumber,
-                Role = "Customer"
+                Username = registerDTO.username,
+                Email = registerDTO.email,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerDTO.password),
+                FullName = registerDTO.fullName,
+                PhoneNumber = registerDTO.phoneNumber,
+                Role = registerDTO.role ?? "Customer",
+                Status = registerDTO.status ?? " Active",
+                Points = 0
             };
 
             await _unitOfWork.Users.AddAsync(user);
@@ -96,7 +106,7 @@ namespace BookingRoom.Server.Services
             var senderEmail = _configuration["EmailSettings:SenderEmail"];
             var senderPassword = _configuration["EmailSettings:SenderPassword"];
 
-           
+
 
             var smtpClient = new SmtpClient(smtpServer)
             {
@@ -139,28 +149,20 @@ namespace BookingRoom.Server.Services
         {
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Name, user.Username ?? string.Empty),
-                new Claim(ClaimTypes.Email, user.Email ?? string.Empty)
+                 new Claim("id", user.UserId.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Username),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var jwtKey = _configuration["Jwt:Key"];
-            var jwtIssuer = _configuration["Jwt:Issuer"];
-            var jwtAudience = _configuration["Jwt:Audience"];
-
-            if (string.IsNullOrEmpty(jwtKey) || string.IsNullOrEmpty(jwtIssuer) || string.IsNullOrEmpty(jwtAudience))
-            {
-                throw new InvalidOperationException("JWT configuration is missing or invalid. Please check Jwt:Key, Jwt:Issuer, and Jwt:Audience in appsettings.json.");
-            }
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: jwtIssuer,
-                audience: jwtAudience,
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddDays(1),
+                expires: DateTime.Now.AddHours(2),
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

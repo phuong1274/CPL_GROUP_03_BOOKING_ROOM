@@ -2,7 +2,8 @@
 using BookingRoom.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+using BookingRoom.Server.Repositories.Interfaces;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace BookingRoom.Server.Controllers
 {
@@ -11,23 +12,140 @@ namespace BookingRoom.Server.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, IUnitOfWork unitOfWork)
         {
             _authService = authService;
+            _unitOfWork = unitOfWork;
         }
 
+        //====================================================================================================
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(e => e.Value.Errors.Count > 0)
+                    .ToDictionary(
+                        kvp => kvp.Key,
+                        kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
+                return BadRequest(errors);
+            }
+
             try
             {
+                Console.WriteLine($"Login input: {loginDTO.login}");
+                var user = await _unitOfWork.Users.GetByEmailOrUsernameAsync(loginDTO.login);
+                Console.WriteLine($"User found: {user?.Username}, Status: {user?.Status}");
+
+                if (user == null)
+                {
+                    Console.WriteLine("User not found in database.");
+                    return BadRequest(new { login = "Invalid username or email" });
+                }
+
+                if (string.Equals(user.Status, "Deactive", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("User is Deactive.");
+                    return StatusCode(403, new { error = "Your account has been deactivated. Please contact support." });
+                }
+
                 var token = await _authService.LoginAsync(loginDTO);
-                return Ok(new { Token = token });
+                if (string.IsNullOrEmpty(token))
+                {
+                    Console.WriteLine("Token is null or empty - incorrect password.");
+                    return BadRequest(new { password = "Incorrect password" });
+                }
+
+                Console.WriteLine("Login successful.");
+                return Ok(new
+                {
+                    token,
+                    user = new
+                    {
+                        user.Username,
+                        user.Email,
+                        user.FullName,
+                        user.Role,
+                        user.PhoneNumber,
+                        user.Points,
+                        user.Status
+                    }
+                });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine($"UnauthorizedAccessException: {ex.Message}");
+                return StatusCode(403, new { error = ex.Message });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                Console.WriteLine($"Exception: {ex.Message}");
+                return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
+            }
+        }
+
+
+
+        //====================================================================================================
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(e => e.Value.Errors.Count > 0)
+                    .ToDictionary(
+                        kvp => kvp.Key,
+                        kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                    );
+                return BadRequest(errors);
+            }
+
+            try
+            {
+                var existingUser = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.username);
+                if (existingUser != null)
+                {
+                    return BadRequest(new { username = "Username is already taken" });
+                }
+
+                var existingEmail = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.email);
+                if (existingEmail != null)
+                {
+                    return BadRequest(new { email = "Email is already registered" });
+                }
+
+                var token = await _authService.RegisterAsync(registerDTO);
+                var user = await _unitOfWork.Users.GetByEmailOrUsernameAsync(registerDTO.username);
+
+                if (user == null)
+                {
+                    return StatusCode(500, new { Error = "User registration failed" });
+                }
+
+                return Ok(new
+                {
+                    token,
+                    user = new
+                    {
+                        user.Username,
+                        user.Email,
+                        user.FullName,
+                        user.Role,
+                        user.PhoneNumber,
+                        user.Points,
+                        user.Status
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
             }
         }
 
@@ -106,4 +224,4 @@ namespace BookingRoom.Server.Controllers
     }
 }
 
-    
+
