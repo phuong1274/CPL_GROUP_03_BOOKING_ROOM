@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BCrypt.Net;
+using System.Net.Mail;
 
 namespace BookingRoom.Server.Services
 {
@@ -55,7 +56,73 @@ namespace BookingRoom.Server.Services
             await _unitOfWork.Users.AddAsync(user);
             await _unitOfWork.SaveChangesAsync();
         }
+        public async Task ForgotPasswordAsync(string email)
+        {
+            var user = await _unitOfWork.Users.GetByEmailAsync(email);
+            if (user == null)
+            {
+                throw new Exception("User with this email does not exist.");
+            }
 
+            var resetToken = Guid.NewGuid().ToString();
+            user.Token = resetToken;
+            user.TokenExpiry = DateTime.Now.AddHours(1);
+            await _unitOfWork.SaveChangesAsync();
+
+            // Cập nhật link để trỏ về /login với query parameter token
+            var resetLink = $"https://localhost:5173/login?token={resetToken}";
+            await SendResetEmail(email, resetLink);
+        }
+
+        public async Task ResetPasswordAsync(string token, string newPassword)
+        {
+            var user = await _unitOfWork.Users.GetAllAsync();
+            var matchingUser = user.FirstOrDefault(u => u.Token == token && u.TokenExpiry > DateTime.Now);
+            if (matchingUser == null)
+            {
+                throw new Exception("Invalid or expired reset token.");
+            }
+
+            matchingUser.PasswordHash = HashPassword(newPassword);
+            matchingUser.Token = null;
+            matchingUser.TokenExpiry = null;
+            await _unitOfWork.SaveChangesAsync();
+        }
+        private async Task SendResetEmail(string email, string resetLink)
+        {
+            // Lấy thông tin từ appsettings.json
+            var smtpServer = _configuration["EmailSettings:SmtpServer"];
+            var port = int.Parse(_configuration["EmailSettings:Port"]);
+            var senderEmail = _configuration["EmailSettings:SenderEmail"];
+            var senderPassword = _configuration["EmailSettings:SenderPassword"];
+
+           
+
+            var smtpClient = new SmtpClient(smtpServer)
+            {
+                Port = port,
+                Credentials = new System.Net.NetworkCredential(senderEmail, senderPassword),
+                EnableSsl = true,
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(senderEmail, "Hotel Booking"),
+                Subject = "Password Reset Request",
+                Body = $"Click the link to reset your password: <a href='{resetLink}'>Reset Password</a>",
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add(email);
+
+            try
+            {
+                await smtpClient.SendMailAsync(mailMessage);
+            }
+            catch (SmtpException ex)
+            {
+                throw new Exception($"Failed to send email: {ex.Message}, StatusCode: {ex.StatusCode}");
+            }
+        }
         private string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
@@ -97,6 +164,37 @@ namespace BookingRoom.Server.Services
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        public async Task ChangePasswordAsync(int userId, string oldPassword, string newPassword)
+        {
+            var user = await _unitOfWork.Users.GetByIdAsync(userId);
+            if (user == null || !VerifyPassword(oldPassword, user.PasswordHash))
+            {
+                throw new Exception("Invalid old password.");
+            }
+            user.PasswordHash = HashPassword(newPassword);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<object> UpdateProfileAsync(int userId, UpdateProfileDTO profileDTO)
+        {
+            var user = await _unitOfWork.Users.GetByIdAsync(userId);
+            if (user == null)
+            {
+                throw new Exception("User not found.");
+            }
+            user.FullName = profileDTO.FullName;
+            user.PhoneNumber = profileDTO.PhoneNumber;
+            user.Email = profileDTO.Email;
+            await _unitOfWork.SaveChangesAsync();
+
+            return new
+            {
+                username = user.Username,
+                fullName = user.FullName,
+                phoneNumber = user.PhoneNumber,
+                email = user.Email
+            };
         }
     }
 }

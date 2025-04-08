@@ -3,16 +3,19 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import './App.css';
+import Home from './pages/Home';
+import ChangePassword from './pages/ChangePassword';
+import EditProfile from './pages/EditProfile';
 
 // Component Home để hiển thị nội dung trang home
-function Home() {
-    return (
-        <div>
-            <h1>Welcome to the Home Page!</h1>
-            <p>You have successfully logged in.</p>
-        </div>
-    );
-}
+//function Home() {
+//    return (
+//        <div>
+//            <h1>Welcome to the Home Page!</h1>
+//            <p>You have successfully logged in.</p>
+//        </div>
+//    );
+//}
 
 function ProtectedRoute({ children }) {
     const { token } = useAuth();
@@ -24,6 +27,8 @@ function AppContent() {
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
             <Route
                 path="/"
                 element={
