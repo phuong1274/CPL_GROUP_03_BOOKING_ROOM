@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,6 +46,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userdetail.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userdetail.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\roomlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\roomlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\services\\roomservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\services\\roomservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +83,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 8,
+=======
+          "SelectedChildIndex": 3,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+<<<<<<< Updated upstream
             },
             {
               "$type": "Bookmark",
@@ -73,12 +107,72 @@
               "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
               "RelativeToolTip": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA4AAAAAAAAAA==",
+=======
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserDetail.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserDetail.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserDetail.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserDetail.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserDetail.jsx",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-08T13:52:56.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoomList.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\RoomList.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\RoomList.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\RoomList.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\RoomList.jsx",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-08T13:52:50.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditRoom.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\EditRoom.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\EditRoom.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\EditRoom.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\EditRoom.jsx",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAswPEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-08T11:46:49.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomService.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\RoomService.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Services\\RoomService.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\RoomService.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Services\\RoomService.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwFwAAAAmAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T13:41:15.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 5,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\Interfaces\\IAuthService.cs",
@@ -198,6 +292,42 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T13:30:42.439Z"
+=======
+              "DocumentIndex": 6,
+              "Title": "roomService.js",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\services\\roomService.js",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\services\\roomService.js",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\services\\roomService.js",
+              "RelativeToolTip": "bookingroom.client\\src\\services\\roomService.js",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-08T11:34:53.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddRoom.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AddRoom.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AddRoom.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AddRoom.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\AddRoom.jsx",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-08T11:27:38.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAgwIEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T11:26:34.37Z"
+>>>>>>> Stashed changes
             }
           ]
         }
