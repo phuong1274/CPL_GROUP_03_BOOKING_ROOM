@@ -12,6 +12,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import BookingList from './pages/BookingList';
 import MyBooking from './pages/MyBooking';
+import AvailableRooms from './pages/AvailableRooms';
 import './App.css';
 
 // ErrorBoundary Component to catch rendering errors
@@ -68,6 +69,13 @@ function Navbar() {
             <div className="navbar-links">
                 {token && (
                     <>
+                        <button
+                            onClick={() => navigate('/CustomerRoom')}
+                            className="nav-button"
+                            aria-label="Navigate to Available Rooms"
+                        >
+                            Available Rooms
+                        </button>
                         <button
                             onClick={() => navigate('/my-booking')}
                             className="nav-button"
@@ -275,6 +283,14 @@ function AppContent() {
                             element={
                                 <ProtectedRoute requireAdmin={true}>
                                     <EditRoom />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/CustomerRoom"
+                            element={
+                                <ProtectedRoute>
+                                    <AvailableRooms />
                                 </ProtectedRoute>
                             }
                         />

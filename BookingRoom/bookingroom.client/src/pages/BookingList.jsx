@@ -9,6 +9,7 @@ import { getUserById, getRoomById } from '../services/api';
 export default function BookingList() {
     const [bookings, setBookings] = useState([]);
     const [error, setError] = useState(null);
+    const [successMessage, setSuccessMessage] = useState(null); // New state for success messages
     const [noResults, setNoResults] = useState(false);
     const [filters, setFilters] = useState({
         roomNumber: '',
@@ -19,8 +20,8 @@ export default function BookingList() {
     });
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const [checkingInId, setCheckingInId] = useState(null); // Track check-in loading state
-    const [checkingOutId, setCheckingOutId] = useState(null); // Track check-out loading state
+    const [checkingInId, setCheckingInId] = useState(null);
+    const [checkingOutId, setCheckingOutId] = useState(null);
     const pageSize = 30;
 
     useEffect(() => {
@@ -37,10 +38,10 @@ export default function BookingList() {
             };
 
             const response = await getAllBookings(params);
-            console.log('Response from getAllBookings:', response); // Debug log
+           
             const bookingsData = response.bookings || [];
             const totalCount = response.totalRecords || 0;
-            console.log('Bookings Data:', bookingsData); // Debug log
+           
 
             const enriched = await Promise.all(
                 bookingsData.map(async (b) => {
@@ -56,16 +57,18 @@ export default function BookingList() {
                 })
             );
 
-            console.log('Enriched Bookings:', enriched); // Debug log
+            
             setBookings(enriched);
             setTotalPages(Math.ceil(totalCount / pageSize));
             setNoResults(enriched.length === 0);
             setError(null);
+            setSuccessMessage(null); // Clear success message on refresh
         } catch (err) {
-            console.error('Error fetching bookings:', err);
+           
             setError(err.message || 'Failed to fetch bookings');
             setBookings([]);
             setNoResults(false);
+            setSuccessMessage(null);
         }
     };
 
@@ -76,27 +79,38 @@ export default function BookingList() {
     };
 
     const handleCheckIn = async (id) => {
-        console.log('Check-in button clicked for booking ID:', id); // Debug log
         try {
             setCheckingInId(id);
-            await checkInBooking(id);
-            await fetchBookings();
             setError(null);
+            setSuccessMessage(null);
+
+            const response = await checkInBooking(id);
+            setSuccessMessage(response.message);
+            alert(response.message); 
+
+            await fetchBookings();
         } catch (err) {
-            console.error('Error in handleCheckIn:', err);
-            setError(err.message || 'Failed to check in booking');
+            console.error('Check-in error:', err);
+            setError(err.message);
         } finally {
             setCheckingInId(null);
         }
     };
 
+
+
     const handleCheckOut = async (id) => {
-        console.log('Check-out button clicked for booking ID:', id); // Debug log
+        console.log('Check-out button clicked for booking ID:', id);
         try {
             setCheckingOutId(id);
-            await checkOutBooking(id);
-            await fetchBookings();
             setError(null);
+            setSuccessMessage(null);
+
+            const response = await checkOutBooking(id); 
+            setSuccessMessage(response.message);
+            alert(response.message);
+
+            await fetchBookings();
         } catch (err) {
             console.error('Error in handleCheckOut:', err);
             setError(err.message || 'Failed to check out booking');
@@ -104,6 +118,7 @@ export default function BookingList() {
             setCheckingOutId(null);
         }
     };
+
 
     const formatDate = (dateString) => {
         if (!dateString) return '';
@@ -114,6 +129,7 @@ export default function BookingList() {
         <div className="p-4">
             <h2 className="text-xl font-bold mb-4">Booking List</h2>
             {error && <p className="text-red-500 mb-4">{error}</p>}
+            {successMessage && <p className="text-green-500 mb-4">{successMessage}</p>}
             {noResults && !error && (
                 <p className="text-yellow-600 mb-4">
                     No bookings found matching your filter criteria.
@@ -142,7 +158,7 @@ export default function BookingList() {
                     <option value="Cancelled">Cancelled</option>
                     <option value="Confirmed">Confirmed</option>
                     <option value="Pending">Pending</option>
-                    <option value="Completed">Completed</option> {/* Added Completed to the filter options */}
+                    <option value="Completed">Completed</option>
                 </select>
             </div>
 
@@ -158,7 +174,7 @@ export default function BookingList() {
                         <th className="border px-4 py-2">Updated At</th>
                         <th className="border px-4 py-2">Total</th>
                         <th className="border px-4 py-2">Status</th>
-                        <th className="border px-4 py-2">Actions</th> {/* Renamed column for clarity */}
+                        <th className="border px-4 py-2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>

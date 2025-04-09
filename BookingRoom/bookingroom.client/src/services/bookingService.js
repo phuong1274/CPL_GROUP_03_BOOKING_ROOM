@@ -55,11 +55,18 @@ export const checkInBooking = async (id) => {
         return response.data;
     } catch (error) {
         const status = error.response?.status || 'unknown';
+        const data = error.response?.data;
+
+        if (data?.error) {
+            throw new Error(`${data.error.code}: ${data.error.details}`);
+        }
+
         throw new Error(
-            error.response?.data?.Error || error.message || `Failed to check in booking (Status: ${status})`
+            data?.message || error.message || `Failed to check in booking (Status: ${status})`
         );
     }
 };
+
 
 // Check-out 1 booking
 export const checkOutBooking = async (id) => {

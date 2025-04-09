@@ -40,7 +40,6 @@ const UserDetail = () => {
                 <p><strong>Full Name:</strong> {user.fullName}</p>
                 <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
                 <p><strong>Role:</strong> {user.role}</p>
-                <p><strong>Points:</strong> {user.points}</p>
                 <p><strong>Status:</strong> {user.status}</p>
                 <p><strong>Create time:</strong> {user.createAt}</p>
             </div>
