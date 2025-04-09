@@ -54,7 +54,7 @@ body {
 
 /* Hero Section (Home Page) */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://landmark72.intercontinental.com/wp-content/uploads/2-1.jpg'); /* Replace with actual hotel image */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://landmark72.intercontinental.com/wp-content/uploads/2-1.jpg');
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -81,53 +81,47 @@ body {
     font-family: 'Lora', serif;
 }
 
-/* Quick Booking Form (Home Page) */
-.quick-book-form {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* About Us Section */
+.about-us-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
 }
 
-/* Form Group (Used in Home, Booking, Login, Register) */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-    .form-group label {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #333;
-        font-family: 'Lora', serif;
+    .about-us-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
     }
 
-    .form-group input,
-    .form-group select {
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-family: 'Lora', serif;
-    }
-
-.book-now-btn {
-    background-color: #b8860b; /* Gold color for luxury */
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.about-us-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    align-items: center;
 }
 
-    .book-now-btn:hover {
-        background-color: #daa520;
+.about-us-text {
+    flex: 1;
+    text-align: left;
+}
+
+    .about-us-text p {
+        font-family: 'Lora', serif;
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+.about-us-image {
+    flex: 1;
+}
+
+    .about-us-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
 
 /* Rooms Section (Home Page) */
@@ -193,65 +187,204 @@ body {
         text-decoration: underline;
     }
 
-/* Booking Page */
-.booking-page {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 2rem;
+.view-all-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #b8860b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+    .view-all-btn:hover {
+        background-color: #daa520;
+    }
+
+/* Room List Page */
+.room-list-page {
+    padding: 4rem 2rem;
     text-align: center;
 }
 
-    .booking-page h1 {
+    .room-list-page h2 {
         font-size: 2.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         color: #2c2c2c;
     }
 
-    .booking-page p {
-        font-family: 'Lora', serif;
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: #666;
+.room-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #28a745;
+    margin: 0.5rem 0;
+}
+
+.no-more-rooms {
+    text-align: center;
+    color: #666;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Booking Page New */
+.booking-page-new {
+    padding: 2rem;
+}
+
+.booking-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.booking-image {
+    flex: 1;
+    margin-top: 4.2rem;
+}
+
+    .booking-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
 
-.booking-form {
+.booking-details {
+    flex: 1;
+    text-align: left;
+}
+
+    .booking-details h1 {
+        font-size: 2rem;
+        color: #2c2c2c;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .booking-details h2 {
+        font-size: 1.5rem;
+        color: #2c2c2c;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+.booking-form-new {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .form-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+        font-family: 'Lora', serif;
+    }
+
+    .form-group input, .form-group select {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: 'Lora', serif;
+    }
+
+.room-number-group {
+    position: relative;
+}
+
+.room-number-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Login and Register Pages */
-.login-page,
-.register-page {
-    max-width: 500px;
-    margin: 4rem auto;
-    padding: 2rem;
-    text-align: center;
+.room-number-controls {
+    display: flex;
+    gap: 0.5rem;
 }
 
-    .login-page h2,
-    .register-page h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #2c2c2c;
-    }
-
-    .login-page form,
-    .register-page form {
+    .room-number-controls button {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        background: black;
+        cursor: pointer;
+        font-size: 1rem;
         display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        justify-content: center;
     }
 
-/* Error and Success Messages (Used in Login, Register, Booking) */
+.guest-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.guest-inputs {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+}
+
+.guest-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .guest-control span {
+        font-family: 'Lora', serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .guest-control input {
+        width: 60px;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+.book-now-btn-new {
+    padding: 1rem 2rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+    .book-now-btn-new:hover {
+        background-color: #e65b5b;
+    }
+
+    .book-now-btn-new:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+    }
+
+/* Error and Success Messages */
 .error-message {
     color: red;
     margin-bottom: 1rem;
@@ -264,42 +397,86 @@ body {
     font-family: 'Lora', serif;
 }
 
-/* NavBar Styles */
-.navbar {
-    background-color: #2c2c2c;
-    padding: 1rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+/* Login & Register Pages */
+.login-page, .register-page, .forgot-password-page, .reset-password-page, .change-password-page {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 600;
+    .login-page h2, .register-page h2, .forgot-password-page h2, .reset-password-page h2, .change-password-page h2 {
+        font-size: 2rem;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
-        .navbar a:hover {
-            color: #b8860b;
-        }
-
-.logout-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
+/* User Profile Page */
+.user-profile-page {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-    .logout-btn:hover {
-        color: #b8860b;
+    .user-profile-page h2 {
+        font-size: 2rem;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+    .profile-details p {
+        font-size: 1.1rem;
+        color: #666;
+        margin: 0.5rem 0;
+    }
+
+        .profile-details p strong {
+            color: #2c2c2c;
+        }
+
+.change-password-link {
+    display: inline-block;
+    color: #ff6b6b;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+    .change-password-link:hover {
+        text-decoration: underline;
+    }
+
+/* Add Room Page */
+.add-room-page {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .add-room-page h2 {
+        font-size: 2rem;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
 /* Footer Styles */
 .footer {
-    background-color: #2c2c2c; /* Dark background to match the NavBar */
+    background-color: #2c2c2c;
     color: white;
     padding: 3rem 2rem;
     text-align: center;
@@ -309,36 +486,29 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 2rem;
-    /* Removed flexbox since there's only one section */
 }
 
-.footer-section {
-    /* Removed flex: 1 and min-width since there's only one section */
+.footer-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
 }
 
-    .footer-section h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: white;
+.footer-section p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.footer-section a {
+    color: #b8860b;
+    text-decoration: none;
+}
+
+    .footer-section a:hover {
+        text-decoration: underline;
     }
-
-    .footer-section p {
-        font-family: 'Lora', serif;
-        font-size: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    .footer-section a {
-        color: #b8860b;
-        text-decoration: none;
-    }
-
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
-
-/* Removed .footer-section ul and .footer-section ul li since Quick Links is gone */
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -351,84 +521,64 @@ body {
         margin: 0;
     }
 
-/*Forgot pass*/
-.forgot-password-page,
-.reset-password-page {
-    max-width: 500px;
-    margin: 4rem auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-.forgot-password-page form,
-.reset-password-page form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/*Change pass and user pro5*/
-.user-profile-page,
-.change-password-page {
-    max-width: 500px;
-    margin: 4rem auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-    .user-profile-page p {
-        font-family: 'Lora', serif;
-        font-size: 1.1rem;
-        margin: 0.5rem 0;
-    }
-
-    .change-password-page form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-.avatar {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-    .avatar:hover {
-        color: #b8860b;
-    }
-
-.guest-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-    .guest-btn:hover {
-        color: #b8860b;
-    }
-/* ... (remaining styles remain unchanged) */
-
 /* Responsive Design */
+
+/* Mobile (dưới 768px) */
 @media (max-width: 768px) {
+    #root {
+        padding: 1rem;
+    }
+
     .hero {
-        height: 500px;
+        min-height: 500px;
+        padding: 4rem 1rem;
     }
 
         .hero h1 {
             font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+    .rooms-section {
+        padding: 2rem 1rem;
+    }
+
+        .rooms-section h2 {
+            font-size: 1.75rem;
+        }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .room-card img {
+        height: 150px;
+    }
+
+    .room-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .room-card p {
+        font-size: 0.85rem;
+    }
+
+    .view-all-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .room-list-page {
+        padding: 2rem 1rem;
+    }
+
+        .room-list-page h2 {
+            font-size: 1.75rem;
         }
 
     .navbar {
@@ -436,20 +586,101 @@ body {
         gap: 1rem;
     }
 
-    /* Simplified responsive styles for Footer */
-    .footer-content {
-        /* Removed flex-direction: column and gap since there's only one section */
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .booking-page,
-    .login-page,
-    .register-page {
-        margin: 2rem 1rem;
+    .booking-page-new {
         padding: 1rem;
+    }
+
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .book-now-btn-new {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 2rem 1rem;
+    }
+
+    .about-us-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-us-text {
+        text-align: center;
     }
 }
 
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #root {
+        padding: 1.5rem;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 5rem 1.5rem;
+    }
+
+        .hero h1 {
+            font-size: 2.75rem;
+        }
+
+    .rooms-section {
+        padding: 3rem 1.5rem;
+    }
+
+        .rooms-section h2 {
+            font-size: 2rem;
+        }
+
+    .rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-card img {
+        height: 180px;
+    }
+
+    .room-list-page {
+        padding: 3rem 1.5rem;
+    }
+
+        .room-list-page h2 {
+            font-size: 2rem;
+        }
+
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-details h1 {
+        font-size: 1.75rem;
+    }
+
+    .about-us-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-us-text {
+        text-align: center;
+    }
+}
+
+/* PC (trên 1024px) */
+@media (min-width: 1025px) {
+    .hero {
+        min-height: 600px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

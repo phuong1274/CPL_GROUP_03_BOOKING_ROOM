@@ -9,10 +9,10 @@ const Login = () => {
         password: ''
     });
     const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null); // Thêm trạng thái success
+    const [success, setSuccess] = useState(null);
     const errorRef = useRef(null);
     const navigate = useNavigate();
-    const { login } = useAuth(); // Sử dụng hàm login từ useAuth
+    const { login } = useAuth();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,9 +26,8 @@ const Login = () => {
         });
         try {
             const token = await loginService(formData);
-            // Giả sử backend trả về user cùng với token, nếu không thì bạn cần điều chỉnh
-            const user = { username: formData.login }; // Thay thế bằng dữ liệu user thực tế từ backend
-            login(token, user); // Cập nhật token và user trong AuthContext
+            const user = { username: formData.login }; // Thay bằng dữ liệu thực tế từ backend nếu có
+            login(token, user);
             setSuccess('Login successful! Redirecting to home...');
             setTimeout(() => {
                 navigate('/');
@@ -44,12 +43,12 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="login-page">
             <h2>Login</h2>
-            {error && <div ref={errorRef} style={{ color: 'red' }}>{error}</div>}
-            {success && <div style={{ color: 'green' }}>{success}</div>} {/* Hiển thị thông báo thành công */}
-            <form onSubmit={handleSubmit}>
-                <div>
+            {error && <div ref={errorRef} className="error-message">{error}</div>}
+            {success && <div className="success-message">{success}</div>}
+            <form onSubmit={handleSubmit} className="login-form">
+                <div className="form-group">
                     <label>Email or Username:</label>
                     <input
                         type="text"
@@ -59,7 +58,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -69,10 +68,10 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" className="book-now-btn">Login</button>
             </form>
             <p>
-                <Link to="/forgot-password" style={{ color: '#b8860b' }}>Forgot Password?</Link>
+                <Link to="/forgot-password" className="forgot-password-link">Forgot Password?</Link>
             </p>
         </div>
     );

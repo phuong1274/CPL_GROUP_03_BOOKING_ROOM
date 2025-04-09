@@ -8,4 +8,8 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="src\data\**" />
+    <TypeScriptConfiguration Remove="src\data\**" />
+  </ItemGroup>
 </Project>

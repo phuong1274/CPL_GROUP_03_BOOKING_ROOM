@@ -1,6 +1,6 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../services/authService'; // Import hàm register từ authService
+import { register } from '../services/authService';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const Register = () => {
         phoneNumber: ''
     });
     const [error, setError] = useState(null);
-    const errorRef = useRef(null); // Sử dụng useRef trong functional component
+    const errorRef = useRef(null);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -22,7 +22,7 @@ const Register = () => {
         e.preventDefault();
         try {
             await register(formData);
-            navigate('/login'); // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
+            navigate('/login'); // register thành công sẽ chuyển sang login 
         } catch (err) {
             setError(err.message || 'Registration failed');
             if (errorRef.current) {
@@ -32,11 +32,11 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div className="register-page">
             <h2>Register</h2>
-            {error && <div ref={errorRef} style={{ color: 'red' }}>{error}</div>}
-            <form onSubmit={handleSubmit}>
-                <div>
+            {error && <div ref={errorRef} className="error-message">{error}</div>}
+            <form onSubmit={handleSubmit} className="register-form">
+                <div className="form-group">
                     <label>Username:</label>
                     <input
                         type="text"
@@ -46,7 +46,7 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Email:</label>
                     <input
                         type="email"
@@ -56,7 +56,7 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -66,7 +66,7 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Full Name:</label>
                     <input
                         type="text"
@@ -76,7 +76,7 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Phone Number:</label>
                     <input
                         type="text"
@@ -86,7 +86,7 @@ const Register = () => {
                         required
                     />
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit" className="book-now-btn">Register</button>
             </form>
         </div>
     );

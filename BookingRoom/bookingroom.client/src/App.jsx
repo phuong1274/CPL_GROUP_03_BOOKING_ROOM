@@ -1,5 +1,4 @@
-﻿// App.jsx
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+﻿import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -7,16 +6,17 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Booking from './pages/Booking';
-import ForgotPassword from './components/ForgotPassword'; // Component mới
-import ResetPassword from './components/ResetPassword';   // Component mới
-import UserProfile from './pages/UserProfile';       // Component mới
-import ChangePassword from './components/ChangePassword'; // Component mới
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
+import UserProfile from './pages/UserProfile';
+import ChangePassword from './components/ChangePassword';
+import RoomList from './pages/RoomList';
+import AddRoom from './pages/AddRoom';
 import './App.css';
 
 function ProtectedRoute({ children }) {
-    const { token, isGuest } = useAuth();
-    // Cho phép truy cập nếu có token hoặc ở chế độ guest
-    return token || isGuest ? children : <Navigate to="/login" />;
+    const { token } = useAuth();
+    return token ? children : <Navigate to="/login" />;
 }
 
 function AppContent() {
@@ -31,16 +31,10 @@ function AppContent() {
                     <Route path="/" element={<Home />} />
                     <Route path="/forgot-password" element={<ForgotPassword />} />
                     <Route path="/reset-password/:token" element={<ResetPassword />} />
+                    <Route path="/room-list" element={<RoomList />} />
+                    <Route path="/booking" element={<Booking />} />
 
                     {/* Protected Routes */}
-                    <Route
-                        path="/booking"
-                        element={
-                            <ProtectedRoute>
-                                <Booking />
-                            </ProtectedRoute>
-                        }
-                    />
                     <Route
                         path="/profile"
                         element={
@@ -57,6 +51,14 @@ function AppContent() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route
+                        path="/add-room"
+                        element={
+                            <ProtectedRoute>
+                                <AddRoom />
+                            </ProtectedRoute>
+                        }
+                    />
                 </Routes>
             </main>
         </div>
@@ -66,7 +68,7 @@ function AppContent() {
 function App() {
     return (
         <AuthProvider>
-             <AppContent />
+            <AppContent />
         </AuthProvider>
     );
 }

@@ -5,7 +5,6 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
-    const [isGuest, setIsGuest] = useState(false); // Thêm trạng thái guest
 
     useEffect(() => {
         const storedToken = localStorage.getItem('token');
@@ -19,29 +18,19 @@ export const AuthProvider = ({ children }) => {
     const login = (newToken, newUser) => {
         setToken(newToken);
         setUser(newUser);
-        setIsGuest(false); // Đảm bảo không ở chế độ guest khi đăng nhập thật
         localStorage.setItem('token', newToken);
         localStorage.setItem('user', JSON.stringify(newUser));
-    };
-
-    const loginAsGuest = () => {
-        setToken(null); // Không có token
-        setUser({ username: 'Guest' }); // User giả với tên "Guest"
-        setIsGuest(true); // Kích hoạt chế độ guest
-        localStorage.removeItem('token'); // Xóa token nếu có
-        localStorage.removeItem('user');
     };
 
     const logout = () => {
         setToken(null);
         setUser(null);
-        setIsGuest(false); // Thoát chế độ guest
         localStorage.removeItem('token');
         localStorage.removeItem('user');
     };
 
     return (
-        <AuthContext.Provider value={{ user, token, isGuest, login, loginAsGuest, logout }}>
+        <AuthContext.Provider value={{ user, token, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
