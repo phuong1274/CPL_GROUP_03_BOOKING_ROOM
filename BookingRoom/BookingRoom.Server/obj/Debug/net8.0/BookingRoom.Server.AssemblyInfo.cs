@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55336ecf9ed5a5e639e65243dcb928d53af21287")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e0926193cf4dbc1efc066ce043bb3dd9c4a7032")]
->>>>>>> phuong
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+393c360895ddf753119a7f0d574cdf10b9ef4c5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

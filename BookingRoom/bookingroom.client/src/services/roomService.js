@@ -130,9 +130,18 @@ export const addRoomType = async (roomTypeData) => {
 
 // Hàm sửa loại phòng
 export const updateRoomType = async (id, roomTypeData) => {
+    const payload = {
+        roomTypeID: id,
+        roomTypeName: roomTypeData.roomTypeName,
+        description: roomTypeData.description,
+        price: roomTypeData.price,
+        validDate: roomTypeData.validDate
+    };
+
     try {
-        await api.put(`/roomtype/${id}`, roomTypeData);
+        await api.put(`/roomtype/${id}`, payload);
     } catch (error) {
+        console.error('API PUT error:', error.response?.data || error.message);
         throw new Error(error.response?.data?.Error || error.message || 'Failed to update room type');
     }
 };

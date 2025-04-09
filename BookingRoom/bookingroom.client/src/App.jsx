@@ -1,15 +1,16 @@
 ﻿import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
-import UserList from './pages/UserList';
-import UserDetail from './pages/UserDetail';
-import RoomList from './pages/RoomList';
-import RoomType from './pages/RoomType';
+import UserList from './pages/AdminPages/UserList/UserList';
+import UserDetail from './pages/AdminPages/UserDetail/UserDetail'
+import RoomList from './pages/AdminPages/RoomList/RoomList';
+import RoomType from './pages/AdminPages/RoomType/RoomType';
 import AddRoom from './pages/AddRoom';
 import EditRoom from './pages/EditRoom';
 import { useEffect, useState } from 'react';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Login from './pages/UserPages/Login/Login';
+import Register from './pages/UserPages/Register/Register';
 import './App.css';
 
 // Component Navbar để hiển thị thanh điều hướng
@@ -31,15 +32,22 @@ function Navbar() {
 
     return (
         <nav style={{
-            backgroundColor: '#f8f9fa',
-            padding: '10px 20px',
+            backgroundColor: '#b0b0b0',
+            padding: '20px 20px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            borderBottom: '1px solid #ddd'
+            borderBottom: '1px solid #ddd',
+            color: 'white',
+            
         }}>
             <div>
-                <h3 style={{ margin: 0 }}>Hotel Booking</h3>
+                <h3 style={{
+                    margin: 0,
+                    color: '#fff',
+                    fontSize: '24px',
+                    fontWeight: 600,
+                }}>Hotel Booking</h3>
             </div>
             <div>
                 {token && isAdmin() && (
@@ -150,7 +158,11 @@ function AppContent() {
     return (
         <div>
             <Navbar />
-            <div style={{ minHeight: 'calc(100vh - 60px)' }}>
+            <div style={{
+                minHeight: 'calc(100vh - 60px)',
+                width: '100%', // Kéo dài hết chiều rộng
+                backgroundColor: '#f4f7fa', // Đồng bộ màu nền
+            }}>
                 <Routes>
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />

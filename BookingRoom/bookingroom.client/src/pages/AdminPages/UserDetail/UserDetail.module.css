@@ -1,0 +1,69 @@
+﻿.userDetailContainer {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f4f7fa;
+    min-height: 100vh;
+   
+}
+
+.userDetailTitle {
+    font-size: 32px;
+    color: #1e90ff;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #1e90ff;
+    padding-bottom: 5px;
+}
+
+.userInfo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.infoItem {
+    font-size: 16px;
+    color: #424242;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+    .infoItem strong {
+        color: #1a1d2d;
+        font-weight: 600;
+        margin-right: 8px;
+    }
+
+.backButton {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+    .backButton:hover {
+        background-color: #1873cc;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(30, 144, 255, 0.3);
+    }
+
+@media (max-width: 768px) {
+    .userDetailContainer {
+        padding: 16px;
+    }
+
+    .infoItem {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,243 @@
+﻿.userListContainer {
+    padding: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f4f7fa;
+    min-height: 100vh;
+}
+
+.userListTitle {
+    font-size: 50px;
+    color: #1e90ff;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #1e90ff;
+}
+
+.errorMessage {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.15);
+    font-size: 14px;
+}
+
+.successMessage {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    font-size: 14px;
+}
+
+.searchFilter {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.searchInput {
+    padding: 10px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    flex: 1;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+    .searchInput:focus {
+        border-color: #1e90ff;
+        box-shadow: 0 0 8px rgba(30, 144, 255, 0.3);
+        outline: none;
+    }
+
+.roleSelect {
+    padding: 10px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    color: #424242;
+}
+
+    .roleSelect:focus {
+        border-color: #1e90ff;
+        box-shadow: 0 0 8px rgba(30, 144, 255, 0.3);
+        outline: none;
+    }
+
+.userTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tableHeader {
+    background-color: #1e90ff;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 16px;
+    border: none;
+    font-size: 14px;
+}
+
+    .tableHeader:first-child {
+        border-top-left-radius: 12px;
+    }
+
+    .tableHeader:last-child {
+        border-top-right-radius: 12px;
+    }
+
+.tableRow {
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+    .tableRow:nth-child(even) {
+        background-color: #f8fafc;
+    }
+
+    .tableRow:hover {
+        background-color: #eef2f6;
+        transform: translateY(-2px);
+    }
+
+.tableCell {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 14px 16px;
+    color: #424242;
+    font-size: 14px;
+}
+
+    .tableCell:last-child {
+        border-right: none;
+    }
+
+.statusSelect {
+    padding: 6px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #424242;
+    transition: border-color 0.3s ease;
+}
+
+    .statusSelect:focus {
+        border-color: #1e90ff;
+        outline: none;
+    }
+
+.pagination {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.paginationButton {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+    .paginationButton:disabled {
+        background-color: #b0bec5;
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    .paginationButton:hover:not(:disabled) {
+        background-color: #1873cc;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(30, 144, 255, 0.3);
+    }
+
+.paginationInfo {
+    font-size: 16px;
+    color: #1a1d2d;
+    font-weight: 500;
+}
+
+.successMessage, .errorMessage {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .userListContainer {
+        padding: 16px;
+    }
+
+    .userListTitle {
+        font-size: 40px; 
+    }
+
+    .searchFilter {
+        gap: 8px; 
+    }
+
+    .userTable {
+        font-size: 13px;
+    }
+
+    .paginationButton {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .userListTitle {
+        font-size: 30px; 
+    }
+
+    .searchInput, .roleSelect {
+        padding: 8px 12px;
+    }
+
+    .paginationButton {
+        padding: 6px 12px; 
+    }
+
+    .userTable {
+        font-size: 12px;
+    }
+}

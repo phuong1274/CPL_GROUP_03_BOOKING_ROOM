@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.1184077">
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.1184077">
   <PropertyGroup>
     <StartupCommand>npm run dev</StartupCommand>
     <JavaScriptTestRoot>src\</JavaScriptTestRoot>
@@ -6,9 +6,7 @@
     <ShouldRunBuildScript>false</ShouldRunBuildScript>
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
-
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
   </ItemGroup>
-
 </Project>
