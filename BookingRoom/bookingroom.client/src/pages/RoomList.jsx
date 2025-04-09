@@ -1,89 +1,198 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+﻿import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../services/api';
 
-const RoomList = () => {
-    const location = useLocation();
-    const bookingData = location.state?.bookingData || {};
+function RoomList() {
+    const [rooms, setRooms] = useState([]);
+    const [error, setError] = useState(null);
+    const [roomNumber, setRoomNumber] = useState('');
+    const [status, setStatus] = useState('');
+    const [roomTypeId, setRoomTypeId] = useState('');
+    const [roomTypes, setRoomTypes] = useState([]);
+    const navigate = useNavigate();
 
-    const rooms = [
-        { id: 1, type: 'classic-room', name: 'Classic Room', description: 'Cozy room with a single bed.', price: 100, image: 'https://landmark72.intercontinental.com/wp-content/uploads/16-1.jpg' },
-        { id: 2, type: 'premium-room', name: 'Premium Room', description: 'Spacious room with a king bed.', price: 150, image: 'https://landmark72.intercontinental.com/wp-content/uploads/14-1.jpg' },
-        { id: 3, type: 'junior-suite', name: 'Junior Suite', description: 'Suite with living area and king bed.', price: 200, image: 'https://landmark72.intercontinental.com/wp-content/uploads/25.jpg' },
-        { id: 4, type: 'premier-suite', name: 'Premier Suite', description: 'Luxury suite with premium amenities.', price: 250, image: 'https://landmark72.intercontinental.com/wp-content/uploads/Ambassador-Suite_Living-Room.jpg' },
-        { id: 5, type: 'ambassador-suite', name: 'Ambassador Suite', description: 'Grand suite with two bedrooms.', price: 300, image: 'https://landmark72.intercontinental.com/wp-content/uploads/30.jpg' },
-        { id: 6, type: 'royal-suite', name: 'Royal Suite', description: 'Top-tier suite with spa bathroom.', price: 400, image: 'https://landmark72.intercontinental.com/wp-content/uploads/intercontinental-hanoi-presidential-suite-2_2.jpg' },
-    ];
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const roomTypesData = await getRoomTypes();
+                setRoomTypes(roomTypesData);
+                fetchRooms();
+            } catch (err) {
+                setError(err.message);
+            }
+        };
+        fetchData();
+    }, []);
 
-    const [displayedRooms, setDisplayedRooms] = useState(rooms.slice(0, 3));
-    const [hasMore, setHasMore] = useState(true);
-    const lastRoomElementRef = useRef(null);
-
-    const loadMoreRooms = () => {
-        const currentLength = displayedRooms.length;
-        const nextRooms = rooms.slice(currentLength, currentLength + 3);
-        if (nextRooms.length > 0) {
-            setDisplayedRooms((prev) => [...prev, ...nextRooms]);
-        }
-        if (currentLength + nextRooms.length >= rooms.length) {
-            setHasMore(false);
+    const fetchRooms = async () => {
+        try {
+            const params = {
+                roomNumber: roomNumber,
+                status: status,
+                roomTypeId: roomTypeId,
+            };
+            const data = await getRooms(params);
+            setRooms(data);
+        } catch (err) {
+            setError(err.message);
         }
     };
 
     useEffect(() => {
-        if (!hasMore) return;
+        fetchRooms();
+    }, [roomNumber, status, roomTypeId]);
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting) {
-                    loadMoreRooms();
-                }
-            },
-            { threshold: 1.0 }
-        );
-
-        if (lastRoomElementRef.current) {
-            observer.observe(lastRoomElementRef.current);
+    const handleDelete = async (id) => {
+        if (window.confirm('Are you sure you want to delete this room?')) {
+            try {
+                // Xóa tất cả media liên quan đến room trước
+                await deleteMediaByRoomId(id);
+                // Sau đó xóa room
+                await deleteRoom(id);
+                setRooms(rooms.filter((room) => room.roomID !== id));
+            } catch (err) {
+                setError(err.message);
+            }
         }
+    };
 
-        return () => {
-            if (observer) observer.disconnect();
-        };
-    }, [displayedRooms, hasMore]);
+    const handleResetFilters = () => {
+        setRoomNumber('');
+        setStatus('');
+        setRoomTypeId('');
+    };
 
     return (
-        <div className="room-list-page">
-            <h2>Room List</h2>
-            <div className="rooms-grid">
-                {displayedRooms.map((room, index) => {
-                    const isLastElement = index === displayedRooms.length - 1;
-                    return (
-                        <div
-                            key={room.id}
-                            className="room-card"
-                            ref={isLastElement ? lastRoomElementRef : null}
-                        >
-                            <img src={room.image} alt={room.name} />
-                            <h3>{room.name}</h3>
-                            <p>{room.description}</p>
-                            <p className="room-price">${room.price}/night</p>
-                            <Link
-                                to={{
-                                    pathname: '/booking',
-                                    state: { bookingData, selectedRoom: room }
-                                }}
-                                className="book-link"
-                            >
-                                Book This Room
-                            </Link>
-                        </div>
-                    );
-                })}
+        <div style={{ padding: '20px' }}>
+            <h1>Room List</h1>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
+            <div style={{ marginBottom: '20px', display: 'flex', gap: '15px', alignItems: 'center' }}>
+                <div>
+                    <label style={{ marginRight: '10px' }}>Search Room Number:</label>
+                    <input
+                        type="text"
+                        value={roomNumber}
+                        onChange={(e) => setRoomNumber(e.target.value)}
+                        placeholder="Enter room number..."
+                        style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                    />
+                </div>
+
+                <div>
+                    <label style={{ marginRight: '10px' }}>Filter by Status:</label>
+                    <select
+                        value={status}
+                        onChange={(e) => setStatus(e.target.value)}
+                        style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                    >
+                        <option value="">All</option>
+                        <option value="Available">Available</option>
+                        <option value="Booked">Booked</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label style={{ marginRight: '10px' }}>Filter by Room Type:</label>
+                    <select
+                        value={roomTypeId}
+                        onChange={(e) => setRoomTypeId(e.target.value)}
+                        style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                    >
+                        <option value="">All</option>
+                        {roomTypes && roomTypes.length > 0 ? (
+                            roomTypes.map((type) => (
+                                <option key={type.roomTypeID} value={type.roomTypeID}>
+                                    {type.roomTypeName}
+                                </option>
+                            ))
+                        ) : (
+                            <option disabled>Loading...</option>
+                        )}
+                    </select>
+                </div>
+
+                <button
+                    onClick={handleResetFilters}
+                    style={{
+                        padding: '8px 15px',
+                        backgroundColor: '#6c757d',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                    }}
+                >
+                    Reset Filters
+                </button>
             </div>
-            {!hasMore && displayedRooms.length === rooms.length && (
-                <p className="no-more-rooms">No more rooms to load</p>
-            )}
+
+            <button
+                onClick={() => navigate('/add-room')}
+                style={{
+                    marginBottom: '20px',
+                    padding: '10px 20px',
+                    backgroundColor: '#28a745',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                }}
+            >
+                Add New Room
+            </button>
+
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                    <tr>
+                        <th style={{ border: '1px solid #ddd', padding: '8px' }}>Room Number</th>
+                        <th style={{ border: '1px solid #ddd', padding: '8px' }}>Room Type</th>
+                        <th style={{ border: '1px solid #ddd', padding: '8px' }}>Status</th>
+                        <th style={{ border: '1px solid #ddd', padding: '8px' }}>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rooms.map((room) => (
+                        <tr key={room.roomID}>
+                            <td style={{ border: '1px solid #ddd', padding: '8px' }}>{room.roomNumber}</td>
+                            <td style={{ border: '1px solid #ddd', padding: '8px' }}>{room.roomTypeName}</td>
+                            <td style={{ border: '1px solid #ddd', padding: '8px' }}>{room.status}</td>
+                            <td style={{ border: '1px solid #ddd', padding: '8px' }}>
+                                <button
+                                    onClick={() => navigate(`/edit-room/${room.roomID}`)}
+                                    style={{
+                                        marginRight: '10px',
+                                        padding: '5px 10px',
+                                        backgroundColor: '#ffc107',
+                                        color: 'black',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    onClick={() => handleDelete(room.roomID)}
+                                    style={{
+                                        padding: '5px 10px',
+                                        backgroundColor: '#dc3545',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
-};
+}
 
 export default RoomList;

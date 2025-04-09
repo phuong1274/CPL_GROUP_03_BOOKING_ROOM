@@ -1,3 +1,189 @@
+=======
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.Development.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\spa.proxy.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.staticwebassets.endpoints.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.exe
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.deps.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.runtimeconfig.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.pdb
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Core.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Identity.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Humanizer.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Mono.TextTemplating.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.ClientModel.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.CodeDom.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Convention.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Hosting.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Runtime.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.TypedParts.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Drawing.Common.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Formats.Asn1.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.IO.Pipelines.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Memory.Data.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Runtime.Caching.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Security.Permissions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Text.Json.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Windows.Extensions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.AssemblyReference.cache
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\spa.proxy.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.GeneratedMSBuildEditorConfig.editorconfig
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfoInputs.cache
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfo.cs
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.CoreCompileInputs.cache
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cs
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cache
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.sourcelink.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\scopedcss\bundle\BookingRoom.Server.styles.css
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.development.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssets.props
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.build.BookingRoom.Server.props
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BookingRoom.Server.props
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BookingRoom.Server.props
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.pack.json
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingR.8C5F99C8.Up2Date
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\refint\BookingRoom.Server.dll
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.pdb
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
+K:\G3\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\spa.proxy.json
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.Development.json
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.json
@@ -6,38 +192,14 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.runtimeconfig.json
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.pdb
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.AssemblyReference.cache
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\spa.proxy.json
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.GeneratedMSBuildEditorConfig.editorconfig
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfoInputs.cache
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfo.cs
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.CoreCompileInputs.cache
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cs
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cache
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.sourcelink.json
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.json
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.development.json
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssets.props
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.build.BookingRoom.Server.props
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BookingRoom.Server.props
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BookingRoom.Server.props
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.pack.json
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\scopedcss\bundle\BookingRoom.Server.styles.css
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingR.8C5F99C8.Up2Date
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\refint\BookingRoom.Server.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.pdb
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Core.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Identity.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Humanizer.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -75,9 +237,13 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.ClientModel.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.CodeDom.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.AttributedModel.dll
@@ -176,191 +342,26 @@ E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoo
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.Development.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\appsettings.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\spa.proxy.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.staticwebassets.endpoints.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.exe
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.deps.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.runtimeconfig.json
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BookingRoom.Server.pdb
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Core.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Azure.Identity.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Humanizer.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Build.Locator.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Mono.TextTemplating.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.ClientModel.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.CodeDom.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.AttributedModel.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Convention.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Hosting.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.Runtime.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Composition.TypedParts.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Drawing.Common.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Formats.Asn1.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.IO.Pipelines.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Memory.Data.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Runtime.Caching.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Security.Permissions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Text.Encodings.Web.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Text.Json.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\System.Windows.Extensions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-S:\New folder\BookingRoom\BookingRoom.Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.AssemblyReference.cache
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\spa.proxy.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.GeneratedMSBuildEditorConfig.editorconfig
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfoInputs.cache
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfo.cs
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.CoreCompileInputs.cache
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cs
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cache
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.sourcelink.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\scopedcss\bundle\BookingRoom.Server.styles.css
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.development.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssets.props
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.build.BookingRoom.Server.props
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BookingRoom.Server.props
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BookingRoom.Server.props
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.pack.json
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingR.8C5F99C8.Up2Date
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.dll
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\refint\BookingRoom.Server.dll
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.pdb
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
-S:\New folder\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.AssemblyReference.cache
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\spa.proxy.json
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.GeneratedMSBuildEditorConfig.editorconfig
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfoInputs.cache
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.AssemblyInfo.cs
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.csproj.CoreCompileInputs.cache
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cs
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.MvcApplicationPartsAssemblyInfo.cache
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.sourcelink.json
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.build.json
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.development.json
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.BookingRoom.Server.Microsoft.AspNetCore.StaticWebAssets.props
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.build.BookingRoom.Server.props
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BookingRoom.Server.props
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BookingRoom.Server.props
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\staticwebassets.pack.json
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\scopedcss\bundle\BookingRoom.Server.styles.css
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingR.8C5F99C8.Up2Date
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\refint\BookingRoom.Server.dll
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.pdb
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\BookingRoom.Server.genruntimeconfig.cache
+E:\FU Learning\2025\SPRING2025\Mock_Project\CPL_GROUP_03_BOOKING_ROOM\BookingRoom\BookingRoom.Server\obj\Debug\net8.0\ref\BookingRoom.Server.dll

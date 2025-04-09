@@ -174,7 +174,7 @@ export const getMediaByRoomId = async (roomId) => {
 export const addMedia = async (mediaData) => {
     try {
         const response = await api.post('/roommedia', {
-            RoomID: mediaData.roomID,
+            RoomID: mediaData.roomID, 
             Media_Link: mediaData.media_Link,
             Description: mediaData.description,
             MediaType: mediaData.mediaType,

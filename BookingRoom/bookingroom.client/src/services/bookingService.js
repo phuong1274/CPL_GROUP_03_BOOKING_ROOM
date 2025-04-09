@@ -63,10 +63,13 @@ export const checkInBooking = async (id) => {
 
 // Check-out 1 booking
 export const checkOutBooking = async (id) => {
+    console.log('checkOutBooking called with ID:', id); // Debug log
     try {
         const response = await api.put(`/booking/${id}/checkout`);
+        console.log('checkOutBooking response:', response.data); // Debug log
         return response.data;
     } catch (error) {
+        console.error('Error in checkOutBooking:', error); // Debug log
         const status = error.response?.status || 'unknown';
         throw new Error(
             error.response?.data?.Error || error.message || `Failed to check out booking (Status: ${status})`

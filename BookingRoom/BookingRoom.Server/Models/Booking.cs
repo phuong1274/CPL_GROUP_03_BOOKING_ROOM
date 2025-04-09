@@ -23,13 +23,9 @@ public partial class Booking
 
     public DateTime? UpdatedAt { get; set; }
 
-    public int? StaffId { get; set; }
-
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     public virtual Room? Room { get; set; }
-
-    public virtual User? Staff { get; set; }
 
     public virtual User? User { get; set; }
 }
