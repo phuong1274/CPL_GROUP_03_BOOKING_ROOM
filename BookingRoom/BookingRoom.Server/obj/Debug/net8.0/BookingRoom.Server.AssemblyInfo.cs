@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+070b69c8e27e3593ab70544cd93d4b11e0244583")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+393c360895ddf753119a7f0d574cdf10b9ef4c5e")]
->>>>>>> origin/kien
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a89ea1a3858e3508ac37be41e819a3e2fc4578a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

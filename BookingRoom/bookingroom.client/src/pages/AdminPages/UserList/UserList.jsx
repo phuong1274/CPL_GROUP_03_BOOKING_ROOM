@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUsers, updateUserStatus } from '../../../services/api';
+import { getUsers, updateUserStatus } from '../../../services/authService';
 import styles from './userList.module.css'; 
 
 const UserList = () => {

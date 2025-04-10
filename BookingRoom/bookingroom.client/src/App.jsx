@@ -1,21 +1,21 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
-import UserList from './pages/UserList';
-import UserDetail from './pages/UserDetail';
-import RoomList from './pages/RoomList';
-import RoomType from './pages/RoomType';
+import UserList from './pages/AdminPages/UserList/UserList';
+import UserDetail from './pages/AdminPages/UserDetail/UserDetail'
+import RoomList from './pages/AdminPages/RoomList/RoomList';
+import RoomType from './pages/AdminPages/RoomType/RoomType';
 import AddRoom from './pages/AddRoom';
 import EditRoom from './pages/EditRoom';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Login from './pages/UserPages/Login/Login';
+import Register from './pages/UserPages/Register/Register';
 import BookingList from './pages/BookingList';
 import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
 import RevenueReport from './pages/RevenueReport';
 import './App.css';
-
 
 class ErrorBoundary extends React.Component {
     state = { hasError: false };

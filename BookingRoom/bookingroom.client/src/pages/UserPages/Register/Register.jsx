@@ -1,12 +1,7 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD:BookingRoom/bookingroom.client/src/pages/Register/Register.jsx
-import { register } from '../../services/authService';
-import { useAuth } from '../../context/AuthContext';
-=======
-import { register } from '../../../services/api';
+import { register } from '../../../services/authService';
 import { useAuth } from '../../../context/AuthContext';
->>>>>>> origin/kien:BookingRoom/bookingroom.client/src/pages/UserPages/Register/Register.jsx
 import styles from './Register.module.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 

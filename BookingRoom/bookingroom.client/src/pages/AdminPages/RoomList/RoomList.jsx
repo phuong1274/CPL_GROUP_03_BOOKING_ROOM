@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../services/roomService';
+import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../../../services/roomService';
 
 function RoomList() {
     const [rooms, setRooms] = useState([]);

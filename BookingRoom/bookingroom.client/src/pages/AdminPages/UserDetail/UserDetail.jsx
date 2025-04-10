@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getUserById } from '../../../services/api.js';
+import { getUserById } from '../../../services/authService';
 import styles from './UserDetail.module.css'; 
 
 const UserDetail = () => {
