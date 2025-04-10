@@ -25,7 +25,18 @@ namespace BookingRoom.Server.Controllers
             _logger = logger;
         }
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="roomNumber"></param>
+        /// <param name="username"></param>
+        /// <param name="checkInDate"></param>
+        /// <param name="checkOutDate"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetBookings(
              [FromQuery] int page = 1,
@@ -116,28 +127,112 @@ namespace BookingRoom.Server.Controllers
         }
 
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/checkin")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CheckIn(int id)
         {
             try
             {
-                
-                var result = await _service.CheckInAsync(id);
-                if (!result)
+                var (success, message) = await _service.CheckInAsync(id);
+
+                if (!success)
                 {
-                    _logger.LogWarning("Failed to check in booking {BookingId}: Invalid status", id);
-                    return BadRequest(new { Error = "Invalid status for check-in" });
+                    _logger.LogWarning("Check-in failed for booking {BookingId}: {Message}", id, message);
+
+                    
+                    var errorResponse = new
+                    {
+                        success = false,
+                        message = message,
+                        error = new
+                        {
+                            code = GetErrorCode(message),
+                            details = message,
+                          
+                            metadata = GetErrorMetadata(message, id)
+                        }
+                    };
+
+                    return BadRequest(errorResponse);
                 }
-                return Ok(new { Message = "Checked in successfully" });
+
+               
+                return Ok(new
+                {
+                    success = true,
+                    message = message,
+                    data = new
+                    {
+                        bookingId = id,
+                        status = "Confirmed",
+                        checkInDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                    }
+                });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error checking in booking {BookingId}", id);
-                return StatusCode(500, new { Error = "Failed to check in booking" });
+                _logger.LogError(ex, "System error during check-in for booking {BookingId}", id);
+                return StatusCode(500, new
+                {
+                    success = false,
+                    message = "A system error occurred during check-in",
+                    error = new
+                    {
+                        code = "SYSTEM_ERROR",
+                        details = "Please try again later or contact support",
+                        timestamp = DateTime.UtcNow.ToString("o")
+                    }
+                });
             }
         }
 
+       
+        private static string GetErrorCode(string message)
+        {
+            return message switch
+            {
+                string s when s.Contains("Booking not found") => "BOOKING_NOT_FOUND",
+                string s when s.Contains("Cannot check-in") => "INVALID_STATUS",
+                string s when s.Contains("no check-in date") => "MISSING_CHECKIN_DATE",
+                string s when s.Contains("only allowed on or after") => "EARLY_CHECKIN",
+                string s when s.Contains("only allowed within 2 days") => "LATE_CHECKIN",
+                _ => "CHECKIN_FAILED"
+            };
+        }
+
+       
+        private static object GetErrorMetadata(string message, int bookingId)
+        {
+            if (message.Contains("only allowed on or after") || message.Contains("only allowed within 2 days"))
+            {
+                return new
+                {
+                    bookingId,
+                    suggestedAction = "Please verify your check-in date",
+                    supportContact = "support@hotel.com"
+                };
+            }
+
+            return new
+            {
+                bookingId,
+                timestamp = DateTime.UtcNow.ToString("o")
+            };
+        }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/checkout")]
         public async Task<IActionResult> CheckOut(int id)
         {

@@ -20,6 +20,11 @@ namespace BookingRoom.Server.Controllers
         }
 
         //====================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="loginDTO"></param>
+        /// <returns></returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
         {
@@ -90,6 +95,11 @@ namespace BookingRoom.Server.Controllers
 
 
         //====================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="registerDTO"></param>
+        /// <returns></returns>
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)

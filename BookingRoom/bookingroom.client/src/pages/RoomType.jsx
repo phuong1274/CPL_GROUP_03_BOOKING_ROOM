@@ -1,6 +1,12 @@
 ﻿import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRoomTypes, deleteRoomType, addRoomType, updateRoomType, getRoomTypeById } from '../services/roomService';
+import {
+    getRoomTypes,
+    deleteRoomType,
+    addRoomType,
+    updateRoomType,
+    getRoomTypeById
+} from '../services/roomService';
 
 function RoomType() {
     const [roomTypes, setRoomTypes] = useState([]);
@@ -18,18 +24,16 @@ function RoomType() {
     });
     const navigate = useNavigate();
 
-    // Fetch all room types
     const fetchRoomTypes = async () => {
         try {
             const data = await getRoomTypes();
             setRoomTypes(data);
-            setFilteredRoomTypes(data); // Initialize filtered list with all room types
+            setFilteredRoomTypes(data);
         } catch (err) {
             setError(err.message);
         }
     };
 
-    // Handle search
     const handleSearch = (e) => {
         const term = e.target.value.toLowerCase();
         setSearchTerm(term);
@@ -39,7 +43,6 @@ function RoomType() {
         setFilteredRoomTypes(filtered);
     };
 
-    // Handle delete
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this room type?')) {
             try {
@@ -52,16 +55,16 @@ function RoomType() {
         }
     };
 
-    // Handle edit
     const handleEdit = async (id) => {
         setIsLoading(true);
         try {
             const data = await getRoomTypeById(id);
+            console.log("Fetched roomType by ID:", data);
             setRoomType({
                 roomTypeName: data.roomTypeName,
                 description: data.description,
                 price: data.price,
-                validDate: data.validDate.split('T')[0]
+                validDate: data.validDate?.split('T')[0] || '',
             });
             setRoomTypeId(id);
             setIsModalOpen(true);
@@ -72,7 +75,6 @@ function RoomType() {
         }
     };
 
-    // Handle add
     const handleAdd = () => {
         setRoomType({
             roomTypeName: '',
@@ -84,13 +86,12 @@ function RoomType() {
         setIsModalOpen(true);
     };
 
-    // Close modal
     const handleCloseModal = () => {
         setIsModalOpen(false);
         setRoomTypeId(null);
+        setError(null);
     };
 
-    // Handle input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setRoomType(prev => ({
@@ -99,7 +100,6 @@ function RoomType() {
         }));
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -109,22 +109,23 @@ function RoomType() {
                 return;
             }
 
+            console.log('Submitting updateRoomType with ID:', roomTypeId);
+            console.log('Data being sent:', roomType);
+
+            const dataToSend = {
+                roomTypeName: roomType.roomTypeName,
+                description: roomType.description,
+                price: parseFloat(roomType.price),
+                validDate: roomType.validDate
+            };
+
             if (roomTypeId) {
-                await updateRoomType(roomTypeId, {
-                    roomTypeName: roomType.roomTypeName,
-                    description: roomType.description,
-                    price: roomType.price,
-                    validDate: roomType.validDate
-                });
+                await updateRoomType(roomTypeId, dataToSend);
             } else {
-                await addRoomType({
-                    roomTypeName: roomType.roomTypeName,
-                    description: roomType.description,
-                    price: roomType.price,
-                    validDate: roomType.validDate
-                });
+                await addRoomType(dataToSend);
             }
-            fetchRoomTypes();
+
+            await fetchRoomTypes();
             handleCloseModal();
         } catch (err) {
             setError(err.message);
@@ -132,7 +133,6 @@ function RoomType() {
         }
     };
 
-    // Load room types on component mount
     useEffect(() => {
         fetchRoomTypes();
     }, []);

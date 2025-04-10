@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getUserById } from '../services/api';
+import { getUserById } from '../services/authService';
 
 const UserDetail = () => {
     const { id } = useParams();
@@ -40,7 +40,6 @@ const UserDetail = () => {
                 <p><strong>Full Name:</strong> {user.fullName}</p>
                 <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
                 <p><strong>Role:</strong> {user.role}</p>
-                <p><strong>Points:</strong> {user.points}</p>
                 <p><strong>Status:</strong> {user.status}</p>
                 <p><strong>Create time:</strong> {user.createAt}</p>
             </div>

@@ -1,25 +1,6 @@
-﻿import axios from 'axios';
-// Tạo instance của axios
-const api = axios.create({
-    baseURL: 'https://localhost:7067/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
+﻿import api from './api';
 
-// Thêm interceptor để gắn token vào header
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
-
-// Hàm register
+// Register function
 export const register = async (registerData) => {
     try {
         const response = await api.post('/auth/register', registerData);
@@ -36,8 +17,8 @@ export const register = async (registerData) => {
         }
     }
 };
-
-// Hàm login
+ 
+// Login function
 export const login = async (loginData) => {
     try {
         const response = await api.post('/auth/login', {
@@ -49,23 +30,23 @@ export const login = async (loginData) => {
         if (error.response) {
             if (error.response.status === 400) {
                 if (error.response.data.login || error.response.data.password || error.response.data.error) {
-                    throw error.response.data; // Throw object lỗi trực tiếp
+                    throw error.response.data; 
                 } else {
-                    throw { Error: error.response.data.Error || 'Yêu cầu không hợp lệ' };
+                    throw { Error: error.response.data.Error || 'Invalid request' };
                 }
             } else if (error.response.status === 403) {
-                throw { error: error.response.data.error || 'Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ.' };
+                throw { error: error.response.data.error || 'Your account has been disabled. Please contact support.' };
             } else if (error.response.status === 500) {
-                throw { Error: error.response.data.Error || 'Lỗi server', Details: error.response.data.Details };
+                throw { Error: error.response.data.Error || 'Server error', Details: error.response.data.Details };
             }
         } else if (error.request) {
-            throw { error: 'Không nhận được phản hồi từ server. Vui lòng kiểm tra xem backend có đang chạy không.' };
+            throw { error: 'No response received from server. Please check if backend is running.' };
         }
-        throw { error: error.message || 'Đăng nhập thất bại' };
+        throw { error: error.message || 'Login failed' };
     }
 };
 
-// Hàm lấy danh sách người dùng
+// Function to get list of users
 export const getUsers = async (search = '', role = '', page = 1, pageSize = 10) => {
     try {
         const response = await api.get('/users', {
@@ -86,7 +67,7 @@ export const getUsers = async (search = '', role = '', page = 1, pageSize = 10) 
 };
 
 
-// Hàm lấy thông tin chi tiết người dùng
+// Function to get user details
 export const getUserById = async (id) => {
     try {
         const response = await api.get(`/users/${id}`);
@@ -104,6 +85,7 @@ export const getUserById = async (id) => {
     }
 };
 
+// Function to update user
 export const updateUserStatus = async (userId, status) => {
     try {
         const response = await api.put(`/users/${userId}/status`, { status });
@@ -111,20 +93,20 @@ export const updateUserStatus = async (userId, status) => {
     } catch (error) {
         if (error.response) {
             if (error.response.status === 405) {
-                throw new Error('Phương thức không được hỗ trợ. Vui lòng kiểm tra API endpoint.');
+                throw new Error('Method not supported. Please check API endpoint.');
             } else if (error.response.status === 404) {
-                throw new Error(error.response.data.error || 'Tài khoản không tồn tại');
+                throw new Error(error.response.data.error || 'Account does not exist');
             } else if (error.response.status === 500) {
-                throw new Error(error.response.data.error || 'Lỗi server');
+                throw new Error(error.response.data.error || 'Server error');
             } else if (error.response.status === 401) {
-                throw new Error('Không được phép truy cập. Vui lòng đăng nhập lại.');
+                throw new Error('Access not allowed. Please log in again.');
             } else if (error.response.status === 403) {
-                throw new Error('Bạn không có quyền thực hiện hành động này.');
+                throw new Error('You do not have permission to perform this action.');
             }
         } else if (error.request) {
-            throw new Error('Không nhận được phản hồi từ server. Vui lòng kiểm tra xem backend có đang chạy không.');
+            throw new Error('No response received from server. Please check if backend is running.');
         }
-        throw new Error(error.message || 'Cập nhật trạng thái thất bại');
+        throw new Error(error.message || 'Update status failed.');
     }
 };
 
@@ -134,6 +116,7 @@ export const setLogoutCallback = (callback) => {
     logoutCallback = callback;
 };
 
+//Logout function
 export const logout = () => {
     if (logoutCallback) {
         logoutCallback();

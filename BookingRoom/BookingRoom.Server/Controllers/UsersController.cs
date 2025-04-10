@@ -21,6 +21,17 @@ namespace BookingRoom.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        //==============================================================================================================
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="search"></param>
+        /// <param name="role"></param>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+
         [HttpGet]
         public async Task<IActionResult> GetUsers(
             [FromQuery] string search = "",
@@ -79,6 +90,13 @@ namespace BookingRoom.Server.Controllers
                 return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
             }
         }
+        
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
@@ -113,7 +131,12 @@ namespace BookingRoom.Server.Controllers
         }
 
         //==============================================================================================================
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="statusDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}/status")]
         public async Task<IActionResult> UpdateUserStatus(int id, [FromBody] StatusDTO statusDTO)
         {

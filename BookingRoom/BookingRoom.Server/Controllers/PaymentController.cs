@@ -22,6 +22,7 @@ namespace BookingRoom.Server.Controllers
             _logger = logger;
         }
 
+        //==============================================================================================================
         /// <summary>
         /// Processes a payment for a booking.
         /// </summary>
@@ -56,6 +57,7 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+        //==============================================================================================================
         /// <summary>
         /// Processes a refund for a booking.
         /// </summary>
@@ -90,6 +92,7 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+        //==============================================================================================================
         /// <summary>
         /// Adds a payment record for a booking.
         /// </summary>

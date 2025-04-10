@@ -26,7 +26,6 @@ namespace BookingRoom.Server.Repositories
                 .ToListAsync();
 
             _context.RoomMedia.RemoveRange(mediaList);
-            // Note: SaveChangesAsync should be called by UnitOfWork, not here
         }
         public async Task<RoomMedium> GetMediaByIdAsync(int mediaId)
         {

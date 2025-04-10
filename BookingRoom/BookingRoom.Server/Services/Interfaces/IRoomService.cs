@@ -11,5 +11,7 @@ namespace BookingRoom.Server.Services.Interfaces
         Task<RoomDTO> AddRoomAsync(RoomDTO roomDTO);
         Task UpdateRoomAsync(int roomId, RoomDTO roomDTO);
         Task DeleteRoomAsync(int roomId);
+        Task UpdateRoomStatusAsync(int roomId, string newStatus);
+
     }
 }

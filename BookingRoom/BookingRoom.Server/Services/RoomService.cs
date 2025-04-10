@@ -134,5 +134,40 @@ namespace BookingRoom.Server.Services
 
             await _unitOfWork.Rooms.DeleteRoomAsync(roomId);
         }
+    
+
+    public async Task UpdateRoomStatusAsync(int roomId, string newStatus)
+    {
+        try
+        {
+           
+            if (string.IsNullOrEmpty(newStatus) || !new[] { "Available", "Booked", "Maintenance" }.Contains(newStatus))
+            {
+                throw new ArgumentException($"Invalid room status: {newStatus}. Must be one of: Available, Booked, UnderMaintenance.");
+            }
+
+            // Fetch the room
+            var room = await _unitOfWork.Rooms.GetRoomByIdAsync(roomId);
+            if (room == null)
+            {
+                throw new KeyNotFoundException($"Room with ID {roomId} not found.");
+            }
+
+            // Update the status
+            room.Status = newStatus;
+            await _unitOfWork.Rooms.UpdateRoomAsync(room);
+            await _unitOfWork.SaveChangesAsync();
+           
+        }
+        catch (Exception ex)
+        {
+            throw new ApplicationException($"Failed to update status for room with ID {roomId}.", ex);
+        }
+    
+}
     }
+
+
+
+
 }

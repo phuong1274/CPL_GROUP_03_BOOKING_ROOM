@@ -1,0 +1,152 @@
+﻿.loginPageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    /*    background-image: linear-gradient(to bottom, rgba(50, 0, 80, 0.7), rgba(50, 0, 80, 0.7)), url('../../assets/Login_Register/bg_login_register.jpg');*/
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/Login_Register/bg_login_register.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loginBox {
+    text-align: center;
+    color: white;
+    width: 400px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 30px;
+}
+
+    .loginBox h2 {
+        font-size: 42px;
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+
+.inputGroup {
+    margin: 30px 0;
+    position: relative;
+}
+
+    .inputGroup label {
+        display: none;
+    }
+
+    .inputGroup input {
+        width: 100%;
+        padding: 12px 12px 12px 50px;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        background: transparent;
+        color: white;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+        .inputGroup input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+
+        .inputGroup input:focus::placeholder {
+            opacity: 0;
+        }
+
+        .inputGroup input[name="login"],
+        .inputGroup input[name="password"] {
+            background: none;
+            position: relative;
+        }
+
+.inputWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    pointer-events: none;
+}
+
+    .inputIcon::after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.7);
+        margin-left: 5px;
+    }
+
+.errorMessage,
+.errorMessageField {
+    color: red;
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+.inputError {
+    border: 2px solid red !important;
+}
+
+.forgotPassword {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+    .registerButton:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+
+.loginButton {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+    .loginButton:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
