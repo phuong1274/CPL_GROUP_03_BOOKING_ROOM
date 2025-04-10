@@ -1,24 +1,4 @@
-﻿import axios from 'axios';
-
-// Tạo instance của axios
-const api = axios.create({
-    baseURL: 'https://localhost:7067/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-
-// Thêm interceptor để gắn token vào header
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
+﻿import api from './api';
 
 // Process a payment for a booking
 export const processPayment = async (bookingId, amount) => {

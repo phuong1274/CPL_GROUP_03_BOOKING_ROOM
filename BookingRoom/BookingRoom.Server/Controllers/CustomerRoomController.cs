@@ -28,12 +28,21 @@ namespace BookingRoom.Server.Controllers
             _logger = logger;
             _roomMediaService = roomMediaService;
         }
-        [HttpGet]
+
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="roomTypeId"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetRooms(
-    [FromQuery] string? status = null,
-    [FromQuery] int? roomTypeId = null,
-    [FromQuery] DateTime? date = null)
+        [FromQuery] string? status = null,
+        [FromQuery] int? roomTypeId = null,
+        [FromQuery] DateTime? date = null)
         {
             try
             {
@@ -100,7 +109,12 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("roomtype/{id}")]
         public async Task<IActionResult> GetRoomType(int id)
         {
@@ -120,7 +134,11 @@ namespace BookingRoom.Server.Controllers
             return Ok(roomTypeDTO);
         }
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("roomtype")]
         public async Task<IActionResult> GetRoomTypes()
         {
@@ -158,7 +176,12 @@ namespace BookingRoom.Server.Controllers
         }
 
 
-        //=========================================
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         [HttpPost("book")]
         public async Task<IActionResult> BookRoom([FromBody] BookingDTO dto)
         {
@@ -172,7 +195,6 @@ namespace BookingRoom.Server.Controllers
 
                 if (!int.TryParse(userIdClaim, out int userId))
                 {
-                    // Nếu không parse được, bạn có thể return lỗi, hoặc xử lý userIdClaim string tùy ý
                     return BadRequest(new { error = "Invalid user ID format." });
                 }
 
@@ -193,7 +215,7 @@ namespace BookingRoom.Server.Controllers
 
                 // Create booking with default 1-night stay
                 var checkInDate = dto.CheckInDate;
-                var checkOutDate = checkInDate.AddDays(1); // Automatically set checkout as next day
+                var checkOutDate = checkInDate.AddDays(1); 
                 decimal pricePerDay = roomType.Price ?? 0;
                 decimal totalAmount = pricePerDay; // For 1 night
 

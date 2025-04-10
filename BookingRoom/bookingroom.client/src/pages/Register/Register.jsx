@@ -1,6 +1,6 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../../services/api';
+import { register } from '../../services/authService';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Register.module.css'
 

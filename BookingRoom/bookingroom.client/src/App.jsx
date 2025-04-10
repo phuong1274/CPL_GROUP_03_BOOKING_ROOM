@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { setLogoutCallback } from './services/api';
+import { setLogoutCallback } from './services/authService';
 import UserList from './pages/UserList';
 import UserDetail from './pages/UserDetail';
 import RoomList from './pages/RoomList';
@@ -13,9 +13,10 @@ import Register from './pages/Register/Register';
 import BookingList from './pages/BookingList';
 import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
+import RevenueReport from './pages/RevenueReport';
 import './App.css';
 
-// ErrorBoundary Component to catch rendering errors
+
 class ErrorBoundary extends React.Component {
     state = { hasError: false };
 
@@ -61,16 +62,19 @@ function Navbar() {
         navigate('/login');
     };
 
+    const isCustomer = token && !isAdmin(); // Customer if authenticated and not an admin
+    const isAdminUser = token && isAdmin(); // Admin if authenticated and has admin role
+
     return (
         <nav className="navbar">
             <div className="navbar-brand">
                 <h3>Hotel Booking</h3>
             </div>
             <div className="navbar-links">
-                {token && (
+                {isCustomer && (
                     <>
                         <button
-                            onClick={() => navigate('/CustomerRoom')}
+                            onClick={() => navigate('/available-rooms')}
                             className="nav-button"
                             aria-label="Navigate to Available Rooms"
                         >
@@ -85,7 +89,7 @@ function Navbar() {
                         </button>
                     </>
                 )}
-                {token && isAdmin() && (
+                {isAdminUser && (
                     <>
                         <button
                             onClick={() => navigate('/users')}
@@ -115,6 +119,13 @@ function Navbar() {
                         >
                             Bookings
                         </button>
+                        <button
+                            onClick={() => navigate('/revenue-report')}
+                            className="nav-button"
+                            aria-label="Navigate to Revenue Report"
+                        >
+                            Revenue Report
+                        </button>
                     </>
                 )}
                 {token && (
@@ -142,7 +153,7 @@ function Home() {
 }
 
 // ProtectedRoute Component
-function ProtectedRoute({ children, requireAdmin = false }) {
+function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false }) {
     const { token, isLoading, isAdmin } = useAuth();
     const [loadingTimeout, setLoadingTimeout] = useState(false);
 
@@ -170,6 +181,10 @@ function ProtectedRoute({ children, requireAdmin = false }) {
     }
 
     if (requireAdmin && !isAdmin()) {
+        return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
+    }
+
+    if (requireCustomer && isAdmin()) {
         return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
@@ -233,7 +248,7 @@ function AppContent() {
                         <Route
                             path="/my-booking"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute requireCustomer={true}>
                                     <MyBooking />
                                 </ProtectedRoute>
                             }
@@ -287,10 +302,18 @@ function AppContent() {
                             }
                         />
                         <Route
-                            path="/CustomerRoom"
+                            path="/available-rooms"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute requireCustomer={true}>
                                     <AvailableRooms />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/revenue-report"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <RevenueReport />
                                 </ProtectedRoute>
                             }
                         />

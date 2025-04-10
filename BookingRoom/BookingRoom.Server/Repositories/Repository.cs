@@ -20,6 +20,16 @@ namespace BookingRoom.Server.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
+        public virtual async Task<List<T>> GetAllAsync(IQueryable<T> query)
+        {
+            if (query == null)
+            {
+                throw new ArgumentNullException(nameof(query));
+            }
+            return await query.ToListAsync();
+        }
+
+
         public virtual async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);

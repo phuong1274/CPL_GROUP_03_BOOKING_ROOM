@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUsers, updateUserStatus } from '../services/api';
+import { getUsers, updateUserStatus } from '../services/authService';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -10,7 +10,7 @@ const UserList = () => {
     const [search, setSearch] = useState('');
     const [role, setRole] = useState('');
     const [error, setError] = useState(null);
-    const [successMessage, setSuccessMessage] = useState(null); // Thêm trạng thái cho thông báo thành công
+    const [successMessage, setSuccessMessage] = useState(null); 
     const navigate = useNavigate();
 
     const fetchUsers = async () => {

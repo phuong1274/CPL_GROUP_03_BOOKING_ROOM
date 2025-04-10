@@ -21,6 +21,13 @@ namespace BookingRoom.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {

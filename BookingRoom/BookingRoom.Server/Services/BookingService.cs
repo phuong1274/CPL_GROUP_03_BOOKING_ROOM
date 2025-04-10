@@ -43,33 +43,32 @@ namespace BookingRoom.Server.Services
         {
             try
             {
-                // Lấy thông tin booking từ database
+                
                 var booking = await _unitOfWork.Bookings.GetByIdAsync(bookingId);
                 if (booking == null)
                 {
                     return (false, "Booking not found");
                 }
 
-                // Kiểm tra trạng thái booking
                 if (booking.BookingStatus != "Pending")
                 {
                     return (false, $"Cannot check-in. Current status is '{booking.BookingStatus}'");
                 }
 
-                // Kiểm tra ngày check-in
+               
                 if (!booking.CheckInDate.HasValue)
                 {
                     return (false, "Invalid booking - no check-in date specified");
                 }
 
-                // Lấy ngày hiện tại (chỉ quan tâm đến phần ngày)
-                var currentDate = DateTime.Today; // Sử dụng Today thay vì Now.Date
+               
+                var currentDate = DateTime.Today; 
                 var checkInDate = booking.CheckInDate.Value.Date;
 
-                // Log thông tin để debug
+               
                 _logger.LogInformation($"Check-in validation - Current: {currentDate:yyyy-MM-dd}, Booking: {checkInDate:yyyy-MM-dd}");
 
-                // Kiểm tra điều kiện check-in
+               
                 if (currentDate < checkInDate)
                 {
                     return (false, $"Check-in is only allowed on or after {checkInDate:yyyy-MM-dd}");
@@ -80,9 +79,9 @@ namespace BookingRoom.Server.Services
                     return (false, $"Check-in is only allowed within 2 days after {checkInDate:yyyy-MM-dd}");
                 }
 
-                // Cập nhật trạng thái booking
-                booking.BookingStatus = "CheckedIn"; // Nên có trạng thái riêng cho đã check-in
-                booking.CheckInDate = DateTime.Now; // Thêm trường lưu thời điểm thực tế check-in
+                
+                booking.BookingStatus = "CheckedIn"; 
+                booking.CheckInDate = DateTime.Now; 
                 booking.UpdatedAt = DateTime.Now;
 
                 await _unitOfWork.Bookings.UpdateAsync(booking);
@@ -108,43 +107,38 @@ namespace BookingRoom.Server.Services
                     return false;
                 }
 
-                if (booking.BookingStatus != "Confirmed" && booking.BookingStatus != "CheckedIn") // Thêm trạng thái "CheckedIn" nếu có
+                if (booking.BookingStatus != "Confirmed" && booking.BookingStatus != "CheckedIn") 
                 {
                     _logger.LogWarning("Booking {BookingId} cannot be checked out: Current status is {Status}", bookingId, booking.BookingStatus);
                     return false;
                 }
 
-                // Kiểm tra ngày check-in và check-out hợp lệ
+                
                 if (!booking.CheckInDate.HasValue || !booking.CheckOutDate.HasValue)
                 {
                     _logger.LogWarning("Booking {BookingId} has invalid CheckInDate or CheckOutDate", bookingId);
                     return false;
                 }
 
-                // Tính số ngày ở (ít nhất 1 ngày)
+                
                 var stayDuration = (booking.CheckOutDate.Value.Date - booking.CheckInDate.Value.Date).Days;
                 if (stayDuration < 1)
-                    stayDuration = 1; // Đảm bảo tính ít nhất 1 ngày
-
-                // Lưu giá mỗi ngày vào biến tạm (nếu cần)
-                var pricePerDay = booking.TotalAmount; // Giả sử TotalAmount là giá/ngày
-
-                // Tính tổng tiền = số ngày ở * giá mỗi ngày
+                    stayDuration = 1;              
+                var pricePerDay = booking.TotalAmount; 
+                
                 booking.TotalAmount = stayDuration * pricePerDay;
 
-                // Cập nhật trạng thái và thời gian check-out
+                
                 booking.BookingStatus = "Completed";
                 booking.CheckOutDate = DateTime.Now;
                 booking.UpdatedAt = DateTime.Now;
 
-                // Cập nhật phòng về trạng thái "Available"
                 if (booking.RoomId.HasValue)
                 {
                     await _roomService.UpdateRoomStatusAsync(booking.RoomId.Value, "Available");
                     
                 }
 
-                // Lưu thay đổi vào database
                 await _unitOfWork.Bookings.UpdateAsync(booking);
                 var changesSaved = await _unitOfWork.SaveChangesAsync();
 
@@ -174,19 +168,16 @@ namespace BookingRoom.Server.Services
             var booking = await _unitOfWork.Bookings.GetByIdAsync(bookingId);
             if (booking == null || booking.BookingStatus != "Pending") return false;
 
-            // Update the booking status to "Cancelled"
             booking.BookingStatus = "Cancelled";
             booking.UpdatedAt = DateTime.Now;
-
-            // Get the associated room and update its status to "Available"
+         
             var room = await _unitOfWork.Rooms.GetRoomByIdAsync(booking.RoomId.GetValueOrDefault());
             if (room != null)
             {
                 room.Status = "Available";
-                await _unitOfWork.Rooms.UpdateRoomAsync(room); // Corrected method name
+                await _unitOfWork.Rooms.UpdateRoomAsync(room);
             }
 
-            // Update the booking
             await _unitOfWork.Bookings.UpdateAsync(booking);
             await _unitOfWork.SaveChangesAsync();
             return true;
