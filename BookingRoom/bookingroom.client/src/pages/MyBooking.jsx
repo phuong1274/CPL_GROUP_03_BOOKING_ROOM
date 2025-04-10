@@ -13,7 +13,7 @@ export default function MyBooking() {
         checkOutDate: '',
         status: ''
     });
-    const [cancellingId, setCancellingId] = useState(null); // Track which booking is being cancelled
+    const [cancellingId, setCancellingId] = useState(null); 
     const pageSize = 30;
     const navigate = useNavigate();
 

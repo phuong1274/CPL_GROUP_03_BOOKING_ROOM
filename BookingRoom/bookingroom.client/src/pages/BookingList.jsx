@@ -4,12 +4,13 @@ import {
     checkOutBooking,
     getAllBookings
 } from '../services/bookingService';
-import { getUserById, getRoomById } from '../services/api';
+import { getUserById} from '../services/authService';
+import {getRoomById } from '../services/roomService';
 
 export default function BookingList() {
     const [bookings, setBookings] = useState([]);
     const [error, setError] = useState(null);
-    const [successMessage, setSuccessMessage] = useState(null); // New state for success messages
+    const [successMessage, setSuccessMessage] = useState(null); 
     const [noResults, setNoResults] = useState(false);
     const [filters, setFilters] = useState({
         roomNumber: '',

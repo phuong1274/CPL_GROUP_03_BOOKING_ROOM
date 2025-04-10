@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../services/api';
+import { getRooms, deleteRoom, getRoomTypes, deleteMediaByRoomId } from '../../../services/roomService';
 
 function RoomList() {
     const [rooms, setRooms] = useState([]);
@@ -63,6 +63,7 @@ function RoomList() {
     };
 
     return (
+
         <div style={{ padding: '20px' }}>
             <h1>Room List</h1>
             {error && <p style={{ color: 'red' }}>{error}</p>}

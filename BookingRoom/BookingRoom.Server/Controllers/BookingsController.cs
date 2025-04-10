@@ -25,7 +25,18 @@ namespace BookingRoom.Server.Controllers
             _logger = logger;
         }
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="roomNumber"></param>
+        /// <param name="username"></param>
+        /// <param name="checkInDate"></param>
+        /// <param name="checkOutDate"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetBookings(
              [FromQuery] int page = 1,
@@ -116,7 +127,11 @@ namespace BookingRoom.Server.Controllers
         }
 
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/checkin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -131,7 +146,7 @@ namespace BookingRoom.Server.Controllers
                 {
                     _logger.LogWarning("Check-in failed for booking {BookingId}: {Message}", id, message);
 
-                    // Phân loại các message lỗi cụ thể từ service
+                    
                     var errorResponse = new
                     {
                         success = false,
@@ -140,7 +155,7 @@ namespace BookingRoom.Server.Controllers
                         {
                             code = GetErrorCode(message),
                             details = message,
-                            // Thêm metadata cho các trường hợp cụ thể
+                          
                             metadata = GetErrorMetadata(message, id)
                         }
                     };
@@ -148,7 +163,7 @@ namespace BookingRoom.Server.Controllers
                     return BadRequest(errorResponse);
                 }
 
-                // Response thành công
+               
                 return Ok(new
                 {
                     success = true,
@@ -178,7 +193,7 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-        // Helper method để xác định error code từ message
+       
         private static string GetErrorCode(string message)
         {
             return message switch
@@ -192,7 +207,7 @@ namespace BookingRoom.Server.Controllers
             };
         }
 
-        // Helper method để thêm metadata cho response lỗi
+       
         private static object GetErrorMetadata(string message, int bookingId)
         {
             if (message.Contains("only allowed on or after") || message.Contains("only allowed within 2 days"))
@@ -212,6 +227,12 @@ namespace BookingRoom.Server.Controllers
             };
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/checkout")]
         public async Task<IActionResult> CheckOut(int id)
         {

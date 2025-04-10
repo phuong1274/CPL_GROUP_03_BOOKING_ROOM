@@ -1,26 +1,6 @@
-﻿import axios from 'axios';
+﻿import api from './api';
 
-// Tạo instance của axios
-const api = axios.create({
-    baseURL: 'https://localhost:7067/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-
-// Thêm interceptor để gắn token vào header
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
-
-// Hàm upload nhiều file (ảnh hoặc video)
+// Upload media function
 export const uploadMedia = async (files) => {
     const formData = new FormData();
     files.forEach((file) => {
@@ -32,24 +12,20 @@ export const uploadMedia = async (files) => {
                 'Content-Type': 'multipart/form-data',
             },
         });
-        return response.data; // Trả về danh sách { url, type }
+        return response.data; 
     } catch (error) {
         throw new Error(error.response?.data || error.message || 'Failed to upload media');
     }
 };
 
-// Hàm lấy danh sách phòng
+// Method to get room list
 export const getRooms = async (queryParams = {}) => {
     try {
         const { roomNumber, status, roomTypeId } = queryParams;
         const params = new URLSearchParams();
-
-        // Thêm các tham số vào query string nếu có
         if (roomNumber) params.append('roomNumber', roomNumber);
         if (status) params.append('status', status);
         if (roomTypeId) params.append('roomTypeId', roomTypeId);
-
-        // Gọi API với query string
         const response = await api.get(`/room${params.toString() ? `?${params.toString()}` : ''}`);
         return response.data;
     } catch (error) {
@@ -57,7 +33,7 @@ export const getRooms = async (queryParams = {}) => {
     }
 };
 
-// Hàm lấy phòng theo ID
+// Method to get room by id
 export const getRoomById = async (id) => {
     try {
         const response = await api.get(`/room/${id}`);
@@ -67,22 +43,21 @@ export const getRoomById = async (id) => {
     }
 };
 
-// Hàm thêm phòng
+// Method to add room
 export const addRoom = async (roomData) => {
     try {
         const response = await api.post('/room', roomData);
-        return response.data; // { roomID, roomNumber, ... }
+        return response.data; 
     } catch (error) {
-        // ✅ Đọc lỗi từ backend
         const serverError = error.response?.data?.error || error.message || 'Unknown error';
         throw new Error(serverError);
     }
 };
 
-
+//Method to update room
 export const updateRoom = async (id, roomData) => {
     try {
-        // Transform data to match backend expectations
+       
         const payload = {
             RoomID: parseInt(id),
             RoomNumber: roomData.roomNumber,
@@ -91,11 +66,10 @@ export const updateRoom = async (id, roomData) => {
             StartDate: roomData.startDate ? new Date(roomData.startDate) : null,
             EndDate: roomData.endDate ? new Date(roomData.endDate) : null
         };
-
         const response = await api.put(`/room/${id}`, payload);
         return response.data;
     } catch (error) {
-        // Enhanced error handling
+       
         const errorMessage = error.response?.data?.toString() ||
             error.response?.statusText ||
             error.message ||
@@ -103,7 +77,7 @@ export const updateRoom = async (id, roomData) => {
         throw new Error(errorMessage);
     }
 };
-// Hàm xóa phòng
+// Method to delete room
 export const deleteRoom = async (id) => {
     try {
         await api.delete(`/room/${id}`);
@@ -112,7 +86,7 @@ export const deleteRoom = async (id) => {
     }
 };
 
-// Hàm lấy danh sách loại phòng
+// Method to get room type
 export const getRoomTypes = async () => {
     try {
         const response = await api.get('/roomtype');
@@ -122,7 +96,7 @@ export const getRoomTypes = async () => {
     }
 };
 
-// Hàm lấy loại phòng theo ID
+// Function to get room type by ID
 export const getRoomTypeById = async (id) => {
     try {
         const response = await api.get(`/roomtype/${id}`);
@@ -132,7 +106,7 @@ export const getRoomTypeById = async (id) => {
     }
 };
 
-// Hàm thêm loại phòng
+// Add room type function
 export const addRoomType = async (roomTypeData) => {
     try {
         const response = await api.post('/roomtype', roomTypeData);
@@ -141,10 +115,11 @@ export const addRoomType = async (roomTypeData) => {
         throw new Error(error.response?.data?.Error || error.message || 'Failed to add room type');
     }
 };
-
+// Update room type function
 export const updateRoomType = async (id, roomTypeData) => {
     const payload = {
         roomTypeID: id, 
+        roomTypeID: id,
         roomTypeName: roomTypeData.roomTypeName,
         description: roomTypeData.description,
         price: roomTypeData.price,
@@ -159,7 +134,7 @@ export const updateRoomType = async (id, roomTypeData) => {
     }
 };
 
-// Hàm xóa loại phòng
+// Delete room type function
 export const deleteRoomType = async (id) => {
     try {
         await api.delete(`/roomtype/${id}`);
@@ -168,7 +143,7 @@ export const deleteRoomType = async (id) => {
     }
 };
 
-// Hàm lấy media theo RoomID
+// Get media by roomid function
 export const getMediaByRoomId = async (roomId) => {
     try {
         const response = await api.get(`/roommedia/room/${roomId}`);
@@ -178,7 +153,7 @@ export const getMediaByRoomId = async (roomId) => {
     }
 };
 
-// Hàm thêm media
+// Add media function
 export const addMedia = async (mediaData) => {
     try {
         const response = await api.post('/roommedia', {
@@ -193,7 +168,7 @@ export const addMedia = async (mediaData) => {
     }
 };
 
-// Hàm xóa media
+// Delete media function
 export const deleteMedia = async (id) => {
     try {
         await api.delete(`/roommedia/${id}`);

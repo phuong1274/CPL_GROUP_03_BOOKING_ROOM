@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getRoomById, updateRoom, getRoomTypes, addMedia, deleteMedia, deleteMediaByRoomId } from '../services/api';
+import { getRoomById, updateRoom, getRoomTypes, addMedia, deleteMedia, deleteMediaByRoomId } from '../services/roomService';
 
 function RoomDetail() {
     const { id } = useParams();

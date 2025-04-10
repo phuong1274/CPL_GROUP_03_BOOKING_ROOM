@@ -1,28 +1,7 @@
-﻿import axios from 'axios';
-
-// Khởi tạo instance axios với baseURL và headers mặc định
-const api = axios.create({
-    baseURL: 'https://localhost:7067/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-});
-
-// Gắn token từ localStorage vào header Authorization trước mỗi request
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('token');
-        console.log('Token:', token); // 👈 Dòng này để in token ra console
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
+﻿import api from './api';
 
 // ==== USER ====
-
+// Get user detail
 export const getUserById = async (id) => {
     try {
         const response = await api.get(`/customer/users/${id}`);
@@ -41,7 +20,7 @@ export const getUserById = async (id) => {
 };
 
 // ==== ROOM ====
-
+// Get available room
 export const getAvailableRooms = async (queryParams = {}) => {
     try {
         const { roomTypeId, date } = queryParams;
@@ -58,6 +37,7 @@ export const getAvailableRooms = async (queryParams = {}) => {
     }
 };
 
+// Get room by ID
 export const getRoomById = async (id) => {
     try {
         const response = await api.get(`/customer/booking/${id}`);
@@ -67,6 +47,7 @@ export const getRoomById = async (id) => {
     }
 };
 
+// Get room type
 export const getRoomTypes = async () => {
     try {
         const response = await api.get('/CustomerRoom/roomtype');
@@ -76,6 +57,7 @@ export const getRoomTypes = async () => {
     }
 };
 
+// Get roomtype by id
 export const getRoomTypeById = async (id) => {
     try {
         const response = await api.get(`/CustomerRoom/roomtype/${id}`);
@@ -85,6 +67,7 @@ export const getRoomTypeById = async (id) => {
     }
 };
 
+// Get media by roomid
 export const getMediaByRoomId = async (roomId) => {
     try {
         const response = await api.get(`/CustomerRoom/roommedia/room/${roomId}`);
@@ -96,6 +79,7 @@ export const getMediaByRoomId = async (roomId) => {
 
 // ==== BOOKING ====
 
+// Gte customer booking list
 export const getMyBookings = async (params = {}) => {
     try {
         const response = await api.get('/customer/booking', { params });
@@ -108,6 +92,7 @@ export const getMyBookings = async (params = {}) => {
     }
 };
 
+// Customer cancel booking
 export const cancelBooking = async (id) => {
     try {
         const response = await api.put(`/customer/booking/${id}/cancel`);
@@ -120,6 +105,7 @@ export const cancelBooking = async (id) => {
     }
 };
 
+// Customer book room
 export const bookRoom = async (payload) => {
     try {
         const response = await api.post('/CustomerRoom/book', payload);

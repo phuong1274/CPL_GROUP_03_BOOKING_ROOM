@@ -20,6 +20,12 @@ namespace BookingRoom.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
+
+        //=================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetRoomTypes()
         {
@@ -50,6 +56,12 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoomType(int id)
         {
@@ -68,6 +80,13 @@ namespace BookingRoom.Server.Controllers
             };
             return Ok(roomTypeDTO);
         }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomTypeDTO"></param>
+        /// <returns></returns>
 
         [HttpPost]
         public async Task<IActionResult> AddRoomType([FromBody] RoomTypeDTO roomTypeDTO)
@@ -88,6 +107,14 @@ namespace BookingRoom.Server.Controllers
             await _unitOfWork.RoomTypes.AddRoomTypeAsync(roomType);
             return CreatedAtAction(nameof(GetRoomType), new { id = roomType.RoomTypeId }, roomType);
         }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="roomTypeDTO"></param>
+        /// <returns></returns>
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRoomType(int id, [FromBody] RoomTypeDTO roomTypeDTO)
@@ -116,6 +143,13 @@ namespace BookingRoom.Server.Controllers
             await _unitOfWork.RoomTypes.UpdateRoomTypeAsync(roomType);
             return NoContent();
         }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRoomType(int id)

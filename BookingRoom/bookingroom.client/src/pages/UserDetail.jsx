@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getUserById } from '../services/api';
+import { getUserById } from '../services/authService';
 
 const UserDetail = () => {
     const { id } = useParams();
