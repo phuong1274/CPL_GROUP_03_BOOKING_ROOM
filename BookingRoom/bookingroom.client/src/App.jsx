@@ -2,6 +2,7 @@
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/api';
+import Home from './pages/Home'
 import UserList from './pages/UserList';
 import UserDetail from './pages/UserDetail';
 import RoomList from './pages/RoomList';
@@ -124,14 +125,14 @@ function Navbar() {
 }
 
 // Home Component
-function Home() {
-    return (
-        <div className="home">
-            <h1>Welcome to the Home Page!</h1>
-            <p>You have successfully logged in.</p>
-        </div>
-    );
-}
+//function Home() {
+//    return (
+//        <div className="home">
+//            <h1>Welcome to the Home Page!</h1>
+//            <p>You have successfully logged in.</p>
+//        </div>
+//    );
+//}
 
 // ProtectedRoute Component
 function ProtectedRoute({ children, requireAdmin = false }) {
@@ -207,7 +208,7 @@ function AppContent() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route
-                            path="/"
+                            path="/home"
                             element={
                                 <ProtectedRoute>
                                     <Home />
