@@ -62,8 +62,8 @@ function Navbar() {
         navigate('/login');
     };
 
-    const isCustomer = token && !isAdmin(); // Customer if authenticated and not an admin
-    const isAdminUser = token && isAdmin(); // Admin if authenticated and has admin role
+    const isCustomer = token && !isAdmin(); 
+    const isAdminUser = token && isAdmin(); 
 
     return (
         <nav className="navbar">

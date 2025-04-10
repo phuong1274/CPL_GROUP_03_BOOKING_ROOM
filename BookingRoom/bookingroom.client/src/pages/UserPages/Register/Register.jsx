@@ -1,8 +1,14 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD:BookingRoom/bookingroom.client/src/pages/Register/Register.jsx
 import { register } from '../../services/authService';
 import { useAuth } from '../../context/AuthContext';
+=======
+import { register } from '../../../services/api';
+import { useAuth } from '../../../context/AuthContext';
+>>>>>>> origin/kien:BookingRoom/bookingroom.client/src/pages/UserPages/Register/Register.jsx
 import styles from './Register.module.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -125,61 +131,121 @@ const Register = () => {
     };
 
     return (
+
+
         <div className={styles.registerPageWrapper}>
             <div className={styles.registerBox}>
                 <h2>Register</h2>
                 {(errors.general || clientErrors.general) && (
-                    <div ref={errorRef} style={{ color: 'red' }}>
+                    <div ref={errorRef} style={{ color: 'red' }} className={styles.errorMessage}>
                         {errors.general || clientErrors.general}
                     </div>
                 )}
                 <form onSubmit={handleSubmit} noValidate>
                     <div className={styles.inputGroup}>
-                        <label>Username:</label>
-                        <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+                        {/*<label>Username:</label>*/}
+                        <div className={styles.inputWrapper}>
+                            <i className={`bi bi-person ${styles.inputIcon}`}></i>
+                            <input
+                                type="text"
+                                name="username"
+                                value={formData.username}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Username"
+                                className={clientErrors.username || errors.username ? styles.inputError : ''}
+                            />
+                        </div>
                         {(clientErrors.username || errors.username) && (
-                            <div style={{ color: 'red' }}>
+                            <div style={{ color: 'red' }} className={styles.errorMessageField}>
                                 {clientErrors.username || (Array.isArray(errors.username) ? errors.username[0] : errors.username)}
                             </div>
                         )}
                     </div>
                     <div className={styles.inputGroup}>
-                        <label>Email:</label>
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                        {/*<label>Email:</label>*/}
+                        <div className={styles.inputWrapper}>
+                            <i className={`bi bi-envelope ${styles.inputIcon}`}></i>
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Email"
+                                className={clientErrors.email || errors.email ? styles.inputError : ''}
+                            />
+                        </div>
                         {(clientErrors.email || errors.email) && (
-                            <div style={{ color: 'red' }}>
+                            <div style={{ color: 'red' }} className={styles.errorMessageField}>
                                 {clientErrors.email || (Array.isArray(errors.email) ? errors.email[0] : errors.email)}
                             </div>
                         )}
                     </div>
                     <div className={styles.inputGroup}>
-                        <label>Password:</label>
-                        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+                        {/*<label>Password:</label>*/}
+                        <div className={styles.inputWrapper}>
+                            <i className={`bi bi-lock ${styles.inputIcon}`}></i>
+                            <input
+                                type="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Password"
+                                className={clientErrors.password || errors.password ? styles.inputError : ''}
+                            />
+                        </div>
                         {(clientErrors.password || errors.password) && (
-                            <div style={{ color: 'red' }}>
+                            <div style={{ color: 'red' }} className={styles.errorMessageField}>
                                 {clientErrors.password || (Array.isArray(errors.password) ? errors.password[0] : errors.password)}
                             </div>
                         )}
                     </div>
                     <div className={styles.inputGroup}>
-                        <label>Full Name:</label>
-                        <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+                        {/*<label>Full Name:</label>*/}
+                        <div className={styles.inputWrapper}>
+                            <i className={`bi bi-person ${styles.inputIcon}`}></i>
+                            <input
+                                type="text"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Full Name"
+                                className={clientErrors.fullName || errors.fullName ? styles.inputError : ''}
+                            />
+                        </div>
                         {(clientErrors.fullName || errors.fullName) && (
-                            <div style={{ color: 'red' }}>
+                            <div style={{ color: 'red' }} className={styles.errorMessageField}>
                                 {clientErrors.fullName || (Array.isArray(errors.fullName) ? errors.fullName[0] : errors.fullName)}
                             </div>
                         )}
                     </div>
                     <div className={styles.inputGroup}>
-                        <label>Phone Number:</label>
-                        <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
+                        {/*<label>Phone Number:</label>*/}
+                        <div className={styles.inputWrapper}>
+                            <i className={`bi bi-telephone ${styles.inputIcon}`}></i>
+                            <input
+                                type="text"
+                                name="phoneNumber"
+                                value={formData.phoneNumber}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Phone Number"
+                                className={clientErrors.phoneNumber || errors.phoneNumber ? styles.inputError : ''}
+                            />
+                        </div>
                         {(clientErrors.phoneNumber || errors.phoneNumber) && (
-                            <div style={{ color: 'red' }}>
+                            <div style={{ color: 'red' }} className={styles.errorMessageField}>
                                 {clientErrors.phoneNumber || (Array.isArray(errors.phoneNumber) ? errors.phoneNumber[0] : errors.phoneNumber)}
                             </div>
                         )}
                     </div>
                     <button type="submit" className={styles.registerButton}>Register</button>
+                    <div className={styles.loginLink}>
+                        Already have an account? <a href="/login">Login</a>
+                    </div>
                 </form>
             </div>
         </div>

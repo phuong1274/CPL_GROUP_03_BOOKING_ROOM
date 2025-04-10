@@ -118,7 +118,11 @@ export const addRoomType = async (roomTypeData) => {
 // Update room type function
 export const updateRoomType = async (id, roomTypeData) => {
     const payload = {
+<<<<<<< HEAD
         roomTypeID: id, 
+=======
+        roomTypeID: id,
+>>>>>>> origin/kien
         roomTypeName: roomTypeData.roomTypeName,
         description: roomTypeData.description,
         price: roomTypeData.price,
