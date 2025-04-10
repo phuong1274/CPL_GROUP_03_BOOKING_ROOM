@@ -1,0 +1,66 @@
+/* Style the table to match the image */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+/* Style the "No bookings found" box */
+.no-data-box {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Style the select dropdowns to match the image */
+select {
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #b8860b; /* Golden border on focus to match your theme */
+}
+
+/* Style the chart container */
+.chart-container {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+    height: 400px; /* Fixed height for the chart */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .chart-container {
+        height: 300px; /* Smaller height on smaller screens */
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .no-data-box {
+        padding: 12px;
+    }
+}

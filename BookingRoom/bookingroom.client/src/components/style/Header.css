@@ -1,0 +1,49 @@
+.header {
+    background-color: #1a1a1a; /* Dark background, slightly lighter than pure black */
+    padding: 0.5rem 2rem; /* Padding for top/bottom and left/right */
+    display: flex;
+    justify-content: space-between; /* Space out contact info and links */
+    align-items: center; /* Vertically center content */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    height: 60px
+}
+
+.header-contact {
+    display: flex;
+    gap: 1.5rem; /* Space between phone and email */
+}
+
+.contact-item {
+    color: white;
+    font-size: 0.9rem; /* Slightly smaller text */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+    .contact-item i {
+        font-size: 1rem; /* Slightly larger icon */
+    }
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between links and separator */
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .header-link:hover {
+        color: #b8860b; /* Golden hover effect to match the navbar */
+    }
+
+.separator {
+    color: white;
+    font-size: 0.9rem;
+}

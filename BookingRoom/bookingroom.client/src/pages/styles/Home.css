@@ -44,29 +44,6 @@
     margin: 0 auto;
 }
 
-/* Form Group (Guests) */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-    .form-group label {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: white;
-        font-family: 'Lora', serif;
-    }
-
-    .form-group input,
-    .form-group select {
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-family: 'Lora', serif;
-        width: 200px
-    }
 /* Style cho nút Book Now */
 .book-now-btn {
     background-color: #b8860b;
@@ -79,22 +56,22 @@
     transition: background-color 0.3s;
 }
 
-    .book-now-btn:hover {
-        background-color: #daa520;
-    }
+.book-now-btn:hover {
+   background-color: #daa520;
+ }
 
 /* Rooms Section (Home Page) */
 .rooms-section {
-    margin-top: 150px;
+    margin-top: 250px;
     text-align: center;
     width: 100%; /* Full màn hình */
 }
 
-    .rooms-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 3.5rem;
-        color: #2c2c2c;
-    }
+.rooms-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    color: #2c2c2c;
+}
 
 .rooms-grid {
     display: grid;
@@ -112,28 +89,28 @@
     transition: transform 0.3s;
 }
 
-    .room-card:hover {
-        transform: translateY(-5px);
-    }
+.room-card:hover {
+    transform: translateY(-5px);
+}
 
-    .room-card img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-    }
+.room-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 
-    .room-card h3 {
-        font-size: 1.5rem;
-        margin: 1rem 0 0.5rem;
-        color: #2c2c2c;
-    }
+.room-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #2c2c2c;
+}
 
-    .room-card p {
-        font-family: 'Lora', serif;
-        font-size: 1rem;
-        color: #666;
-        padding: 0 1rem;
-    }
+.room-card p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #666;
+    padding: 0 1rem;
+}
 
 .book-link {
     display: inline-block;
@@ -143,31 +120,30 @@
     font-weight: 600;
 }
 
-    .book-link:hover {
-        text-decoration: underline;
-    }
+.book-link:hover {
+    text-decoration: underline;
+}
 
 /* Call to Action Section */
 .cta-section {
     text-align: center;
-    background-color: #f8f5f0;
     width: 100%; /* Full màn hình */
-    margin-top: 100px;
-    margin-bottom: 100px /* Loại bỏ margin mặc định */
+    margin-top: 250px;
+    margin-bottom: 250px /* Loại bỏ margin mặc định */
 }
 
-    .cta-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #2c2c2c;
-    }
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+ }
+.cta-section p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
 
-    .cta-section p {
-        font-family: 'Lora', serif;
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: #666;
-    }
+}
 
 .cta-buttons {
     display: flex;

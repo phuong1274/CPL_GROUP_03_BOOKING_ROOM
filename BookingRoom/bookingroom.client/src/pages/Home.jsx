@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+//import Header from '../components/Header'; // Import the Header component
 import Footer from '../components/Footer'; // Import the Footer component
 import './styles/Home.css';
 
@@ -55,19 +56,6 @@ const Home = () => {
                         <h1>Indulge in Luxury at InterContinental Hanoi Landmark72</h1>
                         <p>Experience the highest luxury hotel in Hanoi with panoramic views and world-class amenities.</p>
                         {/* Simplified Quick Booking Form */}
-                        <form className="quick-book-form" onSubmit={handleQuickBook}>
-                            <div className="form-group">
-                                <label>Guests</label>
-                                <select required>
-                                    <option value="">Select</option>
-                                    <option value="1">1 Guest</option>
-                                    <option value="2">2 Guests</option>
-                                    <option value="3">3 Guests</option>
-                                    <option value="4">4+ Guests</option>
-                                </select>
-                            </div>
-                            <button type="submit" className="book-now-btn">Book Now</button>
-                        </form>
                     </div>
                 </section>
 
