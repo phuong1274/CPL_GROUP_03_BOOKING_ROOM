@@ -1,5 +1,7 @@
 ﻿using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Threading.Tasks;
 
 namespace BookingRoom.Server.Repositories
 {
@@ -9,6 +11,9 @@ namespace BookingRoom.Server.Repositories
         private IRoomRepository? _roomRepository;
         private IBookingRepository? _bookingRepository;
         private IUserRepository? _userRepository;
+        public IRoomTypeRepository?  _roomTypes;
+        public IRoomMediaRepository? _roomMedia;
+        public IPaymentRepository? _payments;
         private bool _disposed = false;
 
         public UnitOfWork(HotelBookingDbContext context)
@@ -23,7 +28,29 @@ namespace BookingRoom.Server.Repositories
                 return _roomRepository ??= new RoomRepository(_context);
             }
         }
+        public IRoomRepository RoomRepository
+        {
+            get { return _roomRepository ??= new RoomRepository(_context); }
+        }
 
+        public IRoomTypeRepository RoomTypes
+        {
+            get
+            {
+                return _roomTypes ??= new RoomTypeRepository(_context);
+            }
+        }
+        public IRoomTypeRepository RoomTypeRepository
+        {
+            get { return _roomTypes ??= new RoomTypeRepository(_context); }
+        }
+        public IRoomMediaRepository RoomMedia
+        {
+            get
+            {
+                return _roomMedia ??= new RoomMediaRepository(_context);
+            }
+        }
         public IBookingRepository Bookings
         {
             get
@@ -40,9 +67,33 @@ namespace BookingRoom.Server.Repositories
             }
         }
 
+        public IPaymentRepository Payments
+        {
+            get
+            {
+                return _payments ??= new PaymentRepository(_context);
+            }
+        }
+
+
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
+        }
+
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        {
+            return await _context.Database.BeginTransactionAsync();
+        }
+
+        public async Task CommitTransactionAsync(IDbContextTransaction transaction)
+        {
+            await transaction.CommitAsync();
+        }
+
+        public async Task RollbackTransactionAsync(IDbContextTransaction transaction)
+        {
+            await transaction.RollbackAsync();
         }
 
         public void Dispose()

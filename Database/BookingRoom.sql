@@ -13,7 +13,9 @@ CREATE TABLE [User] (
     CreateAt DATETIME DEFAULT GETDATE(),
     FullName NVARCHAR(255),
     Points INT DEFAULT 0,
-	Role NVARCHAR(50)
+    Role NVARCHAR(50),
+    Token NVARCHAR(255),
+    TokenExpiry DATETIME
 );
 
 -- Bảng RoomType

@@ -1,8 +1,13 @@
-﻿namespace BookingRoom.Server.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookingRoom.Server.DTOs
 {
     public class LoginDTO
     {
-        public string Login { get; set; } = string.Empty; 
-        public string Password { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Email or Username is required")]
+        public string login { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        public string password { get; set; } = string.Empty;
     }
 }

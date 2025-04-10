@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BookingRoom",
-    "\\BookingRoom\\bookingroom.client",
-    "\\BookingRoom\\bookingroom.client\\src",
-    "\\BookingRoom\\bookingroom.client\\src\\components",
-    "\\BookingRoom\\bookingroom.client\\src\\components\\style",
-    "\\BookingRoom\\bookingroom.client\\src\\context",
-    "\\BookingRoom\\bookingroom.client\\src\\pages",
-    "\\BookingRoom\\bookingroom.client\\src\\pages\\styles",
-    "\\BookingRoom\\bookingroom.client\\src\\services"
+    ""
   ],
-  "SelectedNode": "\\BookingRoom\\bookingroom.client\\src\\pages\\Login.jsx",
+  "SelectedNode": "\\BookingRoom.sln",
   "PreviewInSolutionExplorer": false
 }
