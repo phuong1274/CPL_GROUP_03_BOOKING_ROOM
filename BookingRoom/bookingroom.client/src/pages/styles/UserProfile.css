@@ -1,0 +1,71 @@
+/* User Profile Page */
+.user-profile-page {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .user-profile-page h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #2c2c2c;
+    }
+
+    .user-profile-page p {
+        font-size: 1.2rem;
+        color: #555;
+        margin: 0.5rem 0;
+        font-weight: 500;
+        text-align: left
+    }
+
+.profile-links {
+    display: flex;
+    flex-direction: column; /* Arrange buttons in a vertical column */
+    align-items: center; /* Center buttons horizontally */
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    gap: 15px; /* Adjustable spacing between buttons */
+}
+
+.change-user-info-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #b8860b;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    width: 60%; /* Make button full-width within container */
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .change-user-info-link:hover {
+        background-color: #ce9a19;
+        color: whitesmoke;
+    }
+
+.book-link1 {
+    font-size: 14px;
+    color: #6a1b9a;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+    .book-link1:hover {
+        color: #4a0072;
+        text-decoration: underline;
+    }

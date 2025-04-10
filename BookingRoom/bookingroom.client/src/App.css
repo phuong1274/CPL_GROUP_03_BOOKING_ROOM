@@ -9,3 +9,7 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+.content-wrapper {
+    padding: 2rem; /* Apply padding to content below the navbar */
+}

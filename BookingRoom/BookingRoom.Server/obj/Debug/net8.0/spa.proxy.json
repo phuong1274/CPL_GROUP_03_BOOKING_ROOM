@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "S:\\New folder\\BookingRoom\\BookingRoom.Server\\..\\bookingroom.client",
+"WorkingDirectory": "D:\\FULearning\\Sp25_OJT\\New_final_pro\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\..\\bookingroom.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
