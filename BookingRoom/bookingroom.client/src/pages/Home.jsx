@@ -50,12 +50,12 @@ const Home = () => {
                         </button>
                         <button
                             onClick={() => {
-                                navigate('/edit-profile');
+                                navigate('/update-profile');
                                 setDropdownOpen(false);
                             }}
                             style={{ display: 'block', padding: '10px', width: '100%', textAlign: 'left' }}
                         >
-                            Edit Profile
+                            Update Profile
                         </button>
                     </div>
                 )}

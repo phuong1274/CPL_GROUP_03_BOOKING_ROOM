@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { login as loginService } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import styles from './Login.module.css'; 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
     const [formData, setFormData] = useState({ login: '', password: '' });
@@ -34,7 +34,9 @@ const Login = () => {
             setErrors(newErrors);
         }
     }, [formData, login, navigate]);
-
+    const handleForgotPassword = useCallback(() => {
+        navigate('/forgot-password');
+    }, [navigate]);
     return (
         <div className={styles.loginPageWrapper}>
             <div className={styles.loginBox}>
@@ -61,6 +63,16 @@ const Login = () => {
                         </div>
                     ))}
                     <button type="submit" className={styles.loginButton}>Login</button>
+                    {/* Centered Forgot Password with Bootstrap */}
+                    <div className="text-center">
+                        <span
+                            onClick={handleForgotPassword}
+                            className={`${styles.forgotPasswordLink} d-inline-block`}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Forgot Password?
+                        </span>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,6 +1,7 @@
 ﻿import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { forgotPassword } from '../../services/api.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -31,6 +32,7 @@ const ForgotPassword = () => {
         setError('');
         setEmailError('');
 
+        // Validate định dạng email phía client
         if (!validateEmail(email)) {
             setEmailError('Email sai định dạng');
             return;
@@ -38,13 +40,9 @@ const ForgotPassword = () => {
 
         try {
             const response = await forgotPassword(email);
-            setMessage(response.message);
+            setMessage(response); // response là chuỗi: "Reset link has been sent to your email."
         } catch (err) {
-            if (err.error === 'User with this email does not exist.') {
-                setError('User has not existed');
-            } else {
-                setError(err.error || 'Failed to send reset password email');
-            }
+            setError(err || 'Failed to send reset password email'); // err là chuỗi: "User with this email does not exist."
         }
     }, [email]);
 

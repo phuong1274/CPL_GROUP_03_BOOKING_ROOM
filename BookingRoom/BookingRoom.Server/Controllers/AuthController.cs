@@ -149,20 +149,7 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDTO registerDTO)
-        {
-            try
-            {
-                await _authService.RegisterAsync(registerDTO);
-                return Ok(new { Message = "Registration successful" });
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
+        
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO forgotPasswordDTO)
         {
@@ -196,7 +183,7 @@ namespace BookingRoom.Server.Controllers
         {
             try
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userId = int.Parse(User.FindFirst("id")?.Value);
                 await _authService.ChangePasswordAsync(userId, changePasswordDTO.OldPassword, changePasswordDTO.NewPassword);
                 return Ok("Password changed successfully.");
             }
@@ -206,21 +193,7 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-        [Authorize]
-        [HttpPut("update-profile")]
-        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDTO updateProfileDTO)
-        {
-            try
-            {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                var updatedUser = await _authService.UpdateProfileAsync(userId, updateProfileDTO);
-                return Ok(updatedUser);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+         
     }
 }
 

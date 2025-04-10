@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RVv8K8W22j0=",
+  "dgSpecHash": "GXQbfavoSiY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\BookingRoom.Server.csproj",
   "expectedPackageFiles": [
@@ -8,8 +8,8 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.3\\microsoft.aspnetcore.authentication.jwtbearer.8.0.3.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.14\\microsoft.aspnetcore.spaproxy.8.0.14.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.15\\microsoft.aspnetcore.spaproxy.8.0.15.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",
@@ -96,12 +96,6 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1603",
       "level": "Warning",

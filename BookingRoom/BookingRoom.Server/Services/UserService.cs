@@ -120,5 +120,30 @@ namespace BookingRoom.Server.Services
 
             return await _unitOfWork.Users.GetByEmailAsync(email);
         }
+
+        public async Task<object> UpdateProfileAsync(int userId, UpdateProfileDTO profileDTO)
+        {
+           
+
+            var user = await _unitOfWork.Users.GetByIdAsync(userId);
+            if (user == null)
+            {
+                throw new KeyNotFoundException($"User with ID {userId} not found.");
+            }
+
+            user.Username = profileDTO.Username;
+            user.FullName = profileDTO.FullName;
+            user.PhoneNumber = profileDTO.PhoneNumber;
+            user.Email = profileDTO.Email;
+            await _unitOfWork.SaveChangesAsync();
+
+            return new
+            {
+                username = user.Username,
+                fullName = user.FullName,
+                phoneNumber = user.PhoneNumber,
+                email = user.Email
+            };
+        }
     }
 }

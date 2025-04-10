@@ -15,8 +15,10 @@ import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
 import './App.css';
 import Home from './pages/Home';
-import ChangePassword from './pages/ChangePassword';
-import EditProfile from './pages/EditProfile';
+import ChangePassword from './pages/ChangePassword/ChangePassword';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
+import ResetPassword from './pages/ResetPassword/ResetPassword';
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 
 // ErrorBoundary Component to catch rendering errors
 class ErrorBoundary extends React.Component {
@@ -135,14 +137,14 @@ function Navbar() {
 }
 
 // Home Component
-function Home() {
-    return (
-        <div className="home">
-            <h1>Welcome to the Home Page!</h1>
-            <p>You have successfully logged in.</p>
-        </div>
-    );
-}
+//function Home() {
+//    return (
+//        <div className="home">
+//            <h1>Welcome to the Home Page!</h1>
+//            <p>You have successfully logged in.</p>
+//        </div>
+//    );
+//}
 
 // ProtectedRoute Component
 function ProtectedRoute({ children, requireAdmin = false }) {
@@ -217,6 +219,9 @@ function AppContent() {
                     <Routes>
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/forgot-password" element={<ForgotPassword />} />
+                        <Route path="/reset-password/" element={<ResetPassword />} />
+
                         <Route
                             path="/"
                             element={
@@ -225,6 +230,25 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
+
+                        <Route
+                            path="/change-password"
+                            element={
+                                <ProtectedRoute>
+                                    <ChangePassword />
+                                </ProtectedRoute>
+                            }
+                        />
+
+                        <Route
+                            path="/update-profile"
+                            element={
+                                <ProtectedRoute>
+                                    <UpdateProfile />
+                                </ProtectedRoute>
+                            }
+                        />
+
                         <Route
                             path="/users"
                             element={

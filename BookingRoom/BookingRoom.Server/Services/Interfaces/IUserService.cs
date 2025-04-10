@@ -14,5 +14,7 @@ namespace BookingRoom.Server.Services.Interfaces
         Task DeleteUserAsync(int id);
         Task<User> GetByEmailOrUsernameAsync(string login);
         Task<User?> GetByEmailAsync(string email);
+        Task<object> UpdateProfileAsync(int userId, UpdateProfileDTO profileDTO);
+
     }
 }
