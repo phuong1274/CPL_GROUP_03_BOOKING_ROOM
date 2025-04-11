@@ -1,27 +1,9 @@
-<<<<<<< HEAD
-// components/Footer.jsx
 import React from 'react';
-=======
-ï»¿import React from 'react';
 import './style/Footer.css';
->>>>>>> origin/Manh_Hai
 
 const Footer = () => {
     return (
         <footer className="footer">
-<<<<<<< HEAD
-            <div className="footer-content">
-                {/* Contact Info */}
-                <div className="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><strong>Phone:</strong> +84 24 3698 8888</p>
-                    <p><strong>Email:</strong> <a href="mailto:info@intercontinentalhanoi.com">info@intercontinentalhanoi.com</a></p>
-                    <p><strong>Address:</strong> Keangnam Hanoi Landmark Tower, Plot E6, Cau Giay Urban Area, Hanoi, Vietnam</p>
-                </div>
-            </div>
-            <div className="footer-bottom">
-                <p>© 2025 InterContinental Hanoi Landmark72. All rights reserved.</p>
-=======
             {/* Social Media Section (Full Width) */}
             <div className="footer-social-top">
                 <p>Get connected with us on social networks:</p>
@@ -91,8 +73,7 @@ const Footer = () => {
 
             {/* Footer Bottom */}
             <div className="footer-bottom">
-                <p>Â© 2025 Your Company Name. All rights reserved.</p>
->>>>>>> origin/Manh_Hai
+                <p>© 2025 Your Company Name. All rights reserved.</p>
             </div>
         </footer>
     );

@@ -19,7 +19,6 @@ import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
 import RevenueReport from './pages/Revenue_Report/RevenueReport';
 import './App.css';
-import Home from './pages/Home';
 import ChangePassword from './pages/ChangePassword/ChangePassword';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
