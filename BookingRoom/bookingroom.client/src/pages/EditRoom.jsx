@@ -9,15 +9,14 @@ function RoomDetail() {
     const [newMediaLink, setNewMediaLink] = useState('');
     const [newMediaType, setNewMediaType] = useState('Image');
     const [roomTypes, setRoomTypes] = useState([]);
-    const [error, setError] = useState(null);
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const roomData = await getRoomById(id);
-                console.log('roomData:', roomData);
-                console.log('roomData.media:', roomData.media);
                 setRoom({
                     roomId: roomData.roomID,
                     roomNumber: roomData.roomNumber,
@@ -42,16 +41,101 @@ function RoomDetail() {
                 const roomTypesData = await getRoomTypes();
                 setRoomTypes(roomTypesData);
             } catch (err) {
-                setError(err.message);
+                setErrors({ general: err.response?.data?.message || err.message || 'Failed to fetch room data' });
             }
         };
 
         fetchData();
     }, [id]);
 
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!room.roomNumber.trim()) {
+            newErrors.roomNumber = 'Room number is required';
+        } else if (!/^\d+$/.test(room.roomNumber.trim())) {
+            newErrors.roomNumber = 'Room number must be a valid number (digits only)';
+        }
+
+        if (!room.roomTypeId) {
+            newErrors.roomTypeId = 'Room type is required';
+        }
+
+        if (!room.startDate) {
+            newErrors.startDate = 'Start date is required';
+        }
+
+        if (!room.endDate) {
+            newErrors.endDate = 'End date is required';
+        }
+
+        if (room.startDate && room.endDate) {
+            const start = new Date(room.startDate);
+            const end = new Date(room.endDate);
+            if (end <= start) {
+                newErrors.endDate = 'End date must be after start date';
+            }
+        }
+
+        if (!room.status) {
+            newErrors.status = 'Status is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setRoom((prev) => ({ ...prev, [name]: value }));
+
+        // Clear the error for the current field
+        setErrors((prev) => ({ ...prev, [name]: '' }));
+
+        // Real-time validation for each field
+        if (name === 'roomNumber') {
+            if (!value.trim()) {
+                setErrors((prev) => ({ ...prev, roomNumber: 'Room number is required' }));
+            } else if (!/^\d+$/.test(value.trim())) {
+                setErrors((prev) => ({ ...prev, roomNumber: 'Room number must be a valid number (digits only)' }));
+            }
+        }
+
+        if (name === 'roomTypeId') {
+            if (!value) {
+                setErrors((prev) => ({ ...prev, roomTypeId: 'Room type is required' }));
+            }
+        }
+
+        if (name === 'startDate') {
+            if (!value) {
+                setErrors((prev) => ({ ...prev, startDate: 'Start date is required' }));
+            } else if (room.endDate) {
+                const start = new Date(value);
+                const end = new Date(room.endDate);
+                if (end <= start) {
+                    setErrors((prev) => ({ ...prev, endDate: 'End date must be after start date' }));
+                }
+            }
+        }
+
+        if (name === 'endDate') {
+            if (!value) {
+                setErrors((prev) => ({ ...prev, endDate: 'End date is required' }));
+            } else if (room.startDate) {
+                const start = new Date(room.startDate);
+                const end = new Date(value);
+                if (end <= start) {
+                    setErrors((prev) => ({ ...prev, endDate: 'End date must be after start date' }));
+                }
+            }
+        }
+
+        if (name === 'status') {
+            if (!value) {
+                setErrors((prev) => ({ ...prev, status: 'Status is required' }));
+            }
+        }
     };
 
     const handleAddMediaLink = () => {
@@ -72,18 +156,19 @@ function RoomDetail() {
         const file = e.target.files[0];
         if (file) {
             const objectUrl = URL.createObjectURL(file);
-            const fileType = file.type.split('/')[0]; // 'image', 'video', 'audio'
-            const mediaType = fileType === 'image' ? 'Image' :
-                fileType === 'video' ? 'Video' :
-                    fileType === 'audio' ? 'Audio' : 'File';
+            const fileType = file.type.split('/')[0];
+            const mediaType =
+                fileType === 'image' ? 'Image' :
+                    fileType === 'video' ? 'Video' :
+                        fileType === 'audio' ? 'Audio' : 'File';
 
             setMediaItems([
                 ...mediaItems,
                 {
                     mediaId: `temp-${Date.now()}`,
                     mediaLink: objectUrl,
-                    file: file,
-                    mediaType: mediaType,
+                    file,
+                    mediaType,
                 },
             ]);
         }
@@ -92,12 +177,11 @@ function RoomDetail() {
     const handleDeleteMedia = async (index) => {
         const mediaItem = mediaItems[index];
 
-        if (mediaItem.mediaId && typeof mediaItem.mediaId === 'string' && !mediaItem.mediaId.startsWith('temp-')) {
+        if (mediaItem.mediaId && !mediaItem.mediaId.toString().startsWith('temp-')) {
             try {
                 await deleteMedia(mediaItem.mediaId);
             } catch (err) {
-                setError(err.message);
-                return;
+                setErrors({ general: err.response?.data?.message || err.message || 'Failed to delete media' }); return;
             }
         }
 
@@ -105,23 +189,24 @@ function RoomDetail() {
     };
 
     const handleSave = async () => {
+        if (!validateForm()) {
+            return;
+        }
+
         try {
             const roomDTO = {
                 RoomID: parseInt(id),
                 RoomNumber: room.roomNumber,
                 RoomTypeID: parseInt(room.roomTypeId),
-                description: room.description,
+                Description: room.description || '',
                 StartDate: new Date(room.startDate).toISOString().split('.')[0],
                 EndDate: new Date(room.endDate).toISOString().split('.')[0],
                 Status: room.status,
             };
 
-            await updateRoom(id, roomDTO);
-
-            // Delete all existing media first
+            // Capture the response from updateRoom
+            const updateResponse = await updateRoom(id, roomDTO);
             await deleteMediaByRoomId(id);
-
-            // Upload all current media items
             for (const item of mediaItems) {
                 if (item.file) {
                     await addMedia({
@@ -134,18 +219,31 @@ function RoomDetail() {
                     const mediaLink = item.mediaLink.replace('https://localhost:7067', '');
                     await addMedia({
                         roomId: parseInt(id),
-                        mediaLink: mediaLink,
+                        mediaLink,
                         description: '',
                         mediaType: item.mediaType,
                     });
                 }
             }
 
-            navigate('/rooms');
+            // Set success message from backend response
+            setErrors({});
+            setSuccessMessage(updateResponse.message || 'Room updated successfully');
+            setTimeout(() => {
+                setSuccessMessage('');
+                navigate('/rooms');
+            }, 2000);
         } catch (err) {
-            setError(err.message);
+            const errorMessage = err.response?.data?.message || err.message || 'Failed to save changes.';
+            if (errorMessage.toLowerCase().includes('room number already exists')) {
+                setErrors((prev) => ({ ...prev, roomNumber: 'Room number already exists' }));
+            } else {
+                setErrors((prev) => ({ ...prev, general: errorMessage }));
+            }
         }
     };
+
+
 
     const renderMediaPreview = (item) => {
         switch (item.mediaType) {
@@ -185,11 +283,41 @@ function RoomDetail() {
     };
 
     if (!room) return <div>Loading...</div>;
-
     return (
         <div style={{ padding: '20px' }}>
             <h1>Room Details</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {errors.general && (
+                <div style={{
+                    color: 'white',
+                    backgroundColor: '#dc3545',
+                    padding: '10px',
+                    borderRadius: '4px',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
+                    <span>{errors.general}</span>
+                    <button
+                        onClick={() => setErrors((prev) => ({ ...prev, general: '' }))}
+                        style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
+            {successMessage && (
+                <p style={{
+                    color: 'white',
+                    backgroundColor: '#28a745',
+                    padding: '10px',
+                    borderRadius: '4px',
+                    textAlign: 'center',
+                    marginBottom: '20px'
+                }}>
+                    {successMessage}
+                </p>
+            )}
 
             <div style={{ maxWidth: '500px', marginBottom: '20px' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -199,9 +327,19 @@ function RoomDetail() {
                         name="roomNumber"
                         value={room.roomNumber}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: errors.roomNumber ? '1px solid red' : '1px solid #ddd',
+                        }}
                         required
                     />
+                    {errors.roomNumber && (
+                        <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.roomNumber}
+                        </p>
+                    )}
                 </div>
 
                 <div style={{ marginBottom: '15px' }}>
@@ -210,14 +348,25 @@ function RoomDetail() {
                         name="roomTypeId"
                         value={room.roomTypeId}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: errors.roomTypeId ? '1px solid red' : '1px solid #ddd',
+                        }}
                     >
+                        <option value="">Select Room Type</option>
                         {roomTypes.map((type) => (
-                            <option key={type.roomTypeId} value={type.roomTypeId}>
+                            <option key={type.roomTypeID} value={type.roomTypeID}>
                                 {type.roomTypeName}
                             </option>
                         ))}
                     </select>
+                    {errors.roomTypeId && (
+                        <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.roomTypeId}
+                        </p>
+                    )}
                 </div>
 
                 <div style={{ marginBottom: '15px' }}>
@@ -226,13 +375,25 @@ function RoomDetail() {
                         name="status"
                         value={room.status}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: errors.status ? '1px solid red' : '1px solid #ddd',
+                        }}
                     >
+                        <option value="">Select Status</option>
                         <option value="Available">Available</option>
                         <option value="Booked">Booked</option>
                         <option value="Maintenance">Maintenance</option>
                     </select>
+                    {errors.status && (
+                        <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.status}
+                        </p>
+                    )}
                 </div>
+
                 <div style={{ marginBottom: '15px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Description:</label>
                     <textarea
@@ -250,7 +411,6 @@ function RoomDetail() {
                     />
                 </div>
 
-
                 <div style={{ marginBottom: '15px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Start Date:</label>
                     <input
@@ -258,9 +418,19 @@ function RoomDetail() {
                         name="startDate"
                         value={room.startDate}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: errors.startDate ? '1px solid red' : '1px solid #ddd',
+                        }}
                         required
                     />
+                    {errors.startDate && (
+                        <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.startDate}
+                        </p>
+                    )}
                 </div>
 
                 <div style={{ marginBottom: '15px' }}>
@@ -270,14 +440,23 @@ function RoomDetail() {
                         name="endDate"
                         value={room.endDate}
                         onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+                        style={{
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '4px',
+                            border: errors.endDate ? '1px solid red' : '1px solid #ddd',
+                        }}
                         required
                     />
+                    {errors.endDate && (
+                        <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
+                            {errors.endDate}
+                        </p>
+                    )}
                 </div>
             </div>
 
             <h2>Media</h2>
-
             <div style={{ marginBottom: '15px' }}>
                 <div style={{ marginBottom: '10px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Upload File:</label>

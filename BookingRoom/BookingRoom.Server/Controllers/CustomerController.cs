@@ -1,6 +1,7 @@
 ﻿using BookingRoom.Server.DTOs;
 using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
+using BookingRoom.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,14 @@ namespace BookingRoom.Server.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserService _userService;
 
-        public CustomerController(IUnitOfWork unitOfWork)
+        public CustomerController(
+            IUnitOfWork unitOfWork,
+            IUserService userService)
         {
             _unitOfWork = unitOfWork;
+            _userService = userService;
         }
 
         //==============================================================================================================
@@ -57,6 +62,26 @@ namespace BookingRoom.Server.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
+            }
+        }
+
+        [HttpPut("update-profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDTO updateProfileDTO)
+        {
+            try
+            {
+                var idClaim = User.FindFirst("id")?.Value;
+                if (!int.TryParse(idClaim, out var userId))
+                {
+                    return Unauthorized(new { Error = "Invalid user ID in token" });
+                }
+
+                var updatedUser = await _userService.UpdateProfileAsync(userId, updateProfileDTO);
+                return Ok(updatedUser); // Trả về object từ UserService
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Error = ex.Message });
             }
         }
     }

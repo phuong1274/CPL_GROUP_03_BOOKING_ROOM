@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Collections.Generic;
+using BookingRoom.Server.Models;
 using BookingRoom.Server.Services;
 
 namespace BookingRoom.Server.Controllers
@@ -65,11 +66,16 @@ namespace BookingRoom.Server.Controllers
         /// <param name="files"></param>
         /// <returns></returns>
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadMedia(List<IFormFile> files)
+        public async Task<IActionResult> UploadMedia([FromForm] int RoomID, [FromForm] List<IFormFile> files)
         {
             if (files == null || files.Count == 0)
             {
                 return BadRequest("No files uploaded.");
+            }
+
+            if (RoomID <= 0)
+            {
+                return BadRequest("Invalid RoomID.");
             }
 
             try
@@ -80,7 +86,7 @@ namespace BookingRoom.Server.Controllers
                     Directory.CreateDirectory(uploadsFolder);
                 }
 
-                var fileUrls = new List<MediaFileResponse>();
+                var fileResponses = new List<MediaFileResponse>();
                 foreach (var file in files)
                 {
                     // Validate file type (image or video)
@@ -107,14 +113,26 @@ namespace BookingRoom.Server.Controllers
 
                     // Generate the URL to access the file
                     var fileUrl = $"/uploads/{fileName}";
-                    fileUrls.Add(new MediaFileResponse
+
+                    // Create a RoomMedium entry
+                    var roomMediaDTO = new RoomMediaDTO
+                    {
+                        RoomID = RoomID,
+                        Media_Link = fileUrl,
+                        Description = "", // You can add a description field to the form if needed
+                        MediaType = isImage ? "Image" : "Video",
+                    };
+
+                    var createdMedia = await _roomMediaService.AddMediaAsync(roomMediaDTO);
+
+                    fileResponses.Add(new MediaFileResponse
                     {
                         Url = fileUrl,
-                        Type = isImage ? "Image" : "Video"
+                        Type = isImage ? "Image" : "Video",
                     });
                 }
 
-                return Ok(fileUrls);
+                return Ok(fileResponses);
             }
             catch (Exception ex)
             {
@@ -132,6 +150,13 @@ namespace BookingRoom.Server.Controllers
         public async Task<IActionResult> DeleteMediaByRoomId(int roomId)
         {
             await _roomMediaService.DeleteMediaByRoomIdAsync(roomId);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMedia(int id)
+        {
+            await _roomMediaService.DeleteMediaAsync(id);
             return NoContent();
         }
     }

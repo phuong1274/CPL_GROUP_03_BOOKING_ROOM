@@ -46,7 +46,77 @@ export const login = async (loginData) => {
     }
 };
 
-// Function to get list of users
+//Hàm Forgot Password
+export const forgotPassword = async (email) => {
+    try {
+        const response = await api.post('/auth/forgot-password', { email });
+        return response.data; // response.data là chuỗi: "Reset link has been sent to your email."
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 400) {
+                throw error.response.data; // Chuỗi: "User with this email does not exist."
+            } else if (error.response.status === 500) {
+                throw error.response.data || 'Server error';
+            }
+        } else if (error.request) {
+            throw 'No response from server. Please check if the backend is running.';
+        }
+        throw error.message || 'Failed to send reset password email';
+    }
+};
+
+//Hàm Reset Password
+export const resetPassword = async (token, newPassword) => {
+    try {
+        const response = await api.post('/auth/reset-password', {
+            token,
+            newPassword,
+        });
+        return response.data; // Chuỗi: "Password reset successfully."
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 400) {
+                throw error.response.data || 'Invalid or expired token'; // Chuỗi
+            } else if (error.response.status === 500) {
+                throw error.response.data || 'Server error'; // Chuỗi
+            }
+        } else if (error.request) {
+            throw 'No response from server. Please check if the backend is running.'; // Chuỗi
+        }
+        throw error.message || 'Failed to reset password'; // Chuỗi
+    }
+};
+
+//Hàm Change Password
+export const changePassword = async (oldPassword, newPassword) => {
+    try {
+        const response = await api.post(
+            '/auth/change-password',
+            { oldPassword, newPassword },
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`, // Thêm token vào header
+                },
+            }
+        );
+        return response.data; // Chuỗi: "Password changed successfully."
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 400) {
+                throw error.response.data || 'Invalid old password or server error'; // Chuỗi
+            } else if (error.response.status === 401) {
+                throw 'Unauthorized: Invalid or expired token'; // Chuỗi
+            } else if (error.response.status === 500) {
+                throw error.response.data || 'Server error'; // Chuỗi
+            }
+        } else if (error.request) {
+            throw 'No response from server. Please check if the backend is running.'; // Chuỗi
+        }
+        throw error.message || 'Failed to change password'; // Chuỗi
+    }
+};
+
+// Hàm lấy danh sách người dùng
 export const getUsers = async (search = '', role = '', page = 1, pageSize = 10) => {
     try {
         const response = await api.get('/users', {
@@ -65,9 +135,7 @@ export const getUsers = async (search = '', role = '', page = 1, pageSize = 10) 
         }
     }
 };
-
-
-// Function to get user details
+// Hàm lấy thông tin chi tiết người dùng
 export const getUserById = async (id) => {
     try {
         const response = await api.get(`/users/${id}`);

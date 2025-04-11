@@ -9,3 +9,14 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+#root {
+    height: 100%;
+}

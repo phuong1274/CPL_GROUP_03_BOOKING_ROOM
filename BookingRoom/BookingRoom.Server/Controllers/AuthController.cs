@@ -1,5 +1,6 @@
 ﻿using BookingRoom.Server.DTOs;
 using BookingRoom.Server.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BookingRoom.Server.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -157,5 +158,53 @@ namespace BookingRoom.Server.Controllers
                 return StatusCode(500, new { Error = "An internal error occurred", Details = ex.Message });
             }
         }
+
+        
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO forgotPasswordDTO)
+        {
+            try
+            {
+                await _authService.ForgotPasswordAsync(forgotPasswordDTO.Email);
+                return Ok("Reset link has been sent to your email.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO resetPasswordDTO)
+        {
+            try
+            {
+                await _authService.ResetPasswordAsync(resetPasswordDTO.Token, resetPasswordDTO.NewPassword);
+                return Ok("Password reset successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [Authorize]
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO changePasswordDTO)
+        {
+            try
+            {
+                var userId = int.Parse(User.FindFirst("id")?.Value);
+                await _authService.ChangePasswordAsync(userId, changePasswordDTO.OldPassword, changePasswordDTO.NewPassword);
+                return Ok("Password changed successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+         
     }
 }
+
+

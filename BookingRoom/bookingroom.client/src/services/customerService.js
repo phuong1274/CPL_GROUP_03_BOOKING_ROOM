@@ -18,6 +18,33 @@ export const getUserById = async (id) => {
         }
     }
 };
+export const updateProfile = async (formData) => {
+    try {
+        const response = await api.put(
+            '/customer/users/update-profile',
+            formData,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`, // Thêm token vào header
+                },
+            }
+        );
+        return response.data; // Chuỗi: "Profile updated successfully."
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 400) {
+                throw error.response.data || 'Invalid data provided'; // Chuỗi
+            } else if (error.response.status === 401) {
+                throw 'Unauthorized: Please log in again.'; // Chuỗi
+            } else if (error.response.status === 500) {
+                throw error.response.data || 'Server error'; // Chuỗi
+            }
+        } else if (error.request) {
+            throw 'No response from server. Please check if the backend is running.'; // Chuỗi
+        }
+        throw error.message || 'Failed to update profile'; // Chuỗi
+    }
+};
 
 // ==== ROOM ====
 // Get available room

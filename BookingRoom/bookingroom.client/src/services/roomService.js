@@ -57,23 +57,10 @@ export const addRoom = async (roomData) => {
 //Method to update room
 export const updateRoom = async (id, roomData) => {
     try {
-       
-        const payload = {
-            RoomID: parseInt(id),
-            RoomNumber: roomData.roomNumber,
-            RoomTypeID: parseInt(roomData.roomTypeId),
-            Status: roomData.status,
-            StartDate: roomData.startDate ? new Date(roomData.startDate) : null,
-            EndDate: roomData.endDate ? new Date(roomData.endDate) : null
-        };
-        const response = await api.put(`/room/${id}`, payload);
+        const response = await api.put(`/room/${id}`, roomData);
         return response.data;
     } catch (error) {
-       
-        const errorMessage = error.response?.data?.toString() ||
-            error.response?.statusText ||
-            error.message ||
-            'Failed to update room';
+        const errorMessage = error.response?.data?.message || error.message || 'Failed to update room';
         throw new Error(errorMessage);
     }
 };
@@ -156,13 +143,25 @@ export const getMediaByRoomId = async (roomId) => {
 // Add media function
 export const addMedia = async (mediaData) => {
     try {
-        const response = await api.post('/roommedia', {
-            RoomID: mediaData.roomID, 
-            Media_Link: mediaData.media_Link,
-            Description: mediaData.description,
-            MediaType: mediaData.mediaType,
-        });
-        return response.data;
+        if (mediaData.file) {
+            const formData = new FormData();
+            formData.append('RoomID', mediaData.roomId);
+            formData.append('files', mediaData.file);
+            const response = await api.post('/roommedia/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            return response.data[0]; // Assuming the response returns an array of media
+        } else {
+            const response = await api.post('/roommedia', {
+                RoomID: mediaData.roomId,
+                Media_Link: mediaData.mediaLink,
+                Description: mediaData.description,
+                MediaType: mediaData.mediaType,
+            });
+            return response.data;
+        }
     } catch (error) {
         throw new Error(error.response?.data?.Error || error.message || 'Failed to add media');
     }
