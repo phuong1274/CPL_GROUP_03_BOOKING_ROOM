@@ -192,18 +192,31 @@ namespace BookingRoom.Server.Controllers
             {
                 if (id != roomDTO.RoomID)
                 {
-                    return BadRequest("Room ID mismatch");
+                    return BadRequest(new { message = "Room ID mismatch" });
                 }
 
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    var errorMessage = string.Join("; ", ModelState.Values
+                 .SelectMany(v => v.Errors)
+                 .Select(e => e.ErrorMessage));
+                    return BadRequest(new { message = errorMessage });
+                }
+                var existingRoom = await _unitOfWork.Rooms.GetRoomByNumberAsync(roomDTO.RoomNumber);
+                if (existingRoom != null && existingRoom.RoomId != id)
+                {
+                    return BadRequest(new { message = "Room number already exists" });
                 }
 
+                // Validate dates
+                if (roomDTO.StartDate >= roomDTO.EndDate)
+                {
+                    return BadRequest(new { message = "End date must be after start date" });
+                }
                 var room = await _unitOfWork.Rooms.GetRoomByIdAsync(id);
                 if (room == null)
                 {
-                    return NotFound();
+                    return NotFound(new { message = "Room not found" });
                 }
 
                 // Update properties
@@ -225,12 +238,11 @@ namespace BookingRoom.Server.Controllers
 
                 await _unitOfWork.Rooms.UpdateRoomAsync(room);
                 await _unitOfWork.SaveChangesAsync();
-
-                return NoContent();
-            }
+                return Ok(new { message = "Room updated successfully" });
+             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, new { message = $"Internal server error: {ex.Message}" });
             }
         }
 
