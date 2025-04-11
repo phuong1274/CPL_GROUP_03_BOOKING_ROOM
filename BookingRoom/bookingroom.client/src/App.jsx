@@ -1,26 +1,29 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import { setLogoutCallback } from './services/api';
-import UserList from './pages/UserList';
-import UserDetail from './pages/UserDetail';
-import RoomList from './pages/RoomList';
-import RoomType from './pages/RoomType';
+import { setLogoutCallback } from './services/authService';
+import Header from './components/Header'; 
+import Navbar from './components/Navbar'; 
+import Home from './pages/HomePage/Home';
+import UserList from './pages/AdminPages/UserList/UserList';
+import UserDetail from './pages/AdminPages/UserDetail/UserDetail';
+import RoomList from './pages/AdminPages/RoomList/RoomList';
+import RoomType from './pages/AdminPages/RoomType/RoomType';
 import AddRoom from './pages/AddRoom';
 import EditRoom from './pages/EditRoom';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Login from './pages/UserPages/Login/Login';
+import Register from './pages/UserPages/Register/Register';
 import BookingList from './pages/BookingList';
 import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
+import RevenueReport from './pages/Revenue_Report/RevenueReport';
 import './App.css';
-import Home from './pages/Home';
 import ChangePassword from './pages/ChangePassword/ChangePassword';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 
-// ErrorBoundary Component to catch rendering errors
 class ErrorBoundary extends React.Component {
     state = { hasError: false };
 
@@ -50,104 +53,8 @@ function NotFound() {
     );
 }
 
-// Navbar Component
-function Navbar() {
-    const { token, isAdmin, logout } = useAuth();
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    // Hide Navbar on login and register routes (including nested routes)
-    if (location.pathname.startsWith('/login') || location.pathname.startsWith('/register')) {
-        return null;
-    }
-
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
-
-    return (
-        <nav className="navbar">
-            <div className="navbar-brand">
-                <h3>Hotel Booking</h3>
-            </div>
-            <div className="navbar-links">
-                {token && (
-                    <>
-                        <button
-                            onClick={() => navigate('/CustomerRoom')}
-                            className="nav-button"
-                            aria-label="Navigate to Available Rooms"
-                        >
-                            Available Rooms
-                        </button>
-                        <button
-                            onClick={() => navigate('/my-booking')}
-                            className="nav-button"
-                            aria-label="Navigate to My Bookings"
-                        >
-                            My Bookings
-                        </button>
-                    </>
-                )}
-                {token && isAdmin() && (
-                    <>
-                        <button
-                            onClick={() => navigate('/users')}
-                            className="nav-button"
-                            aria-label="Navigate to User List"
-                        >
-                            User List
-                        </button>
-                        <button
-                            onClick={() => navigate('/rooms')}
-                            className="nav-button"
-                            aria-label="Navigate to Room List"
-                        >
-                            Room List
-                        </button>
-                        <button
-                            onClick={() => navigate('/room-types')}
-                            className="nav-button"
-                            aria-label="Navigate to Room Types"
-                        >
-                            Room Types
-                        </button>
-                        <button
-                            onClick={() => navigate('/booking')}
-                            className="nav-button"
-                            aria-label="Navigate to Bookings"
-                        >
-                            Bookings
-                        </button>
-                    </>
-                )}
-                {token && (
-                    <button
-                        onClick={handleLogout}
-                        className="logout-button"
-                        aria-label="Logout"
-                    >
-                        Logout
-                    </button>
-                )}
-            </div>
-        </nav>
-    );
-}
-
-// Home Component
-//function Home() {
-//    return (
-//        <div className="home">
-//            <h1>Welcome to the Home Page!</h1>
-//            <p>You have successfully logged in.</p>
-//        </div>
-//    );
-//}
-
 // ProtectedRoute Component
-function ProtectedRoute({ children, requireAdmin = false }) {
+function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false }) {
     const { token, isLoading, isAdmin } = useAuth();
     const [loadingTimeout, setLoadingTimeout] = useState(false);
 
@@ -178,6 +85,10 @@ function ProtectedRoute({ children, requireAdmin = false }) {
         return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
+    if (requireCustomer && isAdmin()) {
+        return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
+    }
+
     return children;
 }
 
@@ -205,7 +116,8 @@ function AppContent() {
 
     return (
         <div>
-            <Navbar />
+            <Header /> {/* Add the Header component above Navbar */}
+            <Navbar /> {/* Navbar is now below Header */}
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}
@@ -260,7 +172,7 @@ function AppContent() {
                         <Route
                             path="/my-booking"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute requireCustomer={true}>
                                     <MyBooking />
                                 </ProtectedRoute>
                             }
@@ -314,10 +226,18 @@ function AppContent() {
                             }
                         />
                         <Route
-                            path="/CustomerRoom"
+                            path="/available-rooms"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute requireCustomer={true}>
                                     <AvailableRooms />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path="/revenue-report"
+                            element={
+                                <ProtectedRoute requireAdmin={true}>
+                                    <RevenueReport />
                                 </ProtectedRoute>
                             }
                         />
@@ -328,7 +248,6 @@ function AppContent() {
         </div>
     );
 }
-
 function App() {
     return (
         <AuthProvider>

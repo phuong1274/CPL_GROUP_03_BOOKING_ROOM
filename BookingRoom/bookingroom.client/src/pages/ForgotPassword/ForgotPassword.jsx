@@ -1,6 +1,6 @@
 ﻿import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { forgotPassword } from '../../services/api.js';
+import { forgotPassword } from '../../services/authService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ForgotPassword = () => {

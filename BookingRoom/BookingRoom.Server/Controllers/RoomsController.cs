@@ -22,6 +22,14 @@ namespace BookingRoom.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomNumber"></param>
+        /// <param name="status"></param>
+        /// <param name="roomTypeId"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetRooms(
                 [FromQuery] string? roomNumber = null,
@@ -83,7 +91,15 @@ namespace BookingRoom.Server.Controllers
                 _logger.LogError(ex, "Error retrieving rooms.");
                 return StatusCode(500, new { error = $"Error retrieving rooms: {ex.Message}" });
             }
+
         }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoom(int id)
@@ -183,7 +199,13 @@ namespace BookingRoom.Server.Controllers
         }
 
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="roomDTO"></param>
+        /// <returns></returns>
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomDTO roomDTO)
@@ -246,6 +268,13 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRoom(int id)
         {

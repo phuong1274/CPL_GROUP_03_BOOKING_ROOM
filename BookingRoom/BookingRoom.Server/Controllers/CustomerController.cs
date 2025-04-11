@@ -26,6 +26,13 @@ namespace BookingRoom.Server.Controllers
             _userService = userService;
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(int id)
         {

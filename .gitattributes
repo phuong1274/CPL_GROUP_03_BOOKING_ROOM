@@ -1,0 +1,21 @@
+# Enforce LF for all text files in the repository
+* text=auto eol=lf
+
+# Explicitly set LF for specific file types
+*.jsx text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
+
+# Treat binary files as binary (no line ending conversion)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

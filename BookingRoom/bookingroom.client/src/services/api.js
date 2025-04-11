@@ -1,7 +1,21 @@
-﻿import { register, login, forgotPassword, resetPassword, changePassword, getUsers, getUserById, updateUserStatus, setLogoutCallback } from './authService';
-import { getRooms, deleteRoom, getRoomTypes, deleteRoomType, addRoom, addMedia, deleteMediaByRoomId, deleteMedia, getRoomById, updateRoom } from './roomService';
-import { updateProfile } from './customerService'
+﻿import axios from 'axios';
 
-export { register, login, forgotPassword, resetPassword, changePassword, getUsers, getUserById, updateUserStatus, setLogoutCallback };
-export { getRooms, deleteRoom, deleteRoomType, addRoom, getRoomTypes, addMedia, deleteMediaByRoomId, deleteMedia, getRoomById, updateRoom };
-export { updateProfile } from './customerService'
+const api = axios.create({
+    baseURL: 'https://localhost:7067/api',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+
+api.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
+
+export default api;

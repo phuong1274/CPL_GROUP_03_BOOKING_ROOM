@@ -28,6 +28,16 @@ namespace BookingRoom.Server.Controllers
             _logger = logger;
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="checkInDate"></param>
+        /// <param name="checkOutDate"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetMyBookings(
             [FromQuery] int page = 1,
@@ -106,6 +116,13 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/cancel")]
         public async Task<IActionResult> Cancel(int id)
         {
@@ -126,7 +143,12 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
-
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoom(int id)
         {

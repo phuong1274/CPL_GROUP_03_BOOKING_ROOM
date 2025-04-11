@@ -1,0 +1,84 @@
+.header {
+    background-color: #7b5905;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-contact {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    color: white;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .contact-item i {
+        font-size: 1rem;
+    }
+
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .header-link:hover {
+        color: #b8860b;
+    }
+
+.separator {
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Styles for the user name (when logged in) */
+.user-name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+    .user-name:hover {
+        color: #b8860b;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 1rem 2rem;
+    }
+
+    .header-contact {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .header-links {
+        justify-content: center;
+    }
+}

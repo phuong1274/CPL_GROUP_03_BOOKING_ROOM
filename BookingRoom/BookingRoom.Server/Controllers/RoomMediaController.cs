@@ -24,11 +24,19 @@ namespace BookingRoom.Server.Controllers
             public string Type { get; set; }
         }
 
+        
         public RoomMediaController(IRoomMediaService roomMediaService, IWebHostEnvironment environment)
         {
             _roomMediaService = roomMediaService;
             _environment = environment;
         }
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomId"></param>
+        /// <returns></returns>
 
         [HttpGet("room/{roomId}")]
         public async Task<IActionResult> GetMediaByRoomId(int roomId)
@@ -37,6 +45,13 @@ namespace BookingRoom.Server.Controllers
             return Ok(media);
         }
 
+
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomMediaDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> AddMedia([FromBody] RoomMediaDTO roomMediaDTO)
         {
@@ -44,6 +59,12 @@ namespace BookingRoom.Server.Controllers
             return CreatedAtAction(nameof(GetMediaByRoomId), new { roomId = createdMedia.RoomID }, createdMedia);
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="files"></param>
+        /// <returns></returns>
         [HttpPost("upload")]
         public async Task<IActionResult> UploadMedia([FromForm] int RoomID, [FromForm] List<IFormFile> files)
         {
@@ -119,6 +140,12 @@ namespace BookingRoom.Server.Controllers
             }
         }
 
+        //==============================================================================================================
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomId"></param>
+        /// <returns></returns>
         [HttpDelete("room/{roomId}")]
         public async Task<IActionResult> DeleteMediaByRoomId(int roomId)
         {

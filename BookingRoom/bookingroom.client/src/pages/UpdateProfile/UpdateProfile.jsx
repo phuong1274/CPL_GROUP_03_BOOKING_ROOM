@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { updateProfile } from '../../services/api';
+import { updateProfile } from '../../services/customerService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './UpdateProfile.module.css';
 

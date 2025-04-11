@@ -18,6 +18,11 @@ namespace BookingRoom.Server.Repositories
         {
             return await _context.Bookings.ToListAsync();
         }
+        public async Task<List<Booking>> GetAllAsync(IQueryable<Booking> query)
+        {
+            return await query.ToListAsync();
+        }
+
         public IQueryable<Booking> GetQuery()
         {
             return _context.Bookings.AsQueryable();
