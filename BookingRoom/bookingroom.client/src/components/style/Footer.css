@@ -1,0 +1,125 @@
+﻿.footer {
+    background-color: #2c2c2c; /* Dark background to match the image */
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Social Media Section (Top) */
+.footer-social-top {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .footer-social-top p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+    .social-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .social-links a:hover {
+            background-color: #555; /* Slightly lighter gray on hover */
+            color: #fff;
+        }
+
+/* Main Footer Content (Three Columns) */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 20px;
+    min-width: 200px; /* Ensure sections don't collapse too much */
+}
+
+    .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-transform: uppercase; /* Match the uppercase style in the image */
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+            .footer-section ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+
+                .footer-section ul li a:hover {
+                    color: #b8860b; /* Golden hover effect to match the theme */
+                }
+
+.footer-contact p {
+    margin: 10px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.footer-contact i {
+    font-size: 1.2rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,276 @@
+﻿/* Hero Section (Home Page) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://landmark72.intercontinental.com/wp-content/uploads/16-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 0;
+    animation: slideDown 1s ease-out forwards; /* Slide down animation */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: 'Lora', serif;
+}
+
+
+/* Rooms Section (Home Page) */
+.rooms-section {
+    margin-top: 200px;
+    text-align: center;
+    width: 100%;
+   
+}
+
+    .rooms-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3.5rem;
+        color: #2c2c2c;
+        font-family: 'Playfair Display', serif;
+    }
+
+.rooms-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.room-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 1, 0.1);
+    transition: transform 0.3s;
+}
+
+    .room-card:hover {
+        transform: translateY(-5px);
+    }
+
+.row-normal {
+    flex-direction: row; /* Image on the left, text on the right */
+}
+
+.row-reverse {
+    flex-direction: row-reverse; /* Text on the left, image on the right */
+}
+
+.room-image {
+    flex: 1;
+    max-width: 50%;
+    opacity: 0; /* Start with opacity 0 for animation */
+}
+
+    .room-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+.slide-from-left {
+    animation: slideFromLeft 1s ease-out forwards; /* Slide from left for even-indexed images */
+}
+
+.slide-from-right {
+    animation: slideFromRight 1s ease-out forwards; /* Slide from right for odd-indexed images */
+}
+
+.room-content {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;
+}
+
+    .room-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #2c2c2c;
+    }
+
+    .room-content p {
+        font-family: 'Lora', serif;
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+.book-link {
+    display: inline-block;
+    color: #b8860b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .book-link:hover {
+        text-decoration: underline;
+    }
+
+/* Services Section (Home Page) */
+.services-section {
+    margin-top: 200px;
+    text-align: center;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 170px;
+    box-shadow: 0 10px 10px rgba(0, 0, 1, 0.1);
+}
+
+    .services-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+        font-family: 'Playfair Display', serif;
+    }
+
+.services-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-family: 'Lora', serif;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+    font-family: 'Playfair Display', serif;
+}
+
+.service-card p {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-card {
+        flex-direction: column !important;
+    }
+
+    .room-image {
+        max-width: 100%;
+    }
+
+    .room-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section {
+        padding: 20px;
+    }
+
+        .services-section h2 {
+            font-size: 2rem;
+        }
+
+    .services-description {
+        font-size: 1rem;
+    }
+
+    .rooms-section h2 {
+        font-size: 2rem;
+    }
+
+    .room-image img {
+        height: 200px;
+    }
+}
+

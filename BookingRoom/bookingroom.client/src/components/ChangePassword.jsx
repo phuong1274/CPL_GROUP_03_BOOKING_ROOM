@@ -1,7 +1,13 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { changePassword } from '../services/authService'; // Hàm mới trong authService
 import api from '../services/api'; // Sử dụng Axios instance có token
+=======
+import { changePassword } from '../services/authService';
+import './style/ChangePassword.css'// Hàm mới trong authService
+//import api from '../services/api'; // Sử dụng Axios instance có token
+>>>>>>> origin/Manh_Hai
 
 const ChangePassword = () => {
     const [formData, setFormData] = useState({
@@ -43,7 +49,11 @@ const ChangePassword = () => {
             {error && <div ref={errorRef} className="error-message">{error}</div>}
             {message && <div className="success-message">{message}</div>}
             <form onSubmit={handleSubmit}>
+<<<<<<< HEAD
                 <div className="form-group">
+=======
+                <div className="form-group4">
+>>>>>>> origin/Manh_Hai
                     <label>Old Password:</label>
                     <input
                         type="password"
@@ -53,7 +63,11 @@ const ChangePassword = () => {
                         required
                     />
                 </div>
+<<<<<<< HEAD
                 <div className="form-group">
+=======
+                <div className="form-group4">
+>>>>>>> origin/Manh_Hai
                     <label>New Password:</label>
                     <input
                         type="password"
@@ -63,7 +77,11 @@ const ChangePassword = () => {
                         required
                     />
                 </div>
+<<<<<<< HEAD
                 <div className="form-group">
+=======
+                <div className="form-group4">
+>>>>>>> origin/Manh_Hai
                     <label>Confirm Password:</label>
                     <input
                         type="password"
@@ -73,7 +91,11 @@ const ChangePassword = () => {
                         required
                     />
                 </div>
+<<<<<<< HEAD
                 <button type="submit" className="book-now-btn">Change Password</button>
+=======
+                <button type="submit" className="book-now-btn2">Change Password</button>
+>>>>>>> origin/Manh_Hai
             </form>
         </div>
     );

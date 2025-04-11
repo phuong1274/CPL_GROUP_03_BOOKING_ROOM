@@ -1,13 +1,21 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "/wW5wI03F2Tvv1jc+KK4I3BUIW2hIoOmOzebFIWfbLc=",
+=======
+  "Hash": "NFOTtHF6G/FIoLoLPVzUv3lIWZ4TCaEjf5p1T4HYbz0=",
+>>>>>>> origin/Manh_Hai
   "Source": "BookingRoom.Server",
   "BasePath": "_content/BookingRoom.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
+<<<<<<< HEAD
       "Identity": "S:\\New folder\\BookingRoom\\bookingroom.client\\bookingroom.client.esproj",
+=======
+      "Identity": "D:\\FULearning\\Sp25_OJT\\New_final_pro\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\bookingroom.client.esproj",
+>>>>>>> origin/Manh_Hai
       "Version": 2,
       "Source": "bookingroom.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

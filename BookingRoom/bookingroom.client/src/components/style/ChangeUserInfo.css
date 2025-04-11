@@ -1,0 +1,86 @@
+/* Change Password Page */
+.change-user-info-page {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .change-user-info-page h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #2c2c2c;
+    }
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Groups */
+.form-group5 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+    .form-group5 label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .form-group5 input {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-group5 input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+/* Button Styling */
+.change-user-info-link1 {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #b8860b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+    .change-user-info-link1:hover {
+        background: #ce9a19;
+    }
+/* Messages */
+.error-message1, .success-message1 {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.error-message1 {
+    background: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+}
+
+.success-message1 {
+    background: #ddffdd;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+}

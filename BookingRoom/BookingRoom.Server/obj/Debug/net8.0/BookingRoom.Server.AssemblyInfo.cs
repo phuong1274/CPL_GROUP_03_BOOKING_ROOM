@@ -16,10 +16,14 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bee4f0f7e8d9b35a8931a5f3a9dbdee5a49eb7a")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0811769d88379670532886a08bec1218211095f")]
 >>>>>>> origin/son
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70d355a76e7a54327b732cec4deaa0539123602b")]
+>>>>>>> origin/Manh_Hai
 [assembly: System.Reflection.AssemblyProductAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookingRoom.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

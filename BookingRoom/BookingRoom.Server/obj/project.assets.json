@@ -5290,23 +5290,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Users\\AdminMH\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "S:\\New folder\\BookingRoom\\BookingRoom.Server\\BookingRoom.Server.csproj",
+      "projectUniqueName": "D:\\FULearning\\Sp25_OJT\\New_final_pro\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\BookingRoom.Server.csproj",
       "projectName": "BookingRoom.Server",
-      "projectPath": "S:\\New folder\\BookingRoom\\BookingRoom.Server\\BookingRoom.Server.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "S:\\New folder\\BookingRoom\\BookingRoom.Server\\obj\\",
+      "projectPath": "D:\\FULearning\\Sp25_OJT\\New_final_pro\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\BookingRoom.Server.csproj",
+      "packagesPath": "C:\\Users\\AdminMH\\.nuget\\packages\\",
+      "outputPath": "D:\\FULearning\\Sp25_OJT\\New_final_pro\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AdminMH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5315,7 +5315,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5400,7 +5399,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

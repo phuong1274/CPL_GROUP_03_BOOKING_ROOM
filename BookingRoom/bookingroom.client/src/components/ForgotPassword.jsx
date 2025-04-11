@@ -1,6 +1,11 @@
 ﻿import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { forgotPassword } from '../services/authService'; // Hàm mới trong authService
+=======
+import { forgotPassword } from '../services/authService';
+import './style/ForgotPassword.css'; // Import CSS
+>>>>>>> origin/Manh_Hai
 
 const ForgotPassword = () => {
     const [input, setInput] = useState('');
@@ -29,6 +34,7 @@ const ForgotPassword = () => {
     };
 
     return (
+<<<<<<< HEAD
         <div className="forgot-password-page">
             <h2>Forgot Password</h2>
             {error && <div ref={errorRef} className="error-message">{error}</div>}
@@ -46,6 +52,34 @@ const ForgotPassword = () => {
                 </div>
                 <button type="submit" className="book-now-btn">Send Reset Link</button>
             </form>
+=======
+        <div className="forgot-password-container">
+            {/* Phần hình nền bên trái */}
+            <div className="forgot-password-background"></div>
+
+            {/* Phần form quên mật khẩu bên phải */}
+            <div className="forgot-password-page">
+                <h2>Forgot Password</h2>
+                {error && <div ref={errorRef} className="error-message5">{error}</div>}
+                {message && <div className="success-message5">{message}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div className="form-groupp">
+                        <label>Email or Phone Number:</label>
+                        <input
+                            type="text"
+                            name="login"
+                            value={input}
+                            onChange={handleChange}
+                            placeholder="Email or Phone Number"
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="book-now-btn5">
+                        Send Reset Link
+                    </button>
+                </form>
+            </div>
+>>>>>>> origin/Manh_Hai
         </div>
     );
 };
