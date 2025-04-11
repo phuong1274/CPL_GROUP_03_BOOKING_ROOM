@@ -21,13 +21,16 @@ export const uploadMedia = async (files) => {
 // Method to get room list
 export const getRooms = async (queryParams = {}) => {
     try {
-        const { roomNumber, status, roomTypeId } = queryParams;
+        const { roomNumber, status, roomTypeId, page = 1, limit = 10 } = queryParams;
         const params = new URLSearchParams();
         if (roomNumber) params.append('roomNumber', roomNumber);
         if (status) params.append('status', status);
         if (roomTypeId) params.append('roomTypeId', roomTypeId);
+        params.append('page', page);
+        params.append('limit', limit);
+
         const response = await api.get(`/room${params.toString() ? `?${params.toString()}` : ''}`);
-        return response.data;
+        return response.data; // Giả định API trả về mảng phòng hoặc { data: [], total: number }
     } catch (error) {
         throw new Error(error.response?.data?.Error || error.message || 'Failed to fetch rooms');
     }

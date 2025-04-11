@@ -1,6 +1,19 @@
 ﻿import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+    Container,
+    Row,
+    Col,
+    Form,
+    Button,
+    Card,
+    Alert,
+    ListGroup,
+    Image,
+    Spinner,
+} from 'react-bootstrap';
 import { addRoom, getRoomTypes, addMedia, uploadMedia } from '../services/roomService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AddRoom() {
     const [room, setRoom] = useState({
@@ -16,8 +29,10 @@ function AddRoom() {
     const [mediaData, setMediaData] = useState([]);
     const [roomTypes, setRoomTypes] = useState([]);
     const [error, setError] = useState(null);
+    const [isUploading, setIsUploading] = useState(false);
     const navigate = useNavigate();
 
+    // Fetch room types
     useEffect(() => {
         const fetchRoomTypes = async () => {
             try {
@@ -33,29 +48,36 @@ function AddRoom() {
         fetchRoomTypes();
     }, []);
 
+    // Handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setRoom((prev) => ({ ...prev, [name]: value }));
     };
 
+    // Handle media file uploads
     const handleFileChange = async (e) => {
         const files = Array.from(e.target.files);
         if (files.length === 0) return;
 
+        setIsUploading(true);
         try {
             const uploadedMedia = await uploadMedia(files);
             setMediaFiles((prev) => [...prev, ...files]);
             setMediaData((prev) => [...prev, ...uploadedMedia]);
         } catch (err) {
             setError(err.message);
+        } finally {
+            setIsUploading(false);
         }
     };
 
+    // Remove media
     const handleRemoveMedia = (index) => {
         setMediaFiles((prev) => prev.filter((_, i) => i !== index));
         setMediaData((prev) => prev.filter((_, i) => i !== index));
     };
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
@@ -65,7 +87,7 @@ function AddRoom() {
             const endDate = new Date(room.endDate);
 
             if (endDate < startDate) {
-                setError("End Date must be on or after Start Date.");
+                setError('End Date must be on or after Start Date.');
                 return;
             }
 
@@ -91,7 +113,14 @@ function AddRoom() {
             }
 
             alert('Room added successfully!');
-            setRoom({ roomNumber: '', roomTypeID: roomTypes[0]?.roomTypeID || '', description: '', startDate: '', endDate: '', status: 'Available' });
+            setRoom({
+                roomNumber: '',
+                roomTypeID: roomTypes[0]?.roomTypeID || '',
+                description: '',
+                startDate: '',
+                endDate: '',
+                status: 'Available',
+            });
             setMediaFiles([]);
             setMediaData([]);
             navigate('/rooms');
@@ -102,193 +131,210 @@ function AddRoom() {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Add New Room</h1>
+        <Container fluid className="add-room-container py-4">
+            <Card className="shadow-sm">
+                <Card.Body>
+                    <Row className="mb-4">
+                        <Col>
+                            <h2 className="mb-0">Add New Room</h2>
+                        </Col>
+                    </Row>
 
-            {error && (
-                <div style={{
-                    marginBottom: '15px',
-                    padding: '10px',
-                    backgroundColor: '#f8d7da',
-                    color: '#721c24',
-                    border: '1px solid #f5c6cb',
-                    borderRadius: '4px'
-                }}>
-                    {error}
-                </div>
-            )}
-
-            <form onSubmit={handleSubmit} style={{ maxWidth: '500px' }}>
-                {/* Room Number */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Room Number:</label>
-                    <input
-                        type="text"
-                        name="roomNumber"
-                        value={room.roomNumber}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-
-                {/* Room Type */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Room Type:</label>
-                    <select
-                        name="roomTypeID"
-                        value={room.roomTypeID}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                    >
-                        {roomTypes.map((type) => (
-                            <option key={type.roomTypeID} value={type.roomTypeID}>
-                                {type.roomTypeName}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Description */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Description:</label>
-                    <input
-                        type="text"
-                        name="description"
-                        value={room.description}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-
-                {/* Start Date */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Start Date:</label>
-                    <input
-                        type="date"
-                        name="startDate"
-                        value={room.startDate}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-
-                {/* End Date */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>End Date:</label>
-                    <input
-                        type="date"
-                        name="endDate"
-                        value={room.endDate}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-
-                {/* Status */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Status:</label>
-                    <select
-                        name="status"
-                        value={room.status}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                    >
-                        <option value="Available">Available</option>
-                        <option value="Booked">Booked</option>
-                        <option value="Maintenance">Maintenance</option>
-                    </select>
-                </div>
-
-                {/* Media Upload */}
-                <div style={{ marginBottom: '15px' }}>
-                    <label>Add Media (Images/Videos):</label>
-                    <input
-                        type="file"
-                        accept="image/*,video/*"
-                        multiple
-                        onChange={handleFileChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                    />
-                    {mediaFiles.length > 0 && (
-                        <div style={{ marginTop: '10px' }}>
-                            <h4>Uploaded Media:</h4>
-                            <ul>
-                                {mediaFiles.map((file, index) => {
-                                    const media = mediaData[index];
-                                    return (
-                                        <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                                            {media?.type === 'Image' ? (
-                                                <img
-                                                    src={URL.createObjectURL(file)}
-                                                    alt="Preview"
-                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
-                                                />
-                                            ) : (
-                                                <video
-                                                    src={URL.createObjectURL(file)}
-                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }}
-                                                    controls
-                                                />
-                                            )}
-                                            <span>{file.name}</span>
-                                            <button
-                                                type="button"
-                                                onClick={() => handleRemoveMedia(index)}
-                                                style={{
-                                                    padding: '5px 10px',
-                                                    backgroundColor: '#dc3545',
-                                                    color: 'white',
-                                                    border: 'none',
-                                                    borderRadius: '4px',
-                                                    cursor: 'pointer',
-                                                }}
-                                            >
-                                                Remove
-                                            </button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
+                    {error && (
+                        <Alert variant="danger" onClose={() => setError(null)} dismissible>
+                            {error}
+                        </Alert>
                     )}
-                </div>
 
-                {/* Buttons */}
-                <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                        type="submit"
-                        style={{
-                            padding: '10px 20px',
-                            backgroundColor: '#28a745',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        Add Room
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => navigate('/rooms')}
-                        style={{
-                            padding: '10px 20px',
-                            backgroundColor: '#6c757d',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                        }}
-                    >
-                        Cancel
-                    </button>
-                </div>
-            </form>
-        </div>
+                    <Form onSubmit={handleSubmit}>
+                        <Row>
+                            {/* Room Number */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="roomNumber">
+                                    <Form.Label>Room Number</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        name="roomNumber"
+                                        value={room.roomNumber}
+                                        onChange={handleChange}
+                                        placeholder="Enter room number"
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* Room Type */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="roomTypeID">
+                                    <Form.Label>Room Type</Form.Label>
+                                    <Form.Select
+                                        name="roomTypeID"
+                                        value={room.roomTypeID}
+                                        onChange={handleChange}
+                                    >
+                                        {roomTypes.map((type) => (
+                                            <option key={type.roomTypeID} value={type.roomTypeID}>
+                                                {type.roomTypeName}
+                                            </option>
+                                        ))}
+                                    </Form.Select>
+                                </Form.Group>
+                            </Col>
+
+                            {/* Description */}
+                            <Col xs={12} className="mb-3">
+                                <Form.Group controlId="description">
+                                    <Form.Label>Description</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        name="description"
+                                        value={room.description}
+                                        onChange={handleChange}
+                                        placeholder="Enter room description"
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* Start Date */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="startDate">
+                                    <Form.Label>Start Date</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="startDate"
+                                        value={room.startDate}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* End Date */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="endDate">
+                                    <Form.Label>End Date</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="endDate"
+                                        value={room.endDate}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* Status */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="status">
+                                    <Form.Label>Status</Form.Label>
+                                    <Form.Select
+                                        name="status"
+                                        value={room.status}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="Available">Available</option>
+                                        <option value="Booked">Booked</option>
+                                        <option value="Maintenance">Maintenance</option>
+                                    </Form.Select>
+                                </Form.Group>
+                            </Col>
+
+                            {/* Media Upload */}
+                            <Col xs={12} className="mb-4">
+                                <Form.Group controlId="media">
+                                    <Form.Label>Add Media (Images/Videos)</Form.Label>
+                                    <Form.Control
+                                        type="file"
+                                        accept="image/*,video/*"
+                                        multiple
+                                        onChange={handleFileChange}
+                                        disabled={isUploading}
+                                    />
+                                    {isUploading && (
+                                        <div className="mt-2">
+                                            <Spinner animation="border" size="sm" /> Uploading...
+                                        </div>
+                                    )}
+                                </Form.Group>
+
+                                {mediaFiles.length > 0 && (
+                                    <div className="mt-3">
+                                        <h5>Uploaded Media</h5>
+                                        <ListGroup>
+                                            {mediaFiles.map((file, index) => {
+                                                const media = mediaData[index];
+                                                return (
+                                                    <ListGroup.Item
+                                                        key={index}
+                                                        className="d-flex align-items-center justify-content-between"
+                                                    >
+                                                        <div className="d-flex align-items-center">
+                                                            {media?.type === 'Image' ? (
+                                                                <Image
+                                                                    src={URL.createObjectURL(file)}
+                                                                    alt="Preview"
+                                                                    style={{
+                                                                        width: '50px',
+                                                                        height: '50px',
+                                                                        objectFit: 'cover',
+                                                                        borderRadius: '4px',
+                                                                        marginRight: '10px',
+                                                                    }}
+                                                                />
+                                                            ) : (
+                                                                <video
+                                                                    src={URL.createObjectURL(file)}
+                                                                    style={{
+                                                                        width: '50px',
+                                                                        height: '50px',
+                                                                        objectFit: 'cover',
+                                                                        borderRadius: '4px',
+                                                                        marginRight: '10px',
+                                                                    }}
+                                                                    controls
+                                                                />
+                                                            )}
+                                                            <span>{file.name}</span>
+                                                        </div>
+                                                        <Button
+                                                            variant="outline-danger"
+                                                            size="sm"
+                                                            onClick={() => handleRemoveMedia(index)}
+                                                        >
+                                                            Remove
+                                                        </Button>
+                                                    </ListGroup.Item>
+                                                );
+                                            })}
+                                        </ListGroup>
+                                    </div>
+                                )}
+                            </Col>
+
+                            {/* Buttons */}
+                            <Col xs={12} className="text-end">
+                                <Button
+                                    variant="success"
+                                    type="submit"
+                                    className="me-2"
+                                    disabled={isUploading}
+                                >
+                                    Add Room
+                                </Button>
+                                <Button
+                                    variant="secondary"
+                                    onClick={() => navigate('/rooms')}
+                                    disabled={isUploading}
+                                >
+                                    Cancel
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Container>
     );
 }
 

@@ -3,6 +3,8 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
 import UserList from './pages/AdminPages/UserList/UserList';
 import UserDetail from './pages/AdminPages/UserDetail/UserDetail'
 import RoomList from './pages/AdminPages/RoomList/RoomList';
@@ -52,100 +54,100 @@ function NotFound() {
 }
 
 // Navbar Component
-function Navbar() {
-    const { token, isAdmin, logout } = useAuth();
-    const navigate = useNavigate();
-    const location = useLocation();
+//function Navbar() {
+//    const { token, isAdmin, logout } = useAuth();
+//    const navigate = useNavigate();
+//    const location = useLocation();
 
-    // Hide Navbar on login and register routes (including nested routes)
-    if (location.pathname.startsWith('/login') || location.pathname.startsWith('/register')) {
-        return null;
-    }
+//    // Hide Navbar on login and register routes (including nested routes)
+//    if (location.pathname.startsWith('/login') || location.pathname.startsWith('/register')) {
+//        return null;
+//    }
 
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
+//    const handleLogout = () => {
+//        logout();
+//        navigate('/login');
+//    };
 
-    const isCustomer = token && !isAdmin(); 
-    const isAdminUser = token && isAdmin(); 
+//    const isCustomer = token && !isAdmin(); 
+//    const isAdminUser = token && isAdmin(); 
 
-    return (
-        <nav className="navbar">
-            <div className="navbar-brand">
-                <h3>Hotel Booking</h3>
-            </div>
-            <div className="navbar-links">
-                {isCustomer && (
-                    <>
-                        <button
-                            onClick={() => navigate('/available-rooms')}
-                            className="nav-button"
-                            aria-label="Navigate to Available Rooms"
-                        >
-                            Available Rooms
-                        </button>
-                        <button
-                            onClick={() => navigate('/my-booking')}
-                            className="nav-button"
-                            aria-label="Navigate to My Bookings"
-                        >
-                            My Bookings
-                        </button>
-                    </>
-                )}
-                {isAdminUser && (
-                    <>
-                        <button
-                            onClick={() => navigate('/users')}
-                            className="nav-button"
-                            aria-label="Navigate to User List"
-                        >
-                            User List
-                        </button>
-                        <button
-                            onClick={() => navigate('/rooms')}
-                            className="nav-button"
-                            aria-label="Navigate to Room List"
-                        >
-                            Room List
-                        </button>
-                        <button
-                            onClick={() => navigate('/room-types')}
-                            className="nav-button"
-                            aria-label="Navigate to Room Types"
-                        >
-                            Room Types
-                        </button>
-                        <button
-                            onClick={() => navigate('/booking')}
-                            className="nav-button"
-                            aria-label="Navigate to Bookings"
-                        >
-                            Bookings
-                        </button>
-                        <button
-                            onClick={() => navigate('/revenue-report')}
-                            className="nav-button"
-                            aria-label="Navigate to Revenue Report"
-                        >
-                            Revenue Report
-                        </button>
-                    </>
-                )}
-                {token && (
-                    <button
-                        onClick={handleLogout}
-                        className="logout-button"
-                        aria-label="Logout"
-                    >
-                        Logout
-                    </button>
-                )}
-            </div>
-        </nav>
-    );
-}
+//    return (
+//        <nav className="navbar">
+//            <div className="navbar-brand">
+//                <h3>Hotel Booking</h3>
+//            </div>
+//            <div className="navbar-links">
+//                {isCustomer && (
+//                    <>
+//                        <button
+//                            onClick={() => navigate('/available-rooms')}
+//                            className="nav-button"
+//                            aria-label="Navigate to Available Rooms"
+//                        >
+//                            Available Rooms
+//                        </button>
+//                        <button
+//                            onClick={() => navigate('/my-booking')}
+//                            className="nav-button"
+//                            aria-label="Navigate to My Bookings"
+//                        >
+//                            My Bookings
+//                        </button>
+//                    </>
+//                )}
+//                {isAdminUser && (
+//                    <>
+//                        <button
+//                            onClick={() => navigate('/users')}
+//                            className="nav-button"
+//                            aria-label="Navigate to User List"
+//                        >
+//                            User List
+//                        </button>
+//                        <button
+//                            onClick={() => navigate('/rooms')}
+//                            className="nav-button"
+//                            aria-label="Navigate to Room List"
+//                        >
+//                            Room List
+//                        </button>
+//                        <button
+//                            onClick={() => navigate('/room-types')}
+//                            className="nav-button"
+//                            aria-label="Navigate to Room Types"
+//                        >
+//                            Room Types
+//                        </button>
+//                        <button
+//                            onClick={() => navigate('/booking')}
+//                            className="nav-button"
+//                            aria-label="Navigate to Bookings"
+//                        >
+//                            Bookings
+//                        </button>
+//                        <button
+//                            onClick={() => navigate('/revenue-report')}
+//                            className="nav-button"
+//                            aria-label="Navigate to Revenue Report"
+//                        >
+//                            Revenue Report
+//                        </button>
+//                    </>
+//                )}
+//                {token && (
+//                    <button
+//                        onClick={handleLogout}
+//                        className="logout-button"
+//                        aria-label="Logout"
+//                    >
+//                        Logout
+//                    </button>
+//                )}
+//            </div>
+//        </nav>
+//    );
+//}
 
 // Home Component
 //function Home() {
