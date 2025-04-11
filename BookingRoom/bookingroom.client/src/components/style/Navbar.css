@@ -14,7 +14,7 @@
 }
 
 .navbar-brand h3 {
-    color: white;
+    color: darkgoldenrod;
     font-size: 1.5rem; /* Slightly larger for the brand */
     font-weight: 600;
     margin: 0; /* Remove default margin from h3 */
@@ -55,3 +55,56 @@
     .logout-button:hover {
         color: #b8860b; /* Match the hover color from the old navbar */
     }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 1rem; /* Reduce gap between brand and links */
+        padding: 0.5rem; /* Reduce padding for mobile */
+        width: 100vw; /* Ensure full width */
+        min-height: 120px; /* Ensure enough height for stacked content */
+    }
+
+    .navbar-brand h3 {
+        font-size: 1.2rem; /* Reduce font size for mobile */
+        text-align: center; /* Center the brand text */
+    }
+
+    .navbar-links {
+        flex-direction: row; /* Keep links horizontal, but wrap if needed */
+        flex-wrap: wrap; /* Allow links to wrap to the next line if needed */
+        gap: 1.5rem; /* Reduce gap between links */
+        justify-content: center; /* Center the links */
+        width: 100%; /* Ensure links take full width */
+        padding: 0 1rem; /* Add some padding to avoid edge touching */
+    }
+
+    .nav-button {
+        font-size: 0.9rem; /* Reduce font size for mobile */
+    }
+
+    .logout-button {
+        font-size: 0.9rem; /* Reduce font size for mobile */
+    }
+}
+
+/* Extra small screens (e.g., very narrow devices) */
+@media (max-width: 480px) {
+    .navbar-links {
+        gap: 1rem; /* Further reduce gap for very small screens */
+        padding: 0 0.5rem;
+    }
+
+    .nav-button {
+        font-size: 0.8rem; /* Further reduce font size */
+    }
+
+    .logout-button {
+        font-size: 0.8rem; /* Further reduce font size */
+    }
+
+    .navbar-brand h3 {
+        font-size: 1rem; /* Further reduce brand font size */
+    }
+}

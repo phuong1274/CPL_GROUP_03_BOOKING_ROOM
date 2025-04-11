@@ -14,7 +14,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="src\components\Header.css" />
+    <None Remove="src\components\style\BookingForm.css" />
+    <None Remove="src\components\style\ChangePassword.css" />
+    <None Remove="src\components\style\ChangeUserInfo.css" />
+    <None Remove="src\components\style\ForgotPassword.css" />
     <None Remove="src\components\style\Header.ts" />
+    <None Remove="src\components\style\ViewMyBooking.css" />
+    <None Remove="src\components\style\ViewRevenu.css" />
+    <None Remove="src\pages\UserProfile.jsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />

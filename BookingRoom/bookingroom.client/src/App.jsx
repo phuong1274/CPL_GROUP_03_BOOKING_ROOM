@@ -5,7 +5,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
 import Header from './components/Header'; // Import the Header component
 import Navbar from './components/Navbar'; // Already imported
-import Home from './pages/Home';
+import Home from './pages/HomePage/Home';
 import UserList from './pages/AdminPages/UserList/UserList';
 import UserDetail from './pages/AdminPages/UserDetail/UserDetail';
 import RoomList from './pages/AdminPages/RoomList/RoomList';
@@ -17,7 +17,7 @@ import Register from './pages/UserPages/Register/Register';
 import BookingList from './pages/BookingList';
 import MyBooking from './pages/MyBooking';
 import AvailableRooms from './pages/AvailableRooms';
-import RevenueReport from './pages/RevenueReport';
+import RevenueReport from './pages/Revenue_Report/RevenueReport';
 import './App.css';
 
 class ErrorBoundary extends React.Component {
@@ -222,7 +222,6 @@ function AppContent() {
         </div>
     );
 }
-
 function App() {
     return (
         <AuthProvider>

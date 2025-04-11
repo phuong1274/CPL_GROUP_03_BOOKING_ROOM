@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // Adjust the path based on your project structure
 import './style/Header.css'; // Adjust the path based on your project structure
 
 const Header = () => {
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/'); // Redirect to home page after logout
+    };
+
     return (
         <header className="header">
             <div className="header-contact">
@@ -14,9 +23,17 @@ const Header = () => {
                 </span>
             </div>
             <div className="header-links">
-                <Link to="/login" className="header-link">Login</Link>
-                <span className="separator">|</span>
-                <Link to="/register" className="header-link">Sign Up</Link>
+                {user ? (
+                    <span className="user-name" onClick={handleLogout}>
+                        {user.fullName || user.username} {/* Display fullName if available, otherwise username */}
+                    </span>
+                ) : (
+                    <>
+                        <Link to="/login" className="header-link">Login</Link>
+                        <span className="separator">|</span>
+                        <Link to="/register" className="header-link">Sign Up</Link>
+                    </>
+                )}
             </div>
         </header>
     );

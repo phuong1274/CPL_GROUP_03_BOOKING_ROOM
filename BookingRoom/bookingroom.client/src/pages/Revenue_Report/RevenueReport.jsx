@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getRevenueReport } from '../services/reportService';
-import { getRooms } from '../services/roomService';
-import './styles/RevenueReport.css'
+import { getRevenueReport } from '../../services/reportService';
+import { getRooms } from '../../services/roomService';
+import './RevenueReport.css'
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
