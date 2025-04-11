@@ -1,6 +1,26 @@
 ﻿import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getRoomById, updateRoom, getRoomTypes, addMedia, deleteMedia, deleteMediaByRoomId } from '../services/roomService';
+import {
+    Container,
+    Row,
+    Col,
+    Form,
+    Button,
+    Card,
+    Alert,
+    Spinner,
+    ListGroup,
+    Image,
+} from 'react-bootstrap';
+import {
+    getRoomById,
+    updateRoom,
+    getRoomTypes,
+    addMedia,
+    deleteMedia,
+    deleteMediaByRoomId,
+} from '../services/roomService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RoomDetail() {
     const { id } = useParams();
@@ -10,14 +30,14 @@ function RoomDetail() {
     const [newMediaType, setNewMediaType] = useState('Image');
     const [roomTypes, setRoomTypes] = useState([]);
     const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
+    // Fetch room and room types
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const roomData = await getRoomById(id);
-                console.log('roomData:', roomData);
-                console.log('roomData.media:', roomData.media);
                 setRoom({
                     roomId: roomData.roomID,
                     roomNumber: roomData.roomNumber,
@@ -43,17 +63,21 @@ function RoomDetail() {
                 setRoomTypes(roomTypesData);
             } catch (err) {
                 setError(err.message);
+            } finally {
+                setIsLoading(false);
             }
         };
 
         fetchData();
     }, [id]);
 
+    // Handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setRoom((prev) => ({ ...prev, [name]: value }));
     };
 
+    // Handle adding media via link (not used in this version but kept for compatibility)
     const handleAddMediaLink = () => {
         if (newMediaLink.trim()) {
             setMediaItems([
@@ -68,31 +92,42 @@ function RoomDetail() {
         }
     };
 
+    // Handle file uploads
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
             const objectUrl = URL.createObjectURL(file);
-            const fileType = file.type.split('/')[0]; // 'image', 'video', 'audio'
-            const mediaType = fileType === 'image' ? 'Image' :
-                fileType === 'video' ? 'Video' :
-                    fileType === 'audio' ? 'Audio' : 'File';
+            const fileType = file.type.split('/')[0];
+            const mediaType =
+                fileType === 'image'
+                    ? 'Image'
+                    : fileType === 'video'
+                        ? 'Video'
+                        : fileType === 'audio'
+                            ? 'Audio'
+                            : 'File';
 
             setMediaItems([
                 ...mediaItems,
                 {
                     mediaId: `temp-${Date.now()}`,
                     mediaLink: objectUrl,
-                    file: file,
-                    mediaType: mediaType,
+                    file,
+                    mediaType,
                 },
             ]);
         }
     };
 
+    // Handle media deletion
     const handleDeleteMedia = async (index) => {
         const mediaItem = mediaItems[index];
 
-        if (mediaItem.mediaId && typeof mediaItem.mediaId === 'string' && !mediaItem.mediaId.startsWith('temp-')) {
+        if (
+            mediaItem.mediaId &&
+            typeof mediaItem.mediaId === 'string' &&
+            !mediaItem.mediaId.startsWith('temp-')
+        ) {
             try {
                 await deleteMedia(mediaItem.mediaId);
             } catch (err) {
@@ -104,8 +139,17 @@ function RoomDetail() {
         setMediaItems(mediaItems.filter((_, i) => i !== index));
     };
 
+    // Handle saving changes
     const handleSave = async () => {
         try {
+            const startDate = new Date(room.startDate);
+            const endDate = new Date(room.endDate);
+
+            if (endDate < startDate) {
+                setError('End Date must be on or after Start Date.');
+                return;
+            }
+
             const roomDTO = {
                 RoomID: parseInt(id),
                 RoomNumber: room.roomNumber,
@@ -118,7 +162,7 @@ function RoomDetail() {
 
             await updateRoom(id, roomDTO);
 
-            // Delete all existing media first
+            // Delete all existing media
             await deleteMediaByRoomId(id);
 
             // Upload all current media items
@@ -134,7 +178,7 @@ function RoomDetail() {
                     const mediaLink = item.mediaLink.replace('https://localhost:7067', '');
                     await addMedia({
                         roomId: parseInt(id),
-                        mediaLink: mediaLink,
+                        mediaLink,
                         description: '',
                         mediaType: item.mediaType,
                     });
@@ -147,22 +191,33 @@ function RoomDetail() {
         }
     };
 
+    // Render media preview
     const renderMediaPreview = (item) => {
         switch (item.mediaType) {
             case 'Image':
                 return (
-                    <img
+                    <Image
                         src={item.mediaLink}
                         alt="Preview"
-                        style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '4px' }}
-                        onError={(e) => (e.target.src = 'https://via.placeholder.com/200')}
+                        style={{
+                            width: '150px',
+                            height: '150px',
+                            objectFit: 'cover',
+                            borderRadius: '4px',
+                        }}
+                        onError={(e) => (e.target.src = 'https://via.placeholder.com/150')}
                     />
                 );
             case 'Video':
                 return (
                     <video
                         controls
-                        style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '4px' }}
+                        style={{
+                            width: '150px',
+                            height: '150px',
+                            objectFit: 'cover',
+                            borderRadius: '4px',
+                        }}
                     >
                         <source src={item.mediaLink} type="video/mp4" />
                         Your browser does not support the video tag.
@@ -170,182 +225,213 @@ function RoomDetail() {
                 );
             case 'Audio':
                 return (
-                    <audio controls style={{ width: '200px', marginTop: '50px' }}>
+                    <audio
+                        controls
+                        style={{ width: '150px', marginTop: '50px' }}
+                    >
                         <source src={item.mediaLink} type="audio/mpeg" />
                         Your browser does not support the audio element.
                     </audio>
                 );
             default:
                 return (
-                    <div style={{ width: '200px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #ddd', borderRadius: '4px' }}>
+                    <div
+                        style={{
+                            width: '150px',
+                            height: '150px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '1px solid #ddd',
+                            borderRadius: '4px',
+                        }}
+                    >
                         <span>{item.mediaType} File</span>
                     </div>
                 );
         }
     };
 
-    if (!room) return <div>Loading...</div>;
+    if (isLoading || !room) {
+        return (
+            <Container className="text-center py-5">
+                <Spinner animation="border" variant="primary" />
+            </Container>
+        );
+    }
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Room Details</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+        <Container fluid className="room-detail-container py-4">
+            <Card className="shadow-sm">
+                <Card.Body>
+                    <Row className="mb-4">
+                        <Col>
+                            <h2 className="mb-0">Edit Room Details</h2>
+                        </Col>
+                    </Row>
 
-            <div style={{ maxWidth: '500px', marginBottom: '20px' }}>
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Room Number:</label>
-                    <input
-                        type="text"
-                        name="roomNumber"
-                        value={room.roomNumber}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
+                    {error && (
+                        <Alert variant="danger" onClose={() => setError(null)} dismissible>
+                            {error}
+                        </Alert>
+                    )}
 
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Room Type:</label>
-                    <select
-                        name="roomTypeId"
-                        value={room.roomTypeId}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                    >
-                        {roomTypes.map((type) => (
-                            <option key={type.roomTypeId} value={type.roomTypeId}>
-                                {type.roomTypeName}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                    <Form>
+                        <Row>
+                            {/* Room Number */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="roomNumber">
+                                    <Form.Label>Room Number</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        name="roomNumber"
+                                        value={room.roomNumber}
+                                        onChange={handleChange}
+                                        placeholder="Enter room number"
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
 
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Status:</label>
-                    <select
-                        name="status"
-                        value={room.status}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                    >
-                        <option value="Available">Available</option>
-                        <option value="Booked">Booked</option>
-                        <option value="Maintenance">Maintenance</option>
-                    </select>
-                </div>
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Description:</label>
-                    <textarea
-                        name="description"
-                        value={room.description}
-                        onChange={handleChange}
-                        rows={4}
-                        style={{
-                            width: '100%',
-                            padding: '8px',
-                            borderRadius: '4px',
-                            border: '1px solid #ddd',
-                            resize: 'vertical',
-                        }}
-                    />
-                </div>
-
-
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Start Date:</label>
-                    <input
-                        type="date"
-                        name="startDate"
-                        value={room.startDate}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-
-                <div style={{ marginBottom: '15px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>End Date:</label>
-                    <input
-                        type="date"
-                        name="endDate"
-                        value={room.endDate}
-                        onChange={handleChange}
-                        style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
-                        required
-                    />
-                </div>
-            </div>
-
-            <h2>Media</h2>
-
-            <div style={{ marginBottom: '15px' }}>
-                <div style={{ marginBottom: '10px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px' }}>Upload File:</label>
-                    <input
-                        type="file"
-                        onChange={handleFileChange}
-                        style={{ border: '1px solid #ddd', padding: '8px', borderRadius: '4px' }}
-                    />
-                </div>
-                {mediaItems.length > 0 && (
-                    <div>
-                        <h4>Media Preview:</h4>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                            {mediaItems.map((item, index) => (
-                                <div key={item.mediaId} style={{ position: 'relative' }}>
-                                    {renderMediaPreview(item)}
-                                    <button
-                                        onClick={() => handleDeleteMedia(index)}
-                                        style={{
-                                            position: 'absolute',
-                                            top: '5px',
-                                            right: '5px',
-                                            padding: '5px',
-                                            backgroundColor: '#dc3545',
-                                            color: 'white',
-                                            border: 'none',
-                                            borderRadius: '4px',
-                                            cursor: 'pointer',
-                                        }}
+                            {/* Room Type */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="roomTypeId">
+                                    <Form.Label>Room Type</Form.Label>
+                                    <Form.Select
+                                        name="roomTypeId"
+                                        value={room.roomTypeId}
+                                        onChange={handleChange}
                                     >
-                                        X
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
+                                        {roomTypes.map((type) => (
+                                            <option key={type.roomTypeID} value={type.roomTypeID}>
+                                                {type.roomTypeName}
+                                            </option>
+                                        ))}
+                                    </Form.Select>
+                                </Form.Group>
+                            </Col>
 
-            <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-                <button
-                    onClick={handleSave}
-                    style={{
-                        padding: '10px 20px',
-                        backgroundColor: '#28a745',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                    }}
-                >
-                    Save
-                </button>
-                <button
-                    onClick={() => navigate('/rooms')}
-                    style={{
-                        padding: '10px 20px',
-                        backgroundColor: '#007bff',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                    }}
-                >
-                    Back to Room List
-                </button>
-            </div>
-        </div>
+                            {/* Status */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="status">
+                                    <Form.Label>Status</Form.Label>
+                                    <Form.Select
+                                        name="status"
+                                        value={room.status}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="Available">Available</option>
+                                        <option value="Booked">Booked</option>
+                                        <option value="Maintenance">Maintenance</option>
+                                    </Form.Select>
+                                </Form.Group>
+                            </Col>
+
+                            {/* Start Date */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="startDate">
+                                    <Form.Label>Start Date</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="startDate"
+                                        value={room.startDate}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* End Date */}
+                            <Col md={6} xs={12} className="mb-3">
+                                <Form.Group controlId="endDate">
+                                    <Form.Label>End Date</Form.Label>
+                                    <Form.Control
+                                        type="date"
+                                        name="endDate"
+                                        value={room.endDate}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* Description */}
+                            <Col xs={12} className="mb-3">
+                                <Form.Group controlId="description">
+                                    <Form.Label>Description</Form.Label>
+                                    <Form.Control
+                                        as="textarea"
+                                        name="description"
+                                        value={room.description}
+                                        onChange={handleChange}
+                                        rows={4}
+                                        placeholder="Enter room description"
+                                        style={{ resize: 'vertical' }}
+                                    />
+                                </Form.Group>
+                            </Col>
+
+                            {/* Media Upload */}
+                            <Col xs={12} className="mb-4">
+                                <Form.Group controlId="media">
+                                    <Form.Label>Upload Media</Form.Label>
+                                    <Form.Control
+                                        type="file"
+                                        onChange={handleFileChange}
+                                        accept="image/*,video/*,audio/*"
+                                    />
+                                </Form.Group>
+
+                                {mediaItems.length > 0 && (
+                                    <div className="mt-3">
+                                        <h5>Media Preview</h5>
+                                        <ListGroup>
+                                            {mediaItems.map((item, index) => (
+                                                <ListGroup.Item
+                                                    key={item.mediaId}
+                                                    className="d-flex align-items-center justify-content-between"
+                                                >
+                                                    <div className="d-flex align-items-center">
+                                                        {renderMediaPreview(item)}
+                                                        <span className="ms-3">
+                                                            {item.file ? item.file.name : 'Uploaded Media'}
+                                                        </span>
+                                                    </div>
+                                                    <Button
+                                                        variant="outline-danger"
+                                                        size="sm"
+                                                        onClick={() => handleDeleteMedia(index)}
+                                                    >
+                                                        Remove
+                                                    </Button>
+                                                </ListGroup.Item>
+                                            ))}
+                                        </ListGroup>
+                                    </div>
+                                )}
+                            </Col>
+
+                            {/* Buttons */}
+                            <Col xs={12} className="text-end">
+                                <Button
+                                    variant="success"
+                                    onClick={handleSave}
+                                    className="me-2"
+                                >
+                                    Save
+                                </Button>
+                                <Button
+                                    variant="secondary"
+                                    onClick={() => navigate('/rooms')}
+                                >
+                                    Back to Room List
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Container>
     );
 }
 

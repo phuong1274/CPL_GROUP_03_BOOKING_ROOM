@@ -1,0 +1,57 @@
+.bookingListContainer {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a3c34;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-left: 0.5rem;
+}
+
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tableHeader {
+    background-color: #1a3c34;
+    color: white;
+}
+
+.tableRow:hover {
+    background-color: #f1f3f5;
+}
+
+.actionButton {
+    transition: transform 0.2s ease;
+}
+
+    .actionButton:hover {
+        transform: translateY(-2px);
+    }
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .actionButton {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

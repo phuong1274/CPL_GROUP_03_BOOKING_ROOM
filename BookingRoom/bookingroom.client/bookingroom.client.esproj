@@ -7,6 +7,14 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="src\pages\AdminPages\BookingList\**" />
+    <TypeScriptConfiguration Remove="src\pages\AdminPages\BookingList\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\pages\UserPages\BookingList.module.css" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
+    <Folder Include="src\pages\AdminPages\NewFolder\" />
   </ItemGroup>
 </Project>
