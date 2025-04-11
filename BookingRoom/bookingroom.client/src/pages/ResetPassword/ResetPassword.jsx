@@ -1,7 +1,7 @@
 ﻿import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import styles from './ResetPassword.module.css'; // Import CSS module
-import { resetPassword } from '../../services/api'; // Import resetPassword function
+import styles from './ResetPassword.module.css'; 
+import { resetPassword } from '../../services/authService'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ResetPassword = () => {
@@ -14,7 +14,6 @@ const ResetPassword = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
-    // Lấy token từ URL khi component được mount
     useEffect(() => {
         const tokenFromUrl = searchParams.get('token');
         if (tokenFromUrl) {

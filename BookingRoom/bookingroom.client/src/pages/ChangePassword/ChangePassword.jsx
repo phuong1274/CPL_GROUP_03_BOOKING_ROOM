@@ -1,8 +1,8 @@
 ﻿import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { changePassword } from '../../services/api';
-import styles from './ChangePassword.module.css'; // Import CSS module
+import { changePassword } from '../../services/authService';
+import styles from './ChangePassword.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ChangePassword = () => {
