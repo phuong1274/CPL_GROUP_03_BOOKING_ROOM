@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\FU Learning\\2025\\SPRING2025\\Mock_Project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
-  "Documents": [],
+  "WorkspaceRootPath": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|k:\\g3\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|k:\\g3\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|k:\\g3\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|k:\\g3\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AvailableRooms.module.css",
+              "DocumentMoniker": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
+              "ToolTip": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-12T03:49:57.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AvailableRooms.jsx",
+              "DocumentMoniker": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.jsx",
+              "ToolTip": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.jsx",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-12T03:49:53.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyBooking.module.css",
+              "DocumentMoniker": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
+              "ToolTip": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAcwIIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-12T02:52:17.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyBooking.jsx",
+              "DocumentMoniker": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.jsx",
+              "ToolTip": "K:\\G3\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.jsx",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAowI4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-12T02:49:21.944Z",
+              "EditorCaption": ""
             }
           ]
         }

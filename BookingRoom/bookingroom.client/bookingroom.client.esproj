@@ -8,5 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
+    <Folder Include="src\assets\AvailibleRooms\" />
   </ItemGroup>
 </Project>
