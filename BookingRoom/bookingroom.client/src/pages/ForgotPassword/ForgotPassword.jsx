@@ -2,6 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import { forgotPassword } from '../../services/authService';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './ForgotPassword.module.css';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -26,66 +27,83 @@ const ForgotPassword = () => {
         }
     }, []);
 
-    const handleSubmit = useCallback(async (e) => {
-        e.preventDefault();
-        setMessage('');
-        setError('');
-        setEmailError('');
+    const handleSubmit = useCallback(
+        async (e) => {
+            e.preventDefault();
+            setMessage('');
+            setError('');
+            setEmailError('');
 
-        // Validate định dạng email phía client
-        if (!validateEmail(email)) {
-            setEmailError('Email sai định dạng');
-            return;
-        }
+            if (!validateEmail(email)) {
+                setEmailError('Email sai định dạng');
+                return;
+            }
 
-        try {
-            const response = await forgotPassword(email);
-            setMessage(response); // response là chuỗi: "Reset link has been sent to your email."
-        } catch (err) {
-            setError(err || 'Failed to send reset password email'); // err là chuỗi: "User with this email does not exist."
-        }
-    }, [email]);
+            try {
+                const response = await forgotPassword(email);
+                setMessage(response);
+            } catch (err) {
+                setError(err || 'Failed to send reset password email');
+            }
+        },
+        [email]
+    );
 
     return (
-        <div className="d-flex justify-content-center align-items-center min-vh-100 bg-gradient bg-primary-subtle">
-            <div className="card shadow-lg p-4" style={{ maxWidth: '420px', width: '100%', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
-                <h2 className="text-center mb-4 fw-bold text-primary">Forgot Password</h2>
-
-                {message && (
-                    <div className="alert alert-success text-center">{message}</div>
-                )}
-                {error && (
-                    <div className="alert alert-danger text-center">{error}</div>
-                )}
-
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label fw-semibold">Email Address</label>
-                        <input
-                            type="email"
-                            id="email"
-                            className={`form-control ${emailError ? 'is-invalid' : ''}`}
-                            placeholder="you@example.com"
-                            value={email}
-                            onChange={handleChange}
-                            required
-                        />
-                        {emailError && <div className="invalid-feedback">{emailError}</div>}
+        <div className={`container ${styles.customContainer}`}>
+            <div className="row justify-content-center align-items-center min-vh-100">
+                <div className="col-12 col-md-8 col-lg-6">
+                    <div className={`card ${styles.customCard}`}>
+                        <div className="card-body p-4 p-md-5">
+                            <h2 className={`card-title text-center ${styles.cardTitle}`}>
+                                Forgot Password
+                            </h2>
+                            {message && (
+                                <div className="alert alert-success" role="alert">
+                                    {message}
+                                </div>
+                            )}
+                            {error && (
+                                <div className="alert alert-danger" role="alert">
+                                    {error}
+                                </div>
+                            )}
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">
+                                        Email Address
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className={`form-control ${emailError ? 'is-invalid' : ''}`}
+                                        placeholder="you@example.com"
+                                        value={email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                    {emailError && (
+                                        <div className="invalid-feedback">{emailError}</div>
+                                    )}
+                                </div>
+                                <div className="d-grid gap-2">
+                                    <button
+                                        type="submit"
+                                        className={`btn btn-warning ${styles.submitButton}`}
+                                    >
+                                        Send Reset Link
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigate('/login')}
+                                        className={`btn btn-warning ${styles.submitButton}`}
+                                    >
+                                        Back to Login
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-
-                    <button type="submit" className="btn btn-primary w-100 fw-semibold shadow-sm">
-                        Send Reset Link
-                    </button>
-                </form>
-
-                <div className="text-center mt-3">
-                    <span
-                        role="button"
-                        className="text-decoration-underline text-primary"
-                        onClick={() => navigate('/login')}
-                    >
-                        ← Back to Login
-                    </span>
                 </div>
             </div>
         </div>

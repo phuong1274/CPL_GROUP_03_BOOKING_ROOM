@@ -52,6 +52,14 @@ const Navbar = () => {
                         >
                             My Bookings
                         </button>
+
+                        <button
+                            onClick={() => navigate('/update-profile')}
+                            className="nav-button"
+                            aria-label="Navigate to User Profile"
+                        >
+                            User Profile
+                        </button>
                     </>
                 )}
                 {isAdminUser && (

@@ -80,52 +80,79 @@ const ChangePassword = () => {
         }
     };
 
+    
     return (
-        <div className={styles.changePasswordWrapper}>
-            <div className={styles.changePasswordBox}>
-                <h2>Change Password</h2>
-                {error && <div className={styles.errorMessage}>{error}</div>}
-                {success && <div className={styles.successMessage}>{success}</div>}
-                <form onSubmit={handleSubmit}>
-                    <div className={styles.inputGroup}>
-                        <label htmlFor="oldPassword">Old Password:</label>
-                        <input
-                            id="oldPassword"
-                            type="password"
-                            value={oldPassword}
-                            onChange={handleOldPasswordChange}
-                            required
-                            placeholder="Enter your old password"
-                            className={`${styles.input} ${oldPasswordError ? styles['is-invalid'] : ''}`}
-                        />
-                        {oldPasswordError && (
-                            <div className={styles.invalidFeedback}>{oldPasswordError}</div>
-                        )}
+        <div className={`container ${styles.customContainer}`}>
+            <div className="row justify-content-center align-items-center min-vh-100">
+                <div className="col-12 col-md-8 col-lg-6">
+                    <div className={`card ${styles.customCard}`}>
+                        <div className="card-body p-4 p-md-5">
+                            <h2 className={`card-title text-center ${styles.cardTitle}`}>
+                                Change Password
+                            </h2>
+                            {error && (
+                                <div className="alert alert-danger" role="alert">
+                                    {error}
+                                </div>
+                            )}
+                            {success && (
+                                <div className="alert alert-success" role="alert">
+                                    {success}
+                                </div>
+                            )}
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="oldPassword" className="form-label">
+                                        Old Password
+                                    </label>
+                                    <input
+                                        id="oldPassword"
+                                        type="password"
+                                        value={oldPassword}
+                                        onChange={handleOldPasswordChange}
+                                        className={`form-control ${oldPasswordError ? 'is-invalid' : ''}`}
+                                        required
+                                        placeholder="Enter your old password"
+                                    />
+                                    {oldPasswordError && (
+                                        <div className="invalid-feedback">{oldPasswordError}</div>
+                                    )}
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="newPassword" className="form-label">
+                                        New Password
+                                    </label>
+                                    <input
+                                        id="newPassword"
+                                        type="password"
+                                        value={newPassword}
+                                        onChange={handleNewPasswordChange}
+                                        className={`form-control ${newPasswordError ? 'is-invalid' : ''}`}
+                                        required
+                                        placeholder="Enter your new password"
+                                    />
+                                    {newPasswordError && (
+                                        <div className="invalid-feedback">{newPasswordError}</div>
+                                    )}
+                                </div>
+                                <div className="d-grid gap-2">
+                                    <button
+                                        type="submit"
+                                        className={`btn btn-warning ${styles.submitButton}`}
+                                    >
+                                        Change Password
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigate('/')}
+                                        className={`btn btn-warning ${styles.submitButton}`}
+                                    >
+                                        Back to Home
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className={styles.inputGroup}>
-                        <label htmlFor="newPassword">New Password:</label>
-                        <input
-                            id="newPassword"
-                            type="password"
-                            value={newPassword}
-                            onChange={handleNewPasswordChange}
-                            required
-                            placeholder="Enter your new password"
-                            className={`${styles.input} ${newPasswordError ? styles['is-invalid'] : ''}`}
-                        />
-                        {newPasswordError && (
-                            <div className={styles.invalidFeedback}>{newPasswordError}</div>
-                        )}
-                    </div>
-                    <button type="submit" className={styles.changePasswordButton}>Change Password</button>
-                </form>
-                <div className={styles.backToHome}>
-                    <span
-                        onClick={() => navigate('/')}
-                        className={styles.backToHomeLink}
-                    >
-                        Back to Home
-                    </span>
                 </div>
             </div>
         </div>
