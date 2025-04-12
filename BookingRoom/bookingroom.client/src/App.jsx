@@ -3,8 +3,8 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
-import Header from './components/Header'; 
-import Navbar from './components/Navbar'; 
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Home from './pages/HomePage/Home';
 import UserList from './pages/AdminPages/UserList/UserList';
 import UserDetail from './pages/AdminPages/UserDetail/UserDetail';
@@ -54,9 +54,10 @@ function NotFound() {
 }
 
 // ProtectedRoute Component
-function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false }) {
+function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false, allowUnauthenticated = false }) {
     const { token, isLoading, isAdmin } = useAuth();
     const [loadingTimeout, setLoadingTimeout] = useState(false);
+    const location = useLocation();
 
     // Set a timeout for loading state
     useEffect(() => {
@@ -77,8 +78,14 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <div className="error-message">Loading timed out. Please refresh the page.</div>;
     }
 
+    // Cho phép truy cập nếu allowUnauthenticated là true (dành cho trang Home)
+    if (allowUnauthenticated && !token) {
+        return children;
+    }
+
+    // Nếu không có token và không được phép truy cập không cần đăng nhập, chuyển hướng về /login
     if (!token) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" state={{ from: location }} />;
     }
 
     if (requireAdmin && !isAdmin()) {
@@ -89,6 +96,14 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
+    // Redirect based on role for the root path
+    if (location.pathname === '/') {
+        if (isAdmin()) {
+            return <Navigate to="/revenue-report" />;
+        }
+        return children; // Customers see the Home page
+    }
+
     return children;
 }
 
@@ -96,6 +111,12 @@ function AppContent() {
     const { logout } = useAuth();
     const location = useLocation();
     const [errorMessage, setErrorMessage] = useState(null);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar is closed by default
+
+    // Toggle sidebar visibility
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
 
     // Handle error messages from redirects
     useEffect(() => {
@@ -114,10 +135,18 @@ function AppContent() {
         };
     }, [logout]);
 
+    // Kiểm tra nếu đang ở trang login hoặc register thì không hiển thị Header và Navbar
+    const hideHeaderAndNavbar = ['/login', '/register'].includes(location.pathname);
+
     return (
-        <div>
-            <Header /> {/* Add the Header component above Navbar */}
-            <Navbar /> {/* Navbar is now below Header */}
+        <div className="app-container">
+            {/* Chỉ hiển thị Header và Navbar nếu không phải trang login hoặc register */}
+            {!hideHeaderAndNavbar && (
+                <>
+                    <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+                    <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                </>
+            )}
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}
@@ -126,7 +155,7 @@ function AppContent() {
                     </button>
                 </div>
             )}
-            <div className="content">
+            <div className={`content ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
                 <ErrorBoundary>
                     <Routes>
                         <Route path="/login" element={<Login />} />
@@ -137,7 +166,7 @@ function AppContent() {
                         <Route
                             path="/"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute allowUnauthenticated={true}>
                                     <Home />
                                 </ProtectedRoute>
                             }
@@ -248,6 +277,7 @@ function AppContent() {
         </div>
     );
 }
+
 function App() {
     return (
         <AuthProvider>

@@ -106,7 +106,6 @@ const Home = () => {
                                 <div className="room-content">
                                     <h3>{room.name}</h3>
                                     <p>{room.description}</p>
-                                    <Link to="/booking" className="book-link">Book This Room</Link>
                                 </div>
                             </div>
                         ))}

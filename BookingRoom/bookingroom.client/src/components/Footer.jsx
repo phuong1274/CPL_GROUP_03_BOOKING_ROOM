@@ -4,56 +4,9 @@ import './style/Footer.css';
 const Footer = () => {
     return (
         <footer className="footer">
-            {/* Social Media Section (Full Width) */}
-            <div className="footer-social-top">
-                <p>Get connected with us on social networks:</p>
-                <div className="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <i className="ri-facebook-fill"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <i className="ri-twitter-fill"></i>
-                    </a>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" aria-label="Google">
-                        <i className="ri-google-fill"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i className="ri-instagram-fill"></i>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i className="ri-linkedin-fill"></i>
-                    </a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i className="ri-github-fill"></i>
-                    </a>
-                </div>
-            </div>
-
-            {/* Main Footer Content (Three Columns) */}
+            {/* Main Footer Content (Contact on the left, Social on the right) */}
             <div className="footer-container">
-                {/* Products Section */}
-                <div className="footer-section footer-products">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="#angular">Angular</a></li>
-                        <li><a href="#react">React</a></li>
-                        <li><a href="#vue">Vue</a></li>
-                        <li><a href="#laravel">Laravel</a></li>
-                    </ul>
-                </div>
-
-                {/* Useful Links Section */}
-                <div className="footer-section footer-links">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#settings">Settings</a></li>
-                        <li><a href="#orders">Orders</a></li>
-                        <li><a href="#help">Help</a></li>
-                    </ul>
-                </div>
-
-                {/* Contact Section */}
+                {/* Contact Section (Left) */}
                 <div className="footer-section footer-contact">
                     <h3>Contact</h3>
                     <p>
@@ -68,6 +21,31 @@ const Footer = () => {
                     <p>
                         <i className="ri-printer-fill"></i> + 84 234 567 899
                     </p>
+                </div>
+
+                {/* Social Media Section (Right) */}
+                <div className="footer-section footer-social-top">
+                    <p>Get connected with us on social networks:</p>
+                    <div className="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i className="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i className="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://google.com" target="_blank" rel="noopener noreferrer" aria-label="Google">
+                            <i className="ri-google-fill"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i className="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i className="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i className="ri-github-fill"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

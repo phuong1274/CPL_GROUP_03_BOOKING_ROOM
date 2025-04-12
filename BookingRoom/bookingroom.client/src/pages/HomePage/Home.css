@@ -1,4 +1,6 @@
-﻿/* Hero Section (Home Page) */
+﻿/* style/Home.css */
+
+/* Hero Section (Home Page) */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://landmark72.intercontinental.com/wp-content/uploads/16-1.jpg');
     background-size: cover;
@@ -10,12 +12,14 @@
     text-align: center;
     color: white;
     width: 100%;
+    max-width: none;
     margin: 0;
-    animation: slideDown 1s ease-out forwards; /* Slide down animation */
+    animation: slideDown 1s ease-out forwards;
 }
 
 .hero-content {
     max-width: 800px;
+    padding: 0 20px; /* Add padding for smaller screens */
 }
 
 .hero h1 {
@@ -30,13 +34,11 @@
     font-family: 'Lora', serif;
 }
 
-
 /* Rooms Section (Home Page) */
 .rooms-section {
     margin-top: 200px;
     text-align: center;
     width: 100%;
-   
 }
 
     .rooms-section h2 {
@@ -52,6 +54,7 @@
     gap: 3.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px; /* Add padding for smaller screens */
 }
 
 .room-card {
@@ -69,17 +72,17 @@
     }
 
 .row-normal {
-    flex-direction: row; /* Image on the left, text on the right */
+    flex-direction: row;
 }
 
 .row-reverse {
-    flex-direction: row-reverse; /* Text on the left, image on the right */
+    flex-direction: row-reverse;
 }
 
 .room-image {
     flex: 1;
     max-width: 50%;
-    opacity: 0; /* Start with opacity 0 for animation */
+    opacity: 0;
 }
 
     .room-image img {
@@ -89,11 +92,11 @@
     }
 
 .slide-from-left {
-    animation: slideFromLeft 1s ease-out forwards; /* Slide from left for even-indexed images */
+    animation: slideFromLeft 1s ease-out forwards;
 }
 
 .slide-from-right {
-    animation: slideFromRight 1s ease-out forwards; /* Slide from right for odd-indexed images */
+    animation: slideFromRight 1s ease-out forwards;
 }
 
 .room-content {
@@ -113,17 +116,6 @@
         font-size: 1rem;
         color: #666;
         margin-bottom: 1rem;
-    }
-
-.book-link {
-    display: inline-block;
-    color: #b8860b;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-    .book-link:hover {
-        text-decoration: underline;
     }
 
 /* Services Section (Home Page) */
@@ -158,6 +150,7 @@
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px; /* Add padding for smaller screens */
 }
 
 .service-card {
@@ -230,10 +223,47 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    .hero {
+        height: 500px;
+    }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+    .rooms-section,
+    .services-section {
+        margin-top: 150px;
+        margin-bottom: 120px;
+    }
+
+        .rooms-section h2,
+        .services-section h2 {
+            font-size: 2.2rem;
+        }
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        height: 450px;
+    }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
 
     .room-card {
         flex-direction: column !important;
@@ -245,32 +275,175 @@
 
     .room-content {
         text-align: center;
+        padding: 1.5rem;
+    }
+
+    .room-image img {
+        height: 250px;
     }
 }
 
 @media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
+    .hero {
+        height: 400px;
     }
 
-    .services-section {
-        padding: 20px;
-    }
-
-        .services-section h2 {
+        .hero h1 {
             font-size: 2rem;
         }
 
-    .services-description {
-        font-size: 1rem;
+        .hero p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+    .rooms-section,
+    .services-section {
+        margin-top: 100px;
+        margin-bottom: 80px;
+        padding: 20px 15px;
     }
 
-    .rooms-section h2 {
-        font-size: 2rem;
+        .rooms-section h2,
+        .services-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+    .rooms-grid {
+        gap: 2rem;
     }
 
     .room-image img {
         height: 200px;
     }
+
+    .room-content {
+        padding: 1rem;
+    }
+
+        .room-content h3 {
+            font-size: 1.3rem;
+        }
+
+        .room-content p {
+            font-size: 0.9rem;
+        }
+
+    .services-section {
+        padding: 20px 10px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .services-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
 }
 
+@media (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero p {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+    .rooms-section,
+    .services-section {
+        margin-top: 80px;
+        margin-bottom: 60px;
+        padding: 15px 10px;
+    }
+
+        .rooms-section h2,
+        .services-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+    .rooms-grid {
+        gap: 1.5rem;
+    }
+
+    .room-image img {
+        height: 180px;
+    }
+
+    .room-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .room-content p {
+        font-size: 0.85rem;
+    }
+
+    .services-description {
+        font-size: 0.9rem;
+    }
+
+    .service-card {
+        padding: 1rem;
+    }
+
+    .service-icon {
+        font-size: 1.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        height: 300px;
+    }
+
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 0.8rem;
+        }
+
+    .rooms-section h2,
+    .services-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .room-image img {
+        height: 160px;
+    }
+}

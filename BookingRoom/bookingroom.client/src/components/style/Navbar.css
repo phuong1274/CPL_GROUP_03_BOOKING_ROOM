@@ -1,110 +1,254 @@
-.navbar {
-    background-color: #2c2c2c;
-    padding: 1rem;
+/* style/Navbar.css */
+
+/* Sidebar container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 600px;
+    background-color: #1a1a1a;
+    color: #fff;
     display: flex;
-    align-items: center; /* Ensure vertical alignment */
-    gap: 4rem;
-    justify-content: center;
-    width: 100vw; /* Span the full viewport width */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-    margin: 0; /* Ensure no margin adds space */
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
-.navbar-brand h3 {
-    color: darkgoldenrod;
-    font-size: 1.5rem; /* Slightly larger for the brand */
-    font-weight: 600;
-    margin: 0; /* Remove default margin from h3 */
-    font-family: 'Playfair Display', serif; /* Match the font style */
+    /* Sidebar states */
+    .sidebar.sidebar-open {
+        transform: translateY(0);
+    }
+
+    .sidebar.sidebar-closed {
+        transform: translateY(-100%);
+    }
+
+/* Sidebar brand (title) */
+.sidebar-brand {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #1a1a1a;
+    gap: 10px;
 }
 
-.navbar-links {
+    .sidebar-brand h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: darkgoldenrod;
+    }
+
+.sidebar-hamburger-icon {
+    font-size: 1.4rem;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+    .sidebar-hamburger-icon:hover {
+        color: #fff;
+    }
+
+/* Sidebar links container */
+.sidebar-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    overflow-y: auto;
+}
+
+/* Sidebar button styles */
+.sidebar-button {
     display: flex;
     align-items: center;
-    gap: 4rem; /* Match the gap from the old navbar */
-}
-
-.nav-button {
+    padding: 15px 20px;
     background: none;
     border: none;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
+    color: #b3b3b3;
+    font-size: 1rem;
+    text-align: left;
     cursor: pointer;
-    font-family: 'Playfair Display', serif; /* Match the font style */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-    .nav-button:hover {
-        color: #b8860b; /* Match the hover color from the old navbar */
+    .sidebar-button:hover {
+        background-color: #333;
+        color: #fff;
     }
 
+    .sidebar-button.active {
+        background-color: #444;
+        color: #fff;
+    }
+
+/* Sidebar icon styles */
+.sidebar-icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* Logout button */
 .logout-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif; /* Match the font style */
+    margin-top: auto;
+    border-top: 1px solid #333;
 }
 
-    .logout-button:hover {
-        color: #b8860b; /* Match the hover color from the old navbar */
+/* Remove body margin-left */
+body {
+    margin: 0;
+}
+
+/* Adjust content padding */
+.content {
+    padding: 20px;
+    padding-top: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 220px;
+        height: 550px;
     }
 
-/* Mobile Optimization */
+    .sidebar-brand {
+        padding: 15px;
+    }
+
+        .sidebar-brand h3 {
+            font-size: 1.2rem;
+        }
+
+    .sidebar-hamburger-icon {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+        height: 500px;
+    }
+
+    .sidebar-brand h3 {
+        font-size: 1.1rem;
+    }
+
+    .sidebar-hamburger-icon {
+        font-size: 1.2rem;
+    }
+
+    .sidebar-button {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .sidebar-icon {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack elements vertically */
-        gap: 1rem; /* Reduce gap between brand and links */
-        padding: 0.5rem; /* Reduce padding for mobile */
-        width: 100vw; /* Ensure full width */
-        min-height: 120px; /* Ensure enough height for stacked content */
+    .sidebar {
+        width: 180px;
+        height: 450px;
     }
 
-    .navbar-brand h3 {
-        font-size: 1.2rem; /* Reduce font size for mobile */
-        text-align: center; /* Center the brand text */
+    .sidebar-brand {
+        padding: 12px;
     }
 
-    .navbar-links {
-        flex-direction: row; /* Keep links horizontal, but wrap if needed */
-        flex-wrap: wrap; /* Allow links to wrap to the next line if needed */
-        gap: 1.5rem; /* Reduce gap between links */
-        justify-content: center; /* Center the links */
-        width: 100%; /* Ensure links take full width */
-        padding: 0 1rem; /* Add some padding to avoid edge touching */
+        .sidebar-brand h3 {
+            font-size: 1rem;
+        }
+
+    .sidebar-hamburger-icon {
+        font-size: 1.1rem;
     }
 
-    .nav-button {
-        font-size: 0.9rem; /* Reduce font size for mobile */
+    .sidebar-links {
+        padding: 8px 15px;
     }
 
-    .logout-button {
-        font-size: 0.9rem; /* Reduce font size for mobile */
+    .sidebar-button {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .sidebar-icon {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    .content {
+        padding-top: 50px;
     }
 }
 
-/* Extra small screens (e.g., very narrow devices) */
 @media (max-width: 480px) {
-    .navbar-links {
-        gap: 1rem; /* Further reduce gap for very small screens */
-        padding: 0 0.5rem;
+    .sidebar {
+        width: 160px;
+        height: 400px;
     }
 
-    .nav-button {
-        font-size: 0.8rem; /* Further reduce font size */
+    .sidebar-brand {
+        padding: 10px;
     }
 
-    .logout-button {
-        font-size: 0.8rem; /* Further reduce font size */
+        .sidebar-brand h3 {
+            font-size: 0.9rem;
+        }
+
+    .sidebar-hamburger-icon {
+        font-size: 1rem;
     }
 
-    .navbar-brand h3 {
-        font-size: 1rem; /* Further reduce brand font size */
+    .sidebar-button {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .sidebar-icon {
+        font-size: 0.9rem;
+        margin-right: 8px;
+    }
+
+    .content {
+        padding: 15px;
+        padding-top: 45px;
+    }
+}
+
+@media (max-width: 360px) {
+    .sidebar {
+        width: 140px;
+        height: 350px;
+    }
+
+    .sidebar-brand {
+        padding: 8px;
+    }
+
+        .sidebar-brand h3 {
+            font-size: 0.85rem;
+        }
+
+    .sidebar-hamburger-icon {
+        font-size: 0.9rem;
+    }
+
+    .sidebar-button {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+    .sidebar-icon {
+        font-size: 0.85rem;
+        margin-right: 6px;
     }
 }
