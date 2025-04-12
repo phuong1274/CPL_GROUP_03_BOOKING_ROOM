@@ -1,1 +1,47 @@
-﻿
+﻿/* App.css */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding-top: 60px; /* Để tránh nội dung bị che bởi header cố định */
+    flex: 1;
+    padding: 20px;
+}
+
+.error-message {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1100;
+}
+
+.close-error {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    color: #721c24;
+    cursor: pointer;
+}
+
+.loading, .not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+}

@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
@@ -43,7 +43,6 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-// 404 Page Component
 function NotFound() {
     return (
         <div className="not-found">
@@ -53,19 +52,17 @@ function NotFound() {
     );
 }
 
-// ProtectedRoute Component
 function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false, allowUnauthenticated = false }) {
     const { token, isLoading, isAdmin } = useAuth();
     const [loadingTimeout, setLoadingTimeout] = useState(false);
     const location = useLocation();
 
-    // Set a timeout for loading state
     useEffect(() => {
         const timer = setTimeout(() => {
             if (isLoading) {
                 setLoadingTimeout(true);
             }
-        }, 5000); // 5 seconds timeout
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, [isLoading]);
@@ -78,12 +75,10 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <div className="error-message">Loading timed out. Please refresh the page.</div>;
     }
 
-    // Cho phép truy cập nếu allowUnauthenticated là true (dành cho trang Home)
     if (allowUnauthenticated && !token) {
         return children;
     }
 
-    // Nếu không có token và không được phép truy cập không cần đăng nhập, chuyển hướng về /login
     if (!token) {
         return <Navigate to="/login" state={{ from: location }} />;
     }
@@ -96,12 +91,11 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
-    // Redirect based on role for the root path
     if (location.pathname === '/') {
         if (isAdmin()) {
             return <Navigate to="/revenue-report" />;
         }
-        return children; // Customers see the Home page
+        return children;
     }
 
     return children;
@@ -111,36 +105,31 @@ function AppContent() {
     const { logout } = useAuth();
     const location = useLocation();
     const [errorMessage, setErrorMessage] = useState(null);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar is closed by default
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    // Toggle sidebar visibility
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    // Handle error messages from redirects
     useEffect(() => {
         if (location.state?.error) {
             setErrorMessage(location.state.error);
-            // Clear the state after displaying the message
             window.history.replaceState({}, document.title, location.pathname);
         }
     }, [location]);
 
-    // Set logout callback for api.js
     useEffect(() => {
         setLogoutCallback(logout);
         return () => {
-            setLogoutCallback(null); // Cleanup on unmount
+            setLogoutCallback(null);
         };
     }, [logout]);
 
-    // Kiểm tra nếu đang ở trang login hoặc register thì không hiển thị Header và Navbar
-    const hideHeaderAndNavbar = ['/login', '/register'].includes(location.pathname);
+    // Hide both Header and Navbar on login, register, forgot-password, reset-password
+    const hideHeaderAndNavbar = ['/login', '/register', '/forgot-password', '/reset-password'].includes(location.pathname);
 
     return (
         <div className="app-container">
-            {/* Chỉ hiển thị Header và Navbar nếu không phải trang login hoặc register */}
             {!hideHeaderAndNavbar && (
                 <>
                     <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
@@ -162,7 +151,6 @@ function AppContent() {
                         <Route path="/register" element={<Register />} />
                         <Route path="/forgot-password" element={<ForgotPassword />} />
                         <Route path="/reset-password/" element={<ResetPassword />} />
-
                         <Route
                             path="/"
                             element={
@@ -171,7 +159,6 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/change-password"
                             element={
@@ -180,7 +167,6 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/update-profile"
                             element={
@@ -189,7 +175,6 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/users"
                             element={

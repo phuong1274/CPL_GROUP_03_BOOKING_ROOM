@@ -10,7 +10,7 @@ import {
     RiListSettingsLine,
     RiFileChartLine,
     RiLogoutBoxLine,
-    RiMenu3Line // Hamburger menu icon for sidebar
+    RiMenu3Line,
 } from 'react-icons/ri';
 import './style/Navbar.css';
 
@@ -19,7 +19,7 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Hide Navbar on login, register, forgot-password, and reset-password routes
+    // Hide Navbar on specific routes
     if (
         location.pathname.startsWith('/login') ||
         location.pathname.startsWith('/register') ||
@@ -37,7 +37,7 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
 
     const handleNavigation = (path) => {
         navigate(path);
-        toggleSidebar(); // Close sidebar after navigation
+        toggleSidebar(); // Close sidebar on mobile after navigation
     };
 
     const isCustomer = token && !isAdmin();
@@ -49,25 +49,21 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                 <RiMenu3Line
                     className="sidebar-hamburger-icon"
                     onClick={toggleSidebar}
-                    aria-label="Close sidebar"
+                    aria-label={isSidebarOpen ? 'Close sidebar' : 'Open sidebar'}
                 />
                 <h3>Hotel Booking</h3>
             </div>
             <div className="sidebar-links">
-                {/* Show Home button only for customers */}
-                {isCustomer && (
-                    <button
-                        onClick={() => handleNavigation('/')}
-                        className="sidebar-button"
-                        aria-label="Navigate to Home"
-                    >
-                        <RiHomeLine className="sidebar-icon" />
-                        <span>Home</span>
-                    </button>
-                )}
-
                 {isCustomer && (
                     <>
+                        <button
+                            onClick={() => handleNavigation('/')}
+                            className="sidebar-button"
+                            aria-label="Navigate to Home"
+                        >
+                            <RiHomeLine className="sidebar-icon" />
+                            <span>Home</span>
+                        </button>
                         <button
                             onClick={() => handleNavigation('/available-rooms')}
                             className="sidebar-button"

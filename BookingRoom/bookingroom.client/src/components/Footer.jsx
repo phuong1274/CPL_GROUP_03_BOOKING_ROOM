@@ -16,16 +16,16 @@ const Footer = () => {
                         <i className="ri-mail-fill"></i> BookingRoomG3@gmail.com
                     </p>
                     <p>
-                        <i className="ri-phone-fill"></i> + 84 234 567 889
+                        <i className="ri-phone-fill"></i> +84 234 567 889
                     </p>
                     <p>
-                        <i className="ri-printer-fill"></i> + 84 234 567 899
+                        <i className="ri-printer-fill"></i> +84 234 567 899
                     </p>
                 </div>
 
                 {/* Social Media Section (Right) */}
                 <div className="footer-section footer-social-top">
-                    <p>Get connected with us on social networks:</p>
+                    <p>Connected With Us:</p>
                     <div className="social-links">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <i className="ri-facebook-fill"></i>

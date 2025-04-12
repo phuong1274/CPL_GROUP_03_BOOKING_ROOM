@@ -13,6 +13,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    height: 67px
 }
 
 .header-menu {
@@ -37,7 +38,8 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 600;
-    color: darkgoldenrod;
+    color: #FFD700;
+    font-weight: bolder
 }
 
 .header-contact {
@@ -80,7 +82,7 @@
 }
 
 .user-name {
-    color: darkgoldenrod;
+    color: #FFD700 ;
     cursor: pointer;
     font-weight: 500;
     transition: color 0.3s;
