@@ -187,7 +187,7 @@ function RoomType() {
                                     <hr />
                                     <div className={styles.cardDescription}>Description: {type.description}</div>
                                     <hr />
-                                    <div className={styles.cardPrice}>Price: {type.price}</div>
+                                    <div className={styles.cardPrice}>Price(USD): {type.price}</div>
                                     <hr />
                                     <div className={styles.cardValidDate}>Valid Date: {new Date(type.validDate).toLocaleDateString()}</div>
                                     <hr />
@@ -240,7 +240,7 @@ function RoomType() {
                                 />
                             </div>
                             <div className={styles.formGroup}>
-                                <label className={styles.formLabel}>Price:</label>
+                                <label className={styles.formLabel}>Price(USD):</label>
                                 <input
                                     type="number"
                                     name="price"

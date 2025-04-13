@@ -224,7 +224,7 @@ export default function AvailableRooms() {
                                             <br />
                                             <p className={styles.roomDesc}>{room.description || 'No description available.'}</p>
                                             <br />
-                                            <div className={styles.priceText}>${room.price.toFixed(2)} / Night</div>
+                                            <div className={styles.priceText}>${room.price.toFixed(2)} USD/ Night</div>
                                             <br />
                                             <button
                                                 className={styles.bookNowButton}

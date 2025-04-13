@@ -9,7 +9,6 @@
     align-items: flex-end;
     padding-bottom: 5rem;
     position: relative;
-    margin-top: 67px;
 }
 
 .headerText {
@@ -143,8 +142,8 @@
 .cardBody {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     height: 100%;
     padding: 1.5rem;
 }
@@ -218,3 +217,16 @@
     border: 1px solid #ccc;
     font-size: 1rem;
 }
+
+/* Card Media Preview */
+.mediaPreview {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+    .mediaPreview img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
