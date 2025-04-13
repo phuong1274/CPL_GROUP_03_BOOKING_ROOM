@@ -1,84 +1,230 @@
+/* style/Header.css */
 .header {
-    background-color: #7b5905;
-    padding: 0.5rem 2rem;
+    background-color: black;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    z-index: 900;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
-    height: 60px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    height: 67px
+}
+
+.header-menu {
+    color: darkgoldenrod;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamburger-icon {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+    .hamburger-icon:hover {
+        color: #007bff;
+    }
+
+.header-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFD700;
+    font-weight: bolder
 }
 
 .header-contact {
     display: flex;
-    gap: 1.5rem;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact-item {
-    color: white;
     font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    color: goldenrod;
+    white-space: nowrap;
 }
 
     .contact-item i {
-        font-size: 1rem;
+        margin-right: 5px;
     }
 
 .header-links {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
 .header-link {
-    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: darkgoldenrod;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    transition: color 0.3s;
 }
 
     .header-link:hover {
-        color: #b8860b;
+        color: #0056b3;
     }
 
 .separator {
-    color: white;
-    font-size: 0.9rem;
+    color: #555;
 }
 
-/* Styles for the user name (when logged in) */
 .user-name {
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: #FFD700 ;
     cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-weight: bolder;
 }
 
     .user-name:hover {
-        color: #b8860b;
+        color: #007bff;
     }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .header {
+        padding: 12px 15px;
+    }
+
+    .header-contact {
+        gap: 15px;
+    }
+
+    .header-links {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .hamburger-icon {
+        font-size: 1.4rem;
+    }
+
+    .contact-item {
+        font-size: 0.85rem;
+    }
+
+    .header-link {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
-        height: auto;
-        padding: 1rem 2rem;
+        padding: 8px 10px;
+    }
+
+    .header-menu {
+        gap: 8px;
+    }
+
+    .header-title {
+        font-size: 1.1rem;
+    }
+
+    .hamburger-icon {
+        font-size: 1.3rem;
+    }
+
+    .header-contact {
+        gap: 10px;
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .header-links {
+        gap: 5px;
+    }
+
+    .header-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 10px;
+    }
+
+    .header-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-title {
+        font-size: 1rem;
+    }
+
+    .hamburger-icon {
+        font-size: 1.2rem;
     }
 
     .header-contact {
         flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+        gap: 5px;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .contact-item {
+        font-size: 0.75rem;
     }
 
     .header-links {
-        justify-content: center;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        padding: 6px 8px;
+    }
+
+    .header-title {
+        font-size: 0.9rem;
+    }
+
+    .hamburger-icon {
+        font-size: 1.1rem;
+    }
+
+    .contact-item {
+        font-size: 0.7rem;
+    }
+
+    .header-link {
+        font-size: 0.75rem;
     }
 }

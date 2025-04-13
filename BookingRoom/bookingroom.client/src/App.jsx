@@ -1,10 +1,10 @@
 ﻿import React, { useEffect, useState } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { setLogoutCallback } from './services/authService';
-import Header from './components/Header'; 
-import Navbar from './components/Navbar'; 
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Home from './pages/HomePage/Home';
 import UserList from './pages/AdminPages/UserList/UserList';
 import UserDetail from './pages/AdminPages/UserDetail/UserDetail';
@@ -43,7 +43,6 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-// 404 Page Component
 function NotFound() {
     return (
         <div className="not-found">
@@ -53,18 +52,17 @@ function NotFound() {
     );
 }
 
-// ProtectedRoute Component
-function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false }) {
+function ProtectedRoute({ children, requireAdmin = false, requireCustomer = false, allowUnauthenticated = false }) {
     const { token, isLoading, isAdmin } = useAuth();
     const [loadingTimeout, setLoadingTimeout] = useState(false);
+    const location = useLocation();
 
-    // Set a timeout for loading state
     useEffect(() => {
         const timer = setTimeout(() => {
             if (isLoading) {
                 setLoadingTimeout(true);
             }
-        }, 5000); // 5 seconds timeout
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, [isLoading]);
@@ -77,8 +75,12 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <div className="error-message">Loading timed out. Please refresh the page.</div>;
     }
 
+    if (allowUnauthenticated && !token) {
+        return children;
+    }
+
     if (!token) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" state={{ from: location }} />;
     }
 
     if (requireAdmin && !isAdmin()) {
@@ -89,6 +91,13 @@ function ProtectedRoute({ children, requireAdmin = false, requireCustomer = fals
         return <Navigate to="/" state={{ error: 'You do not have permission to access this page.' }} />;
     }
 
+    if (location.pathname === '/') {
+        if (isAdmin()) {
+            return <Navigate to="/revenue-report" />;
+        }
+        return children;
+    }
+
     return children;
 }
 
@@ -96,28 +105,37 @@ function AppContent() {
     const { logout } = useAuth();
     const location = useLocation();
     const [errorMessage, setErrorMessage] = useState(null);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    // Handle error messages from redirects
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
     useEffect(() => {
         if (location.state?.error) {
             setErrorMessage(location.state.error);
-            // Clear the state after displaying the message
             window.history.replaceState({}, document.title, location.pathname);
         }
     }, [location]);
 
-    // Set logout callback for api.js
     useEffect(() => {
         setLogoutCallback(logout);
         return () => {
-            setLogoutCallback(null); // Cleanup on unmount
+            setLogoutCallback(null);
         };
     }, [logout]);
 
+    // Hide both Header and Navbar on login, register, forgot-password, reset-password
+    const hideHeaderAndNavbar = ['/login', '/register', '/forgot-password', '/reset-password'].includes(location.pathname);
+
     return (
-        <div>
-            <Header /> {/* Add the Header component above Navbar */}
-            <Navbar /> {/* Navbar is now below Header */}
+        <div className="app-container">
+            {!hideHeaderAndNavbar && (
+                <>
+                    <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+                    <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                </>
+            )}
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}
@@ -126,23 +144,21 @@ function AppContent() {
                     </button>
                 </div>
             )}
-            <div className="content">
+            <div className={`content ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
                 <ErrorBoundary>
                     <Routes>
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/forgot-password" element={<ForgotPassword />} />
                         <Route path="/reset-password/" element={<ResetPassword />} />
-
                         <Route
                             path="/"
                             element={
-                                <ProtectedRoute>
+                                <ProtectedRoute allowUnauthenticated={true}>
                                     <Home />
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/change-password"
                             element={
@@ -151,7 +167,6 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/update-profile"
                             element={
@@ -160,7 +175,6 @@ function AppContent() {
                                 </ProtectedRoute>
                             }
                         />
-
                         <Route
                             path="/users"
                             element={
@@ -248,6 +262,7 @@ function AppContent() {
         </div>
     );
 }
+
 function App() {
     return (
         <AuthProvider>

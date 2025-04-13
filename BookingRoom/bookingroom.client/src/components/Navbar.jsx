@@ -1,108 +1,143 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import {
+    RiHomeLine,
+    RiHotelLine,
+    RiCalendarCheckLine,
+    RiUserLine,
+    RiDoorOpenLine,
+    RiListSettingsLine,
+    RiFileChartLine,
+    RiLogoutBoxLine,
+    RiMenu3Line,
+} from 'react-icons/ri';
 import './style/Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     const { token, isAdmin, logout } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Hide Navbar on login and register routes (including nested routes)
-    if (location.pathname.startsWith('/login') || location.pathname.startsWith('/register')) {
+    // Hide Navbar on specific routes
+    if (
+        location.pathname.startsWith('/login') ||
+        location.pathname.startsWith('/register') ||
+        location.pathname.startsWith('/forgot-password') ||
+        location.pathname.startsWith('/reset-password')
+    ) {
         return null;
     }
 
     const handleLogout = () => {
         logout();
         navigate('/login');
+        toggleSidebar(); // Close sidebar after logout
+    };
+
+    const handleNavigation = (path) => {
+        navigate(path);
+        toggleSidebar(); // Close sidebar on mobile after navigation
     };
 
     const isCustomer = token && !isAdmin();
     const isAdminUser = token && isAdmin();
 
     return (
-        <nav className="navbar">
-            <div className="navbar-brand">
+        <div className={`sidebar ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+            <div className="sidebar-brand">
+                <RiMenu3Line
+                    className="sidebar-hamburger-icon"
+                    onClick={toggleSidebar}
+                    aria-label={isSidebarOpen ? 'Close sidebar' : 'Open sidebar'}
+                />
                 <h3>Hotel Booking</h3>
             </div>
-            <div className="navbar-links">
-                {/* Add Home button, visible to all users */}
-                <button
-                    onClick={() => navigate('/')}
-                    className="nav-button"
-                    aria-label="Navigate to Home"
-                >
-                    Home
-                </button>
-
+            <div className="sidebar-links">
                 {isCustomer && (
                     <>
                         <button
-                            onClick={() => navigate('/available-rooms')}
-                            className="nav-button"
-                            aria-label="Navigate to Available Rooms"
+                            onClick={() => handleNavigation('/')}
+                            className="sidebar-button"
+                            aria-label="Navigate to Home"
                         >
-                            Available Rooms
+                            <RiHomeLine className="sidebar-icon" />
+                            <span>Home</span>
                         </button>
                         <button
-                            onClick={() => navigate('/my-booking')}
-                            className="nav-button"
+                            onClick={() => handleNavigation('/available-rooms')}
+                            className="sidebar-button"
+                            aria-label="Navigate to Available Rooms"
+                        >
+                            <RiHotelLine className="sidebar-icon" />
+                            <span>Available Rooms</span>
+                        </button>
+                        <button
+                            onClick={() => handleNavigation('/my-booking')}
+                            className="sidebar-button"
                             aria-label="Navigate to My Bookings"
                         >
-                            My Bookings
+                            <RiCalendarCheckLine className="sidebar-icon" />
+                            <span>My Bookings</span>
                         </button>
                     </>
                 )}
                 {isAdminUser && (
                     <>
                         <button
-                            onClick={() => navigate('/users')}
-                            className="nav-button"
+                            onClick={() => handleNavigation('/users')}
+                            className="sidebar-button"
                             aria-label="Navigate to User List"
                         >
-                            User List
+                            <RiUserLine className="sidebar-icon" />
+                            <span>User List</span>
                         </button>
                         <button
-                            onClick={() => navigate('/rooms')}
-                            className="nav-button"
+                            onClick={() => handleNavigation('/rooms')}
+                            className="sidebar-button"
                             aria-label="Navigate to Room List"
                         >
-                            Room List
+                            <RiDoorOpenLine className="sidebar-icon" />
+                            <span>Room List</span>
                         </button>
                         <button
-                            onClick={() => navigate('/room-types')}
-                            className="nav-button"
+                            onClick={() => handleNavigation('/room-types')}
+                            className="sidebar-button"
                             aria-label="Navigate to Room Types"
                         >
-                            Room Types
-                        </button>
-                        <button onClick={() => navigate('/booking')}
-                            className="nav-button"
-                            aria-label="Navigate to Bookings"
-                        >
-                            Bookings
+                            <RiListSettingsLine className="sidebar-icon" />
+                            <span>Room Types</span>
                         </button>
                         <button
-                            onClick={() => navigate('/revenue-report')}
-                            className="nav-button"
+                            onClick={() => handleNavigation('/booking')}
+                            className="sidebar-button"
+                            aria-label="Navigate to Bookings"
+                        >
+                            <RiCalendarCheckLine className="sidebar-icon" />
+                            <span>Bookings</span>
+                        </button>
+                        <button
+                            onClick={() => handleNavigation('/revenue-report')}
+                            className="sidebar-button"
                             aria-label="Navigate to Revenue Report"
                         >
-                            Revenue Report
+                            <RiFileChartLine className="sidebar-icon" />
+                            <span>Revenue Report</span>
                         </button>
                     </>
                 )}
                 {token && (
                     <button
                         onClick={handleLogout}
-                        className="logout-button"
+                        className="sidebar-button logout-button"
                         aria-label="Logout"
                     >
-                        Logout
+                        <RiLogoutBoxLine className="sidebar-icon" />
+                        <span>Logout</span>
                     </button>
                 )}
             </div>
-        </nav>
+        </div>
     );
 };
 
