@@ -1,6 +1,6 @@
 /* style/Header.css */
 .header {
-    background-color: black;
+    background-color: #f4f2ed;
     padding: 15px 20px;
     border-bottom: 1px solid #ddd;
     position: fixed;
@@ -13,7 +13,8 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    height: 67px
+    height: 67px;
+    border-right: 5px gray;
 }
 
 .header-menu {
@@ -25,7 +26,7 @@
 
 .hamburger-icon {
     font-size: 1.5rem;
-    color: white;
+    color: dimgray;
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -38,7 +39,7 @@
     margin: 0;
     font-size: 1.3rem;
     font-weight: 600;
-    color: #FFD700;
+    color: #DAA520;
     font-weight: bolder
 }
 
@@ -82,7 +83,7 @@
 }
 
 .user-name {
-    color: #FFD700 ;
+    color: #DAA520;
     cursor: pointer;
     font-weight: 500;
     transition: color 0.3s;

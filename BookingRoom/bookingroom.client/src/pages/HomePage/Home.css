@@ -2,7 +2,7 @@
 
 /* General styles */
 .home {
-    background-color: #f5f5f5; /* Light background for airy feel */
+    background-color: #dfddd8; /* Light background for airy feel */
     color: #333;
     font-family: 'Inter', sans-serif; /* Modern sans-serif for body */
     overflow-x: hidden; /* Prevent horizontal scroll issues */
@@ -21,6 +21,7 @@
     width: 100%;
     animation: zoomIn 10s ease-in-out infinite alternate; /* Slow background zoom */
     position: relative;
+    margin-top: 67px
 }
 
 .hero-content {

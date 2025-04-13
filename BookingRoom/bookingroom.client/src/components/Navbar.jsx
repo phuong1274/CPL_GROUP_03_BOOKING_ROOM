@@ -83,10 +83,11 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
 
                         <button
                             onClick={() => navigate('/update-profile')}
-                            className="nav-button"
+                            className="sidebar-button"
                             aria-label="Navigate to User Profile"
                         >
-                            User Profile
+                            <RiUserLine className="sidebar-icon" />
+                            <span>UserProfile</span>
                         </button>
                     </>
                 )}
