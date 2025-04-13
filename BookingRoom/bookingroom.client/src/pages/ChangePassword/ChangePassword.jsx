@@ -144,10 +144,10 @@ const ChangePassword = () => {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => navigate('/')}
+                                        onClick={() => navigate('/update-profile')}
                                         className={`btn btn-warning ${styles.submitButton}`}
                                     >
-                                        Back to Home
+                                        Back To Update Profile
                                     </button>
                                 </div>
                             </form>

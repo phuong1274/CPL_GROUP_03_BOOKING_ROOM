@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "DKnR5WQa1Kzj9p7jNDrFhmFZ3VzeFiOGyJ1mcLsBg4o=",
+  "Hash": "+zrApRS2j7vmHCK8i84rWg+3rjScZcQD0/GYmki47v0=",
   "Source": "BookingRoom.Server",
   "BasePath": "_content/BookingRoom.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\bookingroom.client.esproj",
+      "Identity": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\bookingroom.client.esproj",
       "Version": 2,
       "Source": "bookingroom.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
@@ -19,5 +19,6 @@
     }
   ],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
