@@ -135,8 +135,8 @@ const UpdateProfile = () => {
                                 </div>
                             )}
                             <form onSubmit={handleSubmit}>
-                                <div className="mb-4">
-                                    <label htmlFor="username" className={`form-label ${styles.formLabel}`}>
+                                <div className="mb-3">
+                                    <label htmlFor="username" className="form-label">
                                         Username
                                     </label>
                                     <input
@@ -145,15 +145,15 @@ const UpdateProfile = () => {
                                         name="username"
                                         value={formData.username}
                                         onChange={handleChange}
-                                        className={`form-control ${styles.formControl} ${errors.username ? 'is-invalid' : ''}`}
+                                        className={`form-control ${errors.username ? 'is-invalid' : ''}`}
                                         required
                                     />
                                     {errors.username && (
                                         <div className="invalid-feedback">{errors.username}</div>
                                     )}
                                 </div>
-                                <div className="mb-4">
-                                    <label htmlFor="fullName" className={`form-label ${styles.formLabel}`}>
+                                <div className="mb-3">
+                                    <label htmlFor="fullName" className="form-label">
                                         Full Name
                                     </label>
                                     <input
@@ -162,14 +162,14 @@ const UpdateProfile = () => {
                                         name="fullName"
                                         value={formData.fullName}
                                         onChange={handleChange}
-                                        className={`form-control ${styles.formControl} ${errors.fullName ? 'is-invalid' : ''}`}
+                                        className={`form-control ${errors.fullName ? 'is-invalid' : ''}`}
                                         required
                                     />
                                     {errors.fullName && (
                                         <div className="invalid-feedback">{errors.fullName}</div>
                                     )}
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-3">
                                     <label htmlFor="phoneNumber" className={`form-label ${styles.formLabel}`}>
                                         Phone Number
                                     </label>
@@ -179,15 +179,15 @@ const UpdateProfile = () => {
                                         name="phoneNumber"
                                         value={formData.phoneNumber}
                                         onChange={handleChange}
-                                        className={`form-control ${styles.formControl} ${errors.phoneNumber ? 'is-invalid' : ''}`}
+                                        className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`}
                                         required
                                     />
                                     {errors.phoneNumber && (
                                         <div className="invalid-feedback">{errors.phoneNumber}</div>
                                     )}
                                 </div>
-                                <div className="mb-4">
-                                    <label htmlFor="email" className={`form-label ${styles.formLabel}`}>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">
                                         Email
                                     </label>
                                     <input
@@ -196,23 +196,25 @@ const UpdateProfile = () => {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`form-control ${styles.formControl} ${errors.email ? 'is-invalid' : ''}`}
+                                        className={`form-control  ${errors.email ? 'is-invalid' : ''}`}
                                         required
                                     />
                                     {errors.email && (
                                         <div className="invalid-feedback">{errors.email}</div>
                                     )}
                                 </div>
-                                <div className="d-grid gap-3">
-                                    <button type="submit" className={`btn ${styles.submitButton}`}>
+                                <div className="d-grid gap-2">
+                                    <button
+                                        type="submit"
+                                        className={`btn btn-warning ${styles.submitButton}`}>
                                         Save Changes
                                     </button>
                                     <button
-                                        type="button"
-                                        onClick={() => navigate('/')}
-                                        className={styles.backButton}
+                                        type="submit"
+                                        onClick={() => navigate('/change-password')}
+                                        className={`btn btn-warning ${styles.submitButton}`}
                                     >
-                                        Back to Home
+                                        Change Password
                                     </button>
                                 </div>
                             </form>
