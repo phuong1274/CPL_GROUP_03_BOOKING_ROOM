@@ -90,11 +90,11 @@ const Login = () => {
                                 type="button"
                                 className={styles.registerButton}
                             >
-                                Register
+                                REGISTER
                             </button>
                         </Link>
                         <button type="submit" className={styles.loginButton}>
-                            Login
+                            LOGIN
                         </button>
                     </div>
                 </form>
