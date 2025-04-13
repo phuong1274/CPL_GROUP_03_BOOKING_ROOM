@@ -30,7 +30,7 @@ public partial class HotelBookingDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=(local);Database=HotelBookingDB;Uid=sa;Pwd=2004;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=(local);Database=HotelBookingDB;Uid=sa;Pwd=123;TrustServerCertificate=True");
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
