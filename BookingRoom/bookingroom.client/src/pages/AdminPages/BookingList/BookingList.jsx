@@ -341,7 +341,7 @@ export default function BookingList() {
                                     <th>Check-in</th>
                                     <th>Check-out</th>
                                     <th>Updated</th>
-                                    <th>Total</th>
+                                    <th>Total(USD)</th>
                                     <th>Status</th>
                                     <th className="text-center">Actions</th>
                                 </tr>

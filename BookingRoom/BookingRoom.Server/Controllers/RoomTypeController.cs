@@ -1,6 +1,7 @@
 ﻿using BookingRoom.Server.DTOs;
 using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
+using BookingRoom.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -14,10 +15,12 @@ namespace BookingRoom.Server.Controllers
     public class RoomTypeController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IRoomTypeService _roomTypeService;
 
-        public RoomTypeController(IUnitOfWork unitOfWork)
+        public RoomTypeController(IUnitOfWork unitOfWork, IRoomTypeService roomTypeService)
         {
             _unitOfWork = unitOfWork;
+            _roomTypeService = roomTypeService;
         }
 
 
@@ -154,14 +157,25 @@ namespace BookingRoom.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRoomType(int id)
         {
-            var roomType = await _unitOfWork.RoomTypes.GetRoomTypeByIdAsync(id);
-            if (roomType == null)
+            try
             {
-                return NotFound();
+                await _roomTypeService.DeleteRoomTypeAsync(id);
+                return NoContent();
             }
-
-            await _unitOfWork.RoomTypes.DeleteRoomTypeAsync(id);
-            return NoContent();
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { error = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "An unexpected error occurred." });
+            }
         }
+
+
     }
 }

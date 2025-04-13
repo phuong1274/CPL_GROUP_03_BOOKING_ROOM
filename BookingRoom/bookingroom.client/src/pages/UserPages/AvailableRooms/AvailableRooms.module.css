@@ -9,7 +9,6 @@
     align-items: flex-end;
     padding-bottom: 5rem;
     position: relative;
-    margin-top: 67px;
 }
 
 .headerText {
@@ -112,8 +111,15 @@
     color: #2c2c2c;
 }
 
-.roomType {
+.roomNumber {
     font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.roomType {
+    font-size: 25px;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #2c2c2c;
@@ -143,8 +149,8 @@
 .cardBody {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: flex-start;
     height: 100%;
     padding: 1.5rem;
 }
@@ -218,3 +224,16 @@
     border: 1px solid #ccc;
     font-size: 1rem;
 }
+
+/* Card Media Preview */
+.mediaPreview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .mediaPreview img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }

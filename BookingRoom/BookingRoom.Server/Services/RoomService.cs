@@ -3,6 +3,7 @@ using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories;
 using BookingRoom.Server.Repositories.Interfaces;
 using BookingRoom.Server.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -132,11 +133,19 @@ namespace BookingRoom.Server.Services
                 throw new KeyNotFoundException($"Room with ID {roomId} not found.");
             }
 
-            await _unitOfWork.Rooms.DeleteRoomAsync(roomId);
+            try
+            {
+                await _unitOfWork.Rooms.DeleteRoomAsync(roomId);
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new InvalidOperationException("Cannot delete this room because it is referenced by other data (e.g. bookings).");
+            }
         }
-    
 
-    public async Task UpdateRoomStatusAsync(int roomId, string newStatus)
+
+
+        public async Task UpdateRoomStatusAsync(int roomId, string newStatus)
     {
         try
         {

@@ -72,7 +72,14 @@ export const deleteRoom = async (id) => {
     try {
         await api.delete(`/room/${id}`);
     } catch (error) {
-        throw new Error(error.response?.data?.Error || error.message || 'Failed to delete room');
+        console.error('Backend error response:', error.response?.data);
+
+        const errMsg =
+            error.response?.data?.error || 
+            error.response?.data?.message || 
+            'Failed to delete room';
+
+        throw new Error(errMsg);
     }
 };
 
@@ -129,9 +136,11 @@ export const deleteRoomType = async (id) => {
     try {
         await api.delete(`/roomtype/${id}`);
     } catch (error) {
-        throw new Error(error.response?.data?.Error || error.message || 'Failed to delete room type');
+        console.error('Backend error response:', error.response?.data);
+        throw new Error(error.response?.data?.error || error.message || 'Failed to delete room type');
     }
 };
+
 
 // Get media by roomid function
 export const getMediaByRoomId = async (roomId) => {

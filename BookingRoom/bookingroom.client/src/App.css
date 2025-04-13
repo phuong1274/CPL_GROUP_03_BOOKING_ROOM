@@ -21,13 +21,6 @@
     z-index: 1100;
 }
 
-.close-error {
-    margin-left: 10px;
-    background: none;
-    border: none;
-    color: #721c24;
-    cursor: pointer;
-}
 
 .loading, .not-found {
     display: flex;
@@ -41,5 +34,28 @@
 @media (max-width: 768px) {
     .content {
         padding: 15px;
+    }
+
+    .error-message {
+        top: 60px;
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-message {
+        top: 50px;
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}   
+
+@media (max-width: 360px) {
+    .error-message {
+        top: 40px;
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
 }

@@ -1,5 +1,6 @@
 /* General Container */
 .bookingListContainer {
+    margin-top: 67px;
     background-color: #f4f6f9;
     min-height: 100vh;
     padding: 1.5rem;

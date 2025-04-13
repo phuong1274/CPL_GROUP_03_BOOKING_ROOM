@@ -3,6 +3,8 @@ using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -281,11 +283,24 @@ namespace BookingRoom.Server.Controllers
             var room = await _unitOfWork.Rooms.GetRoomByIdAsync(id);
             if (room == null)
             {
-                return NotFound();
+                return NotFound(new { Error = $"Room with ID {id} not found." });
             }
 
-            await _unitOfWork.Rooms.DeleteRoomAsync(id);
-            return NoContent();
+            try
+            {
+                await _unitOfWork.Rooms.DeleteRoomAsync(id);
+                return NoContent();
+            }
+            catch (DbUpdateException ex) when (ex.InnerException is SqlException sqlEx && sqlEx.Number == 547)
+            {
+                return BadRequest(new { Error = "Cannot delete room because it has related bookings." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = "An unexpected error occurred." });
+            }
         }
+
+
     }
 }
