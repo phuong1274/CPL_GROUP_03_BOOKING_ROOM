@@ -8,7 +8,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="src\pages\AdminPages\BookingList\**" />
+    <None Remove="src\pages\AdminPages\NewFolder\**" />
     <TypeScriptConfiguration Remove="src\pages\AdminPages\BookingList\**" />
+    <TypeScriptConfiguration Remove="src\pages\AdminPages\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="src\components\Sideber.jsx" />
@@ -32,6 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\assets\Login_Register\" />
-    <Folder Include="src\pages\AdminPages\NewFolder\" />
+    <Folder Include="src\assets\AvailibleRooms\" />
   </ItemGroup>
 </Project>

@@ -8,9 +8,8 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        logout();
-        navigate('/'); // Redirect to home page after logout
+    const handleNavigateUserProfile = () => {
+        navigate('/update-profile');
     };
 
     return (
@@ -33,7 +32,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
             {/*</div>*/}
             <div className="header-links">
                 {user ? (
-                    <span className="user-name" onClick={handleLogout}>
+                    <span className="user-name" onClick={handleNavigateUserProfile}>
                         {user.fullName || user.username}
                     </span>
                 ) : (

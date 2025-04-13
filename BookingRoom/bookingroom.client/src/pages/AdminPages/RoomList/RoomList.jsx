@@ -1,5 +1,4 @@
-﻿// RoomList.jsx
-import { useEffect, useState, useCallback } from 'react';
+﻿import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     Container,
@@ -22,7 +21,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './RoomList.module.css';
 
 function RoomList() {
-    const [rooms, setRooms] = useState([]);
+    const [allRooms, setAllRooms] = useState([]);
+    const [displayedRooms, setDisplayedRooms] = useState([]);
     const [error, setError] = useState(null);
     const [roomNumber, setRoomNumber] = useState('');
     const [status, setStatus] = useState('');
@@ -35,6 +35,18 @@ function RoomList() {
     const [roomToDelete, setRoomToDelete] = useState(null);
     const pageSize = 20;
     const navigate = useNavigate();
+
+    // Thêm timeout cho thông báo lỗi
+    useEffect(() => {
+        if (error) {
+            const timeout = setTimeout(() => {
+                setError(null); // Tự động ẩn sau 4 giây
+            }, 4000); // 4 giây (có thể điều chỉnh từ 3000 đến 5000)
+
+            // Cleanup để tránh memory leak
+            return () => clearTimeout(timeout);
+        }
+    }, [error]);
 
     useEffect(() => {
         const fetchRoomTypes = async () => {
@@ -50,21 +62,18 @@ function RoomList() {
 
     const fetchRooms = useCallback(
         async (reset = false) => {
-            if (isLoading || !hasMore) return;
             setIsLoading(true);
             try {
-                const params = { roomNumber, status, roomTypeId, page, limit: pageSize };
+                const params = { roomNumber, status, roomTypeId };
                 const data = await getRooms(params);
                 const newData = Array.isArray(data) ? data : [];
+                setAllRooms(newData);
+
                 if (reset) {
-                    setRooms(newData);
-                } else {
-                    setRooms((prevRooms) => [
-                        ...new Set([...prevRooms, ...newData].map((r) => JSON.stringify(r)))].map((r) =>
-                            JSON.parse(r)
-                        ));
+                    setDisplayedRooms(newData.slice(0, pageSize));
+                    setPage(1);
+                    setHasMore(newData.length > pageSize);
                 }
-                if (newData.length < pageSize) setHasMore(false);
             } catch (err) {
                 setError(err.message);
                 setHasMore(false);
@@ -72,15 +81,12 @@ function RoomList() {
                 setIsLoading(false);
             }
         },
-        [roomNumber, status, roomTypeId, page, isLoading, hasMore]
+        [roomNumber, status, roomTypeId]
     );
 
     useEffect(() => {
-        setPage(1);
-        setHasMore(true);
-        setRooms([]);
         fetchRooms(true);
-    }, [roomNumber, status, roomTypeId]);
+    }, [roomNumber, status, roomTypeId, fetchRooms]);
 
     const handleScroll = useCallback(() => {
         const scrollPosition = window.innerHeight + document.documentElement.scrollTop;
@@ -96,14 +102,21 @@ function RoomList() {
     }, [handleScroll]);
 
     useEffect(() => {
-        if (page > 1) fetchRooms();
-    }, [page, fetchRooms]);
+        if (page > 1) {
+            const startIndex = (page - 1) * pageSize;
+            const endIndex = page * pageSize;
+            const newDisplayedRooms = allRooms.slice(0, endIndex);
+            setDisplayedRooms(newDisplayedRooms);
+            setHasMore(endIndex < allRooms.length);
+        }
+    }, [page, allRooms]);
 
     const handleDelete = async () => {
         try {
             await deleteMediaByRoomId(roomToDelete);
             await deleteRoom(roomToDelete);
-            setRooms((prev) => prev.filter((room) => room.roomID !== roomToDelete));
+            setAllRooms((prev) => prev.filter((room) => room.roomID !== roomToDelete));
+            setDisplayedRooms((prev) => prev.filter((room) => room.roomID !== roomToDelete));
             setShowDeleteModal(false);
         } catch (err) {
             setError(err.message);
@@ -125,7 +138,7 @@ function RoomList() {
                             <h2 className={styles.title}>
                                 Room Management
                                 <small className={styles.subtitle}>
-                                    {rooms.length > 0 ? ` (Showing ${rooms.length} rooms)` : ''}
+                                    {displayedRooms.length > 0 ? ` (Showing ${displayedRooms.length} rooms)` : ''}
                                 </small>
                             </h2>
                         </Col>
@@ -205,14 +218,14 @@ function RoomList() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {rooms.length === 0 && !isLoading ? (
+                                {displayedRooms.length === 0 && !isLoading ? (
                                     <tr>
                                         <td colSpan="4" className="text-center text-muted">
                                             No rooms to display.
                                         </td>
                                     </tr>
                                 ) : (
-                                    rooms.map((room) => (
+                                    displayedRooms.map((room) => (
                                         <tr key={room.roomID} className={styles.tableRow}>
                                             <td>{room.roomNumber}</td>
                                             <td>{room.roomTypeName}</td>
@@ -270,7 +283,7 @@ function RoomList() {
 
                     <div className="text-center mt-3">
                         {isLoading && <Spinner animation="border" variant="primary" />}
-                        {!hasMore && rooms.length > 0 && !isLoading && (
+                        {!hasMore && displayedRooms.length > 0 && !isLoading && (
                             <p className="text-muted">No more rooms to load.</p>
                         )}
                     </div>

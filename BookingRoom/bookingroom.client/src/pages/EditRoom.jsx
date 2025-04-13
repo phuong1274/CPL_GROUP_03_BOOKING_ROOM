@@ -37,7 +37,6 @@ function RoomDetail() {
                         }))
                         : []
                 );
-
                 const roomTypesData = await getRoomTypes();
                 setRoomTypes(roomTypesData);
             } catch (err) {
@@ -50,7 +49,6 @@ function RoomDetail() {
 
     const validateForm = () => {
         const newErrors = {};
-
         if (!room.roomNumber.trim()) {
             newErrors.roomNumber = 'Room number is required';
         } else if (!/^\d+$/.test(room.roomNumber.trim())) {

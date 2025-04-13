@@ -7,13 +7,14 @@
     left: 0;
     width: 250px;
     height: 100vh; /* Full viewport height */
-    background-color: #1a1a1a;
+    background-color: #f4f2ed;
     color: #fff;
     display: flex;
     flex-direction: column;
     z-index: 1000;
     transition: transform 0.3s ease; /* Smooth transition for sliding effect */
     overflow-y: auto; /* Allow scrolling if content overflows */
+    border-right: 1px solid black;
 }
 
     .sidebar.sidebar-open {
@@ -31,7 +32,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #1a1a1a;
+    background-color: #f4f2ed;
     gap: 10px;
 }
 
@@ -39,18 +40,18 @@
         margin: 0;
         font-size: 1.3rem;
         font-weight: 600;
-        color: #FFD700;
+        color: #DAA520;
     }
 
 .sidebar-hamburger-icon {
     font-size: 1.4rem;
-    color: #b3b3b3;
+    color: dimgray;
     cursor: pointer;
     transition: color 0.3s;
 }
 
     .sidebar-hamburger-icon:hover {
-        color: #fff;
+        color: #DAA520;
     }
 
 /* Sidebar links container */
@@ -68,16 +69,17 @@
     padding: 15px 20px;
     background: none;
     border: none;
-    color: #b3b3b3;
+    color: #44445f;
     font-size: 1rem;
     text-align: left;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-weight: bolder
 }
 
     .sidebar-button:hover {
-        background-color: #333;
-        color: #fff;
+        background-color: #dabe20;
+        color: gray;
     }
 
     .sidebar-button.active {
@@ -95,13 +97,6 @@
 .logout-button {
     margin-top: auto;
     border-top: 1px solid #333;
-}
-
-/* Adjust content padding to avoid overlap with fixed header */
-.content {
-    padding: 20px;
-    padding-top: 60px; /* Space for fixed header */
-    transition: margin-left 0.3s ease; /* Smooth transition for content */
 }
 
 .sidebar-open + .content {

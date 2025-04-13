@@ -237,7 +237,7 @@ const Register = () => {
                             </div>
                         )}
                     </div>
-                    <button type="submit" className={styles.registerButton}>Register</button>
+                    <button type="submit" className={styles.registerButton}>REGISTER</button>
                     <div className={styles.loginLink}>
                         Already have an account? <a href="/login">Login</a>
                     </div>

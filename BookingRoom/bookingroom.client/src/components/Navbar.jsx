@@ -80,6 +80,15 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                             <RiCalendarCheckLine className="sidebar-icon" />
                             <span>My Bookings</span>
                         </button>
+
+                        <button
+                            onClick={() => navigate('/update-profile')}
+                            className="sidebar-button"
+                            aria-label="Navigate to User Profile"
+                        >
+                            <RiUserLine className="sidebar-icon" />
+                            <span>UserProfile</span>
+                        </button>
                     </>
                 )}
                 {isAdminUser && (

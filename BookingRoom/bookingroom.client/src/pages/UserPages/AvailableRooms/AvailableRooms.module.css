@@ -1,0 +1,219 @@
+﻿/* Header */
+.headerWrapper {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('../../../assets/AvailibleRooms/HeaderImg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.headerText {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Intro section */
+.roomIntroSection {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    border-bottom: 1px solid #d3b5a3;
+}
+
+.roomIntroTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.roomIntroText {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.roomTypeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.roomTypeButton,
+.bookNowButton {
+    padding: 12px 24px;
+    border: 1px solid #d3b5a3;
+    background-color: transparent;
+    color: #d3b5a3;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    font-size: 0.9rem;
+}
+
+    .roomTypeButton:hover,
+    .bookNowButton:hover {
+        background-color: #d3b5a3;
+        color: black;
+    }
+
+    .roomTypeButton.active {
+        background-color: #d3b5a3;
+        color: black;
+        border-color: #d3b5a3;
+    }
+
+/* Room Section */
+.roomSection {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.roomContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.mediaPreview {
+    height: 100%;
+    min-height: 250px;
+}
+
+.mediaPlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    height: 100%;
+    min-height: 250px;
+}
+
+/* Room Info Styling */
+.roomTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.roomType {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.roomDesc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.priceText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #b38b59;
+    margin-bottom: 1.2rem;
+}
+
+/* General Layout */
+.cardList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.spinnerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.emptyMessage {
+    text-align: center;
+    color: #6c757d;
+    padding: 3rem 0;
+}
+
+.containerWrapper {
+    padding: 1.5rem 0;
+}
+
+.filterForm {
+    margin-bottom: 1.5rem;
+}
+
+.filterRow {
+    gap: 1rem;
+    align-items: center;
+}
+
+.pageTitle {
+    margin-bottom: 1.5rem;
+}
+
+/* Booking Box Styling */
+.bookingBox {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    animation: fadeIn 0.4s ease-in-out;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bookingRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bookingDateInput {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}

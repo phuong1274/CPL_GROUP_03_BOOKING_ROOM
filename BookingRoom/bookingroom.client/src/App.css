@@ -6,9 +6,7 @@
 }
 
 .content {
-     /* Để tránh nội dung bị che bởi header cố định */
     flex: 1;
-    
 }
 
 .error-message {
