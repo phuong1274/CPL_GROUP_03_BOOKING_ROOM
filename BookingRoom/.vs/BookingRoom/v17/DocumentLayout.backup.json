@@ -3,40 +3,87 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\editroom\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\editroom\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\userlist\\userlist.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\userlist\\userlist.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\controllers\\roommediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\controllers\\roommediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\header.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\header.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\style\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\style\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\FU Learning\\2025\\SPRING2025\\Mock_Project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AvailableRooms.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\changepassword\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\changepassword\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -47,16 +94,8 @@
       "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\models\\hotelbookingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\style\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\components\\style\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\components\\footer.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -71,20 +110,12 @@
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\forgotpassword\\forgotpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\changepassword\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\changepassword\\changepassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\services\\authservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\services\\authservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\login\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\login\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|c:\\users\\admin\\downloads\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +125,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -105,47 +136,224 @@
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Navbar.jsx",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Navbar.jsx",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\components\\Navbar.jsx",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAYwIQAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-11T14:17:57.853Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "BookingRoom.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
-              "RelativeToolTip": "BookingRoom.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-13T05:00:40.385Z",
+              "Title": "RoomMediaController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomMediaController.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Controllers\\RoomMediaController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomMediaController.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Controllers\\RoomMediaController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwHYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T07:49:14.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HotelBookingDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "RelativeDocumentMoniker": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "RelativeToolTip": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAA9wCgAAAAxAAAAAAAAAA==",
+              "Title": "RoomRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Repositories\\RoomRepository.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Repositories\\RoomRepository.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Repositories\\RoomRepository.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Repositories\\RoomRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T04:19:29.231Z",
+              "WhenOpened": "2025-04-13T07:46:19.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Controllers\\RoomsController.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAkwK8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T07:45:47.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AddRoom.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAQwB0BAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-13T07:43:36.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\index.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\index.css",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\index.css",
+              "RelativeToolTip": "bookingroom.client\\src\\index.css",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T07:11:35.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.css",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.css",
+              "RelativeToolTip": "bookingroom.client\\src\\App.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T07:11:24.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "5554210c-77a4-4749-b8d8-de3201d9cb10.png",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\5554210c-77a4-4749-b8d8-de3201d9cb10.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:11:13.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\1b4ced14-42a0-4c58-ac0f-0ae23742b478.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:11:12.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\7bd4d75a-8d1f-4ca0-ad76-6019be36f4f3.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:11:00.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\main.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\main.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\main.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\main.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-11T14:07:34.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\30bdfd7d-7a74-4eb8-a244-4ac0e8909d50.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:11:08.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "40ef7fe6-ae15-484e-92f6-3bf10864905c.png",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\40ef7fe6-ae15-484e-92f6-3bf10864905c.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:11:05.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "1ca53d14-24fb-4b20-99a5-0e865ba6d819.png",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\1ca53d14-24fb-4b20-99a5-0e865ba6d819.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:10:53.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "fc50200b-5bb1-4685-9338-340b86015df6.png",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\fc50200b-5bb1-4685-9338-340b86015df6.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:10:59.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ba749196-0ce5-4140-8505-94f47157f9e3.jpg",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\ba749196-0ce5-4140-8505-94f47157f9e3.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:10:56.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png",
+              "RelativeToolTip": "BookingRoom.Server\\uploads\\54df7c7d-c3b8-48ec-9242-c8369eb6fa71.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-04-13T07:10:55.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Navbar.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Navbar.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Navbar.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\Navbar.jsx",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAswJcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-13T05:55:06.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Header.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Header.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Header.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Header.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\components\\Header.jsx",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswDEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-13T05:38:08.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "AvailableRooms.jsx",
               "DocumentMoniker": "E:\\FU Learning\\2025\\SPRING2025\\Mock_Project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AvailableRooms.jsx",
               "ToolTip": "E:\\FU Learning\\2025\\SPRING2025\\Mock_Project\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AvailableRooms.jsx",
@@ -154,19 +362,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "Navbar.css",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\style\\Navbar.css",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\style\\Navbar.css",
               "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\style\\Navbar.css",
               "RelativeToolTip": "bookingroom.client\\src\\components\\style\\Navbar.css",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-11T14:17:54.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
+              "Title": "ChangePassword.jsx",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJIAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-11T14:07:34.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "HotelBookingDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAA9wCgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T04:19:29.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
+              "RelativeToolTip": "BookingRoom.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-13T05:00:40.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Footer.jsx",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\components\\Footer.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\components\\Footer.jsx",
@@ -178,19 +422,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 23,
               "Title": "App.jsx",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\App.jsx",
               "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.jsx",
               "RelativeToolTip": "bookingroom.client\\src\\App.jsx",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-04-11T14:13:28.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 25,
               "Title": "ResetPassword.jsx",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ResetPassword\\ResetPassword.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\ResetPassword\\ResetPassword.jsx",
@@ -198,25 +442,11 @@
               "RelativeToolTip": "bookingroom.client\\src\\pages\\ResetPassword\\ResetPassword.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-13T07:15:03.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:07:34.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomType.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:14:55.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 26,
               "Title": "ForgotPassword.jsx",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ForgotPassword\\ForgotPassword.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\ForgotPassword\\ForgotPassword.jsx",
@@ -228,19 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ChangePassword.jsx",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\ChangePassword\\ChangePassword.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-11T14:07:34.815Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 27,
               "Title": "authService.js",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\services\\authService.js",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\services\\authService.js",
@@ -252,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 28,
               "Title": "Login.jsx",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\Login\\Login.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\Login\\Login.jsx",
@@ -261,18 +479,6 @@
               "ViewState": "AgIAAEoAAAAAAAAAAAAmwF4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-04-11T14:07:34.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "main.jsx",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\main.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\main.jsx",
-              "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\main.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\main.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-11T14:07:34.82Z"
             }
           ]
         }
