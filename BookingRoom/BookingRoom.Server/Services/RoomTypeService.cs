@@ -2,11 +2,13 @@
 using BookingRoom.Server.Models;
 using BookingRoom.Server.Repositories;
 using BookingRoom.Server.Repositories.Interfaces;
-using BookingRoom.Server.Services.Interfaces; // Thêm dòng này
+using BookingRoom.Server.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BookingRoom.Server.Services
 {
@@ -96,15 +98,22 @@ namespace BookingRoom.Server.Services
             await _unitOfWork.RoomTypes.UpdateRoomTypeAsync(roomType);
         }
 
-        public async Task DeleteRoomTypeAsync(int roomTypeId)
-        {
-            var roomType = await _unitOfWork.RoomTypes.GetRoomTypeByIdAsync(roomTypeId);
-            if (roomType == null)
+            public async Task DeleteRoomTypeAsync(int roomTypeId)
             {
-                throw new KeyNotFoundException($"Room type with ID {roomTypeId} not found.");
+                var roomType = await _unitOfWork.RoomTypes.GetRoomTypeByIdAsync(roomTypeId);
+                if (roomType == null)
+                {
+                    throw new KeyNotFoundException($"Room type with ID {roomTypeId} not found.");
+                }
+                try
+                {
+                    await _unitOfWork.RoomTypes.DeleteRoomTypeAsync(roomTypeId);
+                }
+                catch (DbUpdateException ex)
+                {
+                    throw new InvalidOperationException("Cannot delete room type because it is assigned to one or more rooms.");
+                }
+           
             }
-
-            await _unitOfWork.RoomTypes.DeleteRoomTypeAsync(roomTypeId);
-        }
     }
 }

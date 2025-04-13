@@ -1,6 +1,6 @@
-﻿import { useState, useEffect } from 'react';
+﻿import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addRoom, getRoomTypes, addMedia, uploadMedia } from '../../../services/roomService';
+import { addRoom, getRoomTypes, addMedia } from '../../../services/roomService';
 import styles from './AddRoom.module.css';
 
 function AddRoom() {
@@ -12,12 +12,9 @@ function AddRoom() {
         endDate: '',
         status: 'Available',
     });
-
-    const [mediaFiles, setMediaFiles] = useState([]);
-    const [mediaData, setMediaData] = useState([]);
+    const [mediaItems, setMediaItems] = useState([]);
     const [roomTypes, setRoomTypes] = useState([]);
     const [error, setError] = useState(null);
-    const [isUploading, setIsUploading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -40,26 +37,35 @@ function AddRoom() {
         setRoom((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleFileChange = async (e) => {
+    const handleFileChange = useCallback((e) => {
         const files = Array.from(e.target.files);
         if (files.length === 0) return;
 
-        setIsUploading(true);
-        try {
-            const uploadedMedia = await uploadMedia(files);
-            setMediaFiles((prev) => [...prev, ...files]);
-            setMediaData((prev) => [...prev, ...uploadedMedia]);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setIsUploading(false);
-        }
-    };
+        const allowedTypes = ['image/jpeg', 'image/png', 'video/mp4'];
+        const maxSize = 10 * 1024 * 1024; // 10MB
+        const newMedia = files
+            .filter((file) => allowedTypes.includes(file.type) && file.size <= maxSize)
+            .map((file) => ({
+                mediaId: `temp-${Date.now()}-${Math.random()}`,
+                mediaLink: URL.createObjectURL(file),
+                file,
+                mediaType: file.type.startsWith('image') ? 'Image' : 'Video',
+            }));
 
-    const handleRemoveMedia = (index) => {
-        setMediaFiles((prev) => prev.filter((_, i) => i !== index));
-        setMediaData((prev) => prev.filter((_, i) => i !== index));
-    };
+        if (newMedia.length < files.length) {
+            setError('Some files were invalid (unsupported type or too large).');
+        }
+
+        setMediaItems((prev) => [...prev, ...newMedia]);
+    }, []);
+
+    const handleRemoveMedia = useCallback((index) => {
+        const mediaItem = mediaItems[index];
+        if (mediaItem.mediaLink.startsWith('blob:')) {
+            URL.revokeObjectURL(mediaItem.mediaLink);
+        }
+        setMediaItems((prev) => prev.filter((_, i) => i !== index));
+    }, [mediaItems]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -86,13 +92,15 @@ function AddRoom() {
                 throw new Error('Failed to create room: Invalid RoomID');
             }
 
-            for (const media of mediaData) {
-                await addMedia({
-                    roomID: newRoom.roomID,
-                    media_Link: media.url,
-                    description: `Media for room ${newRoom.roomNumber}`,
-                    mediaType: media.type,
-                });
+            for (const media of mediaItems) {
+                if (media.file) {
+                    await addMedia({
+                        roomId: newRoom.roomID,
+                        file: media.file,
+                        description: `Media for room ${newRoom.roomNumber}`,
+                        mediaType: media.mediaType,
+                    });
+                }
             }
 
             alert('Room added successfully!');
@@ -104,14 +112,36 @@ function AddRoom() {
                 endDate: '',
                 status: 'Available',
             });
-            setMediaFiles([]);
-            setMediaData([]);
+            setMediaItems([]);
             navigate('/rooms');
         } catch (err) {
             console.error('Error adding room or media:', err);
             setError(err.message);
         }
     };
+
+    const renderMediaPreview = useCallback((item) => {
+        switch (item.mediaType) {
+            case 'Image':
+                return (
+                    <img
+                        src={item.mediaLink}
+                        alt="Preview"
+                        className={styles.mediaImage}
+                        onError={(e) => (e.target.src = 'https://via.placeholder.com/200')}
+                    />
+                );
+            case 'Video':
+                return (
+                    <video controls className={styles.mediaVideo}>
+                        <source src={item.mediaLink} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                );
+            default:
+                return <div className={styles.mediaFile}>{item.mediaType} File</div>;
+        }
+    }, []);
 
     return (
         <div className={styles.container}>
@@ -215,62 +245,36 @@ function AddRoom() {
                         multiple
                         onChange={handleFileChange}
                         className={styles.input}
-                        disabled={isUploading}
                     />
-                    {isUploading && (
-                        <div className={styles.uploadingContainer}>
-                            <span>Loading...</span>
-                        </div>
-                    )}
                 </div>
 
-                {mediaFiles.length > 0 && (
+                {mediaItems.length > 0 && (
                     <div className={`${styles.mediaSection} ${styles.fullWidth}`}>
                         <h4 className={styles.subtitle}>Media Preview:</h4>
                         <div className={styles.mediaGrid}>
-                            {mediaFiles.map((file, index) => {
-                                const media = mediaData[index];
-                                return (
-                                    <div key={index} className={styles.mediaItem}>
-                                        {media?.type === 'Image' ? (
-                                            <img
-                                                src={URL.createObjectURL(file)}
-                                                alt="Preview"
-                                                className={styles.mediaImage}
-                                            />
-                                        ) : (
-                                            <video
-                                                src={URL.createObjectURL(file)}
-                                                className={styles.mediaVideo}
-                                                controls
-                                            />
-                                        )}
-                                        <button
-                                            onClick={() => handleRemoveMedia(index)}
-                                            className={styles.deleteButton}
-                                        >
-                                            ✕
-                                        </button>
-                                    </div>
-                                );
-                            })}
+                            {mediaItems.map((item, index) => (
+                                <div key={item.mediaId} className={styles.mediaItem}>
+                                    {renderMediaPreview(item)}
+                                    <button
+                                        onClick={() => handleRemoveMedia(index)}
+                                        className={styles.deleteButton}
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}
 
                 <div className={styles.buttonGroup}>
-                    <button
-                        type="submit"
-                        className={styles.saveButton}
-                        disabled={isUploading}
-                    >
+                    <button type="submit" className={styles.saveButton}>
                         Add Room
                     </button>
                     <button
                         type="button"
                         onClick={() => navigate('/rooms')}
                         className={styles.backButton}
-                        disabled={isUploading}
                     >
                         Cancel
                     </button>

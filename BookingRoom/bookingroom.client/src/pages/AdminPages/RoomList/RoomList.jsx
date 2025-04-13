@@ -1,4 +1,6 @@
-﻿import { useEffect, useState, useCallback } from 'react';
+﻿// RoomList.js
+
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
     Container,
@@ -36,14 +38,11 @@ function RoomList() {
     const pageSize = 20;
     const navigate = useNavigate();
 
-    // Thêm timeout cho thông báo lỗi
     useEffect(() => {
         if (error) {
             const timeout = setTimeout(() => {
-                setError(null); // Tự động ẩn sau 4 giây
-            }, 4000); // 4 giây (có thể điều chỉnh từ 3000 đến 5000)
-
-            // Cleanup để tránh memory leak
+                setError(null);
+            }, 4000);
             return () => clearTimeout(timeout);
         }
     }, [error]);
@@ -105,8 +104,7 @@ function RoomList() {
         if (page > 1) {
             const startIndex = (page - 1) * pageSize;
             const endIndex = page * pageSize;
-            const newDisplayedRooms = allRooms.slice(0, endIndex);
-            setDisplayedRooms(newDisplayedRooms);
+            setDisplayedRooms(allRooms.slice(0, endIndex));
             setHasMore(endIndex < allRooms.length);
         }
     }, [page, allRooms]);
@@ -119,7 +117,9 @@ function RoomList() {
             setDisplayedRooms((prev) => prev.filter((room) => room.roomID !== roomToDelete));
             setShowDeleteModal(false);
         } catch (err) {
+            console.error('Delete error:', err);
             setError(err.message);
+            setShowDeleteModal(false);
         }
     };
 
@@ -147,7 +147,6 @@ function RoomList() {
                                 variant="success"
                                 onClick={() => navigate('/add-room')}
                                 className={styles.actionButton}
-                                aria-label="Add new room"
                             >
                                 <FaPlus className="me-1" /> Add New Room
                             </Button>
@@ -161,7 +160,7 @@ function RoomList() {
                     )}
 
                     <Row className="mb-4 align-items-end">
-                        <Col md={3} sm={6} xs={12} className="mb-3">
+                        <Col md={3}>
                             <Form.Group controlId="roomNumber">
                                 <Form.Label>Room Number</Form.Label>
                                 <Form.Control
@@ -172,7 +171,7 @@ function RoomList() {
                                 />
                             </Form.Group>
                         </Col>
-                        <Col md={3} sm={6} xs={12} className="mb-3">
+                        <Col md={3}>
                             <Form.Group controlId="status">
                                 <Form.Label>Status</Form.Label>
                                 <Form.Select value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -183,7 +182,7 @@ function RoomList() {
                                 </Form.Select>
                             </Form.Group>
                         </Col>
-                        <Col md={3} sm={6} xs={12} className="mb-3">
+                        <Col md={3}>
                             <Form.Group controlId="roomType">
                                 <Form.Label>Room Type</Form.Label>
                                 <Form.Select value={roomTypeId} onChange={(e) => setRoomTypeId(e.target.value)}>
@@ -196,12 +195,8 @@ function RoomList() {
                                 </Form.Select>
                             </Form.Group>
                         </Col>
-                        <Col md={3} sm={6} xs={12} className="mb-3 text-md-end">
-                            <Button
-                                variant="outline-secondary"
-                                onClick={handleResetFilters}
-                                className={styles.actionButton}
-                            >
+                        <Col md={3} className="text-end">
+                            <Button variant="outline-secondary" onClick={handleResetFilters}>
                                 Reset Filters
                             </Button>
                         </Col>
@@ -252,7 +247,6 @@ function RoomList() {
                                                         size="sm"
                                                         className="me-2"
                                                         onClick={() => navigate(`/edit-room/${room.roomID}`)}
-                                                        aria-label={`Edit room ${room.roomNumber}`}
                                                     >
                                                         <FaEdit />
                                                     </Button>
@@ -268,7 +262,6 @@ function RoomList() {
                                                             setRoomToDelete(room.roomID);
                                                             setShowDeleteModal(true);
                                                         }}
-                                                        aria-label={`Delete room ${room.roomNumber}`}
                                                     >
                                                         <FaTrash />
                                                     </Button>

@@ -111,13 +111,28 @@ function AppContent() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    // Xử lý thông báo lỗi từ location.state
     useEffect(() => {
         if (location.state?.error) {
             setErrorMessage(location.state.error);
+            // Xóa state lỗi khỏi location để tránh hiển thị lại khi refresh
             window.history.replaceState({}, document.title, location.pathname);
         }
     }, [location]);
 
+    // Tự động xóa thông báo sau 5 giây
+    useEffect(() => {
+        if (errorMessage) {
+            const timer = setTimeout(() => {
+                setErrorMessage(null);
+            }, 3000); // 5000ms = 5 giây
+
+            // Dọn dẹp timer khi errorMessage thay đổi hoặc component unmount
+            return () => clearTimeout(timer);
+        }
+    }, [errorMessage]);
+
+    // Xử lý logout callback
     useEffect(() => {
         setLogoutCallback(logout);
         return () => {
@@ -139,9 +154,6 @@ function AppContent() {
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}
-                    <button onClick={() => setErrorMessage(null)} className="close-error">
-                        Close
-                    </button>
                 </div>
             )}
             <div className={`content ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>

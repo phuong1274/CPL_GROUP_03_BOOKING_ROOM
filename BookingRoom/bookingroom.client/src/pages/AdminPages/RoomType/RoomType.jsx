@@ -41,7 +41,6 @@ function RoomType() {
         setFilteredRoomTypes(filtered);
     };
 
-    // Handle delete
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this room type?')) {
             try {
@@ -49,7 +48,7 @@ function RoomType() {
                 setRoomTypes(roomTypes.filter((type) => type.roomTypeID !== id));
                 setFilteredRoomTypes(filteredRoomTypes.filter((type) => type.roomTypeID !== id));
             } catch (err) {
-                setError(err.message);
+                setError(err.message); // Show "Cannot delete room type because it is assigned to one or more rooms."
             }
         }
     };

@@ -333,24 +333,6 @@ function RoomDetail() {
 
                 <div className={`${styles.mediaSection} ${styles.fullWidth}`}>
                     <h2 className={styles.subtitle}>Media</h2>
-                    <div className={styles.mediaInputGrid}>
-                       
-                        <div className={styles.formGroup}>
-                            <label className={styles.label}>Media Type</label>
-                            <select
-                                value={newMediaType}
-                                onChange={(e) => setNewMediaType(e.target.value)}
-                                className={styles.select}
-                            >
-                                {mediaTypes.map((type) => (
-                                    <option key={type} value={type}>
-                                        {type}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-
                     <div className={styles.formGroup}>
                         <label className={styles.label}>Upload File</label>
                         <input

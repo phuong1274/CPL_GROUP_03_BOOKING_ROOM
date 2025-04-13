@@ -3,52 +3,20 @@
   "WorkspaceRootPath": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\editroom\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\editroom\\editroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\services\\roomtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\services\\roomtypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\addroom\\addroom.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\userlist\\userlist.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\userlist\\userlist.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\services\\roomservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\services\\roomservice.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\adminpages\\roomtype\\roomtype.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\mybooking\\mybooking.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F4D40C3-B6B0-4845-8563-B8558F768F05}|bookingroom.client\\bookingroom.client.esproj|solutionrelative:bookingroom.client\\src\\pages\\userpages\\availablerooms\\availablerooms.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\models\\hotelbookingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\models\\hotelbookingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|f:\\cpl_group_03_booking_room\\cpl_group_03_booking_room\\bookingroom\\bookingroom.server\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E172D4-9E1C-44F7-950A-968EE7D69B4D}|BookingRoom.Server\\BookingRoom.Server.csproj|solutionrelative:bookingroom.server\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,158 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.jsx",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\App.jsx",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\App.jsx",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-13T07:25:24.776Z",
+              "DocumentIndex": 1,
+              "Title": "RoomTypeService.cs",
+              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\RoomTypeService.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Services\\RoomTypeService.cs",
+              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\RoomTypeService.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Services\\RoomTypeService.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAAHQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T08:29:18.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddRoom.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.module.css",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAYwKgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:24:04.723Z",
+              "DocumentIndex": 0,
+              "Title": "RoomTypeController.cs",
+              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomTypeController.cs",
+              "RelativeDocumentMoniker": "BookingRoom.Server\\Controllers\\RoomTypeController.cs",
+              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Controllers\\RoomTypeController.cs",
+              "RelativeToolTip": "BookingRoom.Server\\Controllers\\RoomTypeController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAowKsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T08:29:08.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddRoom.jsx",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\AddRoom\\AddRoom.jsx",
-              "ViewState": "AgIAAAABAAAAAAAAAAAkwBoBAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-13T07:23:47.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditRoom.jsx",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\EditRoom\\EditRoom.jsx",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\EditRoom\\EditRoom.jsx",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\EditRoom\\EditRoom.jsx",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\EditRoom\\EditRoom.jsx",
-              "ViewState": "AgIAAEoBAAAAAAAAAAAAAFABAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-13T07:22:48.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "userList.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\UserList\\userList.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\UserList\\userList.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\UserList\\userList.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\UserList\\userList.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:15:32.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "RoomType.jsx",
               "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.jsx",
               "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.jsx",
               "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.jsx",
               "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.jsx",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-13T07:15:03.231Z",
+              "WhenOpened": "2025-04-13T08:29:03.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomType.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:14:55.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MyBooking.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\MyBooking\\MyBooking.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:14:40.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AvailableRooms.module.css",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
-              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
-              "RelativeToolTip": "bookingroom.client\\src\\pages\\UserPages\\AvailableRooms\\AvailableRooms.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-13T07:14:06.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "BookingRoom.Server\\appsettings.json",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\appsettings.json",
-              "RelativeToolTip": "BookingRoom.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-13T07:09:07.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HotelBookingDbContext.cs",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "RelativeDocumentMoniker": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "RelativeToolTip": "BookingRoom.Server\\Models\\HotelBookingDbContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA7wCAAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:08:57.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "BookingRoom.Server\\Services\\AuthService.cs",
-              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\BookingRoom.Server\\Services\\AuthService.cs",
-              "RelativeToolTip": "BookingRoom.Server\\Services\\AuthService.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAgwMAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T06:39:31.162Z",
+              "DocumentIndex": 2,
+              "Title": "roomService.js",
+              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\services\\roomService.js",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\services\\roomService.js",
+              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\services\\roomService.js",
+              "RelativeToolTip": "bookingroom.client\\src\\services\\roomService.js",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAswIoAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-13T08:28:47.935Z",
               "EditorCaption": ""
             }
           ]
