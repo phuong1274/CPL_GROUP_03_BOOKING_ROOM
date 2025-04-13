@@ -1,4 +1,4 @@
-﻿/* App.css */
+﻿﻿ /* App.css */
 .app-container {
     min-height: 100vh;
     display: flex;
@@ -6,9 +6,7 @@
 }
 
 .content {
-    padding-top: 60px; /* Để tránh nội dung bị che bởi header cố định */
     flex: 1;
-    padding: 20px;
 }
 
 .error-message {

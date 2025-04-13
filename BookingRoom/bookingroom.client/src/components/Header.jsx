@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { RiMenu3Line } from 'react-icons/ri'; // Hamburger menu icon
+import { RiMenu3Line } from 'react-icons/ri';
 import './style/Header.css';
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
@@ -9,7 +9,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
     const navigate = useNavigate();
 
     const handleNavigateUserProfile = () => {
-        navigate('/update-profile');  
+        navigate('/update-profile');
     };
 
     return (

@@ -165,7 +165,7 @@
               "RelativeDocumentMoniker": "bookingroom.client\\src\\App.jsx",
               "ToolTip": "C:\\Users\\ADMIN\\Downloads\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\App.jsx",
               "RelativeToolTip": "bookingroom.client\\src\\App.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-04-11T14:13:28.863Z"
             },
@@ -179,7 +179,21 @@
               "RelativeToolTip": "bookingroom.client\\src\\pages\\ResetPassword\\ResetPassword.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-11T14:07:34.789Z"
+              "WhenOpened": "2025-04-13T07:15:03.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoomType.module.css",
+              "DocumentMoniker": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
+              "RelativeDocumentMoniker": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
+              "ToolTip": "F:\\CPL_GROUP_03_BOOKING_ROOM\\CPL_GROUP_03_BOOKING_ROOM\\BookingRoom\\bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
+              "RelativeToolTip": "bookingroom.client\\src\\pages\\AdminPages\\RoomType\\RoomType.module.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T07:14:55.699Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

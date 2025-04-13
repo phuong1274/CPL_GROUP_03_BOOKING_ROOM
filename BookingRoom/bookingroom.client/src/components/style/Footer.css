@@ -1,9 +1,9 @@
 ﻿/* style/Footer.css */
 
 .footer {
-    background-color: #1a1a1a; /* Dark background for elegance */
+    background-color: #000000d1; /* Dark background for elegance */
     color: #fff;
-    padding: 80px 20px 40px; /* More padding for spaciousness */
+    padding: 40px 20px; /* More padding for spaciousness */
     font-family: 'Inter', sans-serif; /* Modern font */
     width: 100%;
     box-sizing: border-box;
@@ -16,7 +16,7 @@
     flex-direction: row; /* Horizontal layout on desktop */
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px; /* Space between sections */
+    gap: 20px; /* Khoảng cách giữa Contact và Social */
 }
 
 .footer-section {
@@ -25,6 +25,7 @@
 
 .footer-contact {
     text-align: left; /* Align left for Contact */
+    margin-left: 100px
 }
 
     .footer-contact h3 {
@@ -39,10 +40,10 @@
     .footer-contact p {
         font-size: 1rem;
         color: #ccc;
-        margin: 12px 0;
+        margin: 12px 0; /* Khoảng cách giữa các mục */
         display: flex;
         align-items: center;
-        gap: 12px; /* Space between icon and text */
+        gap: 10px; /* Khoảng cách giữa icon và text */
     }
 
     .footer-contact i {
@@ -51,19 +52,20 @@
     }
 
 .footer-social-top {
-    text-align: right; /* Align right for Social */
+    text-align: right;
+    margin-right: 100px/* Align right for Social */
 }
 
     .footer-social-top p {
         font-size: 1rem;
         color: #ccc;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem; /* Giảm khoảng cách để khớp với hình */
     }
 
 .social-links {
     display: flex;
     justify-content: flex-end; /* Align right */
-    gap: 20px;
+    gap: 10px; /* Giảm gap từ 20px xuống 10px để khớp với hình */
 }
 
     .social-links a {
@@ -80,23 +82,33 @@
 
 .footer-bottom {
     text-align: center;
-    margin-top: 60px;
-    padding-top: 30px;
+    margin-top: 40px; /* Giảm từ 60px để khớp với hình */
+    padding-top: 20px; /* Giảm từ 30px */
     border-top: 1px solid #444; /* Slightly lighter border */
     font-size: 0.9rem;
     color: #ccc;
+    position: relative; /* Để định vị biểu tượng kim cương */
 }
 
     .footer-bottom p {
         margin: 0;
+        display: inline-block; /* Để căn chỉnh với biểu tượng */
     }
+
+        /* Thêm biểu tượng kim cương trước bản quyền */
+        .footer-bottom p::before {
+            content: '\25C6'; /* Biểu tượng kim cương Unicode */
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-right: 8px; /* Khoảng cách giữa kim cương và text */
+        }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
     .footer-container {
         flex-direction: column; /* Vertical layout on tablet/mobile */
         align-items: center;
-        gap: 30px;
+        gap: 20px;
     }
 
     .footer-contact,
@@ -111,6 +123,7 @@
 
     .social-links {
         justify-content: center; /* Center social links */
+        gap: 10px;
     }
 
     .footer {
@@ -137,6 +150,11 @@
     .social-links a {
         font-size: 1.6rem;
     }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 15px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -145,7 +163,7 @@
     }
 
     .footer-container {
-        gap: 25px;
+        gap: 15px;
     }
 
     .footer-contact h3 {
@@ -166,7 +184,7 @@
     }
 
     .social-links {
-        gap: 15px;
+        gap: 8px;
     }
 
         .social-links a {
@@ -174,13 +192,18 @@
         }
 
     .footer-bottom {
-        margin-top: 40px;
-        padding-top: 20px;
+        margin-top: 20px;
+        padding-top: 10px;
     }
 
         .footer-bottom p {
             font-size: 0.85rem;
         }
+
+            .footer-bottom p::before {
+                font-size: 0.85rem;
+                margin-right: 6px;
+            }
 }
 
 @media (max-width: 480px) {
@@ -189,7 +212,7 @@
     }
 
     .footer-container {
-        gap: 20px;
+        gap: 15px;
     }
 
     .footer-contact h3 {
@@ -210,7 +233,7 @@
     }
 
     .social-links {
-        gap: 12px;
+        gap: 6px;
     }
 
         .social-links a {
@@ -218,18 +241,27 @@
         }
 
     .footer-bottom {
-        margin-top: 30px;
-        padding-top: 15px;
+        margin-top: 15px;
+        padding-top: 10px;
     }
 
         .footer-bottom p {
             font-size: 0.8rem;
         }
+
+            .footer-bottom p::before {
+                font-size: 0.8rem;
+                margin-right: 5px;
+            }
 }
 
 @media (max-width: 360px) {
     .footer {
         padding: 30px 8px 15px;
+    }
+
+    .footer-container {
+        gap: 10px;
     }
 
     .footer-contact h3 {
@@ -250,7 +282,7 @@
     }
 
     .social-links {
-        gap: 10px;
+        gap: 5px;
     }
 
         .social-links a {
@@ -260,4 +292,9 @@
     .footer-bottom p {
         font-size: 0.75rem;
     }
+
+        .footer-bottom p::before {
+            font-size: 0.75rem;
+            margin-right: 4px;
+        }
 }

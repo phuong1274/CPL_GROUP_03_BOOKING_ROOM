@@ -334,21 +334,7 @@ function RoomDetail() {
                 <div className={`${styles.mediaSection} ${styles.fullWidth}`}>
                     <h2 className={styles.subtitle}>Media</h2>
                     <div className={styles.mediaInputGrid}>
-                        <div className={styles.formGroup}>
-                            <label className={styles.label}>Media Link</label>
-                            <div className={styles.mediaLinkGroup}>
-                                <input
-                                    type="text"
-                                    value={newMediaLink}
-                                    onChange={(e) => setNewMediaLink(e.target.value)}
-                                    className={styles.input}
-                                    placeholder="Enter media URL"
-                                />
-                                <button onClick={handleAddMediaLink} className={styles.addButton}>
-                                    Add
-                                </button>
-                            </div>
-                        </div>
+                       
                         <div className={styles.formGroup}>
                             <label className={styles.label}>Media Type</label>
                             <select
