@@ -192,7 +192,7 @@ export default function AvailableRooms() {
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
                                 className={styles.bookingDateInput}
-                                min={new Date().toISOString().split('T')[0]}  
+                                min={new Date().toISOString().split('T')[0]}
                             />
 
                             <button
@@ -220,7 +220,9 @@ export default function AvailableRooms() {
                                     <Col md={6}>{renderMediaPreview(room.media)}</Col>
                                     <Col md={6}>
                                         <Card.Body className={styles.cardBody}>
-                                            <h5 className={styles.roomType}>{room.roomTypeName}</h5>
+                                            <h5 className={styles.roomNumber}>Room {room.roomNumber}</h5>
+                                            <br></br>
+                                            <p className={styles.roomType}>{room.roomTypeName}</p>
                                             <br />
                                             <p className={styles.roomDesc}>{room.description || 'No description available.'}</p>
                                             <br />
@@ -241,6 +243,7 @@ export default function AvailableRooms() {
                                                 Book Now
                                             </button>
                                         </Card.Body>
+
                                     </Col>
                                 </Row>
                             </Card>
@@ -251,4 +254,3 @@ export default function AvailableRooms() {
         </div>
     );
 }
-//o
