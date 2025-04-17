@@ -80,7 +80,7 @@ namespace BookingRoom.Server.Services
                 }
 
                 
-                booking.BookingStatus = "CheckedIn"; 
+                booking.BookingStatus = "Confirmed"; 
                 booking.CheckInDate = DateTime.Now; 
                 booking.UpdatedAt = DateTime.Now;
 
@@ -107,7 +107,7 @@ namespace BookingRoom.Server.Services
                     return false;
                 }
 
-                if (booking.BookingStatus != "Confirmed" && booking.BookingStatus != "CheckedIn") 
+                if (booking.BookingStatus != "Confirmed") 
                 {
                     _logger.LogWarning("Booking {BookingId} cannot be checked out: Current status is {Status}", bookingId, booking.BookingStatus);
                     return false;

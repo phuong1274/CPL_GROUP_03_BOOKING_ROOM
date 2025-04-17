@@ -22,17 +22,17 @@ export default function AvailableRooms() {
     const navigate = useNavigate();
     const bookingBoxRef = useRef(null);
 
-    useEffect(() => {
-        const appHeader = document.querySelector('.app-header');
-        if (appHeader) {
-            const headerHeight = appHeader.offsetHeight;
-            const pageHeader = document.querySelector(`.${styles.headerWrapper}`);
-            if (pageHeader) {
-                pageHeader.style.height = `calc(100vh - ${headerHeight}px)`;
-                pageHeader.style.marginTop = `${headerHeight}px`;
-            }
-        }
-    }, []);
+    //useEffect(() => {
+    //    const appHeader = document.querySelector('.app-header');
+    //    if (appHeader) {
+    //        const headerHeight = appHeader.offsetHeight;
+    //        const pageHeader = document.querySelector(`.${styles.headerWrapper}`);
+    //        if (pageHeader) {
+    //            pageHeader.style.height = `calc(100vh - ${headerHeight}px)`;
+    //            pageHeader.style.marginTop = `${headerHeight}px`;
+    //        }
+    //    }
+    //}, []);
 
     useEffect(() => {
         fetchRoomTypes();

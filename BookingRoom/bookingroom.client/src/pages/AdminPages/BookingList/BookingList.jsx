@@ -1,26 +1,9 @@
 ﻿import React, { useEffect, useState } from 'react';
 import {
-    Container,
-    Row,
-    Col,
-    Form,
-    Button,
-    Table,
-    Spinner,
-    Alert,
-    Card,
-    Badge,
-    Modal,
-    Toast,
-    ToastContainer,
-    Pagination,
-} from 'react-bootstrap';
+    Container, Row, Col, Form, Button, Table, Spinner, Alert, Card, Badge,
+    Modal,Toast,ToastContainer,Pagination,} from 'react-bootstrap';
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa';
-import {
-    getAllBookings,
-    checkInBooking,
-    checkOutBooking,
-} from '../../../services/bookingService';
+import {getAllBookings, checkInBooking, checkOutBooking, from '../../../services/bookingService';
 import { getUserById } from '../../../services/authService';
 import { getRoomById } from '../../../services/roomService';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -86,6 +69,7 @@ export default function BookingList() {
             setError(null);
             setSuccessMessage(null);
         } catch (err) {
+            console.error('Fetch bookings error:', err);
             setError(err.message || 'Failed to fetch bookings');
             setBookings([]);
             setNoResults(false);
@@ -113,16 +97,22 @@ export default function BookingList() {
     };
 
     const handleCheckIn = async () => {
+        if (!selectedBookingId) {
+            setError('No booking selected for check-in');
+            setShowModal(false);
+            return;
+        }
+        console.log('Attempting check-in for booking ID:', selectedBookingId); // Log ID
         try {
             setCheckingInId(selectedBookingId);
             setError(null);
             setSuccessMessage(null);
-
             const response = await checkInBooking(selectedBookingId);
             setSuccessMessage(response.message || 'Booking checked in successfully!');
             setShowModal(false);
             await fetchBookings();
         } catch (err) {
+            console.error('Check-in error:', err); // Log lỗi
             setError(err.message);
         } finally {
             setCheckingInId(null);
@@ -130,16 +120,22 @@ export default function BookingList() {
     };
 
     const handleCheckOut = async () => {
+        if (!selectedBookingId) {
+            setError('No booking selected for check-out');
+            setShowModal(false);
+            return;
+        }
+        console.log('Attempting check-out for booking ID:', selectedBookingId); // Log ID
         try {
             setCheckingOutId(selectedBookingId);
             setError(null);
             setSuccessMessage(null);
-
             const response = await checkOutBooking(selectedBookingId);
             setSuccessMessage(response.message || 'Booking checked out successfully!');
             setShowModal(false);
             await fetchBookings();
         } catch (err) {
+            console.error('Check-out error:', err); // Log lỗi
             setError(err.message);
         } finally {
             setCheckingOutId(null);
@@ -147,7 +143,7 @@ export default function BookingList() {
     };
 
     const formatDate = (dateString) => {
-        if (!dateString) return 'N/A';
+        if (!dateString || dateString === 'N/A') return 'N/A';
         return new Date(dateString).toLocaleDateString();
     };
 
